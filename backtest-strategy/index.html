@@ -1,0 +1,2915 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="台美股資料、積木選股與回測整合套件 —— 專為 AI coding agent 設計的文件集">
+      
+      
+      
+        <link rel="canonical" href="https://snowyowlstrategy.github.io/backtest-strategy/">
+      
+      
+        <link rel="prev" href="../backtest/">
+      
+      
+        <link rel="next" href="../backtest-order/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../sw/logo0902.jpg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>回測：事件模型與策略撰寫 - SnowyOwl</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../sw/theme.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#回測事件模型與策略撰寫" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href=".." title="SnowyOwl" class="md-header__button md-logo" aria-label="SnowyOwl" data-md-component="logo">
+      
+  <img src="../sw/logo0902.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SnowyOwl
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              回測：事件模型與策略撰寫
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切換成暗色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換成暗色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切換成亮色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換成亮色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首頁
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../getting-started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  入門與結構
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../block/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  積木 Block（選股）
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../data/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Data 表格查詢
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../msmp/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  MSMP 歷史資料
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../swquote/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  即時行情
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../backtest/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  回測
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SnowyOwl" class="md-nav__button md-logo" aria-label="SnowyOwl" data-md-component="logo">
+      
+  <img src="../sw/logo0902.jpg" alt="logo">
+
+    </a>
+    SnowyOwl
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    入門與結構
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    入門與結構
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    開始使用 snowyowl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../login/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    so.login 登入
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    api 物件結構
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../errors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    錯誤訊息速查
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    積木 Block（選股）
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    積木 Block（選股）
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    積木 Block 總覽
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-list-conditions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block.list_conditions 積木清單查詢
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-get-table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block.get_table 積木參數與合法值
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-con/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block.con 組積木
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-screener/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block.screener 執行選股
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-pool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block 股池 pool
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-codegen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block 產生的程式碼 code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-caveats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block 已知落差與注意事項
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-reference-tw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    台股積木完整參考
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-reference-us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    美股積木完整參考
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data 表格查詢
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data 表格查詢
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data 模組總覽
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-get-table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data.get_table 列出可用表格
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-get/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data.get 取得表格資料
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    資料頻率與歷史長度
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-get-snapshots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data.get_snapshots 即時快照
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intraday/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    盤中、分K與逐筆明細
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usdata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USData 美股表格查詢
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSMP 歷史資料
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MSMP 歷史資料
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../msmp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSMP 矩陣資料總覽
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../msmp-tables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSMP 資料表與欄位完整清單
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../msmp-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSMP.list 股池
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usmsmp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USMSMP 美股矩陣資料
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    即時行情
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    即時行情
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swquote/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWQuote 即時行情（StarWave）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swquote-callback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWQuote 行情回呼與 SWMarketData
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swquote-event/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWQuote 連線事件與事件碼
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    回測
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測 api.bt 總覽
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測：事件模型與策略撰寫
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測：事件模型與策略撰寫
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#標準骨架" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        標準骨架
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#事件方法" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        事件方法
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#一根-bar-內的執行順序" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一根 bar 內的執行順序
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#row-的完整欄位" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        row 的完整欄位
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#資料結構" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        資料結構
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="資料結構">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#positionon_position-的-pcorepositions-的-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Position（on_position 的 P、core.positions 的 value）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordercoreorders-的-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Order（core.orders 的 value）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#狀態屬性" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        狀態屬性
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="狀態屬性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#selfstats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        self.stats
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#從零寫一支策略的檢查清單" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        從零寫一支策略的檢查清單
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#會出錯的事實測" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        會出錯的事（實測）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="會出錯的事（實測）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#在-on_init-裡下單--runtimeerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        在 on_init 裡下單 → RuntimeError
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#完全平倉不觸發-on_position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完全平倉不觸發 on_position
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#其他陷阱" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其他陷阱
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#框架印出的訊息對照" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        框架印出的訊息對照
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#相關頁" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相關頁
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest-order/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測：委託、成交價與風控
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測：資料與週期
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測：商品規格與績效報告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測：技術指標與參數尋優
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#標準骨架" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        標準骨架
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#事件方法" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        事件方法
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#一根-bar-內的執行順序" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一根 bar 內的執行順序
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#row-的完整欄位" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        row 的完整欄位
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#資料結構" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        資料結構
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="資料結構">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#positionon_position-的-pcorepositions-的-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Position（on_position 的 P、core.positions 的 value）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordercoreorders-的-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Order（core.orders 的 value）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#狀態屬性" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        狀態屬性
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="狀態屬性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#selfstats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        self.stats
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#從零寫一支策略的檢查清單" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        從零寫一支策略的檢查清單
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#會出錯的事實測" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        會出錯的事（實測）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="會出錯的事（實測）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#在-on_init-裡下單--runtimeerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        在 on_init 裡下單 → RuntimeError
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#完全平倉不觸發-on_position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完全平倉不觸發 on_position
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#其他陷阱" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其他陷阱
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#框架印出的訊息對照" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        框架印出的訊息對照
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#相關頁" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相關頁
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="回測事件模型與策略撰寫">回測：事件模型與策略撰寫</h1>
+<blockquote>
+<p>所屬章節：回測
+事件順序、<code>row</code> 欄位、<code>on_init</code> 下單的錯誤、完全平倉的行為皆以合成資料實測驗證（2026-08-21）</p>
+</blockquote>
+<p>理解執行順序是寫策略的前提——它決定了送出的委託何時成交。</p>
+<h2 id="標準骨架">標準骨架</h2>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">snowyowl</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">so</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">api</span> <span class="o">=</span> <span class="n">so</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s1">&#39;user@x.com&#39;</span><span class="p">,</span> <span class="s1">&#39;pwd&#39;</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">bt</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">bt</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">df</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Tools</span><span class="o">.</span><span class="n">get_stock_ohlc</span><span class="p">(</span><span class="s1">&#39;2330&#39;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">adj</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">class</span><span class="w"> </span><span class="nc">MyStrategy</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Core</span><span class="p">):</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        <span class="c1"># 1) 參數：要被 optimize 尋優的都放這裡，命名成 self.xxx</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">n_fast</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_slow</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">20</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">stl</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pft</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        <span class="c1"># 2) 狀態容器</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">close_list</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>        <span class="c1"># 3) 期貨要改最小跳動單位（預設是股票規格）</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        <span class="c1"># self.tick_map = [(np.inf, 1)]</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">my_indicators</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">):</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">close_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">])</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>        <span class="n">fast</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Ind</span><span class="o">.</span><span class="n">rolling_mean</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">close_list</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_fast</span><span class="p">)</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>        <span class="n">slow</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Ind</span><span class="o">.</span><span class="n">rolling_mean</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">close_list</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_slow</span><span class="p">)</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">char</span><span class="p">[</span><span class="s1">&#39;fast&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fast</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>          <span class="c1"># 存進 char 才會顯示在 show_monitor</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">char</span><span class="p">[</span><span class="s1">&#39;slow&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">slow</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">close_list</span><span class="p">)</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_slow</span><span class="p">:</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span>               <span class="c1"># 暖身期不下單</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>        <span class="k">return</span> <span class="n">fast</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">slow</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">fast</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">slow</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">):</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>        <span class="n">long_sig</span><span class="p">,</span> <span class="n">short_sig</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">my_indicators</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">Condition</span><span class="o">.</span><span class="n">Global</span><span class="p">(</span><span class="n">long_sig</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">global_qty</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>                              <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">PriceType</span><span class="o">.</span><span class="n">market_ioc</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;bk&#39;</span><span class="p">)</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">Condition</span><span class="o">.</span><span class="n">Global</span><span class="p">(</span><span class="n">short_sig</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">global_qty</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>                              <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">global_qty</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">PriceType</span><span class="o">.</span><span class="n">market_ioc</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;bp&#39;</span><span class="p">)</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>        <span class="c1"># 風控：每根都要重掛，不要包在 if 裡</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">Condition</span><span class="o">.</span><span class="n">set_STL</span><span class="p">(</span><span class="s1">&#39;bk&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stl</span><span class="p">)</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">Condition</span><span class="o">.</span><span class="n">set_PFT</span><span class="p">(</span><span class="s1">&#39;bk&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pft</span><span class="p">)</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="n">core</span> <span class="o">=</span> <span class="n">MyStrategy</span><span class="p">()</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="n">core</span><span class="o">.</span><span class="n">feed_data</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="n">cfg</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;2330&#39;</span><span class="p">,</span> <span class="n">fee</span><span class="o">=</span><span class="mf">0.001425</span><span class="p">,</span> <span class="n">tax_long</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tax_short</span><span class="o">=</span><span class="mf">0.003</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="n">rp</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">generate_report</span><span class="p">({</span><span class="n">cfg</span><span class="p">:</span> <span class="n">core</span><span class="p">})</span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="nb">print</span><span class="p">(</span><span class="n">rp</span><span class="o">.</span><span class="n">report</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="事件方法">事件方法</h2>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">MyStrategy</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Core</span><span class="p">):</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;策略建立時呼叫一次。只初始化參數與狀態，不能下單。&quot;&quot;&quot;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">):</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;主商品 base 週期（freq[0]）K 棒收盤時觸發。主要下單邏輯寫這裡。</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="sd">        row 是當根收盤 K 棒的 dict，等同 self.row_list[-1]。&quot;&quot;&quot;</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_bar2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">):</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;主商品第 2 週期（freq[1]）收盤時觸發，純訊號、不觸發撮合。</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="sd">        通常算高週期指標存成 self.xxx，下單邏輯仍寫在 on_bar。</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="sd">        有第 3 個週期就是 on_bar3，依此類推。&quot;&quot;&quot;</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_intrabar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">):</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;K 棒收盤前、盤中價格變動時觸發（每筆 tick 一次）。</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="sd">        row 是正在形成中、尚未收盤的那根 bar。&quot;&quot;&quot;</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">P</span><span class="p">):</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;倉位變動時觸發：開倉、加倉、部分平倉。</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="sd">        完全平倉「不會」觸發。常見用法：以 match_uid=P.uid 為每筆持倉掛專屬出場單。&quot;&quot;&quot;</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_other</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">):</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;對標商品 base 週期收盤時觸發，純訊號。多週期依序觸發 on_other2 / on_other3。&quot;&quot;&quot;</span>
+</span></code></pre></div>
+<p><code>on_bar2</code> / <code>on_bar3</code> / <code>on_other*</code> <strong>只有走 <code>set_tick_period</code> + <code>feed_tick_df</code> 才會觸發</strong>，
+<code>feed_data</code> 不經過週期聚合系統。詳見 <a href="../backtest-data/">資料與週期</a>。</p>
+<hr />
+<h2 id="一根-bar-內的執行順序">一根 bar 內的執行順序</h2>
+<p>引擎處理每根 bar 的固定順序：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>1. 更新未實現損益        （重算 global_unrealized_point、每筆持倉的 max_earn / max_loss）
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>2. 撮合既有掛單          （用「這一根」的 OHLC 判斷上一根掛出去的單有沒有成交）
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>      └─ 有成交 → 觸發 on_position
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>3. on_bar(row)           （你的下單邏輯；這裡送出的委託要等下一根才會被撮合）
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>4. 依 Condition.Global 的呼叫順序排定委託優先序
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>5. on_intrabar(row)
+</span></code></pre></div>
+<p>實測（bar 0 下市價買單，三根日線）：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>on_bar(index=0)
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>→ on_intrabar(index=0)
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>→ on_position(rule=bk, index=1)      ← 在 index 1 的開盤價成交
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>→ on_bar(index=1)
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>→ on_intrabar(index=1)
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>→ on_bar(index=2)
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>→ on_intrabar(index=2)
+</span></code></pre></div>
+<p>由此得到三條<strong>設計策略時一定要知道</strong>的規則：</p>
+<table>
+<thead>
+<tr>
+<th>規則</th>
+<th>意義</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>在 <code>on_bar</code> 下的單，最快在「下一根」成交</strong></td>
+<td>沒有「當根收盤價成交」這回事。<code>market_ioc</code> 以<strong>下一根開盤價</strong>成交</td>
+</tr>
+<tr>
+<td><strong><code>on_position</code> 在 <code>on_bar</code> 之前觸發</strong></td>
+<td>成交發生在撮合階段（步驟 2），所以同一根裡 <code>on_position</code> 先跑、<code>on_bar</code> 後跑</td>
+</tr>
+<tr>
+<td><strong>停損停利要每根重掛</strong></td>
+<td><code>set_STL</code> 等是「依當前持倉重算出場價、更新掛單」，不呼叫就不會更新</td>
+</tr>
+</tbody>
+</table>
+<p>多週期時同一筆資料的觸發順序：<strong>先所有子週期訊號（<code>on_bar2</code> / <code>on_bar3</code>…），
+最後才是 base 週期</strong>（走帳務的 <code>on_bar</code>）。對標商品（<code>on_other</code>）在同一時點<strong>先於</strong>主商品。</p>
+<hr />
+<h2 id="row-的完整欄位"><code>row</code> 的完整欄位</h2>
+<p>實測 <code>feed_data</code> 的 <code>row</code> key（含一個自訂欄位 <code>mysig</code>）：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>[&#39;DateTime&#39;, &#39;Open&#39;, &#39;High&#39;, &#39;Low&#39;, &#39;Close&#39;, &#39;Volume&#39;, &#39;mysig&#39;,
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a> &#39;time&#39;, &#39;ts&#39;, &#39;char&#39;, &#39;char1&#39;, &#39;index&#39;]
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DateTime</code></td>
+<td>這根 K 棒的<strong>收盤時間</strong>（<code>pd.Timestamp</code>）</td>
+</tr>
+<tr>
+<td><code>Open</code> / <code>High</code> / <code>Low</code> / <code>Close</code> / <code>Volume</code></td>
+<td>開高低收量。<strong>注意 key 是英文</strong>，即使 <code>feed_data</code> 傳的是中文欄名</td>
+</tr>
+<tr>
+<td><code>index</code></td>
+<td>bar 序號，從 0 開始，等同在 <code>row_list</code> 中的位置</td>
+</tr>
+<tr>
+<td><code>ts</code></td>
+<td><code>DateTime</code> 的 epoch 秒（float），內部彙總用</td>
+</tr>
+<tr>
+<td><code>time</code></td>
+<td>14 碼字串 <code>'YYYYMMDDHHMMSS'</code></td>
+</tr>
+<tr>
+<td><code>char</code> / <code>char1</code></td>
+<td>主圖／副圖指標暫存 dict，等同 <code>self.char</code> / <code>self.char1</code></td>
+</tr>
+<tr>
+<td><code>Settlement</code></td>
+<td>該筆所屬的結算日。<code>feed_tick_df</code> 且 <code>need_settlement=True</code> 時有；<code>feed_data</code> 要靠 <code>columns=['Settlement']</code> 帶入</td>
+</tr>
+<tr>
+<td>你自訂的欄位</td>
+<td>由 <code>columns=[...]</code> 指定帶入（例如外部算好的訊號欄）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong><code>feed_data(df, args=[...中文欄名...])</code> 只是告訴引擎哪一欄是哪一個角色，
+<code>row</code> 裡的 key 一律是英文</strong> <code>Open</code>/<code>High</code>/<code>Low</code>/<code>Close</code>/<code>Volume</code>。
+額外欄位（<code>columns=[...]</code>）則保留原本的欄名。</p>
+</blockquote>
+<p><code>feed_tick_df</code> 的 key 順序略有不同：
+<code>['time','Open','High','Low','Close','Volume', &lt;columns&gt;, 'DateTime','Settlement','index','ts','char','char1']</code></p>
+<blockquote>
+<p>判斷是否為結算日的標準寫法：<code>row['DateTime'] == row['Settlement']</code></p>
+</blockquote>
+<hr />
+<h2 id="資料結構">資料結構</h2>
+<h3 id="positionon_position-的-pcorepositions-的-value">Position（<code>on_position</code> 的 <code>P</code>、<code>core.positions</code> 的 value）</h3>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>index</code></td>
+<td>進場的 bar 索引</td>
+</tr>
+<tr>
+<td><code>entry_time</code></td>
+<td>進場時間</td>
+</tr>
+<tr>
+<td><code>entry_qty</code></td>
+<td>原始進場數量</td>
+</tr>
+<tr>
+<td><code>entry_price</code></td>
+<td>進場價格</td>
+</tr>
+<tr>
+<td><code>max_earn</code></td>
+<td>這筆持倉期間的最高獲利（點數）</td>
+</tr>
+<tr>
+<td><code>max_loss</code></td>
+<td>這筆持倉期間的最大虧損（點數）</td>
+</tr>
+<tr>
+<td><code>rule</code></td>
+<td>造成進場的規則名稱</td>
+</tr>
+<tr>
+<td><code>unrealized_pnl</code></td>
+<td>當前未實現損益</td>
+</tr>
+<tr>
+<td><code>current_qty</code></td>
+<td>當前剩餘數量（部分平倉後小於 <code>entry_qty</code>）</td>
+</tr>
+<tr>
+<td><code>uid</code></td>
+<td>這筆持倉的唯一識別碼，出場單用 <code>match_uid=P.uid</code> 綁定</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ordercoreorders-的-value">Order（<code>core.orders</code> 的 value）</h3>
+<p><code>index</code>、<code>rule</code>、<code>datetime</code>、<code>add_qty</code>、<code>trade_price</code>、<code>trade_type</code>、<code>uid</code>、<code>match_uid</code>。
+<code>core.orders</code> 的 key 是 <code>(rule, match_uid)</code>。</p>
+<hr />
+<h2 id="狀態屬性">狀態屬性</h2>
+<p>策略內可直接讀。<strong>損益以點數計、未含稅費</strong>；要真實金額請看 <code>generate_report</code> 的報表。</p>
+<table>
+<thead>
+<tr>
+<th>屬性</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>self.global_qty</code></td>
+<td>全域總持倉。正＝多、負＝空、<code>0</code>＝空手</td>
+</tr>
+<tr>
+<td><code>self.global_realized_point</code></td>
+<td>全域已實現損益（點數，不含稅費）</td>
+</tr>
+<tr>
+<td><code>self.global_unrealized_point</code></td>
+<td>全域未實現損益（隨行情浮動）</td>
+</tr>
+<tr>
+<td><code>self.positions</code></td>
+<td>持倉字典，key = <code>uid</code>，value = <code>Position</code></td>
+</tr>
+<tr>
+<td><code>self.orders</code></td>
+<td>未成交／未取消的委託，key = <code>(rule, match_uid)</code></td>
+</tr>
+<tr>
+<td><code>self.row_list</code></td>
+<td>所有已收盤 K 棒的 dict 列表；<code>row_list[-1]</code> 即當根</td>
+</tr>
+<tr>
+<td><code>self.row</code></td>
+<td>當前 bar 的 dict（永遠等於 <code>row_list[-1]</code>）</td>
+</tr>
+<tr>
+<td><code>self.stats</code></td>
+<td>依規則名累計的統計，見下</td>
+</tr>
+<tr>
+<td><code>self.char</code> / <code>self.char1</code></td>
+<td>主圖／副圖指標暫存 dict，寫進去 <code>show_monitor()</code> 就會顯示</td>
+</tr>
+<tr>
+<td><code>self.tick_map</code></td>
+<td>最小跳動單位表 <code>[(價格上限, tick), ...]</code>。預設是股票規格 <code>[(10,0.01),(50,0.05),(100,0.1),(500,0.5),(1000,1.0),(inf,5.0)]</code>；台指期要在 <code>on_init</code> 設 <code>[(np.inf, 1)]</code></td>
+</tr>
+<tr>
+<td><code>self.PriceType</code></td>
+<td>委託類型常數</td>
+</tr>
+<tr>
+<td><code>self.Condition</code></td>
+<td>條件式下單入口</td>
+</tr>
+<tr>
+<td><code>self.Ind</code></td>
+<td>技術指標工具箱（類別屬性，所有策略共用同一份）</td>
+</tr>
+<tr>
+<td><code>core.log</code></td>
+<td>委託生命週期 DataFrame，<code>type</code> 欄是 <code>new</code> / <code>update</code> / <code>cancel</code> / <code>deal</code></td>
+</tr>
+<tr>
+<td><code>core.config</code></td>
+<td>商品規格，setter 會驗證型別並清空快取</td>
+</tr>
+</tbody>
+</table>
+<h3 id="selfstats">self.stats</h3>
+<p><code>self.stats['規則名']</code> 會自動建立一個統計盒：</p>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>open_count</code></td>
+<td>進場次數</td>
+</tr>
+<tr>
+<td><code>open_qty</code></td>
+<td>累計進場口數</td>
+</tr>
+<tr>
+<td><code>close_count</code></td>
+<td>平倉次數</td>
+</tr>
+<tr>
+<td><code>current_qty</code></td>
+<td>目前剩餘口數</td>
+</tr>
+<tr>
+<td><code>realized_pnl</code></td>
+<td>該規則累計已實現損益（點數）</td>
+</tr>
+<tr>
+<td><code>continue_wins</code></td>
+<td>連勝／連敗：正數＝連勝、負數＝連敗，勝敗切換時歸 ±1</td>
+</tr>
+<tr>
+<td><code>records</code></td>
+<td><code>{出場規則名: [次數, 口數, pnl]}</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>常態用法是在策略內部讀 <code>self.stats</code></strong>，依戰績調整下一筆的口數：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">WinStreak</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Core</span><span class="p">):</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">base_qty</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">):</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        <span class="n">wins</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;bk&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;continue_wins&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>        <span class="n">qty</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_qty</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">if</span> <span class="n">wins</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_qty</span>   <span class="c1"># 連勝 2 次就加倍</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;sig&#39;</span><span class="p">]</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">global_qty</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">Condition</span><span class="o">.</span><span class="n">Global</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">qty</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">PriceType</span><span class="o">.</span><span class="n">market_ioc</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;bk&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>實測（2330、MA20 訊號、1000 個交易日）：52 次進場中有 <strong>13 次</strong>因連勝被放大到 2 張，
+<code>rp.trade_detail</code> 的 <code>qty</code> 分布是 <code>{1: 38, 2: 13}</code>，對得起來。
+<code>continue_wins</code> 的正負轉換也符合定義——連勝到 3 之後輸一次直接變 <code>-1</code>：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>2023-01-09  wins=2   qty=2
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>2023-03-17  wins=3   qty=2
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>2023-03-21  wins=-1  qty=1      ← 勝敗切換，歸 -1
+</span></code></pre></div>
+<blockquote>
+<p><code>core.stats</code> 與 <code>self.stats</code> <strong>是同一個物件</strong>（實測 <code>core.stats is self.stats</code> 為 <code>True</code>），
+跑完之後從外面讀 <code>core.stats</code> 拿到的是同一份累計結果。</p>
+</blockquote>
+<hr />
+<h2 id="從零寫一支策略的檢查清單">從零寫一支策略的檢查清單</h2>
+<ol>
+<li><strong>選餵資料方式</strong>：單一週期 → <code>feed_data(df)</code>；需要 <code>on_bar2</code> 多週期訊號、
+   或要用小 K 模擬盤中讓停損觸發順序更準 → <code>set_tick_period</code> + <code>feed_tick_df</code>。</li>
+<li><strong><code>on_init</code> 放參數</strong>：想尋優的都存成 <code>self.xxx</code>，<code>optimize</code> 才能從外面覆寫。</li>
+<li><strong>期貨記得設 <code>tick_map</code></strong>：<code>self.tick_map = [(np.inf, 1)]</code>，否則套用股票的跳動單位。</li>
+<li><strong>暖身期回傳假訊號</strong>：指標資料不足時（<code>len(close_list) &lt; window</code>）不要下單。</li>
+<li><strong>每個 <code>Global</code> 給獨立的 <code>rule</code> 名</strong>：同名會被視為「更新同一張單」。
+   避開內建的 <code>STL</code> / <code>PFT</code> / <code>DS</code> / <code>TGT</code>。</li>
+<li><strong>進場條件要含部位檢查</strong>：<code>self.global_qty == 0</code>（只進一次）或 <code>&lt; 1</code>（可反手），
+   否則每根都會重下。</li>
+<li><strong>風控每根重掛</strong>：四個 <code>set_*</code> 方法必須無條件呼叫，不要包在 <code>if</code> 裡。</li>
+<li><strong>設對 <code>config</code></strong>：<code>unit</code>、<code>fee</code>、<code>tax_short</code>、<code>margin</code>。設錯不會報錯但整份報表失真，
+   見 <a href="../backtest-report/">績效報告</a>。</li>
+<li><strong>檢查報表</strong>：<code>rp.report</code> 看 KPI、<code>rp.trade_detail</code> 逐筆對答案、<code>rp.dashboard()</code> 看圖。</li>
+<li><strong>尋優</strong>：把策略包成一個回傳 <code>generate_report(...)</code> 的函式丟給 <code>bt.Tools.optimize</code>。</li>
+</ol>
+<hr />
+<h2 id="會出錯的事實測">會出錯的事（實測）</h2>
+<h3 id="在-on_init-裡下單--runtimeerror">在 <code>on_init</code> 裡下單 → RuntimeError</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">S</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">Core</span><span class="p">):</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">Condition</span><span class="o">.</span><span class="n">Global</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">PriceType</span><span class="o">.</span><span class="n">market_ioc</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>RuntimeError: 還沒有任何 K 棒就下單了 (self.row 是空的)。
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Condition.Global 只能在 on_bar / on_intrabar / on_position 裡呼叫，
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>on_init 只用來初始化參數。
+</span></code></pre></div>
+<h3 id="完全平倉不觸發-on_position">完全平倉不觸發 <code>on_position</code></h3>
+<p>實測：<code>index=0</code> 買 2 口 → <code>index=2</code> 賣 1 口（部分平倉）→ <code>index=4</code> 賣掉剩下的。
+<code>on_position</code> 只觸發 <strong>2 次</strong>（開倉、部分平倉），最後那次完全平倉<strong>沒有觸發</strong>：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>on_position 觸發 2 次: [(1, &#39;bk&#39;, 2, 2), (1, &#39;bk&#39;, 1, 2)]
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>期末 global_qty = 0
+</span></code></pre></div>
+<p>要在部位結清後做事，改在 <code>on_bar</code> 讀 <code>self.stats[rule]</code>（<code>close_count</code> / <code>realized_pnl</code> /
+<code>continue_wins</code>）或事後看 <code>rp.trade_detail</code>。</p>
+<h3 id="其他陷阱">其他陷阱</h3>
+<table>
+<thead>
+<tr>
+<th>陷阱</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>期待 <code>market_ioc</code> 以當根收盤價成交</td>
+<td>不會。在 <code>on_bar</code> 下的單是<strong>下一根開盤價</strong></td>
+</tr>
+<tr>
+<td>在 <code>on_bar</code> 讀剛成交新倉的 <code>global_unrealized_point</code></td>
+<td>該筆的浮動損益要下一根才會計入</td>
+</tr>
+<tr>
+<td>對 <code>rp.trade_detail</code> 的時間欄直接用 <code>.dt</code></td>
+<td>那是<strong>字串</strong>不是 <code>datetime64</code>，要先 <code>pd.to_datetime</code></td>
+</tr>
+<tr>
+<td>K 棒的 <code>DateTime</code> 是<strong>收盤時間</strong></td>
+<td>自備資料時 <code>DateTime</code> 要用 bar 的<strong>結束</strong>時間，不是開始時間。用 <code>feed_tick_df</code> 聚合時，標記 <code>09:00</code> 的 K 棒在 <code>period=[['0900','1330']]</code> 下會被歸進 <code>10:00</code> 那個桶</td>
+</tr>
+<tr>
+<td>餵入交易時段外的資料</td>
+<td>落在 <code>period</code> 之外的 tick 會被忽略並印警告，不進任何 bar</td>
+</tr>
+<tr>
+<td>分段餵入時區間重疊</td>
+<td>重疊那段被時序守門整段丟棄並印警告</td>
+</tr>
+<tr>
+<td>多筆持倉互相干擾</td>
+<td>出場單沒帶 <code>match_uid=P.uid</code> 會依序沖銷。要獨立出場請在 <code>on_position</code> 用 <code>P.uid</code> 綁</td>
+</tr>
+<tr>
+<td>重複下單 vs 更新委託</td>
+<td>同一組 <code>(rule, match_uid)</code> 重複呼叫 <code>Global</code> 是<strong>更新</strong>，不是再下一張</td>
+</tr>
+<tr>
+<td><code>feed_data</code> 不觸發多週期</td>
+<td>需要 <code>on_bar2</code> / <code>on_other*</code> 一定要改用 <code>set_tick_period</code> + <code>feed_tick_df</code></td>
+</tr>
+<tr>
+<td>期待 <code>NetProfit</code> 等於 <code>pnl</code> 加總</td>
+<td><code>NetProfit</code> 取自 <code>daily</code> 曲線末值並四捨五入；期末有未平倉部位時兩者會差一點</td>
+</tr>
+<tr>
+<td><code>lot_size</code> 只對百分比下單有效</td>
+<td><code>add_qty &gt;= 1</code>（固定口數）不受 <code>lot_size</code> 影響</td>
+</tr>
+<tr>
+<td>浮點殘量</td>
+<td>百分比下單沖銷持倉會有 ~1e-17 殘量，框架用 <code>_QTY_min = 1e-9</code> 容差處理。<strong>不要自己用 <code>== 0</code> 比較口數</strong></td>
+</tr>
+<tr>
+<td>即時 tick 重複計算</td>
+<td>callback 要過濾 <code>data.total_volume == 0</code> 的快照，避免重複餵入</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="框架印出的訊息對照">框架印出的訊息對照</h2>
+<table>
+<thead>
+<tr>
+<th>訊息</th>
+<th>意義</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[設定on_bar] :freq= 60</code></td>
+<td><code>set_tick_period</code> 設定成功，base 週期 60 分</td>
+</tr>
+<tr>
+<td><code>[加載] feed_tick</code> / <code>feed_tick_df</code> / <code>feed_other</code></td>
+<td>對應的餵資料方法已掛上</td>
+</tr>
+<tr>
+<td><code>[加載] realized_pnl, margin_used, unrealized_pnl</code></td>
+<td><code>core.config</code> 設定成功</td>
+</tr>
+<tr>
+<td><code>[警告] 主商品第2周期 D 但沒定義 on_bar2, 略過</code></td>
+<td>設了多週期但沒實作對應的 <code>on_barN</code></td>
+</tr>
+<tr>
+<td><code>[警告] 對標第1周期 60 但沒定義 on_other, 略過</code></td>
+<td>設了 <code>set_other_period</code> 但沒實作 <code>on_other</code></td>
+</tr>
+<tr>
+<td><code>[警告] tick ... 落在 period 交易時段之外，已忽略</code></td>
+<td>資料時間不在 <code>period</code> 宣告的時段內</td>
+</tr>
+<tr>
+<td><code>[警告] 主商品資料時間 ... 早於前一筆 ...，已忽略</code></td>
+<td>時序守門擋掉倒退的資料</td>
+</tr>
+<tr>
+<td><code>[警告] ...: DateTime 沒有依時間遞增，已自動排序後才餵入</code></td>
+<td>df 沒排序，框架代為排序；<strong>回頭查資料來源</strong></td>
+</tr>
+<tr>
+<td><code>【'開始下載':XXX ,freq=1】</code> / <code>【下載完成】</code></td>
+<td><code>bt.Tools.get_*_ohlc</code> 正在下載（同商品只下載一次）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="相關頁">相關頁</h2>
+<ul>
+<li><a href="../backtest-order/">委託、成交價與風控</a>：<code>Condition.Global</code>、五種委託型別、成交價實測表</li>
+<li><a href="../backtest-data/">資料與週期</a>：<code>feed_data</code> / <code>feed_tick_df</code>、<code>freq</code>、時序管控</li>
+<li><a href="../backtest-report/">績效報告</a>：<code>config</code> 與四張報表的欄位定義</li>
+<li><a href="../backtest-tools/">指標與參數尋優</a>：<code>self.Ind</code>、<code>bt.Tools.optimize</code></li>
+<li><a href="../backtest/">回測總覽</a>：<code>api.bt</code> 綁定、用積木訊號回測</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="頁腳" >
+        
+          
+          <a href="../backtest/" class="md-footer__link md-footer__link--prev" aria-label="上一頁: 回測 api.bt 總覽">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一頁
+              </span>
+              <div class="md-ellipsis">
+                回測 api.bt 總覽
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../backtest-order/" class="md-footer__link md-footer__link--next" aria-label="下一頁: 回測：委託、成交價與風控">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一頁
+              </span>
+              <div class="md-ellipsis">
+                回測：委託、成交價與風控
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      SnowyOwl · 台美股資料、積木選股與回測
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "navigation.indexes", "navigation.tracking", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tooltips", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

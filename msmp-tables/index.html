@@ -1,0 +1,3007 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="台美股資料、積木選股與回測整合套件 —— 專為 AI coding agent 設計的文件集">
+      
+      
+      
+        <link rel="canonical" href="https://snowyowlstrategy.github.io/msmp-tables/">
+      
+      
+        <link rel="prev" href="../msmp/">
+      
+      
+        <link rel="next" href="../msmp-list/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../sw/logo0902.jpg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>MSMP 資料表與欄位完整清單 - SnowyOwl</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../sw/theme.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#msmp-資料表與欄位完整清單" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href=".." title="SnowyOwl" class="md-header__button md-logo" aria-label="SnowyOwl" data-md-component="logo">
+      
+  <img src="../sw/logo0902.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SnowyOwl
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MSMP 資料表與欄位完整清單
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切換成暗色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換成暗色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切換成亮色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換成亮色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首頁
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../getting-started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  入門與結構
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../block/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  積木 Block（選股）
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../data/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Data 表格查詢
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../msmp/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  MSMP 歷史資料
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../swquote/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  即時行情
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../backtest/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  回測
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SnowyOwl" class="md-nav__button md-logo" aria-label="SnowyOwl" data-md-component="logo">
+      
+  <img src="../sw/logo0902.jpg" alt="logo">
+
+    </a>
+    SnowyOwl
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    入門與結構
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    入門與結構
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    開始使用 snowyowl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../login/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    so.login 登入
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    api 物件結構
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../errors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    錯誤訊息速查
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    積木 Block（選股）
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    積木 Block（選股）
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    積木 Block 總覽
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-list-conditions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block.list_conditions 積木清單查詢
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-get-table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block.get_table 積木參數與合法值
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-con/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block.con 組積木
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-screener/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block.screener 執行選股
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-pool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block 股池 pool
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-codegen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block 產生的程式碼 code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-caveats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block 已知落差與注意事項
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-reference-tw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    台股積木完整參考
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-reference-us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    美股積木完整參考
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data 表格查詢
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data 表格查詢
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data 模組總覽
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-get-table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data.get_table 列出可用表格
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-get/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data.get 取得表格資料
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    資料頻率與歷史長度
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-get-snapshots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data.get_snapshots 即時快照
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intraday/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    盤中、分K與逐筆明細
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usdata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USData 美股表格查詢
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSMP 歷史資料
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MSMP 歷史資料
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../msmp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSMP 矩陣資料總覽
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSMP 資料表與欄位完整清單
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSMP 資料表與欄位完整清單
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#台股apimsmp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        台股（api.MSMP）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="台股（api.MSMP）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#日_k15-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        日_K（15 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#日_指標7-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        日_指標（7 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#日_融資券24-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        日_融資券（24 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#日_三大法人37-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        日_三大法人（37 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#日_capm9-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        日_CAPM（9 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#日_技術指標15-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        日_技術指標（15 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#週_k13-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        週_K（13 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#週_大小股東持股47-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        週_大小股東持股（47 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#週_技術指標16-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        週_技術指標（16 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#月_k13-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        月_K（13 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#月_營收7-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        月_營收（7 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#月_技術指標16-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        月_技術指標（16 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#季股利資訊12-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        季股利資訊（12 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#季財報_資產負債表_千22-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        季財報_資產負債表_千（22 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#季財報_損益表_千28-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        季財報_損益表_千（28 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#季財報_現金流表_千29-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        季財報_現金流表_千（29 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#季財報_財務指標31-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        季財報_財務指標（31 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#其他_籌碼集中37-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其他_籌碼集中（37 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#其他_大盤12-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其他_大盤（12 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tse24-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TSE（24 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otc24-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OTC（24 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tse_週24-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TSE_週（24 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otc_週24-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OTC_週（24 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tse_月24-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TSE_月（24 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otc_月24-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OTC_月（24 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#期貨apimsmp_fut_txf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        期貨：api.MSMP._fut_TXF
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#美股apiusmsmp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        美股（api.USMSMP）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="美股（api.USMSMP）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#日_k8-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        日_K（8 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#週_k5-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        週_K（5 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#月_k5-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        月_K（5 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#季營收5-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        季營收（5 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#季股利資訊4-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        季股利資訊（4 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#季財報_資產負債表_千21-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        季財報_資產負債表_千（21 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#季財報_損益表_千15-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        季財報_損益表_千（15 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#季財報_現金流表_千9-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        季財報_現金流表_千（9 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#季財報_財務指標30-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        季財報_財務指標（30 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#季財報_其他9-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        季財報_其他（9 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../msmp-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSMP.list 股池
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usmsmp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USMSMP 美股矩陣資料
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    即時行情
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    即時行情
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swquote/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWQuote 即時行情（StarWave）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swquote-callback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWQuote 行情回呼與 SWMarketData
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swquote-event/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWQuote 連線事件與事件碼
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    回測
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測 api.bt 總覽
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測：事件模型與策略撰寫
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest-order/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測：委託、成交價與風控
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測：資料與週期
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測：商品規格與績效報告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測：技術指標與參數尋優
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#台股apimsmp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        台股（api.MSMP）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="台股（api.MSMP）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#日_k15-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        日_K（15 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#日_指標7-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        日_指標（7 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#日_融資券24-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        日_融資券（24 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#日_三大法人37-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        日_三大法人（37 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#日_capm9-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        日_CAPM（9 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#日_技術指標15-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        日_技術指標（15 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#週_k13-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        週_K（13 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#週_大小股東持股47-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        週_大小股東持股（47 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#週_技術指標16-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        週_技術指標（16 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#月_k13-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        月_K（13 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#月_營收7-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        月_營收（7 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#月_技術指標16-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        月_技術指標（16 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#季股利資訊12-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        季股利資訊（12 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#季財報_資產負債表_千22-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        季財報_資產負債表_千（22 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#季財報_損益表_千28-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        季財報_損益表_千（28 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#季財報_現金流表_千29-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        季財報_現金流表_千（29 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#季財報_財務指標31-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        季財報_財務指標（31 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#其他_籌碼集中37-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其他_籌碼集中（37 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#其他_大盤12-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其他_大盤（12 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tse24-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TSE（24 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otc24-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OTC（24 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tse_週24-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TSE_週（24 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otc_週24-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OTC_週（24 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tse_月24-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TSE_月（24 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otc_月24-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OTC_月（24 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#期貨apimsmp_fut_txf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        期貨：api.MSMP._fut_TXF
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#美股apiusmsmp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        美股（api.USMSMP）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="美股（api.USMSMP）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#日_k8-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        日_K（8 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#週_k5-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        週_K（5 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#月_k5-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        月_K（5 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#季營收5-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        季營收（5 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#季股利資訊4-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        季股利資訊（4 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#季財報_資產負債表_千21-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        季財報_資產負債表_千（21 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#季財報_損益表_千15-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        季財報_損益表_千（15 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#季財報_現金流表_千9-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        季財報_現金流表_千（9 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#季財報_財務指標30-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        季財報_財務指標（30 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#季財報_其他9-欄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        季財報_其他（9 欄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="msmp-資料表與欄位完整清單">MSMP 資料表與欄位完整清單</h1>
+<blockquote>
+<p>所屬章節：MSMP 歷史資料
+以登入後 <code>api.MSMP._data_map</code> / <code>api.USMSMP._data_map</code> 實際內容產生（台股 25 張表、美股 10 張表）</p>
+</blockquote>
+<h2 id="overview">Overview</h2>
+<p>MSMP 的每個欄位都是一張 <strong>日期（index） × 股票代號（columns）</strong> 的矩陣。兩種取法等價：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">api</span><span class="o">.</span><span class="n">MSMP</span><span class="o">.</span><span class="n">日_K</span><span class="o">.</span><span class="n">Close</span>          <span class="c1"># 屬性存取</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">api</span><span class="o">.</span><span class="n">MSMP</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;日_K&#39;</span><span class="p">,</span> <span class="s1">&#39;Close&#39;</span><span class="p">)</span>  <span class="c1"># 字串存取，適合參數化</span>
+</span></code></pre></div>
+<p><code>api.MSMP.get_table()</code> 會把下表直接印出來。</p>
+<hr />
+<h2 id="台股apimsmp">台股（api.MSMP）</h2>
+<h3 id="日_k15-欄">日_K（15 欄）</h3>
+<p><code>處置股</code>、<code>Open</code>、<code>High</code>、<code>Low</code>、<code>Close</code>、<code>Volume</code>、<code>當沖量</code>、<code>成交額_百萬</code>、<code>市值_百萬</code>、<code>adj_Open</code>、<code>adj_High</code>、<code>adj_Low</code>、<code>adj_Close</code>、<code>adj_Volume</code>、<code>漲跌幅</code></p>
+<h3 id="日_指標7-欄">日_指標（7 欄）</h3>
+<p><code>市值</code>、<code>淨利</code>、<code>淨值</code>、<code>本益比</code>、<code>股價淨值比</code>、<code>股本_百萬</code>、<code>peg</code></p>
+<h3 id="日_融資券24-欄">日_融資券（24 欄）</h3>
+<p><code>融券使用率</code>、<code>融券買進_張</code>、<code>融券買進_千</code>、<code>融券賣出_張</code>、<code>融券賣出_千</code>、<code>融資買進_張</code>、<code>融資增減_張</code>、<code>融資餘額_張</code>、<code>融資維持率</code>、<code>融資限額</code>、<code>融資使用率</code>、<code>融資餘額_千</code>、<code>融資成本</code>、<code>融券增減_張</code>、<code>融券餘額_張</code>、<code>融券維持率</code>、<code>借券賣出_張</code>、<code>借券賣出餘額_張</code>、<code>借券賣出餘額_千</code>、<code>借券賣還券_張</code>、<code>借券餘額_張</code>、<code>資券互抵</code>、<code>資券互抵_當沖比重</code>、<code>券資比</code></p>
+<h3 id="日_三大法人37-欄">日_三大法人（37 欄）</h3>
+<p><code>三大法人買賣超金額_千</code>、<code>三大法人持股成本</code>、<code>外資買進張數</code>、<code>外資賣出張數</code>、<code>外資買賣超張數</code>、<code>外資買進金額_千</code>、<code>外資賣出金額_千</code>、<code>外資買賣超金額_千</code>、<code>外資持股成本</code>、<code>投信買進張數</code>、<code>投信賣出張數</code>、<code>投信買賣超張數</code>、<code>投信買進金額_千</code>、<code>投信賣出金額_千</code>、<code>投信買賣超金額_千</code>、<code>投信持股成本</code>、<code>自營買進張數</code>、<code>自營賣出張數</code>、<code>自營買賣超張數</code>、<code>自營買進金額_千</code>、<code>自營賣出金額_千</code>、<code>自營買賣超金額_千</code>、<code>自營持股成本</code>、<code>自營避險買賣超_張數</code>、<code>自營自行買賣超_張數</code>、<code>三大法人買賣超_張數</code>、<code>主力買賣超張數</code>、<code>主力成本_月均</code>、<code>主力成本_季均</code>、<code>持股張數_董監</code>、<code>持股張數_外資</code>、<code>持股張數_投信</code>、<code>持股張數_自營</code>、<code>發行總張數</code>、<code>八大行庫_買賣超張數</code>、<code>八大行庫_近一年買賣超占比</code>、<code>八大行庫_近一年買賣超張數</code></p>
+<h3 id="日_capm9-欄">日_CAPM（9 欄）</h3>
+<p><code>Beta一月</code>、<code>Beta二月</code>、<code>Beta三月</code>、<code>Beta六月</code>、<code>Beta九月</code>、<code>Beta一年</code>、<code>Beta二年</code>、<code>Beta三年</code>、<code>Beta五年</code></p>
+<h3 id="日_技術指標15-欄">日_技術指標（15 欄）</h3>
+<p><code>bulin_sma</code>、<code>bulin_std</code>、<code>macd_dif</code>、<code>macd_dea</code>、<code>macd_hist</code>、<code>rsi_5</code>、<code>rsi_6</code>、<code>rsi_10</code>、<code>K</code>、<code>D</code>、<code>bulin_upper</code>、<code>bulin_lower</code>、<code>plus_di</code>、<code>minus_di</code>、<code>ADX</code></p>
+<h3 id="週_k13-欄">週_K（13 欄）</h3>
+<p><code>Volume</code>、<code>adj_Volume</code>、<code>Open</code>、<code>High</code>、<code>Low</code>、<code>Close</code>、<code>成交額_百萬</code>、<code>市值_百萬</code>、<code>adj_Open</code>、<code>adj_High</code>、<code>adj_Low</code>、<code>adj_Close</code>、<code>漲跌幅</code></p>
+<h3 id="週_大小股東持股47-欄">週_大小股東持股（47 欄）</h3>
+<p><code>張數小於1_人數</code>、<code>張數小於1_張</code>、<code>張數小於1_比例</code>、<code>張數1到5_人數</code>、<code>張數1到5_張</code>、<code>張數1到5_比例</code>、<code>張數5到10_人數</code>、<code>張數5到10_張</code>、<code>張數5到10_比例</code>、<code>張數10到15_人數</code>、<code>張數10到15_張</code>、<code>張數10到15_比例</code>、<code>張數15到20_人數</code>、<code>張數15到20_張</code>、<code>張數15到20_比例</code>、<code>張數20到30_人數</code>、<code>張數20到30_張</code>、<code>張數20到30_比例</code>、<code>張數30到40_人數</code>、<code>張數30到40_張</code>、<code>張數30到40_比例</code>、<code>張數40到50_人數</code>、<code>張數40到50_張</code>、<code>張數40到50_比例</code>、<code>張數50到100_人數</code>、<code>張數50到100_張</code>、<code>張數50到100_比例</code>、<code>張數100到200_人數</code>、<code>張數100到200_張</code>、<code>張數100到200_比例</code>、<code>張數200到400_人數</code>、<code>張數200到400_張</code>、<code>張數200到400_比例</code>、<code>張數400到600_人數</code>、<code>張數400到600_張</code>、<code>張數400到600_比例</code>、<code>張數600到800_人數</code>、<code>張數600到800_張</code>、<code>張數600到800_比例</code>、<code>張數800到1000_人數</code>、<code>張數800到1000_張</code>、<code>張數800到1000_比例</code>、<code>張數1000張以上_人數</code>、<code>張數1000張以上_張</code>、<code>張數1000張以上_比例</code>、<code>集保總人數</code>、<code>集保總張數</code></p>
+<h3 id="週_技術指標16-欄">週_技術指標（16 欄）</h3>
+<p><code>bulin_sma</code>、<code>bulin_std</code>、<code>macd_dif</code>、<code>macd_dea</code>、<code>macd_hist</code>、<code>K</code>、<code>D</code>、<code>rsi_5</code>、<code>rsi_6</code>、<code>rsi_10</code>、<code>rsi_12</code>、<code>bulin_upper</code>、<code>bulin_lower</code>、<code>plus_di</code>、<code>minus_di</code>、<code>ADX</code></p>
+<h3 id="月_k13-欄">月_K（13 欄）</h3>
+<p><code>Volume</code>、<code>adj_Volume</code>、<code>Open</code>、<code>High</code>、<code>Low</code>、<code>Close</code>、<code>成交額_百萬</code>、<code>市值_百萬</code>、<code>adj_Open</code>、<code>adj_High</code>、<code>adj_Low</code>、<code>adj_Close</code>、<code>漲跌幅</code></p>
+<h3 id="月_營收7-欄">月_營收（7 欄）</h3>
+<p><code>金額_千</code>、<code>MoM</code>、<code>YoY</code>、<code>累積金額_千</code>、<code>累積YoY</code>、<code>營收創歷史新高</code>、<code>營收創歷史新低</code></p>
+<h3 id="月_技術指標16-欄">月_技術指標（16 欄）</h3>
+<p><code>bulin_sma</code>、<code>bulin_std</code>、<code>macd_dif</code>、<code>macd_dea</code>、<code>macd_hist</code>、<code>K</code>、<code>D</code>、<code>rsi_5</code>、<code>rsi_6</code>、<code>rsi_10</code>、<code>rsi_12</code>、<code>bulin_upper</code>、<code>bulin_lower</code>、<code>plus_di</code>、<code>minus_di</code>、<code>ADX</code></p>
+<h3 id="季股利資訊12-欄">季股利資訊（12 欄）</h3>
+<p><code>填權息天數</code>、<code>填權息天數_季</code>、<code>現金股利</code>、<code>現金股利_季</code>、<code>股票股利</code>、<code>股票股利_季</code>、<code>股利合計</code>、<code>股利合計_季</code>、<code>年殖利率</code>、<code>季殖利率</code>、<code>除息參考價_季</code>、<code>除息日_季</code></p>
+<h3 id="季財報_資產負債表_千22-欄">季財報_資產負債表_千（22 欄）</h3>
+<p><code>資產_非流動</code>、<code>資產_有形</code>、<code>資產</code>、<code>資產_流動</code>、<code>現金</code>、<code>庫存</code>、<code>固定資產</code>、<code>使用權資產</code>、<code>資產_無形</code>、<code>遞延資產合計</code>、<code>負債總額</code>、<code>負債_流動</code>、<code>負債_非流動</code>、<code>合約負債</code>、<code>股東權益_總額</code>、<code>股東權益_母公司</code>、<code>金融資產_流動</code>、<code>金融資產_非流動</code>、<code>總應收帳款</code>、<code>總應付帳款</code>、<code>所得稅負債</code>、<code>股本</code></p>
+<h3 id="季財報_損益表_千28-欄">季財報_損益表_千（28 欄）</h3>
+<p><code>營業費用</code>、<code>營業外收入及支出</code>、<code>所得稅費用</code>、<code>稅前息前折舊前淨利</code>、<code>營業收入</code>、<code>營業成本</code>、<code>營業毛利</code>、<code>研究發展費用</code>、<code>營業淨利</code>、<code>財務成本</code>、<code>稅前純益</code>、<code>稅前息前淨利</code>、<code>稅後純益</code>、<code>歸屬母公司淨利</code>、<code>eps</code>、<code>本益比</code>、<code>銷管費用</code>、<code>折舊費用</code>、<code>推銷費用</code>、<code>攤銷費用</code>、<code>管理費用</code>、<code>損益表_稅前息前折舊前淨利</code>、<code>損益表_稅前息前淨利</code>、<code>採用權益法認列之關聯企業及合資損益之份額</code>、<code>外幣兌換利益</code>、<code>外幣兌換損失</code>、<code>業外_外幣兌換淨利益_損失</code>、<code>預期信用減損_損失_利益_營業費用</code></p>
+<h3 id="季財報_現金流表_千29-欄">季財報_現金流表_千（29 欄）</h3>
+<p><code>自由現金流</code>、<code>營運現金流</code>、<code>投資現金流</code>、<code>籌資現金流</code>、<code>資本支出</code>、<code>匯率變動對現金之影響</code>、<code>折舊及攤提費用</code>、<code>償還公司債_CFF</code>、<code>償還長期借款_CFF</code>、<code>出售投資_CFI</code>、<code>利息收現_CFO</code>、<code>支付利息_CFF</code>、<code>支付利息_CFO</code>、<code>支付股利_CFO</code>、<code>收到利息_CFI</code>、<code>收到股利_CFI</code>、<code>新增投資_CFI</code>、<code>投資性不動產出售_購買_CFI</code>、<code>發行公司債_CFF</code>、<code>舉借長期借款_CFF</code>、<code>處分不動產廠房設備_含預付_CFI</code>、<code>購置不動產廠房設備_含預付_CFI</code>、<code>退還_支付_所得稅_CFO</code>、<code>無形資產_增加_減少_CFI</code>、<code>淨現金流_千</code>、<code>自由現金流量_D</code>、<code>買_賣按攤銷後成本衡量之金融資產_CFI</code>、<code>買_賣透過其他綜合損益按公允價值衡量之金融資產_CFI</code>、<code>買_賣透過損益按公允價值衡量之金融資產_CFI</code></p>
+<h3 id="季財報_財務指標31-欄">季財報_財務指標（31 欄）</h3>
+<p><code>營收季變動率</code>、<code>EBITDA利潤率</code>、<code>每股營業額</code>、<code>每股稅前淨利</code>、<code>每股稅後淨利</code>、<code>負債淨值比率</code>、<code>淨值資產比率</code>、<code>營業費用率</code>、<code>研究發展費率</code>、<code>業外收支營收率</code>、<code>營收成長率</code>、<code>營業毛利成長率</code>、<code>營業利益成長率</code>、<code>稅前淨利成長率</code>、<code>稅後淨利成長率</code>、<code>總資產成長率</code>、<code>淨值成長率</code>、<code>eps成長率</code>、<code>ROA_稅後資產報酬率</code>、<code>ROE_稅後權益報酬率</code>、<code>營業毛利率</code>、<code>營業利益率</code>、<code>稅前淨利率</code>、<code>稅後淨利率</code>、<code>每股淨值</code>、<code>存貨週轉率_次</code>、<code>流動比率</code>、<code>速動比率</code>、<code>負債比率</code>、<code>存貨週轉率累季_次</code>、<code>公告累計EPS_元</code></p>
+<h3 id="其他_籌碼集中37-欄">其他_籌碼集中（37 欄）</h3>
+<p><code>籌碼集中度_1日</code>、<code>籌碼集中度_2日</code>、<code>籌碼集中度_3日</code>、<code>籌碼集中度_4日</code>、<code>籌碼集中度_5日</code>、<code>籌碼集中度_10日</code>、<code>籌碼集中度_20日</code>、<code>籌碼集中度_60日</code>、<code>籌碼集中度_100日</code>、<code>籌碼集中度_120日</code>、<code>籌碼集中度_180日</code>、<code>籌碼集中度_240日</code>、<code>家數差_1日</code>、<code>家數差_2日</code>、<code>家數差_3日</code>、<code>家數差_4日</code>、<code>家數差_5日</code>、<code>家數差_10日</code>、<code>家數差_20日</code>、<code>家數差_60日</code>、<code>家數差_100日</code>、<code>家數差_120日</code>、<code>家數差_180日</code>、<code>家數差_240日</code>、<code>家數和</code>、<code>主力買賣超張數_1日</code>、<code>主力買賣超張數_2日</code>、<code>主力買賣超張數_3日</code>、<code>主力買賣超張數_4日</code>、<code>主力買賣超張數_5日</code>、<code>主力買賣超張數_10日</code>、<code>主力買賣超張數_20日</code>、<code>主力買賣超張數_60日</code>、<code>主力買賣超張數_100日</code>、<code>主力買賣超張數_120日</code>、<code>主力買賣超張數_180日</code>、<code>主力買賣超張數_240日</code></p>
+<h3 id="其他_大盤12-欄">其他_大盤（12 欄）</h3>
+<p><code>買入金額_百萬</code>、<code>賣出金額_百萬</code>、<code>買賣超金額_百萬</code>、<code>成交金額_百萬</code>、<code>近一週買入金額_百萬</code>、<code>近一週賣出金額_百萬</code>、<code>近一週買賣超金額_百萬</code>、<code>近一週成交金額_百萬</code>、<code>近一月買入金額_百萬</code>、<code>近一月賣出金額_百萬</code>、<code>近一月買賣超金額_百萬</code>、<code>近一月成交金額_百萬</code></p>
+<h3 id="tse24-欄">TSE（24 欄）</h3>
+<p><code>bulin_sma</code>、<code>bulin_std</code>、<code>Close</code>、<code>Open</code>、<code>High</code>、<code>Low</code>、<code>Volume</code>、<code>adj_Close</code>、<code>adj_Open</code>、<code>adj_High</code>、<code>adj_Low</code>、<code>macd_dif</code>、<code>macd_dea</code>、<code>macd_hist</code>、<code>rsi_5</code>、<code>rsi_6</code>、<code>rsi_10</code>、<code>K</code>、<code>D</code>、<code>bulin_upper</code>、<code>bulin_lower</code>、<code>plus_di</code>、<code>minus_di</code>、<code>ADX</code></p>
+<h3 id="otc24-欄">OTC（24 欄）</h3>
+<p><code>bulin_sma</code>、<code>bulin_std</code>、<code>Close</code>、<code>Open</code>、<code>High</code>、<code>Low</code>、<code>Volume</code>、<code>adj_Close</code>、<code>adj_Open</code>、<code>adj_High</code>、<code>adj_Low</code>、<code>macd_dif</code>、<code>macd_dea</code>、<code>macd_hist</code>、<code>rsi_5</code>、<code>rsi_6</code>、<code>rsi_10</code>、<code>K</code>、<code>D</code>、<code>bulin_upper</code>、<code>bulin_lower</code>、<code>plus_di</code>、<code>minus_di</code>、<code>ADX</code></p>
+<h3 id="tse_週24-欄">TSE_週（24 欄）</h3>
+<p><code>bulin_sma</code>、<code>bulin_std</code>、<code>Close</code>、<code>Open</code>、<code>High</code>、<code>Low</code>、<code>Volume</code>、<code>adj_Close</code>、<code>adj_Open</code>、<code>adj_High</code>、<code>adj_Low</code>、<code>macd_dif</code>、<code>macd_dea</code>、<code>macd_hist</code>、<code>rsi_5</code>、<code>rsi_6</code>、<code>rsi_10</code>、<code>K</code>、<code>D</code>、<code>bulin_upper</code>、<code>bulin_lower</code>、<code>plus_di</code>、<code>minus_di</code>、<code>ADX</code></p>
+<h3 id="otc_週24-欄">OTC_週（24 欄）</h3>
+<p><code>bulin_sma</code>、<code>bulin_std</code>、<code>Close</code>、<code>Open</code>、<code>High</code>、<code>Low</code>、<code>Volume</code>、<code>adj_Close</code>、<code>adj_Open</code>、<code>adj_High</code>、<code>adj_Low</code>、<code>macd_dif</code>、<code>macd_dea</code>、<code>macd_hist</code>、<code>rsi_5</code>、<code>rsi_6</code>、<code>rsi_10</code>、<code>K</code>、<code>D</code>、<code>bulin_upper</code>、<code>bulin_lower</code>、<code>plus_di</code>、<code>minus_di</code>、<code>ADX</code></p>
+<h3 id="tse_月24-欄">TSE_月（24 欄）</h3>
+<p><code>bulin_sma</code>、<code>bulin_std</code>、<code>Close</code>、<code>Open</code>、<code>High</code>、<code>Low</code>、<code>Volume</code>、<code>adj_Close</code>、<code>adj_Open</code>、<code>adj_High</code>、<code>adj_Low</code>、<code>macd_dif</code>、<code>macd_dea</code>、<code>macd_hist</code>、<code>rsi_5</code>、<code>rsi_6</code>、<code>rsi_10</code>、<code>K</code>、<code>D</code>、<code>bulin_upper</code>、<code>bulin_lower</code>、<code>plus_di</code>、<code>minus_di</code>、<code>ADX</code></p>
+<h3 id="otc_月24-欄">OTC_月（24 欄）</h3>
+<p><code>bulin_sma</code>、<code>bulin_std</code>、<code>Close</code>、<code>Open</code>、<code>High</code>、<code>Low</code>、<code>Volume</code>、<code>adj_Close</code>、<code>adj_Open</code>、<code>adj_High</code>、<code>adj_Low</code>、<code>macd_dif</code>、<code>macd_dea</code>、<code>macd_hist</code>、<code>rsi_5</code>、<code>rsi_6</code>、<code>rsi_10</code>、<code>K</code>、<code>D</code>、<code>bulin_upper</code>、<code>bulin_lower</code>、<code>plus_di</code>、<code>minus_di</code>、<code>ADX</code></p>
+<hr />
+<h2 id="期貨apimsmp_fut_txf">期貨：<code>api.MSMP._fut_TXF</code></h2>
+<p><strong>底線開頭、不在上面的 25 張表裡，但這是 snowyowl 唯一的期貨資料。</strong>
+<code>api.bt.Tools.get_fut_ohlc('TXF', ...)</code> 底層讀的就是它。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">f</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">MSMP</span><span class="o">.</span><span class="n">_fut_TXF</span>          <span class="c1"># DataFrame (2570820, 7)</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>欄</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DateTime</code></td>
+<td>1 分 K 時間。<strong>零重複</strong>——單一「近月連續序列」，不是多合約併排</td>
+</tr>
+<tr>
+<td><code>Open</code> / <code>High</code> / <code>Low</code> / <code>Close</code></td>
+<td>點數</td>
+</tr>
+<tr>
+<td><code>TotalVolume</code></td>
+<td>口數</td>
+</tr>
+<tr>
+<td><code>settlement</code></td>
+<td>這根 K 所屬合約的結算日。共 113 個不同值</td>
+</tr>
+</tbody>
+</table>
+<p>實測 <strong>2,570,820 列，2017-05-15 08:46 ~ 2026-08-20 13:45（約 9.3 年）</strong>，
+含日盤與夜盤。第一次存取會印 <code>【快取成功】成功讀取 Parquet 並載入記憶體。</code></p>
+<p>聚合成近月合約日線：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">g</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">MSMP</span><span class="o">.</span><span class="n">_fut_TXF</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;DateTime&#39;</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">daily</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">開盤</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Open&#39;</span><span class="p">,</span><span class="s1">&#39;first&#39;</span><span class="p">),</span> <span class="n">最高</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;High&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">),</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>                            <span class="n">最低</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Low&#39;</span><span class="p">,</span><span class="s1">&#39;min&#39;</span><span class="p">),</span>  <span class="n">收盤</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Close&#39;</span><span class="p">,</span><span class="s1">&#39;last&#39;</span><span class="p">),</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>                            <span class="n">成交量</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;TotalVolume&#39;</span><span class="p">,</span><span class="s1">&#39;sum&#39;</span><span class="p">),</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>                            <span class="n">結算日</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;settlement&#39;</span><span class="p">,</span><span class="s1">&#39;last&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;開盤&#39;</span><span class="p">])</span>
+</span></code></pre></div>
+<blockquote>
+<p>只有台指期 TXF。其他期貨商品、選擇權、海外期貨都<strong>沒有</strong>。
+各頻率的歷史長度對照見 <a href="../data-history/">data-history.md</a>。</p>
+</blockquote>
+<hr />
+<h2 id="美股apiusmsmp">美股（api.USMSMP）</h2>
+<p>美股沒有 <code>list</code>（股池），也沒有大盤指數表。</p>
+<h3 id="日_k8-欄">日_K（8 欄）</h3>
+<p><code>Open</code>、<code>High</code>、<code>Low</code>、<code>Close</code>、<code>Volume</code>、<code>買量</code>、<code>賣量</code>、<code>資金淨流</code></p>
+<h3 id="週_k5-欄">週_K（5 欄）</h3>
+<p><code>Open</code>、<code>High</code>、<code>Low</code>、<code>Close</code>、<code>Volume</code></p>
+<h3 id="月_k5-欄">月_K（5 欄）</h3>
+<p><code>Open</code>、<code>High</code>、<code>Low</code>、<code>Close</code>、<code>Volume</code></p>
+<h3 id="季營收5-欄">季營收（5 欄）</h3>
+<p><code>金額_千</code>、<code>累計金額_千</code>、<code>QoQ</code>、<code>累計YoY</code>、<code>YoY</code></p>
+<h3 id="季股利資訊4-欄">季股利資訊（4 欄）</h3>
+<p><code>股利合計</code>、<code>殖利率</code>、<code>股利</code>、<code>股利發放率</code></p>
+<h3 id="季財報_資產負債表_千21-欄">季財報_資產負債表_千（21 欄）</h3>
+<p><code>資產總額</code>、<code>資產_流動</code>、<code>資產_非流動</code>、<code>現金</code>、<code>總應收帳款</code>、<code>庫存</code>、<code>金融資產_流動</code>、<code>金融資產_非流動</code>、<code>固定資產</code>、<code>無形資產合計</code>、<code>有形資產合計</code>、<code>負債總額</code>、<code>負債_流動</code>、<code>負債_非流動</code>、<code>金融負債_流動</code>、<code>金融負債_非流動</code>、<code>當期所得稅負債</code>、<code>總應付帳款</code>、<code>股東權益_總額</code>、<code>保留盈餘</code>、<code>股東權益_母公司</code></p>
+<h3 id="季財報_損益表_千15-欄">季財報_損益表_千（15 欄）</h3>
+<p><code>稅後純益</code>、<code>營業成本</code>、<code>營業毛利</code>、<code>營業費用</code>、<code>銷管費用</code>、<code>研發費用</code>、<code>營業淨利</code>、<code>財務成本</code>、<code>營業外收入及支出</code>、<code>稅前純益</code>、<code>所得稅費用</code>、<code>稅後淨利</code>、<code>稅前息前淨利</code>、<code>稅前息前折舊前淨利</code>、<code>營業收入</code></p>
+<h3 id="季財報_現金流表_千9-欄">季財報_現金流表_千（9 欄）</h3>
+<p><code>營運現金流</code>、<code>投資現金流</code>、<code>籌資現金流</code>、<code>淨現金流</code>、<code>匯率變動對現金之影響</code>、<code>淨現金流含匯率變動</code>、<code>折舊及攤提費用</code>、<code>資本支出</code>、<code>自由現金流</code></p>
+<h3 id="季財報_財務指標30-欄">季財報_財務指標（30 欄）</h3>
+<p><code>本益比</code>、<code>營業毛利成長率</code>、<code>營業利益成長率</code>、<code>稅前淨利成長率</code>、<code>稅後淨利成長率</code>、<code>總資產成長率</code>、<code>淨值成長率</code>、<code>營業利益率</code>、<code>稅前純益率</code>、<code>稅後資產報酬率</code>、<code>毛利率</code>、<code>研究發展費用率</code>、<code>稅後純益率</code>、<code>營業費用率</code>、<code>稅後權益報酬率</code>、<code>股價營收比</code>、<code>股價淨值比</code>、<code>企業價值對EBIT比率</code>、<code>企業價值對EBITDA比率</code>、<code>每股銷售額</code>、<code>累計存貨週轉率_次</code>、<code>存貨週轉率_次</code>、<code>每股淨值</code>、<code>淨值資產比率</code>、<code>速動比率</code>、<code>流動比率</code>、<code>負債比率</code>、<code>每股稅後盈餘</code>、<code>EPS成長率</code>、<code>營收季變動率</code></p>
+<h3 id="季財報_其他9-欄">季財報_其他（9 欄）</h3>
+<p><code>公告EPS</code>、<code>公告累計EPS</code>、<code>投資人投入資本</code>、<code>營運資金</code>、<code>財報發布日</code>、<code>股價</code>、<code>市值</code>、<code>股數_千</code>、<code>EV企業價值</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="頁腳" >
+        
+          
+          <a href="../msmp/" class="md-footer__link md-footer__link--prev" aria-label="上一頁: MSMP 矩陣資料總覽">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一頁
+              </span>
+              <div class="md-ellipsis">
+                MSMP 矩陣資料總覽
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../msmp-list/" class="md-footer__link md-footer__link--next" aria-label="下一頁: MSMP.list 股池">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一頁
+              </span>
+              <div class="md-ellipsis">
+                MSMP.list 股池
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      SnowyOwl · 台美股資料、積木選股與回測
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "navigation.indexes", "navigation.tracking", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tooltips", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

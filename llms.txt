@@ -1,0 +1,69 @@
+# snowyowl - 台美股資料、積木選股與回測整合套件
+
+> snowyowl 文件索引，以 2026-08-20 實際登入執行結果核對（StarWaveQuoteAPI 1.0.0.4）。涵蓋登入、積木選股（台股 402 個、美股 257 個，全部實測 screener 可正確執行）、表格式資料查詢、矩陣式歷史資料、StarWave 即時行情與回測綁定，供 LLM coding agent 快速查找 API usage documentation。
+> snowyowl **不含下單功能**，`api` 上不存在 `Order`；行情用 StarWave。SWQuote、USData 與 backtest_plus 的細節指向各自既有的文件集，不重複撰寫。
+> 如需完整單一文件，請使用 llms-full.txt。
+
+## 入門與結構
+
+- [開始使用 snowyowl](docs/getting-started.md): `import snowyowl as so; api = so.login()`；**先分流**（查事實走 MSMP／組條件走積木／驗規則走回測）；四個實測範例；五個命名空間與文件導覽；三個最常踩的坑（單位、日頻 1000 筆上限、沒有的資料）
+- [so.login 登入](docs/login.md): `so.login(person_id, person_pwd, type=account/google/apple)`、帳密與社群登入、快取、登入訊息逐行說明、`api.logout()`
+- [api 物件結構](docs/api-structure.md): 7 個命名空間完整屬性表，以及 snowyowl 的能力邊界
+- [錯誤訊息速查](docs/errors.md): 每則訊息都是實際觸發的原文；**`con()` 驗規格、`screener()` 驗 class** 是兩層；積木/Data/MSMP/回測四類錯誤對照；最後一節「**不報錯但結果是錯的**」13 項——選股永遠 0 檔、改 capital 沒反應、成本收兩次稅、名目金額差 1000 倍、月營收差 100 倍、`head(5)` 不是排行、美股漲幅排行全是雜訊…
+
+## 積木 Block（選股）
+
+- [積木 Block 總覽](docs/block.md): `api.Block` 四步流程（get_table → con → screener → 取用），台股/美股方法對照
+- [Block.list_conditions 積木清單查詢](docs/block-list-conditions.md): `list_conditions_tw(category=None)` 回 `ConditionMetadata`；category 只吃英文模組名
+- [Block.get_table 積木參數與合法值](docs/block-get-table.md): `get_table_tw()` 回 `{積木名稱: {參數: [合法值]}}`；台美股同名積木參數不同
+- [Block.con 組積木](docs/block-con.md): `con_tw(name, **params)` 參數驗證、中文標籤、negate 取負、規格固定值（不可指定、自動帶入）、錯誤訊息
+- [Block.screener 執行選股](docs/block-screener.md): `screener_tw(block_list, pool, date)` 回 `code`/`dataframe`/`date`/`sig`；多積木 AND；零命中是 `(0, 0)`；用 `sig` 欄數分辨「條件嚴格」與「積木壞了」
+- [Block 股池 pool](docs/block-pool.md): `pool=['all', '~etf']` 的 `~` 排除語法、8 個股池名稱與檔數
+- [Block 產生的程式碼 code](docs/block-codegen.md): `code` 的四段結構，`exec` 後與 screener 結果一致（實測 602 = 602）
+- [Block 已知落差與注意事項](docs/block-caveats.md): 全量驗證基準（659 個積木 screener 全通過）+ 11 項實測落差——預設值不在合法值內、`list_conditions` 比 `get_table` 多（停用 vs 漏登）、category 兩套詞彙、共用 id 的積木哪些是錯誤哪些是別名、6 個標啟用卻被靜默丟棄、8 個複合值固定參數未收錄、v24 的大盤總額定義、**積木名稱可能與實際邏輯不符**（`o6` 名為漲跌幅實為近 20 日、`percent1` 是上界）
+- [台股積木完整參考](docs/block-reference-tw.md): 402 個台股積木，依中文次類別分 37 組，含 id、邏輯模板、詳細說明、參數合法值與預設值
+- [美股積木完整參考](docs/block-reference-us.md): 257 個美股積木，含 id、邏輯模板、詳細說明、參數合法值與預設值
+
+## Data 表格查詢
+
+- [Data 模組總覽](docs/data.md): `api.Data` / `api.USData` 三個方法，以及與 `api.MSMP` 的分工
+- [Data.get_table 列出可用表格](docs/data-get-table.md): 台股**共 80 張**表完整清單，含先前漏收的 14 張（分點籌碼 5 張、大盤法人 2 張、盤中逐筆明細 6 張、產業個股清單）；參數標記怎麼讀；`產業個股清單` 傳錯 sector 會拋誤導的 `KeyError: 'symbol'`
+- [Data.get 取得表格資料](docs/data-get.md): `get(table, *args)` 五個範例（清單、還原日K、季財報、分K）與兩種錯誤訊息
+- [資料頻率與歷史長度](docs/data-history.md): **日頻硬上限 1000 筆（約 4.1 年）**，週/月/季/年頻回溯 11~16 年；「近五年以上」要降頻；`Data` 的週/月 K 比 `MSMP` 更長；`_千` ÷1e5、`_百萬` ÷1e4 才是億元；**期貨在 `MSMP._fut_TXF`（9.3 年 1 分 K）**；snowyowl 沒有選擇權/匯率/央行利率/原物料；**美股規則不同**（週/月K 反而比台股短，長歷史只在財報與股利）
+- [Data.get_snapshots 即時快照](docs/data-get-snapshots.md): `get_snapshots(symbols)` 回 `dict[str, Stock]`，Stock 15 個欄位；興櫃成交量單位是股
+- [盤中、分K與逐筆明細](docs/intraday.md): 23 張盤中表全部盤中實測；**分兩類**——盤中即時類只有當天（適合最新日篩選、不能回測）、歷史分K類約 4 年 968 個交易日（可回測，`get_stock_ohlc` 底層就是它）；**最後一根 K 棒還在累加**（25 秒實證）、K 棒用結束時間標記；`日成交金額(千)`/`日成交量` 是當日累計不是這根的量；**內外盤欄名是簡體 `内盤`**；五檔欄名兩套（`買_1量` vs `買1量`）；分價量的 `類型` 分 current/pre2Sum/pre4Sum/pre9Sum/pre19Sum；`minutes` 只吃 1/3/5/15/30/60
+- [USData 美股表格查詢](docs/usdata.md): 25 張表全部實跑（形狀與欄位為真實輸出），依參數型態分四組；成交量單位是股不是張；日K 已內含 5~250 日均價/均量；`get_snapshots` 回 `Symbol`（9 欄、直接給 percentChange），與台股 `Stock`（15 欄、無漲跌幅）不同
+
+## MSMP 歷史資料
+
+- [MSMP 矩陣資料總覽](docs/msmp.md): 日期 × 股票代號矩陣、兩種取法、`INDEX`/`INFO`/大盤指數、只到前一交易日
+- [MSMP 資料表與欄位完整清單](docs/msmp-tables.md): 台股 25 張表、美股 10 張表的所有欄位名稱；外加 **`api.MSMP._fut_TXF`**——底線開頭、唯一的期貨資料，257 萬列 1 分 K、2017 起、`settlement` 標記合約月、`DateTime` 零重複（單一近月連續序列）
+- [MSMP.list 股池](docs/msmp-list.md): 8 個股池與檔數；`all` 含一個重複代號的陷阱與去重寫法
+- [USMSMP 美股矩陣資料](docs/usmsmp.md): 10 張表的欄位/形狀/期間實測；沒有 `list`/`INFO`/`INDEX`/大盤指數/`_fut_TXF`；**沒有 `漲跌幅` 也沒有 `adj_*`**；**台股「降頻拿長歷史」在美股不成立**（週K 4.5 年、月K 4 年），長歷史只在財報（27.8 年，回到 1998-Q4）與股利（34 年，回到 1993）；財報覆蓋 5801 檔 vs 價格 13174 檔；資料日比台股晚一天
+
+## 即時行情
+
+- [SWQuote 即時行情（StarWave）](docs/swquote.md): `subscribe(symbol, odd=False)`、期貨要帶月份完整代碼、各市場單位不同（整股張／零股股／期貨口）、`api.SWQuote[n]` 多通道、各交易所訂閱上限 100、取消不存在的 label 是靜默的
+- [SWQuote 行情回呼與 SWMarketData](docs/swquote-callback.md): `set_cb` 全 18 欄；**六種 `data_type` 各只帶部分欄位**（用 `summary()` 驗證）；`SWQuote_status_remarks` / `SWQuote_raise_fall_remarks` 位元解碼，無效輸入回 `ErrMsg` 而不拋例外
+- [SWQuote 連線事件與事件碼](docs/swquote-event.md): `set_event` 的 11 個 event_code、12 個 status_code；**具名常數只覆蓋 9/7 個**，SW007~SW011 只能比字面值；連線是延遲建立、清空訂閱會自動斷線；斷線重連範例
+
+## 回測
+
+- [回測 api.bt 總覽](docs/backtest.md): `api.bt` 是 `SecureMain`、`CallableModule` 技巧；**積木 sig 餵進 Core 的完整實跑路徑**（日 K 也取 MSMP 才對齊）、單檔與組合回測配方
+- [回測：事件模型與策略撰寫](docs/backtest-strategy.md): 標準骨架；**一根 bar 內的執行順序**（`on_position` 早於 `on_bar`）；`row` 的 key 一律英文；`Position` / `Order` 欄位；`stats` 的 `continue_wins`；`on_init` 下單會 RuntimeError；完全平倉不觸發 `on_position`
+- [回測：委託、成交價與風控](docs/backtest-order.md): `Condition.Global` 七個參數；同 `(rule, match_uid)` 是更新不是新單；五種 `PriceType`；**12 個成交價案例實測表**（`stop_rod` 跳空以開盤價成交）；四個停損停利每根都要重掛，`STL`/`PFT`/`DS`/`TGT` 是保留 rule 名
+- [回測：資料與週期](docs/backtest-data.md): 三種餵法；`feed_data` **不會**觸發 `on_bar2`；`args` 只是角色對應、`row` 的 key 是英文；`freq` 兩條路徑等價；時序守門與警告訊息；要跟積木訊號對齊不要用 `get_stock_ohlc`
+- [回測：商品規格與績效報告](docs/backtest-report.md): `fee`/`margin` 依大小自動切換模式；**`tax_long`/`tax_short` 其實是進場稅/出場稅**（台股 `tax_long=0, tax_short=0.003`）；**`capital` 只在百分比下單時生效**；部位被夾成 0 時的誤導錯誤訊息；四張報表 + 27 項 KPI 欄位定義
+- [回測：技術指標與參數尋優](docs/backtest-tools.md): `self.Ind` 九個增量指標（每根都要呼叫）；`bt.Tools.optimize` 的評分預設 `TotalReturns/abs(MaxDrawdown)`，不看交易次數
+
+## AI 工具整合
+
+- [MCP Server](mcp/README.md): 五個 tool（`list_blocks` / `describe_block` / `screen` / `get_screen_code` / `backtest`）覆蓋 659 個積木與回測，stdio 傳輸、零額外相依（不需 `pip install mcp`）。安裝說明見 `mcp/install/`，驗證用 `python mcp/test_protocol.py`（端到端檢查，含真登入、真選股、單檔與組合回測）
+- Agent Skill：`.claude/skills/snowyowl/SKILL.md`。教 agent 怎麼寫 snowyowl 的 Python；MCP 讓 agent 直接抓資料。兩者並存，問「幫我選股」走 MCP，問「幫我寫選股腳本」走 Skill
+
+## 這份文件集是自足的
+
+`api.Data` / `api.USData` 的表格規格、`api.SWQuote` 的行情欄位與事件碼對照表、
+回測的策略撰寫與報表欄位，都寫在上面各頁裡，不需要另外的文件集。
+
+snowyowl **不含下單功能**，`api` 上不存在 `Order`，所以沒有下單與帳務的章節。
