@@ -1,0 +1,3117 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="台美股資料、積木選股與回測整合套件 —— 專為 AI coding agent 設計的文件集">
+      
+      
+      
+        <link rel="canonical" href="https://snowyowlstrategy.github.io/block-caveats/">
+      
+      
+        <link rel="prev" href="../block-codegen/">
+      
+      
+        <link rel="next" href="../block-reference-tw/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../sw/logo0902.jpg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Block 已知落差與注意事項 - SnowyOwl</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../sw/theme.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#block-已知落差與注意事項" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href=".." title="SnowyOwl" class="md-header__button md-logo" aria-label="SnowyOwl" data-md-component="logo">
+      
+  <img src="../sw/logo0902.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SnowyOwl
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Block 已知落差與注意事項
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切換成暗色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換成暗色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切換成亮色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換成亮色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首頁
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../getting-started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  入門與結構
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../block/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  積木 Block（選股）
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../data/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Data 表格查詢
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../msmp/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  MSMP 歷史資料
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../swquote/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  即時行情
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../backtest/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  回測
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SnowyOwl" class="md-nav__button md-logo" aria-label="SnowyOwl" data-md-component="logo">
+      
+  <img src="../sw/logo0902.jpg" alt="logo">
+
+    </a>
+    SnowyOwl
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    入門與結構
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    入門與結構
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    開始使用 snowyowl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../login/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    so.login 登入
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    api 物件結構
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../errors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    錯誤訊息速查
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    積木 Block（選股）
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    積木 Block（選股）
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    積木 Block 總覽
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-list-conditions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block.list_conditions 積木清單查詢
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-get-table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block.get_table 積木參數與合法值
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-con/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block.con 組積木
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-screener/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block.screener 執行選股
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-pool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block 股池 pool
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-codegen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block 產生的程式碼 code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block 已知落差與注意事項
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block 已知落差與注意事項
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-預設值可能不在-get_table-宣告的合法值內" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 預設值可能不在 get_table 宣告的合法值內
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 預設值可能不在 get_table 宣告的合法值內">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        input
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-list_conditions-比-get_table-多多的那些建不出來" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. list_conditions 比 get_table 多，多的那些建不出來
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. list_conditions 比 get_table 多，多的那些建不出來">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        input
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        input
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-category-有兩套詞彙互不通用" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. category 有兩套詞彙，互不通用
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. category 有兩套詞彙，互不通用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        input
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        input
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-多個積木名稱共用同一個-python編碼" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 多個積木名稱共用同一個 python編碼
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 多個積木名稱共用同一個 python編碼">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#m9曾經是真錯誤已修" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        m9：曾經是真錯誤（已修）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#m21-與-r23別名不是錯誤" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        m21 與 r23：別名，不是錯誤
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-零命中時-dataframe-是-0-0沒有欄位" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 零命中時 dataframe 是 (0, 0)，沒有欄位
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-apimsmplistall-含重複代號" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. api.MSMP.list['all'] 含重複代號
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-conditionmetadatapath-格式不統一" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. ConditionMetadata.path 格式不統一
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-有-6-個標記啟用的積木被靜默丟棄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 有 6 個標記「啟用」的積木被靜默丟棄
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-有-8-個積木的固定值仍未收錄複合值" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 有 8 個積木的固定值仍未收錄（複合值）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-v24-的大盤總成交金額是全市場個股加總" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. v24 的「大盤總成交金額」是全市場個股加總
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-美股沒有股池" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. 美股沒有股池
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-積木名稱可能與實際邏輯不符--以-o6-為例" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. 積木名稱可能與實際邏輯不符 —— 以 o6 為例
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. 積木名稱可能與實際邏輯不符 —— 以 o6 為例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#通則" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        通則
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-reference-tw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    台股積木完整參考
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-reference-us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    美股積木完整參考
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data 表格查詢
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data 表格查詢
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data 模組總覽
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-get-table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data.get_table 列出可用表格
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-get/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data.get 取得表格資料
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    資料頻率與歷史長度
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-get-snapshots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data.get_snapshots 即時快照
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intraday/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    盤中、分K與逐筆明細
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usdata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USData 美股表格查詢
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSMP 歷史資料
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MSMP 歷史資料
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../msmp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSMP 矩陣資料總覽
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../msmp-tables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSMP 資料表與欄位完整清單
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../msmp-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSMP.list 股池
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usmsmp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USMSMP 美股矩陣資料
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    即時行情
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    即時行情
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swquote/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWQuote 即時行情（StarWave）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swquote-callback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWQuote 行情回呼與 SWMarketData
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swquote-event/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWQuote 連線事件與事件碼
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    回測
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測 api.bt 總覽
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測：事件模型與策略撰寫
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest-order/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測：委託、成交價與風控
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測：資料與週期
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測：商品規格與績效報告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測：技術指標與參數尋優
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-預設值可能不在-get_table-宣告的合法值內" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 預設值可能不在 get_table 宣告的合法值內
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 預設值可能不在 get_table 宣告的合法值內">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        input
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-list_conditions-比-get_table-多多的那些建不出來" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. list_conditions 比 get_table 多，多的那些建不出來
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. list_conditions 比 get_table 多，多的那些建不出來">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        input
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        input
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-category-有兩套詞彙互不通用" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. category 有兩套詞彙，互不通用
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. category 有兩套詞彙，互不通用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        input
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        input
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-多個積木名稱共用同一個-python編碼" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 多個積木名稱共用同一個 python編碼
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 多個積木名稱共用同一個 python編碼">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#m9曾經是真錯誤已修" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        m9：曾經是真錯誤（已修）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#m21-與-r23別名不是錯誤" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        m21 與 r23：別名，不是錯誤
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-零命中時-dataframe-是-0-0沒有欄位" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 零命中時 dataframe 是 (0, 0)，沒有欄位
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-apimsmplistall-含重複代號" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. api.MSMP.list['all'] 含重複代號
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-conditionmetadatapath-格式不統一" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. ConditionMetadata.path 格式不統一
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-有-6-個標記啟用的積木被靜默丟棄" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 有 6 個標記「啟用」的積木被靜默丟棄
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-有-8-個積木的固定值仍未收錄複合值" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 有 8 個積木的固定值仍未收錄（複合值）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-v24-的大盤總成交金額是全市場個股加總" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. v24 的「大盤總成交金額」是全市場個股加總
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-美股沒有股池" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. 美股沒有股池
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-積木名稱可能與實際邏輯不符--以-o6-為例" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. 積木名稱可能與實際邏輯不符 —— 以 o6 為例
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. 積木名稱可能與實際邏輯不符 —— 以 o6 為例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#通則" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        通則
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="block-已知落差與注意事項">Block 已知落差與注意事項</h1>
+<blockquote>
+<p>所屬章節：積木 Block
+以 2026-08-20 實際執行結果為準（台股 403 / 美股 257 個啟用積木）</p>
+<p><strong>本頁的 403 是 2026-08-20 當時的數字。</strong>之後 <code>c14</code>（名為隔日沖、實際算籌碼
+集中度）已從規格移除，現在是<strong>台股 402 / 美股 257，合計 659</strong>。下面各節的
+數字保留當時的實測記錄不改寫，需要現況請以 <code>len(api.Block.get_table_tw())</code> 為準。</p>
+</blockquote>
+<h2 id="overview">Overview</h2>
+<p>積木的參數規格來自 Excel（<code>block_spec.json</code>），條件邏輯來自 python 類別
+（condition registry）。兩邊是各自維護的，因此存在幾處落差。
+這頁列出實測確認的項目，讓呼叫端知道該防什麼。</p>
+<p><strong>全量驗證基準（2026-08-20）</strong>：台股 403 + 美股 257 個積木，每一個都實際跑過
+<code>screener_tw</code> / <code>screener_us</code>：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>screener_tw  403 / 403 成功
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>screener_us  257 / 257 成功
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>失敗 0，sig 空矩陣（0 欄）0
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>選出檔數中位數：台股 218 檔、美股 1011 檔
+</span></code></pre></div>
+<p>所以下面列的落差<strong>都不會讓積木執行失敗</strong>，它們影響的是「參數能不能調」
+與「結果是否符合名稱」。</p>
+<hr />
+<h2 id="1-預設值可能不在-get_table-宣告的合法值內">1. 預設值可能不在 get_table 宣告的合法值內</h2>
+<p><code>con()</code> 對<strong>你指定的</strong>參數會驗證合法值，但<strong>預設值不驗</strong>。
+所以「<code>con(name)</code> 的輸出，再明確傳回 <code>con()</code> 會被拒絕」。</p>
+<h4 id="input">input</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">d</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">con_tw</span><span class="p">(</span><span class="s1">&#39;今日收盤價&lt;&gt;開高低P%&#39;</span><span class="p">)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">get_table_tw</span><span class="p">()[</span><span class="s1">&#39;今日收盤價&lt;&gt;開高低P%&#39;</span><span class="p">])</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">api</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">con_tw</span><span class="p">(</span><span class="s1">&#39;今日收盤價&lt;&gt;開高低P%&#39;</span><span class="p">,</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>                 <span class="n">operator</span><span class="o">=</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;operator&#39;</span><span class="p">],</span> <span class="n">close_field</span><span class="o">=</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;close_field&#39;</span><span class="p">],</span> <span class="n">percent</span><span class="o">=</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;percent&#39;</span><span class="p">])</span>
+</span></code></pre></div>
+<h4 id="output">output</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>{&#39;id&#39;: &#39;o1&#39;, &#39;operator&#39;: &#39;&gt;&#39;, &#39;close_field&#39;: &#39;Close&#39;, &#39;percent&#39;: 15}
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>{&#39;operator&#39;: [&#39;&lt;&#39;, &#39;&gt;&#39;], &#39;close_field&#39;: [&#39;adj_Open&#39;, &#39;adj_High&#39;, &#39;adj_Low&#39;], &#39;percent&#39;: [1, 2, 3, 5, 7, 9]}
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>ValueError: 積木「今日收盤價&lt;&gt;開高低P%」的參數 close_field 不支援 &#39;Close&#39;
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  可用：adj_Open(開盤價) / adj_High(最高價) / adj_Low(最低價)
+</span></code></pre></div>
+<p><strong>規模</strong>（實測全部積木的往返測試）：</p>
+<table>
+<thead>
+<tr>
+<th>市場</th>
+<th>積木數</th>
+<th>預設值往返會被拒</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>台股</td>
+<td>403</td>
+<td>59</td>
+</tr>
+<tr>
+<td>美股</td>
+<td>257</td>
+<td>18</td>
+</tr>
+</tbody>
+</table>
+<p>有幾個不只是超出範圍，而是<strong>值域不同</strong>（用預設值執行不會出錯，但拿到的是另一套資料）：</p>
+<table>
+<thead>
+<tr>
+<th>積木</th>
+<th>預設值</th>
+<th>get_table 宣告的合法值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>o1</code> 今日收盤價&lt;&gt;開高低P%</td>
+<td><code>close_field='Close'</code>（未還原）</td>
+<td><code>adj_Open</code> / <code>adj_High</code> / <code>adj_Low</code>（還原）</td>
+</tr>
+<tr>
+<td><code>o13</code> 今日收盤(開高低)距歷史最高價&lt;P%</td>
+<td><code>close_field='adj_Close'</code>（還原）</td>
+<td><code>Open</code> / <code>High</code> / <code>Low</code> / <code>Close</code>（未還原）</td>
+</tr>
+<tr>
+<td><code>o14</code> 今日收盤(開高低)距歷史最低價&lt;-P%</td>
+<td><code>close_field='adj_Close'</code></td>
+<td><code>Open</code> / <code>High</code> / <code>Low</code> / <code>Close</code></td>
+</tr>
+<tr>
+<td><code>o29</code> 連續D日(周、月) K棒為紅K</td>
+<td><code>table='日_K'</code></td>
+<td><code>日</code> / <code>周</code> / <code>月</code></td>
+</tr>
+<tr>
+<td><code>r1</code>（美股）日漲跌幅排行前N名</td>
+<td><code>direction=''</code></td>
+<td><code>&gt;</code> / <code>&lt;</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>建議</strong>：要做 UI 或自動組合時，<strong>一律明確指定所有參數</strong>，不要依賴預設值。
+這樣值一定落在 <code>get_table</code> 的清單內，行為也可預期。</p>
+<p>其中「值域不同」那幾筆（<code>o29</code> 的 <code>日_K</code> vs <code>['日','周','月']</code> 之類）有明確成因：
+Excel 的『python參數』寫的是 <code>'table': '${A}_K'</code>——kwarg 由<strong>佔位符加字面後綴組成</strong>。
+<code>get_table</code> 顯示的是佔位符 <code>A</code> 的選項（<code>日</code>/<code>周</code>/<code>月</code>），但 kwarg 實際要的是 <code>日_K</code>。
+這個「組合」步驟目前沒有實作，見下方第 10 節。</p>
+<hr />
+<h2 id="2-list_conditions-比-get_table-多多的那些建不出來">2. list_conditions 比 get_table 多，多的那些建不出來</h2>
+<h4 id="input_1">input</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">len</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">list_conditions_tw</span><span class="p">()),</span> <span class="nb">len</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">get_table_tw</span><span class="p">())</span>
+</span></code></pre></div>
+<h4 id="output_1">output</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>(406, 403)
+</span></code></pre></div>
+<p>美股是 <code>(298, 257)</code>。<code>list_conditions</code> 讀 registry（程式碼裡註冊的全部類別），
+<code>get_table</code> 讀 <code>block_spec.json</code>（只收 Excel 中「狀態＝啟用」的積木）。</p>
+<p>多出來的分兩種，成因不同：</p>
+<table>
+<thead>
+<tr>
+<th>情況</th>
+<th>台股</th>
+<th>美股</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Excel 有列但標「停用」</td>
+<td>4：<code>m15</code>、<code>r22</code>、<code>r23</code>、<code>r24</code></td>
+<td>42：<code>o53</code>～<code>o94</code> 等</td>
+<td><strong>刻意停用</strong>。例如 <code>m15</code>（今日收盤價&lt;&gt;D日均線）已被啟用中的「今日收盤價&lt;&gt;D日(周月)均線」取代</td>
+</tr>
+<tr>
+<td>Excel <strong>完全沒有這個編碼</strong></td>
+<td>3：<code>o2x</code>、<code>s9x</code>、<code>s9y</code></td>
+<td>0</td>
+<td>程式碼已完整實作（分別 222 / 217 / 245 行、有 docstring 與完整參數），但 Excel 未登錄，看起來是<strong>漏登</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="input_2">input</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">con_tw</span><span class="p">(</span><span class="s1">&#39;m15&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<h4 id="output_2">output</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ValueError: 找不到積木 &#39;m15&#39;（market=tw）
+</span></code></pre></div>
+<p><strong>建議</strong>：要列出「可用」的積木，用 <code>get_table_tw()</code> 的 key，不要用 <code>list_conditions_tw()</code>。</p>
+<hr />
+<h2 id="3-category-有兩套詞彙互不通用">3. category 有兩套詞彙，互不通用</h2>
+<table>
+<thead>
+<tr>
+<th>來源</th>
+<th>值</th>
+<th>用在哪</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ConditionMetadata.category</code></td>
+<td>英文模組名，台股 11 種（<code>ohlc</code>、<code>volume</code>、<code>financial</code>…）</td>
+<td><code>list_conditions(category=...)</code> 的過濾</td>
+</tr>
+<tr>
+<td><code>block_spec.json</code> 的 <code>category</code></td>
+<td>中文次類別，台股 37 種（<code>漲跌幅</code>、<code>K棒型態</code>、<code>MACD指標</code>…）</td>
+<td><a href="../block-reference-tw/">積木完整參考</a> 的分組</td>
+</tr>
+</tbody>
+</table>
+<h4 id="input_3">input</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">list_conditions_tw</span><span class="p">(</span><span class="n">category</span><span class="o">=</span><span class="s1">&#39;漲跌幅&#39;</span><span class="p">)</span>     <span class="c1"># 中文 -&gt; 空的</span>
+</span></code></pre></div>
+<h4 id="output_3">output</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>{}
+</span></code></pre></div>
+<h4 id="input_4">input</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">len</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">list_conditions_tw</span><span class="p">(</span><span class="n">category</span><span class="o">=</span><span class="s1">&#39;volume&#39;</span><span class="p">))</span>   <span class="c1"># 英文 -&gt; 有結果</span>
+</span></code></pre></div>
+<h4 id="output_4">output</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>19
+</span></code></pre></div>
+<p>美股的 <code>block_spec.json</code> 次類別<strong>全為空字串</strong>，所以美股完整參考頁只有一個「（未分類）」群組。</p>
+<hr />
+<h2 id="4-多個積木名稱共用同一個-python編碼">4. 多個積木名稱共用同一個 python編碼</h2>
+<p>台股 4 組、美股 2 組的積木名稱共用同一個 <code>python編碼</code>（<code>con()</code> 輸出的 <code>id</code>）。
+<strong>共用本身不是問題</strong>，判斷標準是：兩個名稱是否<strong>宣稱不同的邏輯</strong>卻跑出同一件事。</p>
+<table>
+<thead>
+<tr>
+<th>市場</th>
+<th>id</th>
+<th>兩個名稱</th>
+<th>判定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>台股</td>
+<td><code>m9</code></td>
+<td><code>D日均線斜率&lt;&gt;0.4</code> / <code>&lt;&gt;-0.4</code></td>
+<td>曾是錯誤，<strong>已修</strong></td>
+</tr>
+<tr>
+<td>美股</td>
+<td><code>m9</code></td>
+<td><code>D日均線斜率&lt;&gt;0.4</code> / <code>&lt;&gt;-0.4</code></td>
+<td>曾是錯誤，<strong>已修</strong></td>
+</tr>
+<tr>
+<td>台股</td>
+<td><code>s1</code></td>
+<td><code>近N日期間外資/投信/自營/官股/三大買賣超 &lt;&gt; V張</code> / <code>官股買(賣)超&gt;N張</code></td>
+<td>正常，參數集不同</td>
+</tr>
+<tr>
+<td>台股</td>
+<td><code>r4</code></td>
+<td><code>近D日，官股買(賣)超張數前N名</code> / <code>法人買賣超排行前N名</code></td>
+<td>正常，參數集不同</td>
+</tr>
+<tr>
+<td>台股</td>
+<td><code>m21</code></td>
+<td><code>長期四均線糾結(5MA/10MA/20MA)</code> / 同名 <code>(old)</code></td>
+<td><strong>不是錯誤</strong>，同一積木的舊別名</td>
+</tr>
+<tr>
+<td>美股</td>
+<td><code>r23</code></td>
+<td><code>成交值排行前N名</code> / <code>成交金額排行前N名</code></td>
+<td><strong>不是錯誤</strong>，同一積木的別名</td>
+</tr>
+</tbody>
+</table>
+<h3 id="m9曾經是真錯誤已修">m9：曾經是真錯誤（已修）</h3>
+<p>兩個名稱宣稱的門檻不同（<code>0.4</code> / <code>-0.4</code>），但 <code>con()</code> 產生的 dict 一模一樣，
+等於其中一個名稱在說謊。兩個市場的成因不同：</p>
+<ul>
+<li><strong>台股</strong>：兩列的『python參數』都寫 <code>'value': -0.4</code>（複製貼上漏改），
+  但『邏輯基礎』欄正確帶著各自的符號。<code>build_spec.py</code> 在<strong>映射毫無歧義時</strong>
+  （<code>python參數</code> 恰好一個數值固定值、模板恰好一個數字字面值）以模板為準校正。
+  全部 660 個積木裡只有這一列被校正，校正會在 <code>python build_spec.py</code> 的輸出中列出。</li>
+<li><strong>美股</strong>：兩列的『python參數』<strong>完全沒有</strong> <code>value</code> kwarg，所以都用 class 預設的 <code>0.4</code>，
+  <code>-0.4</code> 那個名稱取用不到。已在 <code>美股積木API.xlsx</code> 的「均線積木」分頁補上。</li>
+</ul>
+<p>修好後：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">con_tw</span><span class="p">(</span><span class="s1">&#39;D日均線斜率&lt;&gt;0.4&#39;</span><span class="p">)</span>    <span class="c1"># value=0.4     -&gt;     2 檔</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">api</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">con_tw</span><span class="p">(</span><span class="s1">&#39;D日均線斜率&lt;&gt;-0.4&#39;</span><span class="p">)</span>   <span class="c1"># value=-0.4    -&gt;  2697 檔</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="n">api</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">con_us</span><span class="p">(</span><span class="s1">&#39;D日均線斜率&lt;&gt;0.4&#39;</span><span class="p">)</span>    <span class="c1"># value=0.4     -&gt;    56 檔</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="n">api</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">con_us</span><span class="p">(</span><span class="s1">&#39;D日均線斜率&lt;&gt;-0.4&#39;</span><span class="p">)</span>   <span class="c1"># value=-0.4    -&gt; 12531 檔</span>
+</span></code></pre></div>
+<h3 id="m21-與-r23別名不是錯誤">m21 與 r23：別名，不是錯誤</h3>
+<p>這兩組的兩個名稱描述的是<strong>同一件事</strong>，跑出同一個結果也就是正確的，
+沒有任何名稱在說謊：</p>
+<ul>
+<li><code>m21</code> 的 <code>(old)</code> 後綴本身就標示它是舊別名，兩列所有機器可讀欄位完全相同。</li>
+<li><code>r23</code> 的「成交值」與「成交金額」在中文財經語境同義，class 相同。
+  唯一差別是 <code>top_n</code> 的選項清單：</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>成交值排行前N名    top_n: [50, 100, 150, 200, 500, 1000]
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>成交金額排行前N名   top_n: [5, 10, 100, 150, 200, 500, 1000]     ← 多了 5、10
+</span></code></pre></div>
+<p>傳同一個 <code>top_n</code> 給兩者，<code>con()</code> 的 dict 與選出的股票<strong>完全相同</strong>（實測 <code>top_n=100</code>
+與 <code>200</code> 皆是）。所以只在<strong>不指定 <code>top_n</code></strong>（預設都是 50）時才看起來撞在一起，
+明確指定就沒有歧義——這也是第 1 節「不要依賴預設值」的用意。</p>
+<blockquote>
+<p><code>成交金額排行前N名</code> 的『python參數』把 <code>id</code> 寫死成 <code>'r23'</code> 而非 <code>'${ID}'</code>，
+且『功能說明』欄留著別的積木的文字（<code>股本:小於N億…</code>）。兩者都不影響行為
+（<code>build_spec.py</code> 忽略 <code>id</code> 欄、不讀『功能說明』），但看 Excel 時會誤導。</p>
+</blockquote>
+<hr />
+<h2 id="5-零命中時-dataframe-是-0-0沒有欄位">5. 零命中時 dataframe 是 (0, 0)，沒有欄位</h2>
+<p>見 <a href="../block-screener/">執行選股 Example 5</a>。安全寫法：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">df</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="s1">&#39;dataframe&#39;</span><span class="p">]</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">symbols</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;stock_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="k">else</span> <span class="p">[]</span>
+</span></code></pre></div>
+<hr />
+<h2 id="6-apimsmplistall-含重複代號">6. api.MSMP.list['all'] 含重複代號</h2>
+<p>2873 筆但只有 2872 個不同代號（<code>'7834'</code> 出現兩次）。
+<code>screener</code> 的股池過濾不受影響，但自己拿去當 DataFrame 的 columns 會踩到
+<code>InvalidIndexError</code>。見 <a href="../block-pool/">股池</a> 末段。</p>
+<hr />
+<h2 id="7-conditionmetadatapath-格式不統一">7. ConditionMetadata.path 格式不統一</h2>
+<p>同一批 metadata 裡出現四種格式：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>&#39;/blocks.api.ppi.volume/v1&#39;
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>&#39;/blocks.api.api.volume/v2&#39;
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>&#39;/blocks-api/api/volume/v3x&#39;
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>&#39;/blocks-api/api/us/ohlc/o1&#39;
+</span></code></pre></div>
+<p>這個欄位目前沒有被程式使用，<strong>不要拿它做解析或路由</strong>。</p>
+<hr />
+<h2 id="8-有-6-個標記啟用的積木被靜默丟棄">8. 有 6 個標記「啟用」的積木被靜默丟棄</h2>
+<p><code>build_spec.py</code> 第 86 行 <code>df.dropna(subset=['python編碼', '積木名稱'])</code>
+會砍掉沒填 <code>python編碼</code> 的列，<strong>且不發任何警告</strong>。
+Excel 中有 6 列狀態是「啟用」卻沒填 <code>python編碼</code>，因此完全不會出現在
+<code>get_table</code> / <code>con</code> 裡：</p>
+<table>
+<thead>
+<tr>
+<th>市場</th>
+<th>分頁</th>
+<th>積木名稱</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>台股</td>
+<td>漲跌幅積木</td>
+<td><code>未知</code></td>
+</tr>
+<tr>
+<td>台股</td>
+<td>漲跌幅積木</td>
+<td><code>停利，較成本價獲利&gt;P%</code></td>
+</tr>
+<tr>
+<td>台股</td>
+<td>漲跌幅積木</td>
+<td><code>停利，較成本價獲利&gt;M千元</code></td>
+</tr>
+<tr>
+<td>台股</td>
+<td>漲跌幅積木</td>
+<td><code>停損，較成本價虧損&gt;P%</code></td>
+</tr>
+<tr>
+<td>台股</td>
+<td>產業概念&amp;市值</td>
+<td><code>已公布股利政策的股票</code></td>
+</tr>
+<tr>
+<td>美股</td>
+<td>財報積木</td>
+<td><code>最近一季合約負債佔股本年增率&lt;&gt;P%</code></td>
+</tr>
+</tbody>
+</table>
+<p>所以「Excel 標啟用的數量」與「實際可用的積木數」不相等：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>台股  Excel 啟用 408 列  -&gt;  扣掉缺 python編碼 5 列  -&gt;  block_spec.json 403 個
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>美股  Excel 啟用 258 列  -&gt;  扣掉缺 python編碼 1 列  -&gt;  block_spec.json 257 個
+</span></code></pre></div>
+<p>要判斷某個積木到底能不能用，<strong>只看 <code>get_table_tw()</code> 的 key</strong>，
+不要以 Excel 的狀態欄為準。</p>
+<hr />
+<h2 id="9-有-8-個積木的固定值仍未收錄複合值">9. 有 8 個積木的固定值仍未收錄（複合值）</h2>
+<p>規格釘死的字面常數（例如 <code>'value': -0.4</code>）現在會由 <code>con()</code> 帶進輸出，見
+<a href="../block-con/">組積木 Example 7</a>。但『python參數』裡「佔位符 + 字面後綴」的
+<strong>複合值</strong>仍未支援，因為需要模板代入：</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>積木</th>
+<th>python參數裡的複合值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>o29</code></td>
+<td>連續D日(周、月) K棒為紅K</td>
+<td><code>'table': '${A}_K'</code></td>
+</tr>
+<tr>
+<td><code>o30</code></td>
+<td>連續D日(周、月) K棒為黑K</td>
+<td><code>'table': '${A}_K'</code></td>
+</tr>
+<tr>
+<td><code>v5</code></td>
+<td>今日(周)成交量&gt;上一日(周)成交量P倍</td>
+<td><code>'table': '${A}_K'</code></td>
+</tr>
+<tr>
+<td><code>v7</code></td>
+<td>日周月成交量創近D日新高(低)</td>
+<td><code>'table': '${A}_K'</code></td>
+</tr>
+<tr>
+<td><code>v8</code></td>
+<td>日(周)成交量漸增(減)連續3次</td>
+<td><code>'table': '${A}_K'</code></td>
+</tr>
+<tr>
+<td><code>m5</code></td>
+<td>今日收盤價突(跌)破D日均線</td>
+<td><code>'table': '${T}_K'</code></td>
+</tr>
+<tr>
+<td><code>m7</code></td>
+<td>今日收盤價(乖離率)&lt;&gt;D日均線P%</td>
+<td><code>'table': '${T}_K'</code></td>
+</tr>
+<tr>
+<td><code>r4</code></td>
+<td>近D日，官股買(賣)超張數前N名</td>
+<td><code>'direction': '${A}超'</code></td>
+</tr>
+</tbody>
+</table>
+<p>這 8 個積木的該參數不會出現在 <code>con()</code> 輸出，condition class 會用自己的預設值，
+所以<strong>「周」「月」的變體目前選不到</strong>（例如 <code>o29</code> 只會跑日 K）。
+<code>python build_spec.py</code> 會把這 8 個逐筆列出。</p>
+<hr />
+<h2 id="10-v24-的大盤總成交金額是全市場個股加總">10. v24 的「大盤總成交金額」是全市場個股加總</h2>
+<p><code>今日(周月)成交金額佔今日(周月)大盤總成交金額&gt;P%</code>（<code>v24</code>）的分母，
+是<strong>同一張個股矩陣橫向加總</strong>得到的全市場成交金額，不是某個現成欄位——
+MSMP 裡沒有大盤總成交金額這個欄位（<code>api.MSMP.TSE</code> 只有 OHLC 與技術指標）。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">market_value</span> <span class="o">=</span> <span class="n">stock_value</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>          <span class="c1"># 全市場當日成交額</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">ratio</span> <span class="o">=</span> <span class="n">stock_value</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">market_value</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+</span></code></pre></div>
+<p>所以分母包含 TSE + OTC + 興櫃 + ETF（也就是 <code>日_K</code> 覆蓋的全部標的），
+各檔占比加總為 100%。實測 2026-08-19：</p>
+<table>
+<thead>
+<tr>
+<th>threshold</th>
+<th>檔數</th>
+<th>占比範圍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&gt;1%</code></td>
+<td>25</td>
+<td>1.01% ~ 5.13%</td>
+</tr>
+<tr>
+<td><code>&gt;3%</code></td>
+<td>2</td>
+<td>3.11% ~ 5.13%</td>
+</tr>
+<tr>
+<td><code>&gt;5%</code></td>
+<td>1（2330）</td>
+<td>5.13%</td>
+</tr>
+<tr>
+<td><code>&gt;10%</code></td>
+<td>0</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><code>&gt;1%</code> 那 25 檔占比合計 43.9%。換 <code>stock_table</code> 成 <code>週_K</code> / <code>月_K</code> 也適用，
+分母會自動變成該頻率的全市場加總。</p>
+<hr />
+<h2 id="11-美股沒有股池">11. 美股沒有股池</h2>
+<p><code>api.USMSMP</code> 沒有 <code>list</code>，<code>screener_us()</code> 也沒有 <code>pool</code> 參數。見 <a href="../block-pool/">股池</a>。</p>
+<hr />
+<h2 id="12-積木名稱可能與實際邏輯不符--以-o6-為例">12. 積木名稱可能與實際邏輯不符 —— 以 <code>o6</code> 為例</h2>
+<p><code>漲跌幅介於P1%到P2%之間</code>（<code>o6</code>）的名稱沒提任何期間，參數也只有 <code>percent1</code> / <code>percent2</code>，
+讀起來像「當日漲跌幅」。實際產生的程式碼是：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">close</span> <span class="o">=</span> <span class="n">msmp</span><span class="o">.</span><span class="n">日_K</span><span class="o">.</span><span class="n">adj_Close</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">close_shifted</span> <span class="o">=</span> <span class="n">close</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>                       <span class="c1"># ← 20 天，硬寫死</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="n">change_pct</span> <span class="o">=</span> <span class="p">((</span><span class="n">close</span> <span class="o">/</span> <span class="n">close_shifted</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="n">lower_bound</span> <span class="o">=</span> <span class="n">change_pct</span> <span class="o">&gt;</span> <span class="n">percent2</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="n">upper_bound</span> <span class="o">=</span> <span class="n">change_pct</span> <span class="o">&lt;</span> <span class="n">percent1</span>
+</span></code></pre></div>
+<p>也就是<strong>近 20 日</strong>漲跌幅，而且 <code>20</code> <strong>沒有做成參數</strong>、改不了。</p>
+<p>實測差距（資料日 2026-08-20，<code>pool=['all','~etf']</code>）：</p>
+<table>
+<thead>
+<tr>
+<th>問法</th>
+<th>檔數</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>con_tw('漲跌幅介於P1%到P2%之間', percent1=9, percent2=5)</code></td>
+<td><strong>183</strong></td>
+</tr>
+<tr>
+<td>直接算 <code>日_K.漲跌幅</code> 當日落在 5~9%</td>
+<td><strong>49</strong></td>
+</tr>
+</tbody>
+</table>
+<p>另外兩點：</p>
+<ul>
+<li><strong><code>percent1</code> 是上界、<code>percent2</code> 是下界</strong>（要求 <code>percent1 &gt; percent2</code>）。
+  按名稱直覺寫 <code>percent1=5, percent2=9</code> 會拋
+  <code>ValueError: percent1 (5) must be greater than percent2 (9)</code>。</li>
+<li>台股<strong>沒有</strong>「當日漲幅 &gt; P%」的純積木。最接近的 <code>o27</code> 是
+  <code>當日為長紅K，且漲幅&gt;P%</code>，多綁了一個長紅K條件。
+  要純粹的當日漲跌幅請直接用 <code>api.MSMP.日_K.漲跌幅</code>。</li>
+</ul>
+<h3 id="通則">通則</h3>
+<p><strong>積木名稱不是規格。</strong> 遇到「檔數與預期差很多」時，第一件事是印出
+<code>screener_tw(...)['code']</code> 看它實際算什麼——那份程式碼是唯一可信的語意來源，
+<code>get_table_*()</code> 只告訴你參數的合法值，不告訴你邏輯。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="頁腳" >
+        
+          
+          <a href="../block-codegen/" class="md-footer__link md-footer__link--prev" aria-label="上一頁: Block 產生的程式碼 code">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一頁
+              </span>
+              <div class="md-ellipsis">
+                Block 產生的程式碼 code
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../block-reference-tw/" class="md-footer__link md-footer__link--next" aria-label="下一頁: 台股積木完整參考">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一頁
+              </span>
+              <div class="md-ellipsis">
+                台股積木完整參考
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      SnowyOwl · 台美股資料、積木選股與回測
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "navigation.indexes", "navigation.tracking", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tooltips", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
