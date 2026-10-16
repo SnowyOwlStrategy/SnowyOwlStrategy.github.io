@@ -1,0 +1,73 @@
+# SnowyOwl - 台美股資料、積木選股與回測整合套件
+
+> SnowyOwl 文件索引，以 2026-08-20 實際登入執行結果核對。涵蓋登入、積木選股（台股 405 個、美股 260 個，全部實測 screener 可正確執行）、表格式資料查詢、矩陣式歷史資料與回測綁定，供 LLM coding agent 快速查找 API usage documentation。
+> SnowyOwl **不含下單功能**，`api` 上不存在 `Order`。USData 與 backtest_plus 的細節指向各自既有的文件集，不重複撰寫。
+> 如需完整單一文件，請使用 llms-full.txt。
+>
+> **要寫回測的話，先看 [docs/recipes.md](docs/recipes.md)** ——
+> 七份實跑驗證過、照抄就能執行的完整腳本，涵蓋 sample.md 的五個案例，
+> 省掉從六篇文件拼骨架的時間。
+
+## 入門與結構
+
+- [開始使用 SnowyOwl](docs/getting-started.md): `import snowyowl as so; api = so.login()`；**先分流**（查事實走 MSMP／組條件走積木／驗規則走回測）；四個實測範例；五個命名空間與文件導覽；三個最常踩的坑（單位、日頻 1000 筆上限、沒有的資料）
+- [怎麼問，才問得到你要的東西](docs/how-to-ask.md): 三組案例（單檔技術指標／選股輪動／期貨）的「小白版 a → 進階版 b」對照；萬用句「先照我說的做，跑完告訴我這個規格有什麼缺陷」；三句原則（做多因子、可交易性過濾、目標權重輪動）；每次回測都該問的兩句
+- [怎麼制定一個 plan](docs/how-to-plan.md): 六階段研究流程——定義問題→資料盤點→資料清洗→特徵工程→訊號驗證→回測；倖存者偏差、單位換算、極端值；percentile 合成與 union→ffill→reindex 對齊；IC 與分組單調性；「每一階做完先給我結果再繼續」
+- [案例集：小白怎麼問回測](docs/case-study-backtest.md): 三個回測案例的完整程式碼——月營收選股（unit 配錯差 1000 倍）、台指期 TXF（四個專屬規格）、組合回測+參數尋優（Strategy 欄與過度配適）
+- [配方集：照抄就能跑的完整腳本](docs/recipes.md): **要寫回測先看這頁**，把散在六篇裡的東西拼好了。`daily_bars()` 標準函式、成本速查表；七個實跑驗證過的完整腳本——單檔技術指標（固定金額）、積木訊號進出場、多檔組合、期貨雙均線多空反手（結算日出場、多空分開看損益）、目標權重輪動（**零股 vs 整股**：小資金只能零股）、訊號驗證（IC 與分組單調性）、參數尋優（含前後兩段分別驗）；三個只有實跑才知道的坑——`index_str_to_date()` 轉月季頻字串 index（含下市遮蔽）、`corrwith` 要先 `pd.DataFrame()` 脫殼否則炸 ProboDataFrame、單策略時報表欄名是 `Strategy`；跑完一定要回答的三件事（毛損益與成本佔比、實際回測期間、曝險率）
+- [so.login 登入](docs/login.md): `so.login(person_id, person_pwd, type=account/google/apple)`、帳密與社群登入、快取、登入訊息逐行說明、`api.logout()`
+- [api 物件結構](docs/api-structure.md): 7 個命名空間完整屬性表，以及 SnowyOwl 的能力邊界
+- [錯誤訊息速查](docs/errors.md): 每則訊息都是實際觸發的原文；**`con()` 驗規格、`screener()` 驗 class** 是兩層；積木/Data/MSMP/回測四類錯誤對照；最後一節「**不報錯但結果是錯的**」13 項——選股永遠 0 檔、改 capital 沒反應、成本收兩次稅、名目金額差 1000 倍、月營收差 100 倍、`head(5)` 不是排行、美股漲幅排行全是雜訊…
+
+## 積木 Block（選股）
+
+- [積木 Block 總覽](docs/block.md): `api.Block` 四步流程（get_table → con → screener → 取用），台股/美股方法對照
+- [list_conditions 積木清單查詢](docs/block-list-conditions.md): `from snowyowl.blocks import list_conditions` 回 `ConditionMetadata`；**已不在 `api.Block` 上**；category 只吃英文模組名
+- [Block.get_table 積木參數與合法值](docs/block-get-table.md): `get_table_tw()` 回 `{積木名稱: {'id': 編碼, 參數: [合法值]}}`；台美股同名積木參數不同；規格固定值不在表內
+- [Block.con 組積木](docs/block-con.md): `con_tw(name, **params)` / `con_tw(id='a1', ...)` / `con_tw({'id':'a1', ...})` 三種寫法輸出相同；參數驗證、中文標籤、negate 取負、規格固定值（自動帶入）、冪等
+- [Block.screener 執行選股](docs/block-screener.md): `screener_tw(block_list, pool, date)` 回 `code`/`dataframe`/`date`/`sig`；多積木 AND；零命中是 `(0, 0)`；用 `sig` 欄數分辨「條件嚴格」與「積木壞了」
+- [Block 股池 pool](docs/block-pool.md): `pool=['all', '~etf']` 的 `~` 排除語法、8 個股池名稱與檔數
+- [通用積木（自訂比較）](docs/block-auto.md): **原生積木表達不了時先看這頁**——`a1/a2/a3` 三顆把 data／rolling／agg／shift／百分比／常數／連續／排行全部參數化，`left`/`right` 直接填 `'表.欄'`；29 條實測（KD/MACD/RSI/布林/ADX/K棒型態/財報/營收/排行）全部組得出來；四個翻譯陷阱（排除要寫成 >、為 0 是 ==、rank 的 pool 要和 screener 一致、月季頻自動轉日頻）
+- [Block 產生的程式碼 code](docs/block-codegen.md): `code` 自給自足（開頭 `msmp = api.MSMP`、helper 直接寫成函式定義），作用域只要有 `api`；`exec` 後與 screener 結果一致（665/665 可編譯）
+- [Block 已知落差與注意事項](docs/block-caveats.md): 全量驗證基準（665 個積木 screener + codegen 全通過）+ 實測落差——預設值正規化（已修）、`list_conditions` 比 `get_table` 多（停用 vs 漏登）、category 兩套詞彙、共用 id 的積木哪些是錯誤哪些是別名、6 個標啟用卻被靜默丟棄、8 個複合值固定參數未收錄、v24 的大盤總額定義、**積木名稱可能與實際邏輯不符**（`o6` 名為漲跌幅實為近 20 日、`percent1` 是上界）
+- [台股積木完整參考](docs/block-reference-tw.md): 405 個台股積木，依中文次類別分 37 組，含 id、邏輯模板、詳細說明、參數合法值與預設值
+- [美股積木完整參考](docs/block-reference-us.md): 260 個美股積木，含 id、邏輯模板、詳細說明、參數合法值與預設值
+
+## Data 表格查詢
+
+- [Data 模組總覽](docs/data.md): `api.Data` / `api.USData` 三個方法，以及與 `api.MSMP` 的分工
+- [Data.get_table 列出可用表格](docs/data-get-table.md): 台股**共 80 張**表完整清單，含先前漏收的 14 張（分點籌碼 5 張、大盤法人 2 張、盤中逐筆明細 6 張、產業個股清單）；參數標記怎麼讀；`產業個股清單` 傳錯 sector 會拋誤導的 `KeyError: 'symbol'`
+- [Data.get 取得表格資料](docs/data-get.md): `get(table, *args)` 五個範例（清單、還原日K、季財報、分K）與兩種錯誤訊息
+- [資料頻率與歷史長度](docs/data-history.md): **日頻硬上限 1000 筆（約 4.1 年）**，週/月/季/年頻回溯 11~16 年；「近五年以上」要降頻；`Data` 的週/月 K 比 `MSMP` 更長；`_千` ÷1e5、`_百萬` ÷1e4 才是億元；**期貨在 `MSMP._fut_TXF`（9.3 年 1 分 K）**；SnowyOwl 沒有選擇權/匯率/央行利率/原物料；**美股規則不同**（週/月K 反而比台股短，長歷史只在財報與股利）
+- [USData.get_snapshots 美股即時快照](docs/data-get-snapshots.md): **僅美股** `api.USData.get_snapshots(symbols)` 回 `dict[str, Symbol]`，Symbol 9 欄（含現成的 netChange/percentChange）；台股 `api.Data` 無此方法
+- [盤中、分K與逐筆明細](docs/intraday.md): 23 張盤中表全部盤中實測；**分兩類**——盤中即時類只有當天（適合最新日篩選、不能回測）、歷史分K類約 4 年 968 個交易日（可回測，`get_stock_ohlc` 底層就是它）；**最後一根 K 棒還在累加**（25 秒實證）、K 棒用結束時間標記；`日成交金額(千)`/`日成交量` 是當日累計不是這根的量；**內外盤欄名是簡體 `内盤`**；五檔欄名兩套（`買_1量` vs `買1量`）；分價量的 `類型` 分 current/pre2Sum/pre4Sum/pre9Sum/pre19Sum；`minutes` 只吃 1/3/5/15/30/60
+- [USData 美股表格查詢](docs/usdata.md): 25 張表全部實跑（形狀與欄位為真實輸出），依參數型態分四組；成交量單位是股不是張；日K 已內含 5~250 日均價/均量；`get_snapshots` 回 `Symbol`（9 欄、直接給 percentChange）；台股 `api.Data` 沒有 get_snapshots
+
+## MSMP 歷史資料
+
+- [MSMP 矩陣資料總覽](docs/msmp.md): 日期 × 股票代號矩陣、兩種取法、`INDEX`/`INFO`/大盤指數、只到前一交易日
+- [MSMP 資料表與欄位完整清單](docs/msmp-tables.md): 台股 25 張表、美股 10 張表的所有欄位名稱；外加 **`api.MSMP._fut_TXF`**——底線開頭、唯一的期貨資料，257 萬列 1 分 K、2017 起、`settlement` 標記合約月、`DateTime` 零重複（單一近月連續序列）
+- [MSMP.list 股池](docs/msmp-list.md): 8 個股池與檔數；`all` 含一個重複代號的陷阱與去重寫法
+- [USMSMP 美股矩陣資料](docs/usmsmp.md): 10 張表的欄位/形狀/期間實測；沒有 `list`/`INFO`/`INDEX`/大盤指數/`_fut_TXF`；**沒有 `漲跌幅` 也沒有 `adj_*`**；**台股「降頻拿長歷史」在美股不成立**（週K 4.5 年、月K 4 年），長歷史只在財報（27.8 年，回到 1998-Q4）與股利（34 年，回到 1993）；財報覆蓋 5801 檔 vs 價格 13174 檔；資料日比台股晚一天
+
+
+## 回測
+
+- [回測 api.bt 總覽](docs/backtest.md): `api.bt` 是 `SecureMain`、`CallableModule` 技巧；**積木 sig 餵進 Core 的完整實跑路徑**（日 K 也取 MSMP 才對齊）、單檔與組合回測配方
+- [回測：事件模型與策略撰寫](docs/backtest-strategy.md): 標準骨架；**一根 bar 內的執行順序**（`on_position` 早於 `on_bar`）；`row` 的 key 一律英文；`Position` / `Order` 欄位；`stats` 的 `continue_wins`；`on_init` 下單會 RuntimeError；完全平倉不觸發 `on_position`；`self.char`/`self.char1` 會畫在 `show_monitor` 與 dashboard 的 K 線；`self.row` 是保留屬性；有內建停損時自己的平倉單要綁 `match_uid`，否則會反向開新倉
+- [回測：委託、成交價與風控](docs/backtest-order.md): `Condition.Global` 七個參數；同 `(rule, match_uid)` 是更新不是新單；五種 `PriceType`；**12 個成交價案例實測表**（`stop_rod` 跳空以開盤價成交）；四個停損停利每根都要重掛，`STL`/`PFT`/`DS`/`TGT` 是保留 rule 名；**委託價依 `tick_map` 四捨五入，期貨要設 `[(inf, 1)]`**；`compel_now` 價格不能給 0
+- [回測：資料與週期](docs/backtest-data.md): 三種餵法；`feed_data` **不會**觸發 `on_bar2`；`args` 只是角色對應、`row` 的 key 是英文；`freq` 兩條路徑等價；時序守門與警告訊息；要跟積木訊號對齊不要用 `get_stock_ohlc`
+- [回測：商品規格與績效報告](docs/backtest-report.md): `fee`/`margin` 依大小自動切換模式；**`tax_long`/`tax_short` 其實是進場稅/出場稅**（台股 `tax_long=0, tax_short=0.003`）；**`capital` 只在百分比下單時生效**；部位被夾成 0 時的誤導錯誤訊息；四張報表 + 28 項 KPI 欄位定義（**`MddRatio` 回撤比率、`MddAmount` 回撤金額**，`daily` 有每日回撤金額 `dd`）；`rp.dashboard()` 四個分頁與寫檔規則；`rp.save()` 存 xlsx 六個 sheet
+- [回測：技術指標與參數尋優](docs/backtest-tools.md): `self.Ind` 25 個增量指標（每根都要呼叫、一根只能呼叫一次）；`bt.Tools.optimize` 以 `CalmarRatio` 評分、回傳最佳參數 dict、全部結果存 `optimize.xlsx`，不看交易次數
+
+## AI 工具整合
+
+- [MCP Server](mcp/README.md): 五個 tool（`list_blocks` / `describe_block` / `screen` / `get_screen_code` / `backtest`）覆蓋 659 個積木與回測，stdio 傳輸、零額外相依（不需 `pip install mcp`）。安裝說明見 `mcp/install/`，驗證用 `python mcp/test_protocol.py`（端到端檢查，含真登入、真選股、單檔與組合回測）
+- Agent Skill：`.claude/skills/snowyowl/SKILL.md`。教 agent 怎麼寫 SnowyOwl 的 Python；MCP 讓 agent 直接抓資料。兩者並存，問「幫我選股」走 MCP，問「幫我寫選股腳本」走 Skill
+
+## 這份文件集是自足的
+
+`api.Data` / `api.USData` 的表格規格、
+回測的策略撰寫與報表欄位，都寫在上面各頁裡，不需要另外的文件集。
+
+SnowyOwl **不含下單功能**，`api` 上不存在 `Order`，所以沒有下單與帳務的章節。

@@ -1,0 +1,782 @@
+/* ==========================================================================
+   snowowl 文件站 — 設計系統
+
+   放在 overrides/assets/ 而不是 docs/，因為它屬於主題，
+   不該跟著 build_site.py 每次清空重建的 staging docs 走。
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+/* --------------------------------------------------------------- tokens */
+:root {
+  /* Latin 走 Inter，中文自然落到 Noto Sans TC —— 混排時字重與字高才一致 */
+  --sw-sans: "Inter", "Noto Sans TC", -apple-system, BlinkMacSystemFont,
+             "Segoe UI", "Microsoft JhengHei", sans-serif;
+  --sw-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+
+  --sw-radius: 10px;
+  --sw-radius-lg: 16px;
+  --sw-maxw: 46rem;
+
+  /* 冷色調 —— snowowl 的名字就是冷的，數字表格也更像儀表板 */
+  --sw-ink:       #0d1421;
+  --sw-ink-2:     #46536b;
+  /* 這一階同時被 stat 說明、頁尾、sw-note 當正文用，所以要壓到
+     4.5:1 以上（#7b879c 只有 3.4:1，小字讀起來會虛）。實測 5.4:1。 */
+  --sw-ink-3:     #5f6b80;
+  --sw-line:      #e3e8f0;
+  --sw-line-soft: #eef1f6;
+  --sw-surface:   #ffffff;
+  --sw-raised:    #f7f9fc;
+  --sw-sunken:    #f1f4f9;
+  --sw-accent:    #2563eb;
+  --sw-accent-2:  #1d4ed8;
+  --sw-accent-bg: #eff4ff;
+  /* 主按鈕的字色。暗色模式的 accent 是淺藍，白字上去只有 2.64:1，
+     所以那邊要反過來用深色字（實測 8.9:1）。 */
+  --sw-on-accent: #ffffff;
+  --sw-good:      #047857;
+  --sw-warn:      #b45309;
+  --sw-crit:      #b91c1c;
+  --sw-shadow:    0 1px 2px rgba(13, 20, 33, .04),
+                  0 8px 24px -12px rgba(13, 20, 33, .12);
+}
+
+[data-md-color-scheme="slate"] {
+  --sw-ink:       #e8eef8;
+  --sw-ink-2:     #a3b0c6;
+  --sw-ink-3:     #8593a9;   /* 暗色側同理，對 surface 實測 6.0:1 */
+  --sw-line:      #232c3d;
+  --sw-line-soft: #1a2130;
+  --sw-surface:   #0e131c;
+  --sw-raised:    #141a26;
+  --sw-sunken:    #10161f;
+  --sw-accent:    #6f9dff;
+  --sw-accent-2:  #93b6ff;
+  --sw-accent-bg: #16203a;
+  --sw-on-accent: #0b1018;
+  --sw-good:      #34d399;
+  --sw-warn:      #fbbf24;
+  --sw-crit:      #f87171;
+  --sw-shadow:    0 1px 2px rgba(0, 0, 0, .3),
+                  0 8px 24px -12px rgba(0, 0, 0, .6);
+}
+
+/* 把 Material 的變數接到我們的 token，一處改動全站生效 */
+:root,
+[data-md-color-scheme="slate"] {
+  --md-text-font-family: var(--sw-sans);
+  --md-code-font-family: var(--sw-mono);
+  --md-default-fg-color:          var(--sw-ink);
+  --md-default-fg-color--light:   var(--sw-ink-2);
+  --md-default-fg-color--lighter: var(--sw-ink-3);
+  --md-default-bg-color:          var(--sw-surface);
+  --md-primary-fg-color:          var(--sw-accent);
+  --md-accent-fg-color:           var(--sw-accent-2);
+  --md-typeset-a-color:           var(--sw-accent);
+  --md-code-bg-color:             var(--sw-sunken);
+  --md-code-fg-color:             var(--sw-ink);
+}
+
+/* --------------------------------------------------------------- 基礎排版 */
+body,
+input,
+.md-typeset {
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11", "tnum";
+  -webkit-font-smoothing: antialiased;
+}
+
+.md-typeset {
+  font-size: .82rem;
+  line-height: 1.8;              /* 中文需要比英文更鬆的行距才不擠 */
+  letter-spacing: .006em;
+  color: var(--sw-ink);
+}
+
+.md-typeset p { margin: .9em 0; }
+.md-typeset strong { font-weight: 600; color: var(--sw-ink); }
+
+.md-typeset h1 {
+  font-size: 1.95rem;
+  font-weight: 700;
+  line-height: 1.28;
+  letter-spacing: -.021em;
+  color: var(--sw-ink);
+  margin: 0 0 .5em;
+}
+
+.md-typeset h2 {
+  font-size: 1.28rem;
+  font-weight: 650;
+  letter-spacing: -.014em;
+  line-height: 1.4;
+  margin: 2.6em 0 .8em;
+  padding-top: 1.5em;
+  border-top: 1px solid var(--sw-line-soft);
+}
+
+.md-typeset h2:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+  margin-top: 1.8em;
+}
+
+.md-typeset h3 {
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: -.008em;
+  margin: 1.9em 0 .6em;
+}
+
+.md-typeset h4 {
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--sw-ink-2);
+  margin: 1.6em 0 .5em;
+}
+
+/* 每篇的「所屬章節」引言當導言處理，層次才分明 */
+.md-typeset h1 + blockquote {
+  margin: 0 0 2.2em;
+  padding: .9rem 1.1rem;
+  border: 0;
+  border-left: 2px solid var(--sw-accent);
+  border-radius: 0 var(--sw-radius) var(--sw-radius) 0;
+  background: var(--sw-accent-bg);
+  font-size: .78rem;
+  color: var(--sw-ink-2);
+}
+
+.md-typeset h1 + blockquote p { margin: .25em 0; }
+
+.md-typeset blockquote {
+  border-left: 2px solid var(--sw-line);
+  color: var(--sw-ink-2);
+  margin: 1.4em 0;
+  padding-left: 1.1rem;
+}
+
+/* --------------------------------------------------------------- 連結 */
+.md-typeset a {
+  color: var(--sw-accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color .14s, color .14s;
+}
+
+.md-typeset a:hover {
+  color: var(--sw-accent-2);
+  border-bottom-color: currentColor;
+}
+
+/* --------------------------------------------------------------- 表格 */
+/* 這站的文件是表格密集型（積木參考、27 項 KPI、12 個成交價案例），
+   值得比 Material 預設更多雕琢 */
+.md-typeset__table { min-width: 100%; }
+
+.md-typeset table:not([class]) {
+  display: table;
+  width: 100%;
+  font-size: .74rem;
+  line-height: 1.65;
+  border: 1px solid var(--sw-line);
+  border-radius: var(--sw-radius);
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--sw-raised);
+  color: var(--sw-ink-2);
+  font-weight: 600;
+  font-size: .68rem;
+  letter-spacing: .04em;
+  padding: .62em .9em;
+  border-bottom: 1px solid var(--sw-line);
+  white-space: nowrap;
+}
+
+.md-typeset table:not([class]) td {
+  padding: .62em .9em;
+  border-top: 1px solid var(--sw-line-soft);
+  vertical-align: top;
+}
+
+.md-typeset table:not([class]) tbody tr:first-child td { border-top: 0; }
+.md-typeset table:not([class]) tbody tr:hover { background: var(--sw-raised); }
+
+/* 表格裡的 code 不再套厚背景，密集表格才不會很吵 */
+.md-typeset table:not([class]) code {
+  background: transparent;
+  padding: 0 .1em;
+  color: var(--sw-accent-2);
+  font-size: .92em;
+  /* Material 預設 break-word 會把 cancel_triggered 斷成 cancel_trigge/red，
+     識別碼被切開就沒法複製也難讀。表格本身可以橫向滑，寧可讓它撐寬。 */
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+/* 參數表的第一欄幾乎都是識別碼，給它固定不折的空間 */
+.md-typeset table:not([class]) td:first-child > code:only-child {
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- 程式碼 */
+.md-typeset code {
+  font-size: .82em;
+  padding: .15em .38em;
+  border-radius: 4px;
+  background: var(--sw-sunken);
+  box-shadow: none;
+}
+
+.md-typeset pre > code {
+  font-size: .72rem;
+  line-height: 1.7;
+  padding: 1rem 1.1rem;
+}
+
+.md-typeset .highlight {
+  border: 1px solid var(--sw-line);
+  border-radius: var(--sw-radius);
+  overflow: hidden;
+  margin: 1.3em 0;
+}
+
+.md-typeset .highlight > pre { margin: 0; }
+.md-typeset .highlight > pre > code { background: var(--sw-sunken); }
+
+.md-typeset .highlight .filename {
+  background: var(--sw-raised);
+  border-bottom: 1px solid var(--sw-line);
+  font-size: .68rem;
+  font-weight: 500;
+  color: var(--sw-ink-3);
+}
+
+.md-clipboard { color: var(--sw-ink-3); }
+.md-clipboard:hover { color: var(--sw-accent); }
+
+/* 行號淡一點，別跟程式碼搶戲 */
+.md-typeset .highlight [data-linenos]::before {
+  color: var(--sw-ink-3);
+  opacity: .55;
+}
+
+/* --------------------------------------------------------------- admonition */
+.md-typeset .admonition,
+.md-typeset details {
+  font-size: .76rem;
+  border: 1px solid var(--sw-line);
+  border-left: 2px solid var(--sw-accent);
+  border-radius: 0 var(--sw-radius) var(--sw-radius) 0;
+  box-shadow: none;
+  background: var(--sw-raised);
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  background: transparent;
+  font-weight: 600;
+  font-size: .76rem;
+}
+
+.md-typeset .admonition-title::before,
+.md-typeset summary::before { background-color: var(--sw-accent); }
+
+.md-typeset .warning,
+.md-typeset .caution { border-left-color: var(--sw-warn); }
+.md-typeset .warning > .admonition-title::before { background-color: var(--sw-warn); }
+
+.md-typeset .danger,
+.md-typeset .error { border-left-color: var(--sw-crit); }
+.md-typeset .danger > .admonition-title::before { background-color: var(--sw-crit); }
+
+/* --------------------------------------------------------------- 版面骨架 */
+.md-header {
+  background: var(--sw-surface);
+  color: var(--sw-ink);
+  border-bottom: 1px solid var(--sw-line);
+  box-shadow: none;
+  backdrop-filter: saturate(180%) blur(12px);
+}
+
+.md-header__title {
+  font-weight: 600;
+  font-size: .86rem;
+  letter-spacing: -.01em;
+}
+
+.md-header__button { color: var(--sw-ink-2); }
+.md-header__button:hover { color: var(--sw-accent); opacity: 1; }
+
+.md-tabs {
+  background: var(--sw-surface);
+  color: var(--sw-ink-2);
+  border-bottom: 1px solid var(--sw-line);
+}
+
+.md-tabs__link {
+  font-size: .74rem;
+  font-weight: 500;
+  opacity: 1;
+  color: var(--sw-ink-2);
+}
+
+.md-tabs__link:hover { color: var(--sw-accent); }
+
+.md-tabs__item--active .md-tabs__link {
+  color: var(--sw-ink);
+  font-weight: 600;
+  box-shadow: inset 0 -2px 0 var(--sw-accent);
+}
+
+.md-main__inner { margin-top: 1.6rem; }
+.md-content__inner { padding-top: .4rem; }
+.md-content { max-width: none; }
+.md-content__inner::before { height: 0; }
+
+/* 內文限寬好讀（46rem 大約是中文一行 40 字，超過就開始難追行），
+   但首頁元件與寬表格不受限 */
+.md-content__inner > :not(.sw-full) { max-width: var(--sw-maxw); }
+
+/* 首頁：左右側欄都被 front matter 隱藏了，所以整個容器居中放寬，
+   並解除上面那條閱讀寬度限制——:has 讓「是不是首頁」用內容判斷，
+   不必為首頁另做一份模板。 */
+.md-content__inner:has(> .sw-hero) {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+}
+
+.md-content__inner:has(> .sw-hero) > * { max-width: none; }
+
+/* 側欄 */
+.md-nav { font-size: .72rem; }
+
+.md-nav__title {
+  font-size: .7rem;
+  font-weight: 600;
+  color: var(--sw-ink-3);
+  letter-spacing: .04em;
+}
+
+.md-nav__link {
+  color: var(--sw-ink-2);
+  border-radius: 6px;
+  padding: .18rem .45rem;
+  transition: background .12s, color .12s;
+}
+
+.md-nav__link:hover { color: var(--sw-accent); background: var(--sw-raised); }
+
+.md-nav__item .md-nav__link--active {
+  color: var(--sw-accent);
+  font-weight: 600;
+  background: var(--sw-accent-bg);
+}
+
+.md-nav--secondary .md-nav__link--active { background: transparent; }
+.md-sidebar { font-size: .72rem; }
+.md-sidebar--secondary .md-nav__title { padding-left: .6rem; }
+
+/* 搜尋 */
+.md-search__form {
+  background: var(--sw-raised);
+  border: 1px solid var(--sw-line);
+  border-radius: var(--sw-radius);
+  box-shadow: none;
+}
+
+.md-search__form:hover { background: var(--sw-sunken); }
+.md-search__input { font-size: .76rem; }
+.md-search__input::placeholder { color: var(--sw-ink-3); }
+
+[data-md-toggle="search"]:checked ~ .md-header .md-search__form {
+  background: var(--sw-surface);
+  border-color: var(--sw-accent);
+}
+
+.md-search-result__meta { font-size: .68rem; color: var(--sw-ink-3); }
+
+/* 頁尾 */
+.md-footer {
+  background: var(--sw-raised);
+  color: var(--sw-ink-2);
+  border-top: 1px solid var(--sw-line);
+}
+
+.md-footer-meta { background: transparent; }
+.md-footer__link { opacity: 1; }
+.md-footer__title { font-size: .82rem; color: var(--sw-ink); }
+.md-footer__direction { font-size: .64rem; color: var(--sw-ink-3); }
+.md-copyright { color: var(--sw-ink-3); font-size: .66rem; }
+.md-copyright__highlight { color: var(--sw-ink-2); }
+
+/* ==========================================================================
+   首頁元件
+   ========================================================================== */
+.sw-hero {
+  margin: -.4rem 0 2.8rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--sw-line-soft);
+}
+
+.sw-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  font-size: .64rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--sw-accent);
+  background: var(--sw-accent-bg);
+  padding: .3rem .65rem;
+  border-radius: 999px;
+  margin-bottom: 1.2rem;
+}
+
+.sw-hero__eyebrow::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--sw-accent);
+  flex: none;
+}
+
+.md-typeset .sw-hero h1 {
+  font-size: 2.7rem;
+  line-height: 1.16;
+  letter-spacing: -.032em;
+  font-weight: 700;
+  margin: 0 0 .7rem;
+  /* 不設 ch 上限 —— ch 是以 Latin「0」的字寬為準，中文標題會被腰斬在
+     詞中間（「選/股」）。容器本身已經限寬，交給它就好。 */
+  text-wrap: balance;
+}
+
+.sw-hero__lead {
+  font-size: .92rem;
+  line-height: 1.75;
+  color: var(--sw-ink-2);
+  max-width: 41em;
+  margin: 0 0 2rem;
+  text-wrap: pretty;
+}
+
+.sw-hero__lead strong { color: var(--sw-ink); font-weight: 600; }
+
+.sw-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  align-items: center;
+}
+
+.md-typeset .sw-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  font-size: .76rem;
+  font-weight: 600;
+  letter-spacing: -.004em;
+  padding: .58rem 1.05rem;
+  border-radius: var(--sw-radius);
+  border: 1px solid transparent;
+  text-decoration: none;
+  transition: transform .12s, box-shadow .12s, background .12s, border-color .12s;
+}
+
+.md-typeset .sw-btn--primary {
+  background: var(--sw-accent);
+  color: var(--sw-on-accent);
+  box-shadow: var(--sw-shadow);
+}
+
+.md-typeset .sw-btn--primary:hover {
+  background: var(--sw-accent-2);
+  color: var(--sw-on-accent);
+  transform: translateY(-1px);
+  border-bottom-color: transparent;
+}
+
+.md-typeset .sw-btn--ghost {
+  background: var(--sw-surface);
+  color: var(--sw-ink);
+  border-color: var(--sw-line);
+}
+
+.md-typeset .sw-btn--ghost:hover {
+  border-color: var(--sw-accent);
+  color: var(--sw-accent);
+  background: var(--sw-raised);
+  transform: translateY(-1px);
+}
+
+/* 數字帶 */
+.sw-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--sw-line);
+  border: 1px solid var(--sw-line);
+  border-radius: var(--sw-radius-lg);
+  overflow: hidden;
+  margin: 0 0 3.4rem;
+}
+
+.sw-stat { background: var(--sw-surface); padding: 1.25rem 1.2rem; }
+
+.sw-stat__n {
+  font-family: var(--sw-mono);
+  font-size: 1.55rem;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -.03em;
+  color: var(--sw-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.sw-stat__n small {
+  font-size: .62em;
+  color: var(--sw-ink-3);
+  margin-left: .15em;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.sw-stat__k {
+  display: block;
+  margin-top: .35rem;
+  font-size: .68rem;
+  color: var(--sw-ink-3);
+  line-height: 1.5;
+}
+
+/* 卡片格 */
+.sw-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
+  gap: .9rem;
+  margin: 0 0 3.4rem;
+}
+
+.md-typeset a.sw-card,
+.sw-card {
+  display: block;
+  padding: 1.15rem 1.2rem 1.2rem;
+  background: var(--sw-surface);
+  border: 1px solid var(--sw-line);
+  border-radius: var(--sw-radius-lg);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color .14s, box-shadow .14s, transform .14s;
+}
+
+.md-typeset a.sw-card:hover {
+  border-color: var(--sw-accent);
+  box-shadow: var(--sw-shadow);
+  transform: translateY(-2px);
+  color: inherit;
+}
+
+.sw-card__i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  margin-bottom: .8rem;
+  border-radius: 8px;
+  background: var(--sw-accent-bg);
+  color: var(--sw-accent);
+}
+
+.sw-card__i svg { width: 1.05rem; height: 1.05rem; }
+
+.md-typeset .sw-card h3 {
+  font-size: .84rem;
+  font-weight: 650;
+  margin: 0 0 .35rem;
+  letter-spacing: -.008em;
+  color: var(--sw-ink);
+}
+
+.sw-card p {
+  font-size: .73rem;
+  line-height: 1.7;
+  color: var(--sw-ink-2);
+  margin: 0;
+}
+
+.sw-card__more {
+  display: inline-block;
+  margin-top: .7rem;
+  font-size: .68rem;
+  font-weight: 600;
+  color: var(--sw-accent);
+}
+
+/* 章節索引 */
+.sw-sections { margin: 0 0 2.6rem; }
+.sw-sec { margin-bottom: 2.1rem; }
+
+.sw-sec__h {
+  display: flex;
+  align-items: baseline;
+  gap: .6rem;
+  padding-bottom: .55rem;
+  margin-bottom: .8rem;
+  border-bottom: 1px solid var(--sw-line-soft);
+}
+
+.md-typeset .sw-sec__h h2 {
+  font-size: .92rem;
+  font-weight: 650;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  letter-spacing: -.01em;
+}
+
+.sw-sec__n {
+  font-family: var(--sw-mono);
+  font-size: .66rem;
+  color: var(--sw-ink-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.sw-sec__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(16rem, 100%), 1fr));
+  gap: .1rem .9rem;
+}
+
+.md-typeset .sw-sec__list a {
+  display: block;
+  padding: .34rem .5rem;
+  font-size: .74rem;
+  border-radius: 6px;
+  border-bottom: 0;
+  color: var(--sw-ink-2);
+  line-height: 1.55;
+}
+
+.md-typeset .sw-sec__list a:hover {
+  background: var(--sw-accent-bg);
+  color: var(--sw-accent);
+  border-bottom: 0;
+}
+
+/* 終端機視窗 */
+.sw-term {
+  margin: 0 0 3.4rem;
+  border: 1px solid var(--sw-line);
+  border-radius: var(--sw-radius-lg);
+  overflow: hidden;
+  background: var(--sw-sunken);
+  box-shadow: var(--sw-shadow);
+}
+
+.sw-term__bar {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .6rem .9rem;
+  background: var(--sw-raised);
+  border-bottom: 1px solid var(--sw-line);
+}
+
+.sw-term__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--sw-line);
+  flex: none;
+}
+
+.sw-term__t {
+  margin-left: .5rem;
+  font-size: .66rem;
+  font-family: var(--sw-mono);
+  color: var(--sw-ink-3);
+}
+
+.sw-term__body {
+  padding: 1.05rem 1.15rem;
+  margin: 0;
+  overflow-x: auto;
+}
+
+.sw-term__body pre {
+  margin: 0;
+  font-family: var(--sw-mono);
+  font-size: .715rem;
+  line-height: 1.85;
+  color: var(--sw-ink);
+  white-space: pre;
+}
+
+.sw-term__body .c { color: var(--sw-ink-3); }   /* 註解 */
+.sw-term__body .p { color: var(--sw-accent); }  /* 提示符 */
+.sw-term__body .o { color: var(--sw-good); }    /* 輸出 */
+
+/* 並排區塊 */
+.sw-two {
+  display: grid;
+  gap: 1.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(19rem, 100%), 1fr));
+  margin: 0 0 3.4rem;
+  align-items: start;
+}
+
+.md-typeset .sw-two h3 { margin-top: 0; }
+
+/* 兩件事一起才不會在手機上橫向溢出：
+   1. grid item 預設 min-width:auto，長 URL 會把欄位撐開 —— 歸零。
+   2. minmax() 的下限是硬下限，auto-fit 不會縮到它以下。Material 把
+      root font-size 設成 20px，19rem 其實是 380px，比手機容器還寬，
+      所以下限一律包 min(…, 100%)。 */
+.sw-two > *,
+.sw-grid > * { min-width: 0; }
+
+.sw-note {
+  font-size: .7rem;
+  overflow-wrap: anywhere;   /* 長 URL 折行，不撐破版面 */
+  color: var(--sw-ink-3);
+  line-height: 1.7;
+  padding: .85rem 1rem;
+  border-radius: var(--sw-radius);
+  background: var(--sw-raised);
+  border: 1px solid var(--sw-line-soft);
+}
+
+/* --------------------------------------------------------------- 響應式 */
+@media screen and (max-width: 76.1875em) {
+  .md-nav--primary .md-nav__title {
+    background: var(--sw-raised);
+    color: var(--sw-ink);
+  }
+}
+
+@media screen and (max-width: 59.9375em) {
+  .sw-stats { grid-template-columns: repeat(2, 1fr); }
+  .md-typeset .sw-hero h1 { font-size: 2rem; }
+  .sw-hero__lead { font-size: .84rem; }
+}
+
+@media screen and (max-width: 44.9375em) {
+  .sw-stats { grid-template-columns: 1fr; }
+  .md-typeset .sw-hero h1 { font-size: 1.7rem; }
+  .sw-cta { flex-direction: column; align-items: stretch; }
+  .md-typeset .sw-btn { justify-content: center; }
+}
+
+/* 寬內容自己橫向滑，不要讓整頁橫捲 */
+.md-typeset .md-typeset__scrollwrap { margin: 1.3em 0; }
