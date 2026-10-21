@@ -1,0 +1,2765 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="台美股資料、積木選股與回測整合套件 —— 專為 AI coding agent 設計的文件集">
+      
+      
+      
+        <link rel="canonical" href="https://snowyowlstrategy.github.io/how-to-ask/">
+      
+      
+        <link rel="prev" href="../getting-started/">
+      
+      
+        <link rel="next" href="../how-to-plan/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../sw/logo0902.jpg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>怎麼問，才問得到你要的東西 - SnowyOwl</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../sw/theme.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#怎麼問才問得到你要的東西" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="https://snowy-owl.my-galaxy.com.tw/SnowyOwl/index" title="SnowyOwl" class="md-header__button md-logo" aria-label="SnowyOwl" data-md-component="logo">
+      
+  <img src="../sw/logo0902.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SnowyOwl
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              怎麼問，才問得到你要的東西
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切換成暗色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換成暗色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切換成亮色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換成亮色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首頁
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../agent-playbook/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  入門與結構
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../block/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  積木 Block（選股）
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../data/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Data 表格查詢
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../msmp/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  MSMP 歷史資料
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../backtest/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  回測
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://snowy-owl.my-galaxy.com.tw/SnowyOwl/index" title="SnowyOwl" class="md-nav__button md-logo" aria-label="SnowyOwl" data-md-component="logo">
+      
+  <img src="../sw/logo0902.jpg" alt="logo">
+
+    </a>
+    SnowyOwl
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    入門與結構
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    入門與結構
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    給 AI 的工作守則
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    開始使用 SnowyOwl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    怎麼問，才問得到你要的東西
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    怎麼問，才問得到你要的東西
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#這頁在講什麼" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        這頁在講什麼
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#萬用句先照做再挑錯" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        萬用句：先照做，再挑錯
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#案例-1單檔技術指標回測" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        案例 1：單檔技術指標回測
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="案例 1：單檔技術指標回測">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-小白版" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a. 小白版
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-追問發現輸給-buyhold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b. 追問：發現輸給 buy&amp;hold
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#這個案例該補的話" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        這個案例該補的話
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#案例-2選股輪動策略" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        案例 2：選股輪動策略
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="案例 2：選股輪動策略">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-小白版_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a. 小白版
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-進階版" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b. 進階版
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-跟-b-差在哪" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a 跟 b 差在哪
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#三句原則為什麼有效" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三句原則為什麼有效
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#案例-3期貨策略" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        案例 3：期貨策略
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="案例 3：期貨策略">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-小白版_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a. 小白版
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#期貨一定要講的四件事" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        期貨一定要講的四件事
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#這個案例該補的話_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        這個案例該補的話
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#三個最常見的提問錯誤" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三個最常見的提問錯誤
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#回測後值得追問的兩句" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        回測後值得追問的兩句
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#提問結構速查" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        提問結構速查
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#相關頁" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相關頁
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-to-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    怎麼制定一個 plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-backtest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    案例集：小白怎麼問回測
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配方集：實跑驗證過的寫法範例
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../login/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    so.login 登入
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    api 物件結構
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../errors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    錯誤訊息速查
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    積木 Block（選股）
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    積木 Block（選股）
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    積木 Block 總覽
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-list-conditions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    list_conditions 積木清單查詢
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-get-table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block.get_table 積木參數與合法值
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-con/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block.con 組積木
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-screener/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block.screener 執行選股
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-pool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block 股池 pool
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-auto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    通用積木（自訂比較）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-codegen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block 產生的程式碼 code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-caveats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block 已知落差與注意事項
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-reference-tw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    台股積木完整參考
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-reference-us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    美股積木完整參考
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data 表格查詢
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data 表格查詢
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data 模組總覽
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-get-table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data.get_table 列出可用表格
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-get/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data.get 取得表格資料
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    資料頻率與歷史長度
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-get-snapshots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USData.get_snapshots 美股即時快照
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intraday/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    盤中、分K與逐筆明細
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usdata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USData 美股表格查詢
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSMP 歷史資料
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MSMP 歷史資料
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../msmp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSMP 矩陣資料總覽
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../msmp-tables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSMP 資料表與欄位完整清單
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../msmp-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSMP.list 股池
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usmsmp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USMSMP 美股矩陣資料
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    回測
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測 api.bt 總覽
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測：事件模型與策略撰寫
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest-order/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測：委託、成交價與風控
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測：資料與週期
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測：商品規格與績效報告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測：技術指標與參數尋優
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#這頁在講什麼" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        這頁在講什麼
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#萬用句先照做再挑錯" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        萬用句：先照做，再挑錯
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#案例-1單檔技術指標回測" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        案例 1：單檔技術指標回測
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="案例 1：單檔技術指標回測">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-小白版" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a. 小白版
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-追問發現輸給-buyhold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b. 追問：發現輸給 buy&amp;hold
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#這個案例該補的話" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        這個案例該補的話
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#案例-2選股輪動策略" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        案例 2：選股輪動策略
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="案例 2：選股輪動策略">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-小白版_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a. 小白版
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-進階版" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b. 進階版
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-跟-b-差在哪" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a 跟 b 差在哪
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#三句原則為什麼有效" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三句原則為什麼有效
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#案例-3期貨策略" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        案例 3：期貨策略
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="案例 3：期貨策略">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-小白版_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a. 小白版
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#期貨一定要講的四件事" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        期貨一定要講的四件事
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#這個案例該補的話_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        這個案例該補的話
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#三個最常見的提問錯誤" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三個最常見的提問錯誤
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#回測後值得追問的兩句" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        回測後值得追問的兩句
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#提問結構速查" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        提問結構速查
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#相關頁" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相關頁
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="怎麼問才問得到你要的東西">怎麼問，才問得到你要的東西</h1>
+<blockquote>
+<p>所屬章節：入門
+三組案例，每組都是「小白版 a」→「進階版 b」的對照
+目的不是教 API，是教<strong>怎麼把需求講清楚</strong></p>
+</blockquote>
+<h2 id="這頁在講什麼">這頁在講什麼</h2>
+<p>同一個需求，換個講法，拿到的東西差很多。</p>
+<p>以案例 2 為例——同樣是月營收選股，小白版是單因子排序，
+進階版是有可交易性過濾的多因子輪動。<strong>差別不在我會不會寫，在你有沒有講。</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>小白版 a</th>
+<th>進階版 b</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>講的是</td>
+<td><strong>要什麼結果</strong></td>
+<td><strong>要什麼規格</strong></td>
+</tr>
+<tr>
+<td>長度</td>
+<td>一兩句</td>
+<td>一頁</td>
+</tr>
+<tr>
+<td>我會做的</td>
+<td>照字面執行，然後告訴你缺陷</td>
+<td>照規格實作</td>
+</tr>
+<tr>
+<td>適合</td>
+<td>探索、快速試錯</td>
+<td>你已經知道要什麼</td>
+</tr>
+</tbody>
+</table>
+<p><strong>兩種都對。</strong> a 適合開場，b 適合你看過 a 的結果之後。</p>
+<hr />
+<h2 id="萬用句先照做再挑錯">萬用句：先照做，再挑錯</h2>
+<p>如果只記一句，記這個：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>先照我說的做，跑完告訴我這個規格有什麼缺陷，以及要達到機構等級還缺什麼
+</span></code></pre></div>
+<p>這句話讓你保有規格的控制權，同時讓我把「應該有但你沒提」的東西列出來給你決定。</p>
+<blockquote>
+<p><strong>為什麼我不自己加？</strong> 你沒要求時我不加，是刻意的。
+你說「每檔 10 萬」我就照做，不會自作主張改成目標權重輪動——
+那是把我的判斷凌駕在你的規格上。</p>
+</blockquote>
+<hr />
+<h2 id="案例-1單檔技術指標回測">案例 1：單檔技術指標回測</h2>
+<h3 id="a-小白版">a. 小白版</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>0050 的 adjclose ma5 ma10 多頭排列買入，空頭排列賣出
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>每次買 10 萬
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>產回測報告給我，並給我儀表板
+</span></code></pre></div>
+<p><strong>這句話已經夠好了</strong>，四個要素齊全：標的、訊號、部位、輸出。</p>
+<p>可以再講清楚的地方：「多頭排列」是只比 MA5 &gt; MA10，還是收盤價 &gt; MA5 &gt; MA10？
+兩種讀法都合理，講明了就不用猜。</p>
+<h3 id="b-追問發現輸給-buyhold">b. 追問：發現輸給 buy&amp;hold</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>我發現我輸給 buy&amp;hold，請幫我找到適合的參數
+</span></code></pre></div>
+<p>這句追問很關鍵——但<strong>答案可能是「參數救不了」</strong>。
+均線策略有一段時間空手；標的大漲的期間，空手的每一天都是機會成本，
+這時換參數改變不了「有一部分時間不在場上」這件事。</p>
+<blockquote>
+<p><strong>這類追問要連著問「是不是結構性問題」</strong>，否則我可能真的去掃參數，
+掃完才發現方向錯了。</p>
+</blockquote>
+<h3 id="這個案例該補的話">這個案例該補的話</h3>
+<table>
+<thead>
+<tr>
+<th>加這句</th>
+<th>會得到</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「順便掃一下參數空間，我要看全貌不是單一組合」</td>
+<td>多組參數的對照表，而不是一組數字</td>
+</tr>
+<tr>
+<td>「同時告訴我曝險率」</td>
+<td>直接看出空手成本</td>
+</tr>
+<tr>
+<td>「交易次數太少的組合要標出來」</td>
+<td>避開只交易 2~3 次的過度配適解</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="案例-2選股輪動策略">案例 2：選股輪動策略</h2>
+<h3 id="a-小白版_1">a. 小白版</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>給我一個選股策略，用月營收 yoy 作為選股條件，取最好的 10 檔的上市股票，
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>在每個月的公告日的下個交易日進行換股，每檔 10 萬。
+</span></code></pre></div>
+<p>規格完整、時間軸明確（公告日的下個交易日，無未來函數）。我會照做。</p>
+<p>但規格本身有一個風險：<strong>純 YoY 排序容易選到去年同期營收趨近於零的公司</strong>，
+YoY 動輒數百 %、甚至上萬 %，那不是成長，是除以接近零的數。</p>
+<h3 id="b-進階版">b. 進階版</h3>
+<p>先是三句原則：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>「做多因子，不要單因子」
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>「要有可交易性過濾：流動性、衝擊成本、最低股價」
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>「用目標權重輪動，不要固定金額」
+</span></code></pre></div>
+<p>然後是完整規格：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>做一個台股多因子輪動策略，規格如下：
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>【因子】用 percentile 排名合成分數，等權平均：
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>  - 月營收 YoY（正向）
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>  - 公告累計EPS（正向）
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>  - ROA 稅後資產報酬率（正向）
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>  - 營業利益率（正向）
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>  - 營業利益成長率（正向）
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>  - 無形資產增加 CFI（反向）
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>【可交易性】三層過濾，排名前先套遮罩：
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>  - 20日均成交額排名前 60%
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>  - 成交額 &gt;= capital × max_w / 0.02（衝擊成本地板）
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>  - 股價 &gt;= 10 元
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>  ※ 成交額要用「未還原」Close 算，Volume 是張要 ×1000
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>【換股】月頻公告日 ∪ 季頻公告日，同月取最新那個
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>【部位】每檔固定 1/N：新進名單買 1/N，不在名單全部賣出，續留的不調整
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>【對齊】財報日期先 union 再 ffill 再 reindex，不要直接 reindex
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>【成本】手續費 0.001425 × 0.3 折
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>top_n=20, capital=100萬, max_w=0.20
+</span></code></pre></div>
+<h3 id="a-跟-b-差在哪">a 跟 b 差在哪</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>a</th>
+<th>b</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>選股</td>
+<td>單因子 YoY 排序</td>
+<td>6 因子 percentile 合成</td>
+</tr>
+<tr>
+<td>可交易性</td>
+<td>只限上市</td>
+<td><strong>三層</strong>：流動性排名 + 衝擊成本地板 + 最低股價</td>
+</tr>
+<tr>
+<td>部位</td>
+<td>每檔固定 10 萬（<code>capital</code> 不生效、無複利）</td>
+<td>每檔 1/N（<code>capital</code> 生效、有複利）</td>
+</tr>
+<tr>
+<td>換股日</td>
+<td>只有月頻</td>
+<td>月頻 ∪ 季頻</td>
+</tr>
+<tr>
+<td>對齊</td>
+<td>沒講</td>
+<td>union → ffill → reindex</td>
+</tr>
+</tbody>
+</table>
+<h3 id="三句原則為什麼有效">三句原則為什麼有效</h3>
+<p><strong>①「做多因子，不要單因子」</strong>
+一句話就從排序變成合成分數。單因子排序很容易選到極端值（見案例 2a 的風險）。</p>
+<p><strong>②「要有可交易性過濾：流動性、衝擊成本、最低股價」</strong>
+最關鍵的一句。<strong>衝擊成本地板</strong>（<code>capital × max_w / impact</code>）這個概念
+我不會主動加——除非你說「要考慮衝擊成本」。</p>
+<p><strong>③「用目標權重輪動，不要固定金額」</strong>
+「每檔 10 萬」會走固定口數路徑，<code>capital</code> 不參與計算、沒有複利。
+講「目標權重」我才會用 <code>1/N</code> 百分比下單。見 <a href="../backtest-report/">backtest-report.md</a>。</p>
+<hr />
+<h2 id="案例-3期貨策略">案例 3：期貨策略</h2>
+<h3 id="a-小白版_2">a. 小白版</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>給我一個 txf 的肯特納策略，頻率為一小時，在結算日強制出場。
+</span></code></pre></div>
+<p><strong>這句話的資訊密度很高</strong>，三個要素都是期貨專屬的：</p>
+<table>
+<thead>
+<tr>
+<th>要素</th>
+<th>為什麼重要</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>txf</code></td>
+<td>回測用的 1 分 K 在 <code>api.MSMP._fut_TXF</code>；<code>api.Data</code> 另有台指期日／週／月 K（含夜盤）、近期分 K、三大法人未平倉（2026-10 起，見 <a href="../data-get-table/">data-get-table.md</a> Example 4）</td>
+</tr>
+<tr>
+<td><code>頻率一小時</code></td>
+<td>要走 <code>set_tick_period(freq=60)</code> + <code>feed_tick_df</code>，不是 <code>feed_data</code></td>
+</tr>
+<tr>
+<td><code>結算日強制出場</code></td>
+<td>要 <code>need_settlement=True</code>，判斷式是 <code>row['DateTime'] == row['Settlement']</code></td>
+</tr>
+</tbody>
+</table>
+<p>肯特納通道需要 <code>ema</code> + <code>atr</code>，兩個 <code>self.Ind</code> 都有。</p>
+<h3 id="期貨一定要講的四件事">期貨一定要講的四件事</h3>
+<p>即使沒明講，我也會處理，但<strong>講了更保險</strong>：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>期貨規格要對：
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  tick_map=[(np.inf, 1)]     ← 最小跳動 1 點，不設會套用股票規格
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>  fee=500                     ← 每口固定金額（&gt;= 1 自動切換模式）
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>  unit=200                    ← 合約乘數
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>  tax_long/tax_short=0.00002
+</span></code></pre></div>
+<h3 id="這個案例該補的話_1">這個案例該補的話</h3>
+<table>
+<thead>
+<tr>
+<th>加這句</th>
+<th>會得到</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「多空都做」</td>
+<td>否則我可能只寫多單</td>
+</tr>
+<tr>
+<td>「結算日出場後當天不再進場」</td>
+<td>避免結算日當天來回</td>
+</tr>
+<tr>
+<td>「跳空時停損以開盤價成交，確認一下」</td>
+<td>我會把成交價規則講清楚</td>
+</tr>
+<tr>
+<td>「日盤夜盤都要，還是只做日盤」</td>
+<td><code>period</code> 參數差很多</td>
+</tr>
+<tr>
+<td>「快線、慢線各幾根」</td>
+<td>沒講的話週期是我選的</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="三個最常見的提問錯誤">三個最常見的提問錯誤</h2>
+<table>
+<thead>
+<tr>
+<th>這樣問</th>
+<th>為什麼不好</th>
+<th>改成</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「幫我找會漲的股票」</td>
+<td>沒有可對應的條件，只能猜</td>
+<td>講<strong>可觀測的條件</strong>：營收、法人買超、突破均線</td>
+</tr>
+<tr>
+<td>「幫我回測近十年」</td>
+<td>日頻只有約 2 年（2026-10 實測 <code>MSMP</code> 500 筆；長度會變）</td>
+<td>「近三年」，或明說「可以降到週/月頻」</td>
+</tr>
+<tr>
+<td>「順便幫我下單」</td>
+<td>SnowyOwl <strong>沒有下單功能</strong>，<code>api</code> 上不存在 <code>Order</code></td>
+<td>選股 + 回測到此為止</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="回測後值得追問的兩句">回測後值得追問的兩句</h2>
+<p>這是給<strong>你</strong>追問用的（AI 預設只給報表和儀表板，你問了才會算）：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>① 扣成本前的毛損益是多少？成本佔投入資金幾 %？
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>② 回測期間實際是哪一段？
+</span></code></pre></div>
+<p><strong>為什麼</strong>：</p>
+<ul>
+<li>日頻訊號進出頻繁時，總報酬是負的、毛損益卻可能是正的——虧損幾乎全是成本。
+  看到負數就放棄策略是誤判。</li>
+<li>日頻長度有限（2026-10 實測約 2 年），「過去這幾年」實際上只有資料涵蓋的那一段，
+  不是你以為的十年。</li>
+</ul>
+<hr />
+<h2 id="提問結構速查">提問結構速查</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>【標的】     0050 / TXF / 上市股票
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>【訊號】     MA5 &gt; MA10 / 肯特納突破 / 月營收 YoY 排名
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>【部位】     每檔 10 萬（固定金額）或 目標權重 1/N（有複利）
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>【換股/出場】公告日下個交易日 / 結算日強制平倉
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>【成本】     台股個股 / ETF / 台指期（見 backtest-report.md）
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>【輸出】     報表 + 儀表板 + 逐筆交易
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>【追問】     毛損益、成本佔比、回測期間、這規格有什麼缺陷
+</span></code></pre></div>
+<hr />
+<h2 id="相關頁">相關頁</h2>
+<ul>
+<li><a href="../getting-started/">開始使用 SnowyOwl</a>：查事實 / 組條件 / 驗規則 的三分法</li>
+<li><a href="../case-study-backtest/">案例集：小白怎麼問回測</a>：三個回測案例的提問、陷阱與追問</li>
+<li><a href="../backtest-report/">商品規格與績效報告</a>：<code>unit</code> / <code>capital</code> / <code>tax_*</code> 的陷阱</li>
+<li><a href="../errors/">錯誤訊息速查</a>：「不報錯但結果是錯的」</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="頁腳" >
+        
+          
+          <a href="../getting-started/" class="md-footer__link md-footer__link--prev" aria-label="上一頁: 開始使用 SnowyOwl">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一頁
+              </span>
+              <div class="md-ellipsis">
+                開始使用 SnowyOwl
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../how-to-plan/" class="md-footer__link md-footer__link--next" aria-label="下一頁: 怎麼制定一個 plan">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一頁
+              </span>
+              <div class="md-ellipsis">
+                怎麼制定一個 plan
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      SnowyOwl · 台美股資料、積木選股與回測
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "navigation.indexes", "navigation.tracking", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tooltips", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
