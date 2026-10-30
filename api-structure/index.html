@@ -1353,6 +1353,8 @@
       
         
       
+        
+      
     
     
     
@@ -1439,6 +1441,34 @@
     
   
     Data.get_table 列出可用表格
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-v2-tables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data v2 新增資料表（28 張）
   
 
     
@@ -2265,6 +2295,7 @@
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[&#39;get&#39;, &#39;get_table&#39;]                       # 台股：無 get_snapshots
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>[&#39;get&#39;, &#39;get_snapshots&#39;, &#39;get_table&#39;]      # 美股：有 get_snapshots
 </span></code></pre></div>
+<p>三者的 <code>get_table()</code> 都吃 <code>type</code>：預設 <code>'print'</code> 印出，<code>type='dic'</code> 回傳 <code>{分段: {表名: 參數}}</code>（見 <a href="../data-get-table/">data-get-table.md</a>）。</p>
 <h4 id="input_3">input</h4>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">bt</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">n</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)]</span>
 </span></code></pre></div>
@@ -2284,7 +2315,7 @@
 <tbody>
 <tr>
 <td>表格查詢 <code>api.Data</code> / <code>api.USData</code></td>
-<td>有</td>
+<td>有（台股 2026-10-27 實測 114 張，含「新增」段 28 張，見 <a href="../data-v2-tables/">data-v2-tables.md</a>）</td>
 </tr>
 <tr>
 <td>矩陣資料 <code>api.MSMP</code> / <code>api.USMSMP</code></td>
