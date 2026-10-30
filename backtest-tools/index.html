@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="台美股資料、積木選股與回測整合套件 —— 專為 AI coding agent 設計的文件集">
+        <meta name="description" content="SnowyOwl —— 台美股資料、積木選股與回測的 Python 套件">
       
       
       
@@ -15,6 +15,8 @@
       
         <link rel="prev" href="../backtest-report/">
       
+      
+        <link rel="next" href="../recipes/">
       
       
         
@@ -25,7 +27,7 @@
     
     
       
-        <title>回測：技術指標與參數尋優 - SnowyOwl</title>
+        <title>技術指標與參數最佳化 - SnowyOwl</title>
       
     
     
@@ -72,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#回測技術指標與參數尋優" class="md-skip">
+        <a href="#技術指標與參數最佳化" class="md-skip">
           跳轉到
         </a>
       
@@ -107,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              回測：技術指標與參數尋優
+              技術指標與參數最佳化
             
           </span>
         </div>
@@ -228,35 +230,13 @@
     
     
       <li class="md-tabs__item">
-        <a href="../agent-playbook/" class="md-tabs__link">
+        <a href="../getting-started/" class="md-tabs__link">
           
   
   
     
   
-  入門與結構
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../block/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  積木 Block（選股）
+  開始使用
 
         </a>
       </li>
@@ -278,7 +258,7 @@
   
     
   
-  Data 表格查詢
+  資料
 
         </a>
       </li>
@@ -294,13 +274,13 @@
     
     
       <li class="md-tabs__item">
-        <a href="../msmp/" class="md-tabs__link">
+        <a href="../block/" class="md-tabs__link">
           
   
   
     
   
-  MSMP 歷史資料
+  積木選股
 
         </a>
       </li>
@@ -325,6 +305,50 @@
     
   
   回測
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../api-login/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  API 參考
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../ai-setup/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  搭配 AI 使用
 
         </a>
       </li>
@@ -410,20 +434,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
     
     
     
@@ -445,7 +455,7 @@
   <span class="md-ellipsis">
     
   
-    入門與結構
+    開始使用
   
 
     
@@ -461,39 +471,11 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    入門與結構
+    開始使用
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../agent-playbook/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    給 AI 的工作守則
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -509,119 +491,7 @@
   <span class="md-ellipsis">
     
   
-    開始使用 SnowyOwl
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../how-to-ask/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    怎麼問，才問得到你要的東西
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../how-to-plan/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    怎麼制定一個 plan
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../case-study-backtest/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    案例集：小白怎麼問回測
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../recipes/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    配方集：實跑驗證過的寫法範例
+    快速開始
   
 
     
@@ -649,63 +519,7 @@
   <span class="md-ellipsis">
     
   
-    so.login 登入
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api-structure/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    api 物件結構
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../errors/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    錯誤訊息速查
+    登入與登出
   
 
     
@@ -734,16 +548,6 @@
   
     
     
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
       
         
       
@@ -778,7 +582,7 @@
   <span class="md-ellipsis">
     
   
-    積木 Block（選股）
+    資料
   
 
     
@@ -794,7 +598,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    積木 Block（選股）
+    資料
   
 
           </label>
@@ -807,14 +611,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block/" class="md-nav__link">
+      <a href="../data/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    積木 Block 總覽
+    資料總覽
   
 
     
@@ -835,14 +639,110 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-list-conditions/" class="md-nav__link">
+      <a href="../data-get/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    list_conditions 積木清單查詢
+    表格查詢 api.Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    台股資料
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    台股資料
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-tw-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    台股資料一覽
   
 
     
@@ -863,14 +763,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-get-table/" class="md-nav__link">
+      <a href="../data-tw-price/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Block.get_table 積木參數與合法值
+    價量與 K 線
   
 
     
@@ -891,14 +791,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-con/" class="md-nav__link">
+      <a href="../data-tw-chip/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Block.con 組積木
+    籌碼
   
 
     
@@ -919,14 +819,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-screener/" class="md-nav__link">
+      <a href="../data-tw-fundamental/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Block.screener 執行選股
+    基本面
   
 
     
@@ -947,14 +847,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-pool/" class="md-nav__link">
+      <a href="../data-tw-intraday/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Block 股池 pool
+    盤中與分 K
   
 
     
@@ -975,14 +875,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-auto/" class="md-nav__link">
+      <a href="../data-tw-broker/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    通用積木（自訂比較）
+    券商分點
   
 
     
@@ -1003,14 +903,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-codegen/" class="md-nav__link">
+      <a href="../data-tw-futures/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Block 產生的程式碼 code
+    期貨
   
 
     
@@ -1031,14 +931,136 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-caveats/" class="md-nav__link">
+      <a href="../data-tw-event/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Block 已知落差與注意事項
+    清單與事件
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usdata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    美股資料 api.USData
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    矩陣資料
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    矩陣資料
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../msmp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    矩陣資料 MSMP
   
 
     
@@ -1059,14 +1081,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-reference-tw/" class="md-nav__link">
+      <a href="../msmp-tables/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    台股積木完整參考
+    MSMP 資料表與欄位
   
 
     
@@ -1087,14 +1109,50 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-reference-us/" class="md-nav__link">
+      <a href="../usmsmp/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    美股積木完整參考
+    美股矩陣資料 USMSMP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    資料期間與頻率
   
 
     
@@ -1123,6 +1181,8 @@
   
     
     
+      
+        
       
         
       
@@ -1161,7 +1221,7 @@
   <span class="md-ellipsis">
     
   
-    Data 表格查詢
+    積木選股
   
 
     
@@ -1177,7 +1237,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Data 表格查詢
+    積木選股
   
 
           </label>
@@ -1190,14 +1250,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../data/" class="md-nav__link">
+      <a href="../block/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Data 模組總覽
+    積木選股概覽
   
 
     
@@ -1218,14 +1278,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-get-table/" class="md-nav__link">
+      <a href="../block-get-table/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Data.get_table 列出可用表格
+    查詢積木
   
 
     
@@ -1246,14 +1306,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-v2-tables/" class="md-nav__link">
+      <a href="../block-con/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Data v2 新增資料表（28 張）
+    組合條件
   
 
     
@@ -1274,14 +1334,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-get/" class="md-nav__link">
+      <a href="../block-screener/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Data.get 取得表格資料
+    執行選股
   
 
     
@@ -1302,14 +1362,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-history/" class="md-nav__link">
+      <a href="../block-pool/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    資料頻率與歷史長度
+    股池
   
 
     
@@ -1330,14 +1390,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-get-snapshots/" class="md-nav__link">
+      <a href="../block-auto/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    USData.get_snapshots 美股即時快照
+    通用積木
   
 
     
@@ -1358,14 +1418,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../intraday/" class="md-nav__link">
+      <a href="../block-codegen/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    盤中、分K與逐筆明細
+    選股程式碼
   
 
     
@@ -1386,109 +1446,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../usdata/" class="md-nav__link">
+      <a href="../block-reference-tw/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    USData 美股表格查詢
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    MSMP 歷史資料
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    MSMP 歷史資料
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../msmp/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    MSMP 矩陣資料總覽
+    台股積木一覽
   
 
     
@@ -1509,70 +1474,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../msmp-tables/" class="md-nav__link">
+      <a href="../block-reference-us/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    MSMP 資料表與欄位完整清單
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../msmp-list/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    MSMP.list 股池
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../usmsmp/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    USMSMP 美股矩陣資料
+    美股積木一覽
   
 
     
@@ -1603,6 +1512,8 @@
   
     
     
+      
+        
       
         
       
@@ -1630,10 +1541,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -1651,8 +1562,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1676,7 +1587,7 @@
   <span class="md-ellipsis">
     
   
-    回測 api.bt 總覽
+    回測概覽
   
 
     
@@ -1704,7 +1615,7 @@
   <span class="md-ellipsis">
     
   
-    回測：事件模型與策略撰寫
+    撰寫策略
   
 
     
@@ -1732,7 +1643,7 @@
   <span class="md-ellipsis">
     
   
-    回測：委託、成交價與風控
+    下單與成交
   
 
     
@@ -1760,7 +1671,7 @@
   <span class="md-ellipsis">
     
   
-    回測：資料與週期
+    資料與週期
   
 
     
@@ -1788,7 +1699,7 @@
   <span class="md-ellipsis">
     
   
-    回測：商品規格與績效報告
+    商品設定與績效報告
   
 
     
@@ -1825,7 +1736,7 @@
   <span class="md-ellipsis">
     
   
-    回測：技術指標與參數尋優
+    技術指標與參數最佳化
   
 
     
@@ -1843,7 +1754,7 @@
   <span class="md-ellipsis">
     
   
-    回測：技術指標與參數尋優
+    技術指標與參數最佳化
   
 
     
@@ -1869,22 +1780,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#selfind--技術指標工具箱" class="md-nav__link">
+  <a href="#技術指標-selfind" class="md-nav__link">
     <span class="md-ellipsis">
       
-        self.Ind — 技術指標工具箱
+        技術指標 self.Ind
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="self.Ind — 技術指標工具箱">
+    <nav class="md-nav" aria-label="技術指標 self.Ind">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#兩個容易踩的地方" class="md-nav__link">
+  <a href="#呼叫方式" class="md-nav__link">
     <span class="md-ellipsis">
       
-        兩個容易踩的地方
+        呼叫方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#用-name-區分計算狀態" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        用 name 區分計算狀態
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#指標一覽" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        指標一覽
       
     </span>
   </a>
@@ -1897,22 +1830,77 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bttoolsoptimize--參數尋優" class="md-nav__link">
+  <a href="#參數最佳化-bttoolsoptimize" class="md-nav__link">
     <span class="md-ellipsis">
       
-        bt.Tools.optimize — 參數尋優
+        參數最佳化 bt.Tools.optimize
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="bt.Tools.optimize — 參數尋優">
+    <nav class="md-nav" aria-label="參數最佳化 bt.Tools.optimize">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#尋優要注意的事" class="md-nav__link">
+  <a href="#語法" class="md-nav__link">
     <span class="md-ellipsis">
       
-        尋優要注意的事
+        語法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#參數" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        參數
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#回傳" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        回傳
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#範例" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        範例
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#策略函式的寫法" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        策略函式的寫法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#使用建議" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        使用建議
       
     </span>
   </a>
@@ -1925,10 +1913,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#相關頁" class="md-nav__link">
+  <a href="#錯誤處理" class="md-nav__link">
     <span class="md-ellipsis">
       
-        相關頁
+        錯誤處理
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#相關頁面" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相關頁面
       
     </span>
   </a>
@@ -1939,6 +1938,482 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    策略範例
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 參考
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API 參考
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-login/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    snowyowl 與 api
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    api.Data／USData
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-msmp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    api.MSMP／USMSMP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-block/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    api.Block
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-bt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    api.bt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../errors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    錯誤訊息
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    搭配 AI 使用
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    搭配 AI 使用
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安裝與設定
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-to-ask/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    提問技巧
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-to-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    規劃研究流程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-backtest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測提問範例
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI 工作守則
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1978,22 +2453,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#selfind--技術指標工具箱" class="md-nav__link">
+  <a href="#技術指標-selfind" class="md-nav__link">
     <span class="md-ellipsis">
       
-        self.Ind — 技術指標工具箱
+        技術指標 self.Ind
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="self.Ind — 技術指標工具箱">
+    <nav class="md-nav" aria-label="技術指標 self.Ind">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#兩個容易踩的地方" class="md-nav__link">
+  <a href="#呼叫方式" class="md-nav__link">
     <span class="md-ellipsis">
       
-        兩個容易踩的地方
+        呼叫方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#用-name-區分計算狀態" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        用 name 區分計算狀態
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#指標一覽" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        指標一覽
       
     </span>
   </a>
@@ -2006,22 +2503,77 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bttoolsoptimize--參數尋優" class="md-nav__link">
+  <a href="#參數最佳化-bttoolsoptimize" class="md-nav__link">
     <span class="md-ellipsis">
       
-        bt.Tools.optimize — 參數尋優
+        參數最佳化 bt.Tools.optimize
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="bt.Tools.optimize — 參數尋優">
+    <nav class="md-nav" aria-label="參數最佳化 bt.Tools.optimize">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#尋優要注意的事" class="md-nav__link">
+  <a href="#語法" class="md-nav__link">
     <span class="md-ellipsis">
       
-        尋優要注意的事
+        語法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#參數" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        參數
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#回傳" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        回傳
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#範例" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        範例
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#策略函式的寫法" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        策略函式的寫法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#使用建議" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        使用建議
       
     </span>
   </a>
@@ -2034,10 +2586,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#相關頁" class="md-nav__link">
+  <a href="#錯誤處理" class="md-nav__link">
     <span class="md-ellipsis">
       
-        相關頁
+        錯誤處理
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#相關頁面" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相關頁面
       
     </span>
   </a>
@@ -2061,21 +2624,36 @@
 
 
 
-<h1 id="回測技術指標與參數尋優">回測：技術指標與參數尋優</h1>
-<blockquote>
-<p>所屬章節：回測</p>
-</blockquote>
-<h2 id="selfind--技術指標工具箱">self.Ind — 技術指標工具箱</h2>
-<p><code>self.Ind</code> 是 <code>Core</code> 的<strong>類別屬性</strong>（所有策略共用同一份），採<strong>增量計算</strong>：
-每根新 K 棒呼叫一次，回傳目前累積的完整序列（<code>list</code>），取 <code>[-1]</code> 就是最新值。</p>
-<p>同一條序列若有多種用途，用 <code>name=</code> 參數區分狀態快取；
-不指定時以 <code>window</code> 加資料物件 id 自動區分。</p>
+<h1 id="技術指標與參數最佳化">技術指標與參數最佳化</h1>
+<p>策略內用 <code>self.Ind</code> 計算技術指標，用 <code>bt.Tools.optimize()</code> 搜尋策略參數的最佳組合。以下範例中的 <code>bt</code> 即 <code>api.bt</code>。</p>
+<h2 id="技術指標-selfind">技術指標 <code>self.Ind</code></h2>
+<p><code>self.Ind</code> 以增量方式計算指標：每根 K 棒呼叫一次，傳入到目前為止的完整序列，回傳累積的指標序列（<code>list</code>），取 <code>[-1]</code> 為最新值。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">my_indicators</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">):</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">close_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">])</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">ma5</span>  <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Ind</span><span class="o">.</span><span class="n">rolling_mean</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">close_list</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">ma20</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Ind</span><span class="o">.</span><span class="n">rolling_mean</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">close_list</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">char</span><span class="p">[</span><span class="s1">&#39;ma5&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">ma5</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>      <span class="c1"># 存進 self.char，show_monitor() 與 dashboard 的 K 線就會畫</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">char</span><span class="p">[</span><span class="s1">&#39;ma20&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ma20</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="k">return</span> <span class="n">ma5</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">ma20</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></code></pre></div>
+<p>寫進 <code>self.char</code> 的值會畫在 <code>show_monitor()</code> 與儀表板的 K 線上，見 <a href="../backtest-strategy/">撰寫策略</a>。</p>
+<h3 id="呼叫方式">呼叫方式</h3>
+<ul>
+<li>每根 K 棒都呼叫一次。指標依呼叫次數逐根累積，只在部分 K 棒呼叫（例如放在 <code>if</code> 條件內）時，指標序列會與資料錯開。</li>
+<li>同一根 K 棒對同一個指標只呼叫一次。每呼叫一次，指標就前進一根；例如逐欄位計算特徵時，三個欄位都呼叫 <code>ema(c, 15)</code> 會前進三次，窗口錯位。同一個值要在多處使用時，計算一次後重複使用，或以當根的序號（<code>row['index']</code>）作為快取鍵，確保一根只計算一次。</li>
+</ul>
+<h3 id="用-name-區分計算狀態">用 <code>name</code> 區分計算狀態</h3>
+<p>每個指標都保存自己的計算狀態。未指定 <code>name</code> 時，依 <code>window</code> 與傳入的序列物件自動區分。同一條序列有多種用途時，例如同一份 <code>close_list</code> 要算兩個 5 日平均、但 <code>min_period</code> 不同，要用 <code>name</code> 區分，否則兩者會共用同一份狀態。</p>
+<p><code>self.Ind</code> 是 <code>Core</code> 的類別屬性，所有策略實例共用同一份。同一個 Python 執行環境（例如同一個 Jupyter kernel）中執行多個 <code>core</code> 時，相同 <code>name</code> 的指標會共用狀態。要讓每個實例各自獨立，在 <code>on_init</code> 中建立新的指標物件：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="bp">self</span><span class="o">.</span><span class="n">Ind</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Ind</span><span class="p">)()</span>
+</span></code></pre></div>
+<h3 id="指標一覽">指標一覽</h3>
 <table>
 <thead>
 <tr>
-<th>函式</th>
-<th>簽名</th>
-<th>備註</th>
+<th>方法</th>
+<th>參數</th>
+<th>說明</th>
 </tr>
 </thead>
 <tbody>
@@ -2087,42 +2665,17 @@
 <tr>
 <td><code>rolling_max</code></td>
 <td><code>(ls, window, min_period=None, name=None)</code></td>
-<td>移動最大</td>
+<td>移動最大值</td>
 </tr>
 <tr>
 <td><code>rolling_min</code></td>
 <td><code>(ls, window, min_period=None, name=None)</code></td>
-<td>移動最小</td>
+<td>移動最小值</td>
 </tr>
 <tr>
 <td><code>rolling_std</code></td>
 <td><code>(ls, window, k=1, min_period=None, name=None)</code></td>
-<td>ta-lib 相容 STDDEV：母體標準差（ddof=0）× k</td>
-</tr>
-<tr>
-<td><code>ema</code></td>
-<td><code>(ls, window, alpha=None, name=None)</code></td>
-<td><code>alpha=None</code> → α=2/(N+1) 標準 EMA；<code>alpha=1/N</code> → Wilder 平滑（ATR/RSI 用）</td>
-</tr>
-<tr>
-<td><code>macd</code></td>
-<td><code>(ls, short_window=12, long_window=26, macd_window=9, name=None)</code></td>
-<td>回傳 <code>macd_dif, macd_ema, macd_hist</code></td>
-</tr>
-<tr>
-<td><code>atr</code></td>
-<td><code>(high, low, close, window=14, name=None)</code></td>
-<td>ta-lib 相容，Wilder 平滑</td>
-</tr>
-<tr>
-<td><code>rsi</code></td>
-<td><code>(ls, window=14, name=None)</code></td>
-<td>ta-lib 相容</td>
-</tr>
-<tr>
-<td><code>stochastic</code></td>
-<td><code>(high, low, close, rsv_window=9, k_window=3, d_window=3, name=None)</code></td>
-<td>KD，與 pandas <code>ewm(adjust=False)</code> 對齊</td>
+<td>與 ta-lib 的 STDDEV 相同：母體標準差（ddof=0）× k</td>
 </tr>
 <tr>
 <td><code>rolling_sum</code></td>
@@ -2130,128 +2683,181 @@
 <td>移動加總</td>
 </tr>
 <tr>
-<td><code>skew</code> / <code>kurt</code></td>
+<td><code>ema</code></td>
+<td><code>(ls, window, alpha=None, name=None)</code></td>
+<td>指數移動平均。<code>alpha=None</code> 為標準 EMA（α=2/(N+1)）；<code>alpha=1/N</code> 為 Wilder 平滑（ATR、RSI 使用）</td>
+</tr>
+<tr>
+<td><code>macd</code></td>
+<td><code>(ls, short_window=12, long_window=26, macd_window=9, name=None)</code></td>
+<td>MACD，回傳 <code>macd_dif, macd_ema, macd_hist</code></td>
+</tr>
+<tr>
+<td><code>atr</code></td>
+<td><code>(high, low, close, window=14, name=None)</code></td>
+<td>ATR，與 ta-lib 相同，Wilder 平滑</td>
+</tr>
+<tr>
+<td><code>rsi</code></td>
+<td><code>(ls, window=14, name=None)</code></td>
+<td>RSI，與 ta-lib 相同</td>
+</tr>
+<tr>
+<td><code>stochastic</code></td>
+<td><code>(high, low, close, rsv_window=9, k_window=3, d_window=3, name=None)</code></td>
+<td>KD，與 pandas <code>ewm(adjust=False)</code> 的結果一致</td>
+</tr>
+<tr>
+<td><code>skew</code>／<code>kurt</code></td>
 <td><code>(ls, window, name=None)</code></td>
 <td>移動偏度／峰度</td>
 </tr>
 <tr>
-<td><code>zscore</code> / <code>minmax</code></td>
+<td><code>zscore</code>／<code>minmax</code></td>
 <td><code>(ls, window, eps=1e-9, name=None)</code></td>
-<td>移動標準化 /區間正規化</td>
+<td>移動標準化／區間正規化</td>
 </tr>
 <tr>
-<td><code>median</code> / <code>tsrank</code></td>
+<td><code>median</code>／<code>tsrank</code></td>
 <td><code>(ls, window, name=None)</code></td>
 <td>移動中位數／時序排名</td>
 </tr>
 <tr>
-<td><code>argmax</code> / <code>argmin</code></td>
+<td><code>argmax</code>／<code>argmin</code></td>
 <td><code>(ls, window, norm=True, name=None)</code></td>
 <td>窗口內極值的位置</td>
 </tr>
 <tr>
-<td><code>decay</code> / <code>slope</code> / <code>delta</code></td>
+<td><code>decay</code>／<code>slope</code>／<code>delta</code></td>
 <td><code>(ls, window, name=None)</code></td>
 <td>線性衰減加權／斜率／差分</td>
 </tr>
 <tr>
-<td><code>corr</code> / <code>cov</code></td>
+<td><code>corr</code>／<code>cov</code></td>
 <td><code>(a, b, window, name=None)</code></td>
-<td>兩條序列的移動相關／共變異</td>
+<td>兩條序列的移動相關係數／共變異數</td>
 </tr>
 <tr>
-<td><code>katz</code> / <code>shannon</code></td>
-<td><code>(ls, window[, bins=8], name=None)</code></td>
-<td>碎形維度／熵</td>
+<td><code>katz</code></td>
+<td><code>(ls, window, name=None)</code></td>
+<td>碎形維度</td>
+</tr>
+<tr>
+<td><code>shannon</code></td>
+<td><code>(ls, window, bins=8, name=None)</code></td>
+<td>熵</td>
 </tr>
 </tbody>
 </table>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">my_indicators</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">):</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">close_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">])</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">ma5</span>  <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Ind</span><span class="o">.</span><span class="n">rolling_mean</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">close_list</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">ma20</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Ind</span><span class="o">.</span><span class="n">rolling_mean</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">close_list</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">char</span><span class="p">[</span><span class="s1">&#39;ma5&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">ma5</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>      <span class="c1"># 存進 self.char，show_monitor() 與 dashboard 的 K 線就會畫</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">char</span><span class="p">[</span><span class="s1">&#39;ma20&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ma20</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="k">return</span> <span class="n">ma5</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">ma20</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<h2 id="參數最佳化-bttoolsoptimize">參數最佳化 <code>bt.Tools.optimize</code></h2>
+<p>先以隨機取樣探索參數範圍，再用 TPE 演算法搜尋，找出 <code>CalmarRatio</code> 最高的參數組合。</p>
+<h3 id="語法">語法</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">api</span><span class="o">.</span><span class="n">bt</span><span class="o">.</span><span class="n">Tools</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="n">my_strategy</span><span class="p">,</span> <span class="n">search_range</span><span class="p">,</span> <span class="n">times</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">random_ratio</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 </span></code></pre></div>
-<h3 id="兩個容易踩的地方">兩個容易踩的地方</h3>
-<p><strong>每根 bar 都要呼叫一次。</strong> 增量計算的前提是「每來一根就餵一次」，
-包在 <code>if</code> 裡條件性呼叫會讓內部狀態跟資料脫節。</p>
-<p><strong>同一根 K 棒呼叫兩次會前進兩次。</strong> 例如逐欄位算特徵時三個欄位都要 <code>ema(c, 15)</code>，就推進了三次，窗口全部錯位（實測 MACD 因此反號）。用當根根數當快取鍵，保證一根只算一次。</p>
-<p><strong>多個 core 共用 <code>Ind</code>。</strong> <code>Ind</code> 是類別屬性，同一個 kernel 跑多個 core 時，給相同 <code>name</code> 會互相污染。在 <code>on_init</code> 寫 <code>self.Ind = type(self.Ind)()</code> 讓每個實例各用一份。</p>
-<p><strong>同一條序列不同用途要給 <code>name</code>。</strong> 例如同一份 <code>close_list</code> 同時要 5 日與 5 日
-（但不同 <code>min_period</code>）的平均，不給 <code>name</code> 會共用同一份快取狀態。</p>
-<hr />
-<h2 id="bttoolsoptimize--參數尋優">bt.Tools.optimize — 參數尋優</h2>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">bt</span><span class="o">.</span><span class="n">Tools</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="n">my_strategy</span><span class="p">,</span> <span class="n">search_range</span><span class="p">,</span> <span class="n">times</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">random_ratio</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-</span></code></pre></div>
+<h3 id="參數">參數</h3>
 <table>
 <thead>
 <tr>
 <th>參數</th>
+<th>型別</th>
+<th>預設值</th>
 <th>說明</th>
-<th>預設</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>my_strategy</code></td>
-<td>自訂策略<strong>函式</strong>，需回傳有 <code>report</code> 屬性的物件（即 <code>generate_report</code> 的結果）</td>
-<td>必填</td>
+<td>函式</td>
+<td>—</td>
+<td>必填。自訂策略函式，參數名稱與 <code>search_range</code> 的 key 相同，回傳 <code>generate_report()</code> 的結果（有 <code>report</code> 屬性的物件）</td>
 </tr>
 <tr>
 <td><code>search_range</code></td>
-<td>參數範圍字典，格式 <code>{'名稱': [最小, 最大, 步長]}</code></td>
-<td>必填</td>
+<td><code>dict</code></td>
+<td>—</td>
+<td>必填。參數範圍，格式為 <code>{'名稱': [最小, 最大, 步長]}</code></td>
 </tr>
 <tr>
 <td><code>times</code></td>
-<td>優化總次數</td>
+<td><code>int</code></td>
 <td><code>50</code></td>
+<td>總搜尋次數</td>
 </tr>
 <tr>
 <td><code>random_ratio</code></td>
-<td>前面隨機探索的比例，之後用智能（TPE）尋優</td>
+<td><code>float</code></td>
 <td><code>0.5</code></td>
+<td>前段隨機探索的比例，其餘次數以 TPE 演算法搜尋</td>
 </tr>
 </tbody>
 </table>
-<p>回傳最佳參數 dict（例 <code>{'percent_in': 2.3, 'percent_out': 4}</code>）。評分是 <code>rp.report</code> 的 <strong><code>CalmarRatio</code></strong>（<code>CAGR / abs(MddRatio)</code>，NaN 當 0）。全部結果另存目前資料夾的 <code>optimize.xlsx</code>（CalmarRatio 在最前面），跑完會自動開檔。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">opt</span><span class="p">(</span><span class="n">percent_in</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">percent_out</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">core</span> <span class="o">=</span> <span class="n">MyStrategy</span><span class="p">()</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">core</span><span class="o">.</span><span class="n">percent_in</span>  <span class="o">=</span> <span class="n">percent_in</span>       <span class="c1"># 覆寫 on_init 設的 self.xxx</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">core</span><span class="o">.</span><span class="n">percent_out</span> <span class="o">=</span> <span class="n">percent_out</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">core</span><span class="o">.</span><span class="n">feed_data</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="k">return</span> <span class="n">bt</span><span class="o">.</span><span class="n">generate_report</span><span class="p">({</span><span class="n">cfg</span><span class="p">:</span> <span class="n">core</span><span class="p">})</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">arg</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;percent_in&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">],</span> <span class="s1">&#39;percent_out&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">]}</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">best</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Tools</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="n">opt</span><span class="p">,</span> <span class="n">arg</span><span class="p">,</span> <span class="n">times</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="n">rp_best</span> <span class="o">=</span> <span class="n">opt</span><span class="p">(</span><span class="o">**</span><span class="n">best</span><span class="p">)</span>                   <span class="c1"># 用最佳參數重跑一次</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">rp_best</span><span class="o">.</span><span class="n">report</span><span class="p">)</span>
-</span></code></pre></div>
-<h3 id="尋優要注意的事">尋優要注意的事</h3>
-<p><strong>參數必須是 <code>on_init</code> 裡設的 <code>self.xxx</code></strong>，<code>optimize</code> 才能從外面覆寫。
-寫死在 <code>on_bar</code> 裡的常數改不到。</p>
-<p><strong>每次呼叫都要建新的 <code>core</code>。</strong> <code>core</code> 是有狀態的，重複用同一個會累積前一次的部位與統計。</p>
-<p><strong>評分是 <code>CalmarRatio</code></strong>（<code>CAGR / abs(MddRatio)</code>）。
-這個目標偏好高報酬低回撤，但完全不看交易次數——
-可能挑出只交易 3 次剛好都對的參數。自己看 <code>rp.report</code> 的 <code>TotalTrades</code> 檢查。</p>
-<p><strong>參數型別會變。</strong> 取樣值剛好是整數時傳進來是 <code>int</code>（<code>1.0</code> 會變 <code>1</code>），否則是 <code>float</code>。
-window 這類參數在函式開頭自己 <code>int(x)</code>；字串參數用索引搜尋（<code>'metric_i': [0, len(METRICS)-1, 1]</code>）；
-要固定某個參數不搜，用 <code>functools.partial(run, metric='YoY')</code>。</p>
-<p><strong><code>成功: 0組</code> 接著 <code>UnboundLocalError: best_params</code></strong> 是症狀不是原因：每一組都拋了例外、被吞掉沒印。
-自己呼叫一次 <code>run(**某組參數)</code> 真正的錯誤就會出現（最常見：參數名收不到、回傳的不是 rp）。</p>
-<p><strong>連續跑兩輪先關 Excel。</strong> 上一輪自動開啟的 <code>optimize.xlsx</code> 會鎖住檔案，下一輪整輪跑完才在寫檔時 <code>PermissionError</code>。</p>
-<p><strong>尋優本身就是過度配適的來源。</strong> <code>times=50</code> 在兩個參數上已經掃過相當比例的空間，
-挑出的最佳值在樣本外不見得成立。至少把資料切成前後兩段分別驗。</p>
-<hr />
-<h2 id="相關頁">相關頁</h2>
+<h3 id="回傳">回傳</h3>
+<p>最佳參數的 <code>dict</code>，例如 <code>{'percent_in': 2.3, 'percent_out': 4}</code>。</p>
 <ul>
-<li><a href="../backtest-strategy/">事件模型與策略撰寫</a>：<code>on_init</code> 放參數、<code>self.char</code></li>
-<li><a href="../backtest-report/">績效報告</a>：<code>rp.report</code> 的欄位定義</li>
-<li><a href="../backtest/">回測總覽</a></li>
+<li>評分是 <code>rp.report</code> 的 <code>CalmarRatio</code>（<code>CAGR / abs(MddRatio)</code>），<code>NaN</code> 視為 0。</li>
+<li>所有參數組合的結果存成目前資料夾的 <code>optimize.xlsx</code>（<code>CalmarRatio</code> 排在各 KPI 欄的最前面），執行結束後自動開啟。</li>
 </ul>
+<h3 id="範例">範例</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">opt</span><span class="p">(</span><span class="n">percent_in</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">percent_out</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">core</span> <span class="o">=</span> <span class="n">MyStrategy</span><span class="p">()</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">core</span><span class="o">.</span><span class="n">percent_in</span>  <span class="o">=</span> <span class="n">percent_in</span>       <span class="c1"># 覆寫 on_init 設的 self.xxx</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">core</span><span class="o">.</span><span class="n">percent_out</span> <span class="o">=</span> <span class="n">percent_out</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">core</span><span class="o">.</span><span class="n">feed_data</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="k">return</span> <span class="n">bt</span><span class="o">.</span><span class="n">generate_report</span><span class="p">({</span><span class="n">cfg</span><span class="p">:</span> <span class="n">core</span><span class="p">})</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">arg</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;percent_in&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">],</span> <span class="s1">&#39;percent_out&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">]}</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">best</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Tools</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="n">opt</span><span class="p">,</span> <span class="n">arg</span><span class="p">,</span> <span class="n">times</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="n">rp_best</span> <span class="o">=</span> <span class="n">opt</span><span class="p">(</span><span class="o">**</span><span class="n">best</span><span class="p">)</span>                   <span class="c1"># 用最佳參數重跑一次</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">rp_best</span><span class="o">.</span><span class="n">report</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="策略函式的寫法">策略函式的寫法</h3>
+<ul>
+<li>要搜尋的參數在 <code>on_init</code> 中設為 <code>self.xxx</code>，策略函式建立 <code>core</code> 後再覆寫。直接寫在 <code>on_bar</code> 中的常數無法從外部調整。</li>
+<li>每次呼叫都建立新的 <code>core</code>。<code>core</code> 會保存部位與統計，重複使用會累積前一次的結果。</li>
+<li>取樣值為整數時以 <code>int</code> 傳入（<code>1.0</code> 會傳入 <code>1</code>），否則為 <code>float</code>。window 這類需要整數的參數，在函式開頭用 <code>int(x)</code> 轉換。</li>
+<li>字串參數以索引搜尋，例如 <code>'metric_i': [0, len(METRICS)-1, 1]</code>，在函式內再用索引取出字串。</li>
+<li>要固定某個參數不搜尋時，用 <code>functools.partial(run, metric='YoY')</code> 先帶入該參數。</li>
+</ul>
+<h3 id="使用建議">使用建議</h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>評分只看 <code>CalmarRatio</code>，偏好高報酬、低回撤，但不考慮交易次數，只交易 3 次且剛好都獲利的參數也可能得到高分。取得最佳參數後，檢查 <code>rp.report</code> 的 <code>TotalTrades</code>。</li>
+<li>最佳參數是在同一段資料上挑選出來的，在其他期間不一定成立。建議把資料分成前後兩段分別驗證，做法見 <a href="../recipes/">策略範例</a>。</li>
+</ul>
+</div>
+<h2 id="錯誤處理">錯誤處理</h2>
+<table>
+<thead>
+<tr>
+<th>錯誤訊息</th>
+<th>原因</th>
+<th>處理方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>成功: 0組</code>，接著出現 <code>UnboundLocalError</code>（<code>best_params</code>）</td>
+<td>每一組參數執行時都發生例外，例外內容不會顯示。常見原因是策略函式收不到參數名稱，或回傳值不是 <code>generate_report()</code> 的結果</td>
+<td>以任一組參數直接呼叫策略函式一次（例如 <code>opt(percent_in=2, percent_out=3)</code>），就會顯示實際的錯誤</td>
+</tr>
+<tr>
+<td><code>PermissionError</code>（寫入 <code>optimize.xlsx</code> 時）</td>
+<td>上一次執行自動開啟的 <code>optimize.xlsx</code> 仍在 Excel 中開啟，檔案被鎖定。錯誤在整輪搜尋結束、寫入檔案時才出現</td>
+<td>再次執行前先關閉 <code>optimize.xlsx</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="相關頁面">相關頁面</h2>
+<ul>
+<li><a href="../backtest-strategy/">撰寫策略</a>：<code>on_init</code> 放參數、<code>self.char</code></li>
+<li><a href="../backtest-report/">商品設定與績效報告</a>：<code>rp.report</code> 的欄位定義</li>
+<li><a href="../recipes/">策略範例</a>：參數最佳化與分段驗證的完整範例</li>
+<li><a href="../backtest/">回測概覽</a></li>
+<li><a href="../api-bt/">api.bt</a>：<code>api.bt</code> 成員一覽</li>
+</ul>
+<p class="sw-verified">最後驗證：2026-10-16</p>
 
 
 
@@ -2287,7 +2893,7 @@ window 這類參數在函式開頭自己 <code>int(x)</code>；字串參數用�
       <nav class="md-footer__inner md-grid" aria-label="頁腳" >
         
           
-          <a href="../backtest-report/" class="md-footer__link md-footer__link--prev" aria-label="上一頁: 回測：商品規格與績效報告">
+          <a href="../backtest-report/" class="md-footer__link md-footer__link--prev" aria-label="上一頁: 商品設定與績效報告">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2297,11 +2903,27 @@ window 這類參數在函式開頭自己 <code>int(x)</code>；字串參數用�
                 上一頁
               </span>
               <div class="md-ellipsis">
-                回測：商品規格與績效報告
+                商品設定與績效報告
               </div>
             </div>
           </a>
         
+        
+          
+          <a href="../recipes/" class="md-footer__link md-footer__link--next" aria-label="下一頁: 策略範例">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一頁
+              </span>
+              <div class="md-ellipsis">
+                策略範例
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     

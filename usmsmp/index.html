@@ -6,17 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="台美股資料、積木選股與回測整合套件 —— 專為 AI coding agent 設計的文件集">
+        <meta name="description" content="SnowyOwl —— 台美股資料、積木選股與回測的 Python 套件">
       
       
       
         <link rel="canonical" href="https://snowyowlstrategy.github.io/usmsmp/">
       
       
-        <link rel="prev" href="../msmp-list/">
+        <link rel="prev" href="../msmp-tables/">
       
       
-        <link rel="next" href="../backtest/">
+        <link rel="next" href="../data-history/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>USMSMP 美股矩陣資料 - SnowyOwl</title>
+        <title>美股矩陣資料 USMSMP - SnowyOwl</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#usmsmp-美股矩陣資料" class="md-skip">
+        <a href="#美股矩陣資料-usmsmp" class="md-skip">
           跳轉到
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              USMSMP 美股矩陣資料
+              美股矩陣資料 USMSMP
             
           </span>
         </div>
@@ -230,13 +230,37 @@
     
     
       <li class="md-tabs__item">
-        <a href="../agent-playbook/" class="md-tabs__link">
+        <a href="../getting-started/" class="md-tabs__link">
           
   
   
     
   
-  入門與結構
+  開始使用
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../data/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  資料
 
         </a>
       </li>
@@ -258,53 +282,7 @@
   
     
   
-  積木 Block（選股）
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../data/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Data 表格查詢
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-  
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../msmp/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  MSMP 歷史資料
+  積木選股
 
         </a>
       </li>
@@ -327,6 +305,50 @@
     
   
   回測
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../api-login/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  API 參考
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../ai-setup/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  搭配 AI 使用
 
         </a>
       </li>
@@ -412,20 +434,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
     
     
     
@@ -447,7 +455,7 @@
   <span class="md-ellipsis">
     
   
-    入門與結構
+    開始使用
   
 
     
@@ -463,39 +471,11 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    入門與結構
+    開始使用
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../agent-playbook/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    給 AI 的工作守則
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -511,119 +491,7 @@
   <span class="md-ellipsis">
     
   
-    開始使用 SnowyOwl
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../how-to-ask/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    怎麼問，才問得到你要的東西
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../how-to-plan/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    怎麼制定一個 plan
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../case-study-backtest/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    案例集：小白怎麼問回測
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../recipes/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    配方集：實跑驗證過的寫法範例
+    快速開始
   
 
     
@@ -651,63 +519,7 @@
   <span class="md-ellipsis">
     
   
-    so.login 登入
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api-structure/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    api 物件結構
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../errors/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    錯誤訊息速查
+    登入與登出
   
 
     
@@ -732,6 +544,8 @@
       
   
   
+    
+  
   
   
     
@@ -742,6 +556,123 @@
         
       
         
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    資料
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    資料
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    資料總覽
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-get/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    表格查詢 api.Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
       
         
       
@@ -770,17 +701,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    積木 Block（選股）
+    台股資料
   
 
     
@@ -791,12 +722,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             
   
-    積木 Block（選股）
+    台股資料
   
 
           </label>
@@ -809,14 +740,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block/" class="md-nav__link">
+      <a href="../data-tw-list/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    積木 Block 總覽
+    台股資料一覽
   
 
     
@@ -837,14 +768,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-list-conditions/" class="md-nav__link">
+      <a href="../data-tw-price/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    list_conditions 積木清單查詢
+    價量與 K 線
   
 
     
@@ -865,14 +796,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-get-table/" class="md-nav__link">
+      <a href="../data-tw-chip/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Block.get_table 積木參數與合法值
+    籌碼
   
 
     
@@ -893,14 +824,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-con/" class="md-nav__link">
+      <a href="../data-tw-fundamental/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Block.con 組積木
+    基本面
   
 
     
@@ -921,14 +852,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-screener/" class="md-nav__link">
+      <a href="../data-tw-intraday/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Block.screener 執行選股
+    盤中與分 K
   
 
     
@@ -949,14 +880,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-pool/" class="md-nav__link">
+      <a href="../data-tw-broker/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Block 股池 pool
+    券商分點
   
 
     
@@ -977,14 +908,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-auto/" class="md-nav__link">
+      <a href="../data-tw-futures/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    通用積木（自訂比較）
+    期貨
   
 
     
@@ -1005,14 +936,138 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-codegen/" class="md-nav__link">
+      <a href="../data-tw-event/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Block 產生的程式碼 code
+    清單與事件
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usdata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    美股資料 api.USData
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    矩陣資料
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    矩陣資料
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../msmp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    矩陣資料 MSMP
   
 
     
@@ -1033,14 +1088,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-caveats/" class="md-nav__link">
+      <a href="../msmp-tables/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Block 已知落差與注意事項
+    MSMP 資料表與欄位
   
 
     
@@ -1058,17 +1113,44 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../block-reference-tw/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    美股矩陣資料 USMSMP
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    台股積木完整參考
+    美股矩陣資料 USMSMP
   
 
     
@@ -1077,6 +1159,172 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#語法" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        語法
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#與台股-msmp-的差異" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        與台股 MSMP 的差異
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#資料表期間與覆蓋檔數" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        資料表、期間與覆蓋檔數
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#各表的欄位" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        各表的欄位
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#範例" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        範例
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="範例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#矩陣的形式" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        矩陣的形式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#漲跌幅" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        漲跌幅
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#財報" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        財報
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#限定股票範圍" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        限定股票範圍
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#漲幅排行加上成交值門檻" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        漲幅排行加上成交值門檻
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#資料日期" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        資料日期
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#相關頁面" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相關頁面
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1089,14 +1337,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-reference-us/" class="md-nav__link">
+      <a href="../data-history/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    美股積木完整參考
+    資料期間與頻率
   
 
     
@@ -1125,6 +1373,8 @@
   
     
     
+      
+        
       
         
       
@@ -1163,7 +1413,7 @@
   <span class="md-ellipsis">
     
   
-    Data 表格查詢
+    積木選股
   
 
     
@@ -1179,7 +1429,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Data 表格查詢
+    積木選股
   
 
           </label>
@@ -1192,14 +1442,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../data/" class="md-nav__link">
+      <a href="../block/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Data 模組總覽
+    積木選股概覽
   
 
     
@@ -1220,14 +1470,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-get-table/" class="md-nav__link">
+      <a href="../block-get-table/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Data.get_table 列出可用表格
+    查詢積木
   
 
     
@@ -1248,14 +1498,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-v2-tables/" class="md-nav__link">
+      <a href="../block-con/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Data v2 新增資料表（28 張）
+    組合條件
   
 
     
@@ -1276,14 +1526,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-get/" class="md-nav__link">
+      <a href="../block-screener/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Data.get 取得表格資料
+    執行選股
   
 
     
@@ -1304,14 +1554,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-history/" class="md-nav__link">
+      <a href="../block-pool/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    資料頻率與歷史長度
+    股池
   
 
     
@@ -1332,14 +1582,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-get-snapshots/" class="md-nav__link">
+      <a href="../block-auto/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    USData.get_snapshots 美股即時快照
+    通用積木
   
 
     
@@ -1360,14 +1610,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../intraday/" class="md-nav__link">
+      <a href="../block-codegen/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    盤中、分K與逐筆明細
+    選股程式碼
   
 
     
@@ -1388,14 +1638,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../usdata/" class="md-nav__link">
+      <a href="../block-reference-tw/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    USData 美股表格查詢
+    台股積木一覽
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-reference-us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    美股積木一覽
   
 
     
@@ -1420,10 +1698,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1435,31 +1711,34 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    MSMP 歷史資料
+    回測
   
 
     
@@ -1470,12 +1749,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
   
-    MSMP 歷史資料
+    回測
   
 
           </label>
@@ -1488,14 +1767,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../msmp/" class="md-nav__link">
+      <a href="../backtest/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    MSMP 矩陣資料總覽
+    回測概覽
   
 
     
@@ -1516,14 +1795,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../msmp-tables/" class="md-nav__link">
+      <a href="../backtest-strategy/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    MSMP 資料表與欄位完整清單
+    撰寫策略
   
 
     
@@ -1544,14 +1823,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../msmp-list/" class="md-nav__link">
+      <a href="../backtest-order/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    MSMP.list 股池
+    下單與成交
   
 
     
@@ -1569,44 +1848,17 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    USMSMP 美股矩陣資料
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../backtest-data/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    USMSMP 美股矩陣資料
+    資料與週期
   
 
     
@@ -1615,304 +1867,90 @@
   
 
       </a>
-      
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
+              
+            
+              
+                
   
   
   
+  
+    <li class="md-nav__item">
+      <a href="../backtest-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
+    商品設定與績效報告
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Overview
-      
-    </span>
-  </a>
+
+    
+  </span>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#與台股-msmp-的差異" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        與台股 MSMP 的差異
-      
-    </span>
-  </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-張表欄位形狀與期間" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        10 張表：欄位、形狀與期間
-      
-    </span>
-  </a>
+
+      </a>
+    </li>
   
-    <nav class="md-nav" aria-label="10 張表：欄位、形狀與期間">
-      <ul class="md-nav__list">
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest-tools/" class="md-nav__link">
         
-          <li class="md-nav__item">
-  <a href="#台股的降頻拿長歷史在美股不成立" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        台股的「降頻拿長歷史」在美股不成立
-      
-    </span>
-  </a>
   
-</li>
+  
+  <span class="md-ellipsis">
+    
+  
+    技術指標與參數最佳化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/" class="md-nav__link">
         
-          <li class="md-nav__item">
-  <a href="#覆蓋的股票數也不同" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        覆蓋的股票數也不同
-      
-    </span>
-  </a>
   
-</li>
-        
-      </ul>
-    </nav>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#各表的欄位" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        各表的欄位
-      
-    </span>
-  </a>
+  <span class="md-ellipsis">
+    
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#manual-sample-inputoutput" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Manual Sample Input/Output
-      
-    </span>
-  </a>
+    策略範例
   
-    <nav class="md-nav" aria-label="Manual Sample Input/Output">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-1公開成員" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example 1：公開成員
-      
-    </span>
-  </a>
+
+    
+  </span>
   
-    <nav class="md-nav" aria-label="Example 1：公開成員">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#input" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        input
-      
-    </span>
-  </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#output" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        output
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-2矩陣長相" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example 2：矩陣長相
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Example 2：矩陣長相">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#input_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        input
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#output_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        output
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-3財報美股最有價值的一塊" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example 3：財報（美股最有價值的一塊）
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Example 3：財報（美股最有價值的一塊）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#input_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        input
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#output_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        output
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-4沒有股池的後果" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example 4：沒有股池的後果
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Example 4：沒有股池的後果">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#input_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        input
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#output_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        output
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-5資料日期比台股晚一天" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example 5：資料日期比台股晚一天
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#美股排行要加流動性門檻成交值自己算" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        美股排行要加流動性門檻（成交值自己算）
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#注意" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        注意
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
+
+      </a>
     </li>
   
 
@@ -1967,7 +2005,7 @@
   <span class="md-ellipsis">
     
   
-    回測
+    API 參考
   
 
     
@@ -1983,7 +2021,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    回測
+    API 參考
   
 
           </label>
@@ -1996,14 +2034,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../backtest/" class="md-nav__link">
+      <a href="../api-login/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    回測 api.bt 總覽
+    snowyowl 與 api
   
 
     
@@ -2024,14 +2062,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../backtest-strategy/" class="md-nav__link">
+      <a href="../api-data/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    回測：事件模型與策略撰寫
+    api.Data／USData
   
 
     
@@ -2052,14 +2090,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../backtest-order/" class="md-nav__link">
+      <a href="../api-msmp/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    回測：委託、成交價與風控
+    api.MSMP／USMSMP
   
 
     
@@ -2080,14 +2118,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../backtest-data/" class="md-nav__link">
+      <a href="../api-block/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    回測：資料與週期
+    api.Block
   
 
     
@@ -2108,14 +2146,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../backtest-report/" class="md-nav__link">
+      <a href="../api-bt/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    回測：商品規格與績效報告
+    api.bt
   
 
     
@@ -2136,14 +2174,223 @@
   
   
     <li class="md-nav__item">
-      <a href="../backtest-tools/" class="md-nav__link">
+      <a href="../errors/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    回測：技術指標與參數尋優
+    錯誤訊息
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    搭配 AI 使用
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    搭配 AI 使用
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安裝與設定
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-to-ask/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    提問技巧
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-to-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    規劃研究流程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-backtest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測提問範例
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI 工作守則
   
 
     
@@ -2191,10 +2438,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#語法" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        語法
       
     </span>
   </a>
@@ -2213,41 +2460,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#10-張表欄位形狀與期間" class="md-nav__link">
+  <a href="#資料表期間與覆蓋檔數" class="md-nav__link">
     <span class="md-ellipsis">
       
-        10 張表：欄位、形狀與期間
+        資料表、期間與覆蓋檔數
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="10 張表：欄位、形狀與期間">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#台股的降頻拿長歷史在美股不成立" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        台股的「降頻拿長歷史」在美股不成立
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#覆蓋的股票數也不同" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        覆蓋的股票數也不同
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2263,34 +2482,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#manual-sample-inputoutput" class="md-nav__link">
+  <a href="#範例" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Manual Sample Input/Output
+        範例
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Manual Sample Input/Output">
+    <nav class="md-nav" aria-label="範例">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-1公開成員" class="md-nav__link">
+  <a href="#矩陣的形式" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example 1：公開成員
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Example 1：公開成員">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#input" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        input
+        矩陣的形式
       
     </span>
   </a>
@@ -2298,38 +2505,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#output" class="md-nav__link">
+  <a href="#漲跌幅" class="md-nav__link">
     <span class="md-ellipsis">
       
-        output
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-2矩陣長相" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example 2：矩陣長相
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Example 2：矩陣長相">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#input_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        input
+        漲跌幅
       
     </span>
   </a>
@@ -2337,38 +2516,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#output_1" class="md-nav__link">
+  <a href="#財報" class="md-nav__link">
     <span class="md-ellipsis">
       
-        output
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-3財報美股最有價值的一塊" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example 3：財報（美股最有價值的一塊）
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Example 3：財報（美股最有價值的一塊）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#input_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        input
+        財報
       
     </span>
   </a>
@@ -2376,38 +2527,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#output_2" class="md-nav__link">
+  <a href="#限定股票範圍" class="md-nav__link">
     <span class="md-ellipsis">
       
-        output
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-4沒有股池的後果" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example 4：沒有股池的後果
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Example 4：沒有股池的後果">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#input_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        input
+        限定股票範圍
       
     </span>
   </a>
@@ -2415,37 +2538,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#output_3" class="md-nav__link">
+  <a href="#漲幅排行加上成交值門檻" class="md-nav__link">
     <span class="md-ellipsis">
       
-        output
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-5資料日期比台股晚一天" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example 5：資料日期比台股晚一天
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#美股排行要加流動性門檻成交值自己算" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        美股排行要加流動性門檻（成交值自己算）
+        漲幅排行加上成交值門檻
       
     </span>
   </a>
@@ -2458,10 +2554,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#注意" class="md-nav__link">
+  <a href="#資料日期" class="md-nav__link">
     <span class="md-ellipsis">
       
-        注意
+        資料日期
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#相關頁面" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相關頁面
       
     </span>
   </a>
@@ -2485,15 +2592,10 @@
 
 
 
-<h1 id="usmsmp-美股矩陣資料">USMSMP 美股矩陣資料</h1>
-<blockquote>
-<p>所屬章節：MSMP 歷史資料
-10 張表的形狀與期間以 2026-10-21 實測為準（美股資料日 2026-10-20）；長度會變，用前先 <code>len()</code> 確認
-下方範例輸出是 2026-08 的執行紀錄</p>
-</blockquote>
-<h2 id="overview">Overview</h2>
-<p><code>api.USMSMP</code> 與 <code>api.MSMP</code> 是同一個類別（<code>_MSMP</code>），用法完全相同，
-但<strong>表格較少、沒有股池與大盤指數，而且各頻率的歷史長度規則和台股不一樣</strong>。</p>
+<h1 id="美股矩陣資料-usmsmp">美股矩陣資料 USMSMP</h1>
+<p><code>api.USMSMP</code> 以日期 × 股票代號的矩陣提供美股歷史資料，用法與台股 <a href="../msmp/">矩陣資料 MSMP</a> 相同。
+適合跨全市場計算指標與選股；單一標的的完整財報、分 K 與明細用 <a href="../usdata/">美股資料 api.USData</a>。</p>
+<h2 id="語法">語法</h2>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">api</span><span class="o">.</span><span class="n">USMSMP</span><span class="o">.</span><span class="n">日_K</span><span class="o">.</span><span class="n">Close</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">api</span><span class="o">.</span><span class="n">USMSMP</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;日_K&#39;</span><span class="p">,</span> <span class="s1">&#39;Close&#39;</span><span class="p">)</span>
 </span></code></pre></div>
@@ -2501,7 +2603,7 @@
 <table>
 <thead>
 <tr>
-<th>成員</th>
+<th>項目</th>
 <th><code>api.MSMP</code>（台股）</th>
 <th><code>api.USMSMP</code>（美股）</th>
 </tr>
@@ -2514,38 +2616,60 @@
 </tr>
 <tr>
 <td><code>list</code>（股池）</td>
-<td>有（8 個）</td>
-<td><strong>沒有</strong></td>
+<td>有</td>
+<td>沒有</td>
 </tr>
 <tr>
 <td><code>INFO</code></td>
 <td>有</td>
-<td><strong>沒有</strong></td>
+<td>沒有</td>
 </tr>
 <tr>
 <td><code>INDEX</code></td>
-<td>有（D / M / Q）</td>
-<td><strong>沒有</strong></td>
+<td>有（D／M／Q）</td>
+<td>沒有</td>
 </tr>
 <tr>
-<td>大盤指數 <code>TSE</code> / <code>OTC</code></td>
+<td>大盤指數 <code>TSE</code>／<code>OTC</code></td>
 <td>有</td>
-<td><strong>沒有</strong></td>
+<td>沒有</td>
 </tr>
 <tr>
-<td>期貨 <code>_fut_TXF</code></td>
+<td>台指期 <code>_fut_TXF</code></td>
 <td>有</td>
-<td><strong>沒有</strong></td>
+<td>沒有</td>
 </tr>
 <tr>
-<td><code>get</code> / <code>get_table</code> / <code>DataFrame</code> / <code>msmp_to_dic</code></td>
+<td><code>get</code>／<code>get_table</code>／<code>DataFrame</code>／<code>msmp_to_dic</code></td>
 <td>有</td>
 <td>有</td>
+</tr>
+<tr>
+<td><code>日_K</code> 欄位</td>
+<td>含 <code>adj_*</code> 還原價、<code>成交額_百萬</code>、<code>市值_百萬</code>、<code>漲跌幅</code></td>
+<td><code>Open</code>、<code>High</code>、<code>Low</code>、<code>Close</code>、<code>Volume</code>，另有 <code>買量</code>、<code>賣量</code>、<code>資金淨流</code></td>
+</tr>
+<tr>
+<td>週 K、月 K 的期間</td>
+<td>約 6 年</td>
+<td>約 2 年</td>
+</tr>
+<tr>
+<td>成交量單位</td>
+<td>張</td>
+<td>股</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="10-張表欄位形狀與期間">10 張表：欄位、形狀與期間</h2>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">USMSMP</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">n</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)]</span>
+</span></code></pre></div>
+<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>[&#39;DataFrame&#39;, &#39;get&#39;, &#39;get_table&#39;, &#39;msmp_to_dic&#39;,
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a> &#39;季營收&#39;, &#39;季股利資訊&#39;, &#39;季財報_其他&#39;, &#39;季財報_損益表_千&#39;,
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a> &#39;季財報_現金流表_千&#39;, &#39;季財報_財務指標&#39;, &#39;季財報_資產負債表_千&#39;,
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a> &#39;日_K&#39;, &#39;月_K&#39;, &#39;週_K&#39;]
+</span></code></pre></div>
+<h2 id="資料表期間與覆蓋檔數">資料表、期間與覆蓋檔數</h2>
+<p>以下為 2026-10-21 的結果（美股資料日 2026-10-20）。長度會隨時間變動，使用前以 <code>len()</code> 確認。</p>
 <table>
 <thead>
 <tr>
@@ -2561,42 +2685,42 @@
 <td><code>日_K</code></td>
 <td>8</td>
 <td>(500, 13534)</td>
-<td>2024-10-22 ~ 2026-10-20</td>
+<td>2024-10-22 ～ 2026-10-20</td>
 <td>2.0</td>
 </tr>
 <tr>
 <td><code>週_K</code></td>
 <td>5</td>
 <td>(122, 13330)</td>
-<td>2024-06-24 ~ 2026-10-19</td>
-<td><strong>2.3</strong></td>
+<td>2024-06-24 ～ 2026-10-19</td>
+<td>2.3</td>
 </tr>
 <tr>
 <td><code>月_K</code></td>
 <td>5</td>
 <td>(26, 13330)</td>
-<td>2024-09-01 ~ 2026-10-01</td>
-<td><strong>2.1</strong></td>
+<td>2024-09-01 ～ 2026-10-01</td>
+<td>2.1</td>
 </tr>
 <tr>
 <td><code>季營收</code></td>
 <td>5</td>
 <td>(56, 5811)</td>
-<td>2012-Q4 ~ 2026-Q3</td>
-<td><strong>13.7</strong></td>
+<td>2012-Q4 ～ 2026-Q3</td>
+<td>13.7</td>
 </tr>
 <tr>
 <td><code>季股利資訊</code></td>
 <td>4</td>
 <td>(17, 5820)</td>
-<td>2010-Y ~ 2026-Y</td>
-<td><strong>17</strong></td>
+<td>2010-Y ～ 2026-Y</td>
+<td>17</td>
 </tr>
 <tr>
 <td><code>季財報_資產負債表_千</code></td>
 <td>21</td>
 <td>(56, 5811)</td>
-<td>2012-Q4 ~ 2026-Q3</td>
+<td>2012-Q4 ～ 2026-Q3</td>
 <td>13.7</td>
 </tr>
 <tr>
@@ -2629,13 +2753,15 @@
 </tr>
 </tbody>
 </table>
-<h3 id="台股的降頻拿長歷史在美股不成立">台股的「降頻拿長歷史」在美股不成立</h3>
-<p>台股的 <code>MSMP</code> 週／月 K（約 6 年）比日 K（約 2 年）長，所以問「近五年」可以降頻。
-<strong>美股不行</strong>——週 K 約 2.3 年、月 K 約 2.1 年，跟日 K 差不多。</p>
+<ul>
+<li>價格類（日、週、月 K）最長約 2 年，以週 K、月 K 也無法取得更長的股價歷史。長期歷史只有財報（2012-Q4 起）與股利（2010 起）。</li>
+<li>價格類覆蓋 13534 檔（日 K），財報類 5811 檔（股利 5820 檔）。跨表運算後以 <code>.dropna()</code> 去除沒有值的股票。</li>
+<li>季頻表的 index 是 <code>'2026-Q2'</code> 格式的字串，排序與篩選以字串比較。</li>
+</ul>
 <table>
 <thead>
 <tr>
-<th>問「近 N 年」</th>
+<th>「近 N 年」</th>
 <th>台股</th>
 <th>美股</th>
 </tr>
@@ -2647,9 +2773,9 @@
 <td>日頻</td>
 </tr>
 <tr>
-<td>三 ~ 六年</td>
+<td>三～六年</td>
 <td>週／月頻（約 6 年）</td>
-<td><strong>只能用季財報</strong>（13.7 年）；價格資料沒有</td>
+<td>只有季財報（13.7 年）；沒有價格資料</td>
 </tr>
 <tr>
 <td>更長</td>
@@ -2658,139 +2784,130 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p><strong>美股要長期股價就沒辦法。</strong> 價格類（日／週／月 K）最多約 2.3 年。
-長歷史只存在於<strong>財報與股利</strong>這兩塊。台股版的對照見 <a href="../data-history/">data-history.md</a>。</p>
-</blockquote>
-<h3 id="覆蓋的股票數也不同">覆蓋的股票數也不同</h3>
-<p>價格類 <strong>13534 檔</strong>（日 K），財報類只有 <strong>5811 檔</strong>（股利 5820）。
-跨表運算後一定要 <code>.dropna()</code>，否則會拿到一堆 NaN：</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">U</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">USMSMP</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">per</span> <span class="o">=</span> <span class="n">U</span><span class="o">.</span><span class="n">季財報_財務指標</span><span class="o">.</span><span class="n">本益比</span>            <span class="c1"># (56, 5811)</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">close</span> <span class="o">=</span> <span class="n">U</span><span class="o">.</span><span class="n">日_K</span><span class="o">.</span><span class="n">Close</span>                     <span class="c1"># (500, 13534)</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># 兩者頻率與欄位都不同，不能直接相除</span>
-</span></code></pre></div>
-<hr />
 <h2 id="各表的欄位">各表的欄位</h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>日_K                  Open High Low Close Volume 買量 賣量 資金淨流
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>週_K / 月_K            Open High Low Close Volume
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>季營收                 金額_千 累計金額_千 QoQ YoY 累計YoY
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>季股利資訊              股利 股利合計 股利發放率 殖利率
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>季財報_損益表_千         營業收入 營業成本 營業毛利 營業費用 銷管費用 研發費用
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>                      營業淨利 營業外收入及支出 財務成本 稅前純益 稅前息前淨利
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>                      稅前息前折舊前淨利 所得稅費用 稅後純益 稅後淨利
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>季財報_現金流表_千       營運現金流 投資現金流 籌資現金流 自由現金流 淨現金流
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>                      淨現金流含匯率變動 匯率變動對現金之影響 折舊及攤提費用 資本支出
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>季財報_其他             股價 市值 股數_千 公告EPS 公告累計EPS 財報發布日
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>                      EV企業價值 營運資金 投資人投入資本
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>季財報_財務指標（30）     本益比 股價淨值比 股價營收比 每股淨值 每股稅後盈餘 每股銷售額
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>                      毛利率 營業利益率 稅前純益率 稅後純益率 稅後權益報酬率 稅後資產報酬率
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>                      負債比率 流動比率 速動比率 淨值資產比率 營業費用率 研究發展費用率
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>                      存貨週轉率_次 累計存貨週轉率_次 企業價值對EBIT比率 企業價值對EBITDA比率
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>                      EPS成長率 營收季變動率 營業毛利成長率 營業利益成長率
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>                      稅前淨利成長率 稅後淨利成長率 總資產成長率 淨值成長率
+<table>
+<thead>
+<tr>
+<th>表</th>
+<th>欄位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>日_K</code></td>
+<td><code>Open</code>、<code>High</code>、<code>Low</code>、<code>Close</code>、<code>Volume</code>、<code>買量</code>、<code>賣量</code>、<code>資金淨流</code></td>
+</tr>
+<tr>
+<td><code>週_K</code>／<code>月_K</code></td>
+<td><code>Open</code>、<code>High</code>、<code>Low</code>、<code>Close</code>、<code>Volume</code></td>
+</tr>
+<tr>
+<td><code>季營收</code></td>
+<td><code>金額_千</code>、<code>累計金額_千</code>、<code>QoQ</code>、<code>YoY</code>、<code>累計YoY</code></td>
+</tr>
+<tr>
+<td><code>季股利資訊</code></td>
+<td><code>股利</code>、<code>股利合計</code>、<code>股利發放率</code>、<code>殖利率</code></td>
+</tr>
+<tr>
+<td><code>季財報_損益表_千</code></td>
+<td><code>營業收入</code>、<code>營業成本</code>、<code>營業毛利</code>、<code>營業費用</code>、<code>銷管費用</code>、<code>研發費用</code>、<code>營業淨利</code>、<code>營業外收入及支出</code>、<code>財務成本</code>、<code>稅前純益</code>、<code>稅前息前淨利</code>、<code>稅前息前折舊前淨利</code>、<code>所得稅費用</code>、<code>稅後純益</code>、<code>稅後淨利</code></td>
+</tr>
+<tr>
+<td><code>季財報_現金流表_千</code></td>
+<td><code>營運現金流</code>、<code>投資現金流</code>、<code>籌資現金流</code>、<code>自由現金流</code>、<code>淨現金流</code>、<code>淨現金流含匯率變動</code>、<code>匯率變動對現金之影響</code>、<code>折舊及攤提費用</code>、<code>資本支出</code></td>
+</tr>
+<tr>
+<td><code>季財報_其他</code></td>
+<td><code>股價</code>、<code>市值</code>、<code>股數_千</code>、<code>公告EPS</code>、<code>公告累計EPS</code>、<code>財報發布日</code>、<code>EV企業價值</code>、<code>營運資金</code>、<code>投資人投入資本</code></td>
+</tr>
+<tr>
+<td><code>季財報_財務指標</code></td>
+<td><code>本益比</code>、<code>股價淨值比</code>、<code>股價營收比</code>、<code>每股淨值</code>、<code>每股稅後盈餘</code>、<code>每股銷售額</code>、<code>毛利率</code>、<code>營業利益率</code>、<code>稅前純益率</code>、<code>稅後純益率</code>、<code>稅後權益報酬率</code>、<code>稅後資產報酬率</code>、<code>負債比率</code>、<code>流動比率</code>、<code>速動比率</code>、<code>淨值資產比率</code>、<code>營業費用率</code>、<code>研究發展費用率</code>、<code>存貨週轉率_次</code>、<code>累計存貨週轉率_次</code>、<code>企業價值對EBIT比率</code>、<code>企業價值對EBITDA比率</code>、<code>EPS成長率</code>、<code>營收季變動率</code>、<code>營業毛利成長率</code>、<code>營業利益成長率</code>、<code>稅前淨利成長率</code>、<code>稅後淨利成長率</code>、<code>總資產成長率</code>、<code>淨值成長率</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>季財報_資產負債表_千</code> 的 21 欄見 <a href="../msmp-tables/">MSMP 資料表與欄位</a>。</p>
+<table>
+<thead>
+<tr>
+<th>單位</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_千</code> 結尾的表與欄位</td>
+<td>千美元，÷ 1e6 得十億美元</td>
+</tr>
+<tr>
+<td><code>Volume</code></td>
+<td>股</td>
+</tr>
+</tbody>
+</table>
+<h2 id="範例">範例</h2>
+<h3 id="矩陣的形式">矩陣的形式</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">api</span><span class="o">.</span><span class="n">USMSMP</span><span class="o">.</span><span class="n">日_K</span><span class="o">.</span><span class="n">Close</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:,</span> <span class="p">:</span><span class="mi">6</span><span class="p">]</span>
 </span></code></pre></div>
-<p><code>季財報_資產負債表_千</code> 的 21 欄見 <a href="../msmp-tables/">msmp-tables.md</a> 的美股段落。</p>
-<hr />
-<h2 id="manual-sample-inputoutput">Manual Sample Input/Output</h2>
-<h3 id="example-1公開成員">Example 1：公開成員</h3>
-<h4 id="input">input</h4>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">USMSMP</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">n</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)]</span>
+<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>                  A      AA     AAA    AAAA    AAAC    AAAD
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>date
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>2026-08-14 148.5300 49.9800 24.9600 30.9670 20.0950 49.5900
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>2026-08-17 148.4500 51.7100 24.9500 30.9550 20.0900 49.4950
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>2026-08-18 148.4400 50.0200 24.9500 30.7000 20.0950 49.4653
 </span></code></pre></div>
-<h4 id="output">output</h4>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>[&#39;DataFrame&#39;, &#39;get&#39;, &#39;get_table&#39;, &#39;msmp_to_dic&#39;,
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a> &#39;季營收&#39;, &#39;季股利資訊&#39;, &#39;季財報_其他&#39;, &#39;季財報_損益表_千&#39;,
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a> &#39;季財報_現金流表_千&#39;, &#39;季財報_財務指標&#39;, &#39;季財報_資產負債表_千&#39;,
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a> &#39;日_K&#39;, &#39;月_K&#39;, &#39;週_K&#39;]
+<p>美股矩陣約 1.3 萬檔（台股約 2900 檔）。</p>
+<h3 id="漲跌幅">漲跌幅</h3>
+<p><code>日_K</code> 沒有 <code>漲跌幅</code> 欄，以收盤價計算：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">U</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">USMSMP</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">chg</span> <span class="o">=</span> <span class="n">U</span><span class="o">.</span><span class="n">日_K</span><span class="o">.</span><span class="n">Close</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span>
 </span></code></pre></div>
-<p>台股獨有的 <code>INFO</code>、<code>INDEX</code>、<code>list</code>、<code>TSE</code>、<code>OTC</code>、<code>_fut_TXF</code> 都不在這裡。</p>
-<hr />
-<h3 id="example-2矩陣長相">Example 2：矩陣長相</h3>
-<h4 id="input_1">input</h4>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">api</span><span class="o">.</span><span class="n">USMSMP</span><span class="o">.</span><span class="n">日_K</span><span class="o">.</span><span class="n">Close</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:,</span> <span class="p">:</span><span class="mi">6</span><span class="p">]</span>
+<h3 id="財報">財報</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">U</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">USMSMP</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">rev</span> <span class="o">=</span> <span class="n">U</span><span class="o">.</span><span class="n">季財報_損益表_千</span><span class="o">.</span><span class="n">營業收入</span><span class="p">[</span><span class="s1">&#39;AAPL&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">v</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1e6</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> 十億&#39;</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">rev</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
 </span></code></pre></div>
-<h4 id="output_1">output</h4>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>DataFrame shape: (1000, 13174)
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>                  A      AA     AAA    AAAA    AAAC    AAAD
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>date
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>2026-08-14 148.5300 49.9800 24.9600 30.9670 20.0950 49.5900
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>2026-08-17 148.4500 51.7100 24.9500 30.9550 20.0900 49.4950
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>2026-08-18 148.4400 50.0200 24.9500 30.7000 20.0950 49.4653
+<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>{&#39;2025-Q3&#39;: &#39;102.5 十億&#39;, &#39;2025-Q4&#39;: &#39;143.8 十億&#39;,
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a> &#39;2026-Q1&#39;: &#39;111.2 十億&#39;, &#39;2026-Q2&#39;: &#39;109.4 十億&#39;}
 </span></code></pre></div>
-<p>美股矩陣寬約 1.3 萬檔（台股約 2900）。<code>日_K</code> 比台股多了 <code>買量</code> / <code>賣量</code> / <code>資金淨流</code> 三欄，
-但沒有台股的 <code>adj_*</code> 還原價、<code>成交額_百萬</code>、<code>市值_百萬</code>、<code>漲跌幅</code>。</p>
-<blockquote>
-<p><strong>美股沒有 <code>漲跌幅</code> 欄</strong>，要自己算：<code>U.日_K.Close.pct_change() * 100</code>。</p>
-</blockquote>
-<hr />
-<h3 id="example-3財報美股最有價值的一塊">Example 3：財報（美股最有價值的一塊）</h3>
-<p><code>年季</code> 是字串（<code>'2026-Q2'</code>），不是日期——排序與篩選用字串比較。</p>
-<h4 id="input_2">input</h4>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">U</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">USMSMP</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">rev</span> <span class="o">=</span> <span class="n">U</span><span class="o">.</span><span class="n">季財報_損益表_千</span><span class="o">.</span><span class="n">營業收入</span><span class="p">[</span><span class="s1">&#39;AAPL&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">v</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1e6</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> 十億&#39;</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">rev</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<p>常用欄位：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">U</span><span class="o">.</span><span class="n">季財報_財務指標</span><span class="o">.</span><span class="n">本益比</span><span class="p">[</span><span class="s1">&#39;AAPL&#39;</span><span class="p">]</span>          <span class="c1"># PER 時間序列，2012-Q4 起</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">U</span><span class="o">.</span><span class="n">季財報_財務指標</span><span class="o">.</span><span class="n">稅後權益報酬率</span><span class="p">[</span><span class="s1">&#39;AAPL&#39;</span><span class="p">]</span>    <span class="c1"># ROE</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">U</span><span class="o">.</span><span class="n">季財報_現金流表_千</span><span class="o">.</span><span class="n">自由現金流</span><span class="p">[</span><span class="s1">&#39;AAPL&#39;</span><span class="p">]</span>     <span class="c1"># FCF</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">U</span><span class="o">.</span><span class="n">季財報_其他</span><span class="o">.</span><span class="n">財報發布日</span><span class="p">[</span><span class="s1">&#39;AAPL&#39;</span><span class="p">]</span>           <span class="c1"># 財報公布日</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="n">U</span><span class="o">.</span><span class="n">季股利資訊</span><span class="o">.</span><span class="n">殖利率</span><span class="p">[</span><span class="s1">&#39;AAPL&#39;</span><span class="p">]</span>               <span class="c1"># 年頻，2010-Y 起</span>
 </span></code></pre></div>
-<h4 id="output_2">output</h4>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>{&#39;2025-Q3&#39;: &#39;102.5 十億&#39;, &#39;2025-Q4&#39;: &#39;143.8 十億&#39;,
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a> &#39;2026-Q1&#39;: &#39;111.2 十億&#39;, &#39;2026-Q2&#39;: &#39;109.4 十億&#39;}
+<p>季財報在季度結束後才公布。回測時以 <code>財報發布日</code> 對齊資料，而不是 <code>年季</code>，可避免使用到當時尚未公布的財報。</p>
+<h3 id="限定股票範圍">限定股票範圍</h3>
+<p>美股沒有股池，<code>screener_us()</code> 沒有 <code>pool</code> 參數。要限定範圍時，從選股結果中選取 columns：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">r</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">screener_us</span><span class="p">([</span><span class="n">b</span><span class="p">])</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">watch</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;AAPL&#39;</span><span class="p">,</span> <span class="s1">&#39;MSFT&#39;</span><span class="p">,</span> <span class="s1">&#39;NVDA&#39;</span><span class="p">]</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">sub</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="s1">&#39;sig&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">r</span><span class="p">[</span><span class="s1">&#39;sig&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">watch</span><span class="p">)]</span>
 </span></code></pre></div>
-<blockquote>
-<p><strong>單位是千（美元）</strong>，<code>÷ 1e6</code> 得十億美元。所有 <code>_千</code> 結尾的表都一樣。</p>
-</blockquote>
-<p>常用組合：</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">U</span><span class="o">.</span><span class="n">季財報_財務指標</span><span class="o">.</span><span class="n">本益比</span><span class="p">[</span><span class="s1">&#39;AAPL&#39;</span><span class="p">]</span>          <span class="c1"># PER 時間序列，2012-Q4 起</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">U</span><span class="o">.</span><span class="n">季財報_財務指標</span><span class="o">.</span><span class="n">稅後權益報酬率</span><span class="p">[</span><span class="s1">&#39;AAPL&#39;</span><span class="p">]</span>    <span class="c1"># ROE</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">U</span><span class="o">.</span><span class="n">季財報_現金流表_千</span><span class="o">.</span><span class="n">自由現金流</span><span class="p">[</span><span class="s1">&#39;AAPL&#39;</span><span class="p">]</span>     <span class="c1"># FCF</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">U</span><span class="o">.</span><span class="n">季財報_其他</span><span class="o">.</span><span class="n">財報發布日</span><span class="p">[</span><span class="s1">&#39;AAPL&#39;</span><span class="p">]</span>           <span class="c1"># 做回測時用它避開前視偏誤</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">U</span><span class="o">.</span><span class="n">季股利資訊</span><span class="o">.</span><span class="n">殖利率</span><span class="p">[</span><span class="s1">&#39;AAPL&#39;</span><span class="p">]</span>               <span class="c1"># 年頻，2010-Y 起（2026-10-21 實測）</span>
+<p>依產業或市值篩選時，先以 <code>api.USData.get('美股產業對照表')</code>（13187 列，含 <code>粗產業名稱</code>、<code>細產業名稱</code>、<code>是否為ETF</code>、<code>市值(美元)</code>）取得代號清單，見 <a href="../usdata/">美股資料 api.USData</a>。</p>
+<h3 id="漲幅排行加上成交值門檻">漲幅排行加上成交值門檻</h3>
+<p>美股沒有成交額欄，成交值以 <code>Volume × Close</code> 計算：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">U</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">USMSMP</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">c</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">U</span><span class="o">.</span><span class="n">日_K</span><span class="o">.</span><span class="n">Close</span><span class="p">,</span> <span class="n">U</span><span class="o">.</span><span class="n">日_K</span><span class="o">.</span><span class="n">Volume</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">val</span> <span class="o">=</span> <span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">c</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>          <span class="c1"># 成交值（美元）</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">chg</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span>      <span class="c1"># 漲跌幅 %</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="n">big</span> <span class="o">=</span> <span class="n">chg</span><span class="p">[(</span><span class="n">chg</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">val</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">chg</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mf">1e8</span><span class="p">)]</span>
 </span></code></pre></div>
-<p><strong>做回測要用 <code>財報發布日</code> 而不是 <code>年季</code></strong>——<code>2026-Q2</code> 的財報不是 Q2 結束當天就知道的。</p>
-<hr />
-<h3 id="example-4沒有股池的後果">Example 4：沒有股池的後果</h3>
-<p>因為沒有 <code>list</code>，積木的美股 screener 不開放 <code>pool</code>：</p>
-<h4 id="input_3">input</h4>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">screener_us</span><span class="p">(</span><span class="n">block_list</span><span class="p">,</span> <span class="n">pool</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">])</span>
+<p>2026-10-20「漲幅 ≥ 10%」的檔數：不設門檻 173 檔，成交值 ≥ $1M 為 73 檔，≥ $10M 為 36 檔，≥ $100M 為 13 檔。不設門檻時，排行前段多為權證、股價低於 1 美分的股票，或因反分割產生的漲幅，建議加上成交值門檻。</p>
+<h2 id="資料日期">資料日期</h2>
+<p>美股的資料日期通常比台股晚一天。2026-08-21 執行時：</p>
+<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>api.MSMP   最後日期 = 2026-08-20
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>api.USMSMP 最後日期 = 2026-08-19
 </span></code></pre></div>
-<h4 id="output_3">output</h4>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>TypeError: Block.screener_us() got an unexpected keyword argument &#39;pool&#39;
-</span></code></pre></div>
-<p>要限定範圍請自己切 columns：</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">r</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">screener_us</span><span class="p">([</span><span class="n">b</span><span class="p">])</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">watch</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;AAPL&#39;</span><span class="p">,</span> <span class="s1">&#39;MSFT&#39;</span><span class="p">,</span> <span class="s1">&#39;NVDA&#39;</span><span class="p">]</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">sub</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="s1">&#39;sig&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">r</span><span class="p">[</span><span class="s1">&#39;sig&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">watch</span><span class="p">)]</span>
-</span></code></pre></div>
-<p>要按產業或市值篩，用 <code>api.USData.get('美股產業對照表')</code>（13187 列，
-含 <code>粗產業名稱</code> / <code>細產業名稱</code> / <code>是否為ETF</code> / <code>市值(美元)</code>）先取代號清單。
-見 <a href="../usdata/">usdata.md</a>。</p>
-<hr />
-<h3 id="example-5資料日期比台股晚一天">Example 5：資料日期比台股晚一天</h3>
-<p>實測（2026-08-21 執行）：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>api.MSMP   最後日期 = 2026-08-20
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>api.USMSMP 最後日期 = 2026-08-19
-</span></code></pre></div>
-<p>時區與結算的差異造成的。所以 <code>screener_tw</code> 與 <code>screener_us</code> 的 <code>date</code> <strong>不會相同</strong>，
-不要假設一致——跨市場比較前先各自取 <code>index[-1]</code> 對齊。</p>
-<hr />
-<h3 id="美股排行要加流動性門檻成交值自己算">美股排行要加流動性門檻（成交值自己算）</h3>
-<p>美股沒有 <code>成交額_百萬</code> 也沒有 <code>漲跌幅</code> 欄，兩個都要自己算：</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">U</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">USMSMP</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">c</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">U</span><span class="o">.</span><span class="n">日_K</span><span class="o">.</span><span class="n">Close</span><span class="p">,</span> <span class="n">U</span><span class="o">.</span><span class="n">日_K</span><span class="o">.</span><span class="n">Volume</span>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">val</span> <span class="o">=</span> <span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">c</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>          <span class="c1"># 成交值（美元）</span>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="n">chg</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span>      <span class="c1"># 漲跌幅 %</span>
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="n">big</span> <span class="o">=</span> <span class="n">chg</span><span class="p">[(</span><span class="n">chg</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">val</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">chg</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mf">1e8</span><span class="p">)]</span>
-</span></code></pre></div>
-<p>2026-10-20 實測「漲幅 ≥ 10%」：不加門檻 173 檔 → 成交值 ≥ $1M 剩 73 → ≥ $10M 剩 36 → ≥ $100M 剩 13。
-不加門檻的排行前幾名多半是權證、次分錢股或反分割造成的假漲幅。</p>
-<h2 id="注意">注意</h2>
+<p>因此 <code>screener_tw()</code> 與 <code>screener_us()</code> 回傳的 <code>date</code> 可能不同。跨市場比較前，各自以 <code>index[-1]</code> 取得資料日期再對齊。</p>
+<h2 id="相關頁面">相關頁面</h2>
 <ul>
-<li><strong>沒有 <code>漲跌幅</code> 欄</strong>，自己用 <code>Close.pct_change() * 100</code> 算。</li>
-<li><strong>價格類最多約 2.3 年</strong>，長歷史只有財報（2012-Q4 起）與股利（2010 起）。</li>
-<li><strong>財報覆蓋 5811 檔、價格覆蓋 13534 檔</strong>，跨表運算後要 <code>.dropna()</code>。</li>
-<li><code>_千</code> 結尾的欄位單位是千美元，<code>÷ 1e6</code> 得十億。</li>
-<li>成交量 <code>Volume</code> 的單位是<strong>股</strong>（美股沒有「張」的概念）。</li>
-<li>表格式查詢（單檔完整財報、分K、明細）用 <a href="../usdata/">api.USData</a>，25 張表。</li>
+<li><a href="../msmp/">矩陣資料 MSMP</a>：取法與台股矩陣</li>
+<li><a href="../msmp-tables/">MSMP 資料表與欄位</a>：美股 10 張表的完整欄位</li>
+<li><a href="../data-history/">資料期間與頻率</a>：台股與美股各頻率的期間比較</li>
+<li><a href="../usdata/">美股資料 api.USData</a>：美股表格查詢</li>
 </ul>
+<p class="sw-verified">最後驗證：2026-10-21</p>
 
 
 
@@ -2826,7 +2943,7 @@
       <nav class="md-footer__inner md-grid" aria-label="頁腳" >
         
           
-          <a href="../msmp-list/" class="md-footer__link md-footer__link--prev" aria-label="上一頁: MSMP.list 股池">
+          <a href="../msmp-tables/" class="md-footer__link md-footer__link--prev" aria-label="上一頁: MSMP 資料表與欄位">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2836,20 +2953,20 @@
                 上一頁
               </span>
               <div class="md-ellipsis">
-                MSMP.list 股池
+                MSMP 資料表與欄位
               </div>
             </div>
           </a>
         
         
           
-          <a href="../backtest/" class="md-footer__link md-footer__link--next" aria-label="下一頁: 回測 api.bt 總覽">
+          <a href="../data-history/" class="md-footer__link md-footer__link--next" aria-label="下一頁: 資料期間與頻率">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一頁
               </span>
               <div class="md-ellipsis">
-                回測 api.bt 總覽
+                資料期間與頻率
               </div>
             </div>
             <div class="md-footer__button md-icon">

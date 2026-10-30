@@ -6,17 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="台美股資料、積木選股與回測整合套件 —— 專為 AI coding agent 設計的文件集">
+        <meta name="description" content="SnowyOwl —— 台美股資料、積木選股與回測的 Python 套件">
       
       
       
-        <link rel="canonical" href="https://snowyowlstrategy.github.io/api-structure/">
+        <link rel="canonical" href="https://snowyowlstrategy.github.io/api-login/">
       
       
-        <link rel="prev" href="../login/">
+        <link rel="prev" href="../recipes/">
       
       
-        <link rel="next" href="../errors/">
+        <link rel="next" href="../api-data/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>api 物件結構 - SnowyOwl</title>
+        <title>snowyowl 與 api - SnowyOwl</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#api-物件結構" class="md-skip">
+        <a href="#snowyowl-與-api" class="md-skip">
           跳轉到
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              api 物件結構
+              snowyowl 與 api
             
           </span>
         </div>
@@ -226,41 +226,17 @@
   
   
   
-    
-  
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../agent-playbook/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  入門與結構
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
   
     
     
       <li class="md-tabs__item">
-        <a href="../block/" class="md-tabs__link">
+        <a href="../getting-started/" class="md-tabs__link">
           
   
   
     
   
-  積木 Block（選股）
+  開始使用
 
         </a>
       </li>
@@ -282,7 +258,7 @@
   
     
   
-  Data 表格查詢
+  資料
 
         </a>
       </li>
@@ -298,13 +274,13 @@
     
     
       <li class="md-tabs__item">
-        <a href="../msmp/" class="md-tabs__link">
+        <a href="../block/" class="md-tabs__link">
           
   
   
     
   
-  MSMP 歷史資料
+  積木選股
 
         </a>
       </li>
@@ -327,6 +303,52 @@
     
   
   回測
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  API 參考
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../ai-setup/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  搭配 AI 使用
 
         </a>
       </li>
@@ -403,26 +425,10 @@
       
   
   
-    
   
   
-  
     
     
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
       
         
       
@@ -432,27 +438,24 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    入門與結構
+    開始使用
   
 
     
@@ -463,44 +466,16 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
   
-    入門與結構
+    開始使用
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../agent-playbook/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    給 AI 的工作守則
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -516,119 +491,7 @@
   <span class="md-ellipsis">
     
   
-    開始使用 SnowyOwl
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../how-to-ask/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    怎麼問，才問得到你要的東西
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../how-to-plan/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    怎麼制定一個 plan
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../case-study-backtest/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    案例集：小白怎麼問回測
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../recipes/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    配方集：實跑驗證過的寫法範例
+    快速開始
   
 
     
@@ -656,271 +519,7 @@
   <span class="md-ellipsis">
     
   
-    so.login 登入
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    api 物件結構
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    api 物件結構
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#manual-sample-inputoutput" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Manual Sample Input/Output
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Manual Sample Input/Output">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-1完整屬性表" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example 1：完整屬性表
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Example 1：完整屬性表">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#input" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        input
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#output" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        output
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-2各命名空間的方法" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example 2：各命名空間的方法
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Example 2：各命名空間的方法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#input_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        input
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#output_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        output
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#input_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        input
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#output_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        output
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#input_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        input
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#會用到的四個" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        會用到的四個
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#snowyowl-的能力邊界" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SnowyOwl 的能力邊界
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../errors/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    錯誤訊息速查
+    登入與登出
   
 
     
@@ -949,16 +548,6 @@
   
     
     
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
       
         
       
@@ -993,7 +582,7 @@
   <span class="md-ellipsis">
     
   
-    積木 Block（選股）
+    資料
   
 
     
@@ -1009,7 +598,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    積木 Block（選股）
+    資料
   
 
           </label>
@@ -1022,14 +611,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block/" class="md-nav__link">
+      <a href="../data/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    積木 Block 總覽
+    資料總覽
   
 
     
@@ -1050,14 +639,110 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-list-conditions/" class="md-nav__link">
+      <a href="../data-get/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    list_conditions 積木清單查詢
+    表格查詢 api.Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    台股資料
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    台股資料
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-tw-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    台股資料一覽
   
 
     
@@ -1078,14 +763,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-get-table/" class="md-nav__link">
+      <a href="../data-tw-price/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Block.get_table 積木參數與合法值
+    價量與 K 線
   
 
     
@@ -1106,14 +791,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-con/" class="md-nav__link">
+      <a href="../data-tw-chip/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Block.con 組積木
+    籌碼
   
 
     
@@ -1134,14 +819,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-screener/" class="md-nav__link">
+      <a href="../data-tw-fundamental/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Block.screener 執行選股
+    基本面
   
 
     
@@ -1162,14 +847,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-pool/" class="md-nav__link">
+      <a href="../data-tw-intraday/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Block 股池 pool
+    盤中與分 K
   
 
     
@@ -1190,14 +875,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-auto/" class="md-nav__link">
+      <a href="../data-tw-broker/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    通用積木（自訂比較）
+    券商分點
   
 
     
@@ -1218,14 +903,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-codegen/" class="md-nav__link">
+      <a href="../data-tw-futures/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Block 產生的程式碼 code
+    期貨
   
 
     
@@ -1246,14 +931,136 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-caveats/" class="md-nav__link">
+      <a href="../data-tw-event/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Block 已知落差與注意事項
+    清單與事件
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usdata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    美股資料 api.USData
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    矩陣資料
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    矩陣資料
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../msmp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    矩陣資料 MSMP
   
 
     
@@ -1274,14 +1081,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-reference-tw/" class="md-nav__link">
+      <a href="../msmp-tables/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    台股積木完整參考
+    MSMP 資料表與欄位
   
 
     
@@ -1302,14 +1109,50 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-reference-us/" class="md-nav__link">
+      <a href="../usmsmp/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    美股積木完整參考
+    美股矩陣資料 USMSMP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    資料期間與頻率
   
 
     
@@ -1338,6 +1181,8 @@
   
     
     
+      
+        
       
         
       
@@ -1376,7 +1221,7 @@
   <span class="md-ellipsis">
     
   
-    Data 表格查詢
+    積木選股
   
 
     
@@ -1392,7 +1237,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Data 表格查詢
+    積木選股
   
 
           </label>
@@ -1405,14 +1250,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../data/" class="md-nav__link">
+      <a href="../block/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Data 模組總覽
+    積木選股概覽
   
 
     
@@ -1433,14 +1278,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-get-table/" class="md-nav__link">
+      <a href="../block-get-table/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Data.get_table 列出可用表格
+    查詢積木
   
 
     
@@ -1461,14 +1306,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-v2-tables/" class="md-nav__link">
+      <a href="../block-con/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Data v2 新增資料表（28 張）
+    組合條件
   
 
     
@@ -1489,14 +1334,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-get/" class="md-nav__link">
+      <a href="../block-screener/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Data.get 取得表格資料
+    執行選股
   
 
     
@@ -1517,14 +1362,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-history/" class="md-nav__link">
+      <a href="../block-pool/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    資料頻率與歷史長度
+    股池
   
 
     
@@ -1545,14 +1390,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-get-snapshots/" class="md-nav__link">
+      <a href="../block-auto/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    USData.get_snapshots 美股即時快照
+    通用積木
   
 
     
@@ -1573,14 +1418,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../intraday/" class="md-nav__link">
+      <a href="../block-codegen/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    盤中、分K與逐筆明細
+    選股程式碼
   
 
     
@@ -1601,14 +1446,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../usdata/" class="md-nav__link">
+      <a href="../block-reference-tw/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    USData 美股表格查詢
+    台股積木一覽
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-reference-us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    美股積木一覽
   
 
     
@@ -1637,6 +1510,12 @@
   
     
     
+      
+        
+      
+        
+      
+        
       
         
       
@@ -1667,7 +1546,7 @@
   <span class="md-ellipsis">
     
   
-    MSMP 歷史資料
+    回測
   
 
     
@@ -1683,7 +1562,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    MSMP 歷史資料
+    回測
   
 
           </label>
@@ -1696,14 +1575,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../msmp/" class="md-nav__link">
+      <a href="../backtest/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    MSMP 矩陣資料總覽
+    回測概覽
   
 
     
@@ -1724,14 +1603,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../msmp-tables/" class="md-nav__link">
+      <a href="../backtest-strategy/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    MSMP 資料表與欄位完整清單
+    撰寫策略
   
 
     
@@ -1752,14 +1631,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../msmp-list/" class="md-nav__link">
+      <a href="../backtest-order/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    MSMP.list 股池
+    下單與成交
   
 
     
@@ -1780,14 +1659,489 @@
   
   
     <li class="md-nav__item">
-      <a href="../usmsmp/" class="md-nav__link">
+      <a href="../backtest-data/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    USMSMP 美股矩陣資料
+    資料與週期
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    商品設定與績效報告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    技術指標與參數最佳化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    策略範例
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 參考
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API 參考
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    snowyowl 與 api
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    snowyowl 與 api
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#函式摘要" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        函式摘要
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-成員摘要" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api 成員摘要
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#功能範圍" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        功能範圍
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#函式說明" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        函式說明
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="函式說明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sologin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        so.login
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-方法說明" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api 方法說明
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="api 方法說明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apilogout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api.logout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apilogin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api.login
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    api.Data／USData
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-msmp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    api.MSMP／USMSMP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-block/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    api.Block
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-bt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    api.bt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../errors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    錯誤訊息
   
 
     
@@ -1827,8 +2181,6 @@
       
         
       
-        
-      
     
     
     
@@ -1840,17 +2192,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    回測
+    搭配 AI 使用
   
 
     
@@ -1861,12 +2213,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
-    回測
+    搭配 AI 使用
   
 
           </label>
@@ -1879,14 +2231,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../backtest/" class="md-nav__link">
+      <a href="../ai-setup/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    回測 api.bt 總覽
+    安裝與設定
   
 
     
@@ -1907,14 +2259,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../backtest-strategy/" class="md-nav__link">
+      <a href="../how-to-ask/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    回測：事件模型與策略撰寫
+    提問技巧
   
 
     
@@ -1935,14 +2287,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../backtest-order/" class="md-nav__link">
+      <a href="../how-to-plan/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    回測：委託、成交價與風控
+    規劃研究流程
   
 
     
@@ -1963,14 +2315,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../backtest-data/" class="md-nav__link">
+      <a href="../case-study-backtest/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    回測：資料與週期
+    回測提問範例
   
 
     
@@ -1991,42 +2343,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../backtest-report/" class="md-nav__link">
+      <a href="../agent-playbook/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    回測：商品規格與績效報告
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../backtest-tools/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    回測：技術指標與參數尋優
+    AI 工作守則
   
 
     
@@ -2074,10 +2398,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#函式摘要" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        函式摘要
       
     </span>
   </a>
@@ -2085,136 +2409,47 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#manual-sample-inputoutput" class="md-nav__link">
+  <a href="#api-成員摘要" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Manual Sample Input/Output
+        api 成員摘要
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Manual Sample Input/Output">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#功能範圍" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        功能範圍
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#函式說明" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        函式說明
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="函式說明">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-1完整屬性表" class="md-nav__link">
+  <a href="#sologin" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example 1：完整屬性表
+        so.login
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Example 1：完整屬性表">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#input" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        input
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#output" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        output
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-2各命名空間的方法" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example 2：各命名空間的方法
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Example 2：各命名空間的方法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#input_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        input
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#output_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        output
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#input_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        input
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#output_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        output
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#input_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        input
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#會用到的四個" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        會用到的四個
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -2224,13 +2459,41 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#snowyowl-的能力邊界" class="md-nav__link">
+  <a href="#api-方法說明" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SnowyOwl 的能力邊界
+        api 方法說明
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="api 方法說明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apilogout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api.logout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apilogin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api.login
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2251,100 +2514,176 @@
 
 
 
-<h1 id="api-物件結構">api 物件結構</h1>
-<blockquote>
-<p>所屬章節：入門
-以 2026-08-20 實際執行結果為準</p>
-</blockquote>
-<h2 id="overview">Overview</h2>
-<p><code>so.login()</code> 回傳的物件上掛好這些命名空間，登入時建立。本版不含即時行情訂閱（<code>api</code> 上沒有 <code>SWQuote</code> / <code>Quote</code> / <code>USQuote</code> / <code>FutQuote</code>）。</p>
-<h2 id="manual-sample-inputoutput">Manual Sample Input/Output</h2>
-<h3 id="example-1完整屬性表">Example 1：完整屬性表</h3>
-<h4 id="input">input</h4>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">api</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">n</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)):</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n</span><span class="si">:</span><span class="s2">12</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">api</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">))</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span></code></pre></div>
-<h4 id="output">output</h4>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Block        Block
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Data         _DataObj
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>MSMP         _MSMP
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>USData       _USDataObj
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>USMSMP       _MSMP
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>bt           SecureMain
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>login        method
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>logout       method
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>person_id    str
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>person_pwd   str
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>type         str
-</span></code></pre></div>
-<hr />
-<h3 id="example-2各命名空間的方法">Example 2：各命名空間的方法</h3>
-<h4 id="input_1">input</h4>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">Block</span><span class="p">)</span>
-</span></code></pre></div>
-<h4 id="output_1">output</h4>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Block（積木）
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  台股  get_table_tw()  con_tw()  screener_tw()
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  美股  get_table_us()  con_us()  screener_us()
-</span></code></pre></div>
-<h4 id="input_2">input</h4>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">n</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)]</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">USData</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">n</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)]</span>
-</span></code></pre></div>
-<h4 id="output_2">output</h4>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[&#39;get&#39;, &#39;get_table&#39;]                       # 台股：無 get_snapshots
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>[&#39;get&#39;, &#39;get_snapshots&#39;, &#39;get_table&#39;]      # 美股：有 get_snapshots
-</span></code></pre></div>
-<p>三者的 <code>get_table()</code> 都吃 <code>type</code>：預設 <code>'print'</code> 印出，<code>type='dic'</code> 回傳 <code>{分段: {表名: 參數}}</code>（見 <a href="../data-get-table/">data-get-table.md</a>）。</p>
-<h4 id="input_3">input</h4>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">bt</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">n</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)]</span>
-</span></code></pre></div>
-<h4 id="會用到的四個">會用到的四個</h4>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>[&#39;Core&#39;, &#39;Tools&#39;, &#39;config&#39;, &#39;generate_report&#39;]
-</span></code></pre></div>
-<p><code>Core</code> 寫策略、<code>config</code> 設商品規格與成本、<code>generate_report</code> 產報表、<code>Tools</code> 是取資料與參數尋優。用法見 <a href="../backtest/">backtest.md</a> 起五頁。</p>
-<hr />
-<h2 id="snowyowl-的能力邊界">SnowyOwl 的能力邊界</h2>
+<h1 id="snowyowl-與-api">snowyowl 與 api</h1>
+<p><code>import snowyowl as so</code> 之後用 <code>so.login()</code> 登入，取得 <code>api</code> 物件；所有功能都掛在 <code>api</code> 底下。</p>
+<h2 id="函式摘要">函式摘要</h2>
 <table>
 <thead>
 <tr>
-<th>功能</th>
-<th>SnowyOwl</th>
+<th>函式</th>
+<th>說明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>表格查詢 <code>api.Data</code> / <code>api.USData</code></td>
-<td>有（台股 2026-10-27 實測 114 張，含「新增」段 28 張，見 <a href="../data-v2-tables/">data-v2-tables.md</a>）</td>
-</tr>
-<tr>
-<td>矩陣資料 <code>api.MSMP</code> / <code>api.USMSMP</code></td>
-<td>有（另有 <code>MSMP._fut_TXF</code>：台指期 1 分 K，9.3 年）</td>
-</tr>
-<tr>
-<td>積木選股 <code>api.Block</code></td>
-<td>有（台股 416 個、美股 260 個積木）</td>
-</tr>
-<tr>
-<td>回測 <code>api.bt</code></td>
-<td>有（backtest_plus）</td>
-</tr>
-<tr>
-<td>即時行情訂閱（推送）</td>
-<td><strong>沒有</strong>，<code>api</code> 上不存在 <code>SWQuote</code> / <code>Quote</code> / <code>USQuote</code> / <code>FutQuote</code></td>
-</tr>
-<tr>
-<td>盤中快照（拉取式）</td>
-<td>美股 <code>api.USData.get_snapshots()</code>；台股用 <code>api.Data.get()</code> 分K查詢</td>
-</tr>
-<tr>
-<td>下單 / 帳務</td>
-<td><strong>沒有</strong>，<code>api</code> 上不存在 <code>Order</code></td>
+<td><a href="#sologin"><code>so.login(person_id=None, person_pwd=None, type='account')</code></a></td>
+<td>登入，回傳 <code>api</code> 物件</td>
 </tr>
 </tbody>
 </table>
-<p><code>api</code> 上沒有 <code>Order</code>，也沒有 CA 憑證流程——SnowyOwl 是資料、選股與回測用的，
-不做交易委託。要下單得用另外的下單套件。</p>
+<h2 id="api-成員摘要">api 成員摘要</h2>
+<table>
+<thead>
+<tr>
+<th>成員</th>
+<th>型別</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../api-data/"><code>api.Data</code></a></td>
+<td>物件</td>
+<td>台股表格查詢</td>
+</tr>
+<tr>
+<td><a href="../api-data/#apiusdata"><code>api.USData</code></a></td>
+<td>物件</td>
+<td>美股表格查詢、即時快照</td>
+</tr>
+<tr>
+<td><a href="../api-msmp/"><code>api.MSMP</code></a></td>
+<td>物件</td>
+<td>台股矩陣資料（日期 × 代號）</td>
+</tr>
+<tr>
+<td><a href="../api-msmp/#apiusmsmp"><code>api.USMSMP</code></a></td>
+<td>物件</td>
+<td>美股矩陣資料</td>
+</tr>
+<tr>
+<td><a href="../api-block/"><code>api.Block</code></a></td>
+<td>物件</td>
+<td>積木選股</td>
+</tr>
+<tr>
+<td><a href="../api-bt/"><code>api.bt</code></a></td>
+<td>物件</td>
+<td>回測引擎</td>
+</tr>
+<tr>
+<td><a href="#apilogout"><code>api.logout()</code></a></td>
+<td>方法</td>
+<td>登出並清除登入快取</td>
+</tr>
+<tr>
+<td><a href="#apilogin"><code>api.login()</code></a></td>
+<td>方法</td>
+<td>重新登入</td>
+</tr>
+<tr>
+<td><code>api.person_id</code>／<code>api.person_pwd</code>／<code>api.type</code></td>
+<td><code>str</code></td>
+<td>登入時提供的帳號、密碼、登入方式</td>
+</tr>
+</tbody>
+</table>
+<h2 id="功能範圍">功能範圍</h2>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>提供方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>表格查詢</td>
+<td><code>api.Data</code>（台股 114 張表，2026-10-29）、<code>api.USData</code>（美股 25 張表）</td>
+</tr>
+<tr>
+<td>矩陣資料</td>
+<td><code>api.MSMP</code>、<code>api.USMSMP</code>；台指期 1 分 K 在 <code>api.MSMP._fut_TXF</code>（2017-05 起）</td>
+</tr>
+<tr>
+<td>積木選股</td>
+<td><code>api.Block</code>（台股 416 個、美股 260 個積木）</td>
+</tr>
+<tr>
+<td>回測</td>
+<td><code>api.bt</code></td>
+</tr>
+<tr>
+<td>盤中快照</td>
+<td>美股 <code>api.USData.get_snapshots()</code>；台股以 <code>api.Data.get()</code> 查詢分 K</td>
+</tr>
+<tr>
+<td>即時行情訂閱</td>
+<td>不提供</td>
+</tr>
+<tr>
+<td>下單與帳務</td>
+<td>不提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="函式說明">函式說明</h2>
+<h3 id="sologin">so.login</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">so</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">person_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">person_pwd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;account&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>登入並回傳已初始化的 <code>api</code> 物件。</p>
+<table>
+<thead>
+<tr>
+<th>參數</th>
+<th>型別</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>person_id</code></td>
+<td><code>str</code></td>
+<td>帳號。<code>type='account'</code> 時必填</td>
+</tr>
+<tr>
+<td><code>person_pwd</code></td>
+<td><code>str</code></td>
+<td>密碼。<code>type='account'</code> 時必填</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>str</code></td>
+<td><code>'account'</code>（帳號密碼，預設）、<code>'google'</code>、<code>'apple'</code>（開啟瀏覽器登入，不需帳密）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong>：<code>api</code> 物件。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">snowyowl</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">so</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">api</span> <span class="o">=</span> <span class="n">so</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s1">&#39;帳號&#39;</span><span class="p">,</span> <span class="s1">&#39;密碼&#39;</span><span class="p">)</span>          <span class="c1"># 帳號密碼</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">api</span> <span class="o">=</span> <span class="n">so</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;google&#39;</span><span class="p">)</span>          <span class="c1"># Google 帳號（開啟瀏覽器）</span>
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>帳號或密碼留空時會顯示「登錄失敗」且不會登入。Google／Apple 登入首次需在瀏覽器驗證，之後 72 小時內不必重新驗證。</p>
+</div>
+<p>詳細說明：<a href="../login/">登入與登出</a></p>
+<hr />
+<h2 id="api-方法說明">api 方法說明</h2>
+<h3 id="apilogout">api.logout</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">api</span><span class="o">.</span><span class="n">logout</span><span class="p">()</span>
+</span></code></pre></div>
+<p>清除 <code>api</code> 上的功能，並刪除本機登入快取（<code>~/.snowyowl/auth.json</code>）。帳號資訊會保留，可直接用 <code>api.login()</code> 重新登入。</p>
+<h3 id="apilogin">api.login</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">api</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">person_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">person_pwd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</span></code></pre></div>
+<p>重新登入。參數省略時沿用原本的值。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">api</span><span class="o">.</span><span class="n">logout</span><span class="p">()</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">api</span><span class="o">.</span><span class="n">login</span><span class="p">()</span>        <span class="c1"># 用原本的身分重新登入</span>
+</span></code></pre></div>
+<p class="sw-verified">最後驗證：2026-10-30</p>
 
 
 
@@ -2380,7 +2719,7 @@
       <nav class="md-footer__inner md-grid" aria-label="頁腳" >
         
           
-          <a href="../login/" class="md-footer__link md-footer__link--prev" aria-label="上一頁: so.login 登入">
+          <a href="../recipes/" class="md-footer__link md-footer__link--prev" aria-label="上一頁: 策略範例">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2390,20 +2729,20 @@
                 上一頁
               </span>
               <div class="md-ellipsis">
-                so.login 登入
+                策略範例
               </div>
             </div>
           </a>
         
         
           
-          <a href="../errors/" class="md-footer__link md-footer__link--next" aria-label="下一頁: 錯誤訊息速查">
+          <a href="../api-data/" class="md-footer__link md-footer__link--next" aria-label="下一頁: api.Data／USData">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一頁
               </span>
               <div class="md-ellipsis">
-                錯誤訊息速查
+                api.Data／USData
               </div>
             </div>
             <div class="md-footer__button md-icon">

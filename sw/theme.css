@@ -780,3 +780,6 @@ input,
 
 /* 寬內容自己橫向滑，不要讓整頁橫捲 */
 .md-typeset .md-typeset__scrollwrap { margin: 1.3em 0; }
+
+/* 頁尾的實測日期（docs 的「以 YYYY-MM-DD 為準」轉成這行） */
+.md-typeset .sw-verified { margin-top: 2.5em; font-size: .72rem; color: var(--md-default-fg-color--light); text-align: right; }

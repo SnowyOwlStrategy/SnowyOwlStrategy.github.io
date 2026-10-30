@@ -9,7 +9,7 @@ description: |
   歷史與矩陣資料：api.MSMP／api.USMSMP、日_K／週_K／月_K、adj 還原股價、漲跌幅、
   成交量／成交額、市值。
   表格查詢：api.Data／api.USData、get(table)、get_table(type=dic)、清單／分K／逐筆明細、
-  v2 新增表（日_K線資料表、季_財務比率…）。
+  台股 114 張表依用途分類（價量、籌碼、基本面、盤中、分點、期貨、清單與事件）。
   基本面：月營收、季財報、EPS、本益比 PER、ROE、毛利率、股利。
   籌碼：三大法人、外資／投信／自營、融資融券、八大行庫、券商分點、大戶持股、籌碼集中度。
   技術面：均線、MACD、RSI、KD、布林、突破。
@@ -68,7 +68,7 @@ import snowyowl as so
 api = so.login('帳號', '密碼', type='account')   # 或 so.login(type='google')
 ```
 
-登入細節見 [login.md](https://snowyowlstrategy.github.io/login/)；`api` 底下有哪些物件見 [api-structure.md](https://snowyowlstrategy.github.io/api-structure/)。
+登入細節見 [login.md](https://snowyowlstrategy.github.io/login/)；`api` 底下有哪些物件見 [api-login.md](https://snowyowlstrategy.github.io/api-login/)。
 
 ## 流程
 
@@ -83,7 +83,7 @@ api = so.login('帳號', '密碼', type='account')   # 或 so.login(type='google
 
 ## 寫法規則
 
-與 [agent-playbook.md](https://snowyowlstrategy.github.io/agent-playbook/) 的「寫法鐵則」相同：
+與 [agent-playbook.md](https://snowyowlstrategy.github.io/agent-playbook/) 的「寫法規則」相同：
 
 | 規則 | 錯了會怎樣 |
 |---|---|
@@ -106,12 +106,12 @@ api = so.login('帳號', '密碼', type='account')   # 或 so.login(type='google
 | 積木怎麼組、怎麼跑 | [block.md](https://snowyowlstrategy.github.io/block/)、[block-con.md](https://snowyowlstrategy.github.io/block-con/)、[block-screener.md](https://snowyowlstrategy.github.io/block-screener/)、[block-pool.md](https://snowyowlstrategy.github.io/block-pool/) |
 | 原生積木做不到的條件、白話 → 參數對照 | [block-auto.md](https://snowyowlstrategy.github.io/block-auto/) |
 | 某個積木的參數與合法值 | [block-reference-tw.md](https://snowyowlstrategy.github.io/block-reference-tw/)、[block-reference-us.md](https://snowyowlstrategy.github.io/block-reference-us/) |
-| 積木的已知落差 | [block-caveats.md](https://snowyowlstrategy.github.io/block-caveats/) |
+| 積木名稱與實際計算方式（以產生的 `code` 為準） | [block-codegen.md](https://snowyowlstrategy.github.io/block-codegen/) |
 | MSMP 有哪些表與欄位、常用查詢 | [msmp.md](https://snowyowlstrategy.github.io/msmp/)、[msmp-tables.md](https://snowyowlstrategy.github.io/msmp-tables/) |
-| 表格式查詢（`api.Data`）有哪些表（`get_table(type='dic')` 可用程式列舉） | [data-get.md](https://snowyowlstrategy.github.io/data-get/)、[data-get-table.md](https://snowyowlstrategy.github.io/data-get-table/) |
-| `get_table()`「新增」段的 28 張（`日_`／`週_`／`月_`／`季_`／`事件_` 開頭） | [data-v2-tables.md](https://snowyowlstrategy.github.io/data-v2-tables/) |
+| 台股表格式查詢（`api.Data`）有哪些表、每張的資料區間與欄位 | [data-tw-list.md](https://snowyowlstrategy.github.io/data-tw-list/)（依用途分 7 類，各分類頁有範例輸出） |
 | 各頻率的歷史長度、期貨資料在哪 | [data-history.md](https://snowyowlstrategy.github.io/data-history/) |
-| 盤中、分K、逐筆明細 | [intraday.md](https://snowyowlstrategy.github.io/intraday/) |
+| 盤中、分K、逐筆明細 | [data-tw-intraday.md](https://snowyowlstrategy.github.io/data-tw-intraday/) |
 | 美股 | [usmsmp.md](https://snowyowlstrategy.github.io/usmsmp/)、[usdata.md](https://snowyowlstrategy.github.io/usdata/) |
 | 回測框架 | [backtest.md](https://snowyowlstrategy.github.io/backtest/)、[backtest-strategy.md](https://snowyowlstrategy.github.io/backtest-strategy/)、[backtest-order.md](https://snowyowlstrategy.github.io/backtest-order/)、[backtest-data.md](https://snowyowlstrategy.github.io/backtest-data/)、[backtest-report.md](https://snowyowlstrategy.github.io/backtest-report/)、[backtest-tools.md](https://snowyowlstrategy.github.io/backtest-tools/) |
-| 錯誤訊息、不報錯但結果是錯的 | [errors.md](https://snowyowlstrategy.github.io/errors/) |
+| 錯誤訊息 | [errors.md](https://snowyowlstrategy.github.io/errors/) |
+| 各物件的方法與參數一覽 | [api-login.md](https://snowyowlstrategy.github.io/api-login/)、[api-data.md](https://snowyowlstrategy.github.io/api-data/)、[api-msmp.md](https://snowyowlstrategy.github.io/api-msmp/)、[api-block.md](https://snowyowlstrategy.github.io/api-block/)、[api-bt.md](https://snowyowlstrategy.github.io/api-bt/) |
