@@ -9,7 +9,27 @@
          <lastmod>2026-10-30</lastmod>
     </url>
     <url>
-         <loc>https://snowyowlstrategy.github.io/api-structure/</loc>
+         <loc>https://snowyowlstrategy.github.io/ai-setup/</loc>
+         <lastmod>2026-10-30</lastmod>
+    </url>
+    <url>
+         <loc>https://snowyowlstrategy.github.io/api-block/</loc>
+         <lastmod>2026-10-30</lastmod>
+    </url>
+    <url>
+         <loc>https://snowyowlstrategy.github.io/api-bt/</loc>
+         <lastmod>2026-10-30</lastmod>
+    </url>
+    <url>
+         <loc>https://snowyowlstrategy.github.io/api-data/</loc>
+         <lastmod>2026-10-30</lastmod>
+    </url>
+    <url>
+         <loc>https://snowyowlstrategy.github.io/api-login/</loc>
+         <lastmod>2026-10-30</lastmod>
+    </url>
+    <url>
+         <loc>https://snowyowlstrategy.github.io/api-msmp/</loc>
          <lastmod>2026-10-30</lastmod>
     </url>
     <url>
@@ -41,10 +61,6 @@
          <lastmod>2026-10-30</lastmod>
     </url>
     <url>
-         <loc>https://snowyowlstrategy.github.io/block-caveats/</loc>
-         <lastmod>2026-10-30</lastmod>
-    </url>
-    <url>
          <loc>https://snowyowlstrategy.github.io/block-codegen/</loc>
          <lastmod>2026-10-30</lastmod>
     </url>
@@ -54,10 +70,6 @@
     </url>
     <url>
          <loc>https://snowyowlstrategy.github.io/block-get-table/</loc>
-         <lastmod>2026-10-30</lastmod>
-    </url>
-    <url>
-         <loc>https://snowyowlstrategy.github.io/block-list-conditions/</loc>
          <lastmod>2026-10-30</lastmod>
     </url>
     <url>
@@ -85,14 +97,6 @@
          <lastmod>2026-10-30</lastmod>
     </url>
     <url>
-         <loc>https://snowyowlstrategy.github.io/data-get-snapshots/</loc>
-         <lastmod>2026-10-30</lastmod>
-    </url>
-    <url>
-         <loc>https://snowyowlstrategy.github.io/data-get-table/</loc>
-         <lastmod>2026-10-30</lastmod>
-    </url>
-    <url>
          <loc>https://snowyowlstrategy.github.io/data-get/</loc>
          <lastmod>2026-10-30</lastmod>
     </url>
@@ -101,7 +105,35 @@
          <lastmod>2026-10-30</lastmod>
     </url>
     <url>
-         <loc>https://snowyowlstrategy.github.io/data-v2-tables/</loc>
+         <loc>https://snowyowlstrategy.github.io/data-tw-broker/</loc>
+         <lastmod>2026-10-30</lastmod>
+    </url>
+    <url>
+         <loc>https://snowyowlstrategy.github.io/data-tw-chip/</loc>
+         <lastmod>2026-10-30</lastmod>
+    </url>
+    <url>
+         <loc>https://snowyowlstrategy.github.io/data-tw-event/</loc>
+         <lastmod>2026-10-30</lastmod>
+    </url>
+    <url>
+         <loc>https://snowyowlstrategy.github.io/data-tw-fundamental/</loc>
+         <lastmod>2026-10-30</lastmod>
+    </url>
+    <url>
+         <loc>https://snowyowlstrategy.github.io/data-tw-futures/</loc>
+         <lastmod>2026-10-30</lastmod>
+    </url>
+    <url>
+         <loc>https://snowyowlstrategy.github.io/data-tw-intraday/</loc>
+         <lastmod>2026-10-30</lastmod>
+    </url>
+    <url>
+         <loc>https://snowyowlstrategy.github.io/data-tw-list/</loc>
+         <lastmod>2026-10-30</lastmod>
+    </url>
+    <url>
+         <loc>https://snowyowlstrategy.github.io/data-tw-price/</loc>
          <lastmod>2026-10-30</lastmod>
     </url>
     <url>
@@ -125,15 +157,7 @@
          <lastmod>2026-10-30</lastmod>
     </url>
     <url>
-         <loc>https://snowyowlstrategy.github.io/intraday/</loc>
-         <lastmod>2026-10-30</lastmod>
-    </url>
-    <url>
          <loc>https://snowyowlstrategy.github.io/login/</loc>
-         <lastmod>2026-10-30</lastmod>
-    </url>
-    <url>
-         <loc>https://snowyowlstrategy.github.io/msmp-list/</loc>
          <lastmod>2026-10-30</lastmod>
     </url>
     <url>

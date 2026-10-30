@@ -6,17 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="台美股資料、積木選股與回測整合套件 —— 專為 AI coding agent 設計的文件集">
+        <meta name="description" content="SnowyOwl —— 台美股資料、積木選股與回測的 Python 套件">
       
       
       
         <link rel="canonical" href="https://snowyowlstrategy.github.io/data-history/">
       
       
-        <link rel="prev" href="../data-get/">
+        <link rel="prev" href="../usmsmp/">
       
       
-        <link rel="next" href="../data-get-snapshots/">
+        <link rel="next" href="../block/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>資料頻率與歷史長度 - SnowyOwl</title>
+        <title>資料期間與頻率 - SnowyOwl</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#資料頻率與歷史長度" class="md-skip">
+        <a href="#資料期間與頻率" class="md-skip">
           跳轉到
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              資料頻率與歷史長度
+              資料期間與頻率
             
           </span>
         </div>
@@ -230,35 +230,13 @@
     
     
       <li class="md-tabs__item">
-        <a href="../agent-playbook/" class="md-tabs__link">
+        <a href="../getting-started/" class="md-tabs__link">
           
   
   
     
   
-  入門與結構
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../block/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  積木 Block（選股）
+  開始使用
 
         </a>
       </li>
@@ -282,7 +260,7 @@
   
     
   
-  Data 表格查詢
+  資料
 
         </a>
       </li>
@@ -298,13 +276,13 @@
     
     
       <li class="md-tabs__item">
-        <a href="../msmp/" class="md-tabs__link">
+        <a href="../block/" class="md-tabs__link">
           
   
   
     
   
-  MSMP 歷史資料
+  積木選股
 
         </a>
       </li>
@@ -327,6 +305,50 @@
     
   
   回測
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../api-login/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  API 參考
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../ai-setup/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  搭配 AI 使用
 
         </a>
       </li>
@@ -412,20 +434,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
     
     
     
@@ -447,7 +455,7 @@
   <span class="md-ellipsis">
     
   
-    入門與結構
+    開始使用
   
 
     
@@ -463,39 +471,11 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    入門與結構
+    開始使用
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../agent-playbook/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    給 AI 的工作守則
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -511,119 +491,7 @@
   <span class="md-ellipsis">
     
   
-    開始使用 SnowyOwl
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../how-to-ask/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    怎麼問，才問得到你要的東西
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../how-to-plan/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    怎麼制定一個 plan
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../case-study-backtest/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    案例集：小白怎麼問回測
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../recipes/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    配方集：實跑驗證過的寫法範例
+    快速開始
   
 
     
@@ -651,63 +519,7 @@
   <span class="md-ellipsis">
     
   
-    so.login 登入
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api-structure/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    api 物件結構
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../errors/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    錯誤訊息速查
+    登入與登出
   
 
     
@@ -732,6 +544,8 @@
       
   
   
+    
+  
   
   
     
@@ -742,6 +556,123 @@
         
       
         
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    資料
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    資料
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    資料總覽
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-get/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    表格查詢 api.Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
       
         
       
@@ -770,17 +701,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    積木 Block（選股）
+    台股資料
   
 
     
@@ -791,12 +722,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             
   
-    積木 Block（選股）
+    台股資料
   
 
           </label>
@@ -809,14 +740,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block/" class="md-nav__link">
+      <a href="../data-tw-list/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    積木 Block 總覽
+    台股資料一覽
   
 
     
@@ -837,14 +768,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-list-conditions/" class="md-nav__link">
+      <a href="../data-tw-price/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    list_conditions 積木清單查詢
+    價量與 K 線
   
 
     
@@ -865,14 +796,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-get-table/" class="md-nav__link">
+      <a href="../data-tw-chip/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Block.get_table 積木參數與合法值
+    籌碼
   
 
     
@@ -893,14 +824,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-con/" class="md-nav__link">
+      <a href="../data-tw-fundamental/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Block.con 組積木
+    基本面
   
 
     
@@ -921,14 +852,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-screener/" class="md-nav__link">
+      <a href="../data-tw-intraday/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Block.screener 執行選股
+    盤中與分 K
   
 
     
@@ -949,14 +880,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-pool/" class="md-nav__link">
+      <a href="../data-tw-broker/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Block 股池 pool
+    券商分點
   
 
     
@@ -977,14 +908,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-auto/" class="md-nav__link">
+      <a href="../data-tw-futures/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    通用積木（自訂比較）
+    期貨
   
 
     
@@ -1005,98 +936,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../block-codegen/" class="md-nav__link">
+      <a href="../data-tw-event/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Block 產生的程式碼 code
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../block-caveats/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Block 已知落差與注意事項
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../block-reference-tw/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    台股積木完整參考
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../block-reference-us/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    美股積木完整參考
+    清單與事件
   
 
     
@@ -1116,27 +963,44 @@
     </li>
   
 
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usdata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
-      
-      
+  
+    美股資料 api.USData
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
   
   
     
-  
-  
-  
     
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
       
         
       
@@ -1148,27 +1012,24 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    Data 表格查詢
+    矩陣資料
   
 
     
@@ -1179,12 +1040,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Data 表格查詢
+    矩陣資料
   
 
           </label>
@@ -1197,14 +1058,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../data/" class="md-nav__link">
+      <a href="../msmp/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Data 模組總覽
+    矩陣資料 MSMP
   
 
     
@@ -1225,14 +1086,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-get-table/" class="md-nav__link">
+      <a href="../msmp-tables/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Data.get_table 列出可用表格
+    MSMP 資料表與欄位
   
 
     
@@ -1253,14 +1114,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-v2-tables/" class="md-nav__link">
+      <a href="../usmsmp/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Data v2 新增資料表（28 張）
+    美股矩陣資料 USMSMP
   
 
     
@@ -1274,29 +1135,9 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../data-get/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Data.get 取得表格資料
-  
-
-    
-  </span>
-  
-  
-
-      </a>
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1325,7 +1166,7 @@
   <span class="md-ellipsis">
     
   
-    資料頻率與歷史長度
+    資料期間與頻率
   
 
     
@@ -1343,7 +1184,7 @@
   <span class="md-ellipsis">
     
   
-    資料頻率與歷史長度
+    資料期間與頻率
   
 
     
@@ -1369,10 +1210,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#歷史長度地圖" class="md-nav__link">
+  <a href="#期間總覽" class="md-nav__link">
     <span class="md-ellipsis">
       
-        歷史長度地圖
+        期間總覽
       
     </span>
   </a>
@@ -1380,10 +1221,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#近-n-年該走哪張表" class="md-nav__link">
+  <a href="#台股各頻率的期間" class="md-nav__link">
     <span class="md-ellipsis">
       
-        「近 N 年」該走哪張表
+        台股各頻率的期間
       
     </span>
   </a>
@@ -1391,10 +1232,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#兩個容易誤判的陷阱" class="md-nav__link">
+  <a href="#近-n-年該用哪張表" class="md-nav__link">
     <span class="md-ellipsis">
       
-        兩個容易誤判的陷阱
+        「近 N 年」該用哪張表
       
     </span>
   </a>
@@ -1402,10 +1243,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#期貨資料在-msmp_fut_txf" class="md-nav__link">
+  <a href="#非日期的-index" class="md-nav__link">
     <span class="md-ellipsis">
       
-        期貨資料在 MSMP._fut_TXF
+        非日期的 index
       
     </span>
   </a>
@@ -1413,10 +1254,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#美股的規則不一樣" class="md-nav__link">
+  <a href="#單位換算" class="md-nav__link">
     <span class="md-ellipsis">
       
-        美股的規則不一樣
+        單位換算
       
     </span>
   </a>
@@ -1424,10 +1265,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#snowyowl-沒有的資料" class="md-nav__link">
+  <a href="#期貨msmp_fut_txf" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SnowyOwl 沒有的資料
+        期貨：MSMP._fut_TXF
       
     </span>
   </a>
@@ -1435,10 +1276,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#相關頁" class="md-nav__link">
+  <a href="#美股" class="md-nav__link">
     <span class="md-ellipsis">
       
-        相關頁
+        美股
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#不提供的資料" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        不提供的資料
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#相關頁面" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相關頁面
       
     </span>
   </a>
@@ -1454,6 +1317,83 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    積木選股
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    積木選股
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
@@ -1461,14 +1401,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-get-snapshots/" class="md-nav__link">
+      <a href="../block/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    USData.get_snapshots 美股即時快照
+    積木選股概覽
   
 
     
@@ -1489,14 +1429,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../intraday/" class="md-nav__link">
+      <a href="../block-get-table/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    盤中、分K與逐筆明細
+    查詢積木
   
 
     
@@ -1517,14 +1457,182 @@
   
   
     <li class="md-nav__item">
-      <a href="../usdata/" class="md-nav__link">
+      <a href="../block-con/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    USData 美股表格查詢
+    組合條件
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-screener/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    執行選股
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-pool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    股池
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-auto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    通用積木
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-codegen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    選股程式碼
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-reference-tw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    台股積木一覽
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block-reference-us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    美股積木一覽
   
 
     
@@ -1553,6 +1661,12 @@
   
     
     
+      
+        
+      
+        
+      
+        
       
         
       
@@ -1583,7 +1697,7 @@
   <span class="md-ellipsis">
     
   
-    MSMP 歷史資料
+    回測
   
 
     
@@ -1599,7 +1713,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    MSMP 歷史資料
+    回測
   
 
           </label>
@@ -1612,14 +1726,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../msmp/" class="md-nav__link">
+      <a href="../backtest/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    MSMP 矩陣資料總覽
+    回測概覽
   
 
     
@@ -1640,14 +1754,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../msmp-tables/" class="md-nav__link">
+      <a href="../backtest-strategy/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    MSMP 資料表與欄位完整清單
+    撰寫策略
   
 
     
@@ -1668,14 +1782,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../msmp-list/" class="md-nav__link">
+      <a href="../backtest-order/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    MSMP.list 股池
+    下單與成交
   
 
     
@@ -1696,14 +1810,98 @@
   
   
     <li class="md-nav__item">
-      <a href="../usmsmp/" class="md-nav__link">
+      <a href="../backtest-data/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    USMSMP 美股矩陣資料
+    資料與週期
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    商品設定與績效報告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    技術指標與參數最佳化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    策略範例
   
 
     
@@ -1766,7 +1964,7 @@
   <span class="md-ellipsis">
     
   
-    回測
+    API 參考
   
 
     
@@ -1782,7 +1980,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    回測
+    API 參考
   
 
           </label>
@@ -1795,14 +1993,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../backtest/" class="md-nav__link">
+      <a href="../api-login/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    回測 api.bt 總覽
+    snowyowl 與 api
   
 
     
@@ -1823,14 +2021,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../backtest-strategy/" class="md-nav__link">
+      <a href="../api-data/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    回測：事件模型與策略撰寫
+    api.Data／USData
   
 
     
@@ -1851,14 +2049,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../backtest-order/" class="md-nav__link">
+      <a href="../api-msmp/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    回測：委託、成交價與風控
+    api.MSMP／USMSMP
   
 
     
@@ -1879,14 +2077,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../backtest-data/" class="md-nav__link">
+      <a href="../api-block/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    回測：資料與週期
+    api.Block
   
 
     
@@ -1907,14 +2105,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../backtest-report/" class="md-nav__link">
+      <a href="../api-bt/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    回測：商品規格與績效報告
+    api.bt
   
 
     
@@ -1935,14 +2133,223 @@
   
   
     <li class="md-nav__item">
-      <a href="../backtest-tools/" class="md-nav__link">
+      <a href="../errors/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    回測：技術指標與參數尋優
+    錯誤訊息
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    搭配 AI 使用
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    搭配 AI 使用
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安裝與設定
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-to-ask/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    提問技巧
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-to-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    規劃研究流程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-backtest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回測提問範例
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI 工作守則
   
 
     
@@ -1990,10 +2397,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#歷史長度地圖" class="md-nav__link">
+  <a href="#期間總覽" class="md-nav__link">
     <span class="md-ellipsis">
       
-        歷史長度地圖
+        期間總覽
       
     </span>
   </a>
@@ -2001,10 +2408,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#近-n-年該走哪張表" class="md-nav__link">
+  <a href="#台股各頻率的期間" class="md-nav__link">
     <span class="md-ellipsis">
       
-        「近 N 年」該走哪張表
+        台股各頻率的期間
       
     </span>
   </a>
@@ -2012,10 +2419,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#兩個容易誤判的陷阱" class="md-nav__link">
+  <a href="#近-n-年該用哪張表" class="md-nav__link">
     <span class="md-ellipsis">
       
-        兩個容易誤判的陷阱
+        「近 N 年」該用哪張表
       
     </span>
   </a>
@@ -2023,10 +2430,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#期貨資料在-msmp_fut_txf" class="md-nav__link">
+  <a href="#非日期的-index" class="md-nav__link">
     <span class="md-ellipsis">
       
-        期貨資料在 MSMP._fut_TXF
+        非日期的 index
       
     </span>
   </a>
@@ -2034,10 +2441,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#美股的規則不一樣" class="md-nav__link">
+  <a href="#單位換算" class="md-nav__link">
     <span class="md-ellipsis">
       
-        美股的規則不一樣
+        單位換算
       
     </span>
   </a>
@@ -2045,10 +2452,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#snowyowl-沒有的資料" class="md-nav__link">
+  <a href="#期貨msmp_fut_txf" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SnowyOwl 沒有的資料
+        期貨：MSMP._fut_TXF
       
     </span>
   </a>
@@ -2056,10 +2463,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#相關頁" class="md-nav__link">
+  <a href="#美股" class="md-nav__link">
     <span class="md-ellipsis">
       
-        相關頁
+        美股
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#不提供的資料" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        不提供的資料
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#相關頁面" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相關頁面
       
     </span>
   </a>
@@ -2083,18 +2512,32 @@
 
 
 
-<h1 id="資料頻率與歷史長度">資料頻率與歷史長度</h1>
-<blockquote>
-<p>所屬章節：Data 表格查詢
-2026-10-21 實測（標的 <code>2330</code>，資料日 2026-10-20）</p>
-</blockquote>
-<p><strong>問「近 N 年」之前先看這頁。</strong> 歷史長度<strong>不是固定值</strong>：2026-08 實測日頻是 1000 筆，
-2026-10 實測只剩 500 筆（<code>MSMP</code>）／250 筆（<code>Data</code>）。程式裡一律用 <code>len()</code>、<code>index[0]</code> 確認，
-不要寫死年數。</p>
-<p>台股降頻（週／月 K、月營收、季財報）能拿到比日頻長的歷史；<code>MSMP</code> 的版本比 <code>Data</code> 的版本長。
-美股價格類各頻率都差不多短，基本面（季財報）很長——見下方「美股的規則不一樣」。</p>
-<p>下面的表除非另外標明，都是<strong>台股</strong>。</p>
-<h2 id="歷史長度地圖">歷史長度地圖</h2>
+<h1 id="資料期間與頻率">資料期間與頻率</h1>
+<p>各介面、各頻率可取得的歷史期間，以及查詢「近 N 年」時該用哪張表。
+歷史長度會隨時間變動，程式中以 <code>len()</code>、<code>index[0]</code> 確認，不要寫死年數。</p>
+<h2 id="期間總覽">期間總覽</h2>
+<p><code>api.Data</code> 的表依資料區間分為兩種，每張表屬於哪一種見 <a href="../data-tw-list/">台股資料一覽</a>：</p>
+<table>
+<thead>
+<tr>
+<th>類型</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>依起訖日或全部歷史</td>
+<td><code>日_</code>、<code>週_</code>、<code>月_</code>、<code>季_</code> 開頭的表。依 <code>startDate</code>／<code>endDate</code> 回傳，或一次回傳全部歷史。單一股票的歷史最長，日 K 從 2010 年起</td>
+</tr>
+<tr>
+<td>固定最新 1000 筆</td>
+<td>多數表名結尾為 <code>-單檔股票多個區間</code> 的日頻表。日頻約 4 年，起點隨時間往後移。試用方案只回傳其中最新的 &frac14;</td>
+</tr>
+</tbody>
+</table>
+<p><code>api.MSMP</code> 是全市場矩陣，一次取得所有股票，台股日頻約 2 年（2026-10-21 為 500 筆）。</p>
+<h2 id="台股各頻率的期間">台股各頻率的期間</h2>
+<p>以下 <code>api.MSMP</code> 為 2026-10-21、<code>api.Data</code> 為 2026-10-29（標的 <code>2330</code>）的結果。</p>
 <table>
 <thead>
 <tr>
@@ -2107,191 +2550,268 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>日</strong></td>
+<td>日</td>
 <td><code>MSMP.日_*</code>（K、三大法人、融資券、指標、技術指標…）</td>
-<td><strong>500</strong></td>
-<td>2024-09-26 ~ 2026-10-20</td>
-<td><strong>2.1</strong></td>
+<td>500</td>
+<td>2024-09-26 ～ 2026-10-20</td>
+<td>2.1</td>
 </tr>
 <tr>
-<td><strong>日</strong></td>
+<td>日</td>
+<td><code>Data.get('日_K線資料表', s, start, end)</code></td>
+<td>4,121</td>
+<td>2010-01-04 ～</td>
+<td>16.8</td>
+</tr>
+<tr>
+<td>日</td>
+<td><code>Data.get('日_還原K資料表', s, start, end)</code></td>
+<td>5,862</td>
+<td>2003-01-02 ～</td>
+<td>23.8</td>
+</tr>
+<tr>
+<td>日</td>
 <td><code>Data.get('日K/技術指標/價量資料-單檔股票多個區間', s)</code></td>
-<td><strong>250</strong></td>
-<td>2025-10-08 ~ 2026-10-20</td>
-<td><strong>1.0</strong></td>
+<td>1000（固定）</td>
+<td>2022-09-12 ～</td>
+<td>4.1</td>
 </tr>
 <tr>
-<td><strong>日</strong></td>
+<td>日</td>
 <td><code>Data.get('還原日K價量資料(個股、ETF、大盤)-單檔股票多個區間', s)</code></td>
-<td><strong>250</strong></td>
+<td>1000（固定）</td>
 <td>同上</td>
-<td><strong>1.0</strong></td>
+<td>4.1</td>
 </tr>
 <tr>
 <td>週</td>
 <td><code>MSMP.週_K</code></td>
-<td><strong>307</strong></td>
-<td>2020-11-06 ~</td>
-<td><strong>6.0</strong></td>
+<td>307</td>
+<td>2020-11-06 ～</td>
+<td>6.0</td>
+</tr>
+<tr>
+<td>週</td>
+<td><code>Data.get('週_還原K線資料表', s)</code></td>
+<td>868</td>
+<td>2010-01-08 ～</td>
+<td>16.8</td>
 </tr>
 <tr>
 <td>週</td>
 <td><code>Data.get('還原週K價量資料(個股、ETF、大盤)-單檔股票多個區間', s)</code></td>
-<td>192</td>
-<td>2023-02-17 ~</td>
-<td>3.7</td>
+<td>765</td>
+<td>2012-01-06 ～</td>
+<td>14.8</td>
 </tr>
 <tr>
 <td>月</td>
 <td><code>MSMP.月_K</code></td>
-<td><strong>72</strong></td>
-<td>2020-11-30 ~</td>
-<td><strong>5.9</strong></td>
+<td>72</td>
+<td>2020-11-30 ～</td>
+<td>5.9</td>
+</tr>
+<tr>
+<td>月</td>
+<td><code>Data.get('月_還原K線資料表', s)</code></td>
+<td>202</td>
+<td>2010-01 ～</td>
+<td>16.8</td>
 </tr>
 <tr>
 <td>月</td>
 <td><code>Data.get('還原月K價量資料(個股、ETF、大盤)-單檔股票多個區間', s)</code></td>
-<td>45</td>
-<td>2023-02-01 ~</td>
-<td>3.7</td>
+<td>178</td>
+<td>2012-01 ～</td>
+<td>14.8</td>
 </tr>
 <tr>
 <td>月營收</td>
 <td><code>MSMP.月_營收</code></td>
-<td><strong>101</strong></td>
-<td><strong>2018-M05 ~ 2026-M09</strong></td>
-<td><strong>8.4</strong></td>
+<td>101</td>
+<td>2018-M05 ～ 2026-M09</td>
+<td>8.4</td>
 </tr>
 <tr>
 <td>月營收</td>
-<td><code>Data.get('個股營收資訊-單檔股票多個區間', s)</code></td>
-<td>45</td>
-<td>2023-M01 ~</td>
-<td>3.7</td>
+<td><code>Data.get('月_營收資料表', s)</code></td>
+<td>201</td>
+<td>2010-01 ～ 2026-09</td>
+<td>16.7</td>
 </tr>
 <tr>
 <td>季財報</td>
 <td><code>MSMP.季財報_*</code></td>
-<td><strong>24</strong></td>
-<td><strong>2020-Q4 ~ 2026-Q3</strong></td>
-<td><strong>6</strong></td>
+<td>24</td>
+<td>2020-Q4 ～ 2026-Q3</td>
+<td>6</td>
 </tr>
 <tr>
 <td>季財報</td>
-<td><code>Data.get('個股季財報資訊-單檔股票多個區間', s)</code></td>
-<td>12</td>
-<td>2023-Q3 ~ 2026-Q2</td>
-<td>3</td>
+<td><code>Data.get('季_綜合損益表', s)</code>（資產負債、現金流量、財務比率相同）</td>
+<td>66</td>
+<td>2010-Q1 ～ 2026-Q2</td>
+<td>16.5</td>
 </tr>
 <tr>
 <td>年股利</td>
 <td><code>MSMP.季股利資訊</code></td>
 <td>8</td>
-<td>2019-Y ~ 2026-Y</td>
+<td>2019-Y ～ 2026-Y</td>
 <td>8</td>
 </tr>
 <tr>
 <td>年股利</td>
-<td><code>Data.get('個股股利資訊(年)-單檔股票多個區間', s)</code></td>
-<td>4</td>
-<td>2023 ~ 2026</td>
-<td>4</td>
+<td><code>Data.get('季_個股除權息資料表', s)</code></td>
+<td>27</td>
+<td>2000 ～ 2026</td>
+<td>27</td>
 </tr>
 <tr>
 <td>期貨 1 分</td>
 <td><code>MSMP._fut_TXF</code></td>
-<td><strong>2,617,245</strong></td>
-<td><strong>2017-05-15 ~</strong></td>
-<td><strong>9.4</strong></td>
+<td>2,617,245</td>
+<td>2017-05-15 ～</td>
+<td>9.4</td>
 </tr>
 <tr>
 <td>期貨日</td>
 <td><code>Data.get('台指期日K', 'TXF')</code></td>
-<td>1000</td>
-<td>2022-09-02 ~</td>
+<td>1000（固定）</td>
+<td>2022-09-12 ～</td>
 <td>4.1</td>
 </tr>
 <tr>
 <td>期貨週</td>
 <td><code>Data.get('台指期週K', 'TXF')</code></td>
-<td>865</td>
-<td><strong>2010-01-08 ~</strong></td>
-<td><strong>16.8</strong></td>
+<td>866</td>
+<td>2010-01-08 ～</td>
+<td>16.8</td>
 </tr>
 <tr>
 <td>期貨月</td>
 <td><code>Data.get('台指期月K', 'TXF')</code></td>
 <td>202</td>
-<td><strong>2010-01-29 ~</strong></td>
-<td><strong>16.7</strong></td>
-</tr>
-<tr>
-<td>個股 1 分</td>
-<td><code>Data.get('取得歷史1分K(指定起訖日)', s, start, end)</code></td>
-<td>依區間</td>
-<td>你指定</td>
-<td>—</td>
+<td>2010-01-29 ～</td>
+<td>16.7</td>
 </tr>
 </tbody>
 </table>
-<p><strong>同一種資料，<code>MSMP</code> 版本比 <code>Data</code> 版本長。</strong> 要長歷史先找 <code>MSMP</code>。</p>
-<h2 id="近-n-年該走哪張表">「近 N 年」該走哪張表</h2>
-<p>以 2026-10-21 實測的長度為準（長度會變，用前先 <code>len()</code> 確認）：</p>
+<p>各 <code>api.Data</code> 表的資料區間見 <a href="../data-tw-price/">價量與 K 線</a>、<a href="../data-tw-fundamental/">基本面</a>、<a href="../data-tw-futures/">期貨</a> 等分類頁。</p>
+<h2 id="近-n-年該用哪張表">「近 N 年」該用哪張表</h2>
+<p>單一股票的長期歷史用 <code>api.Data</code> 依起訖日的表；全市場的矩陣用 <code>api.MSMP</code>。</p>
 <table>
 <thead>
 <tr>
-<th>問題</th>
-<th>走哪</th>
+<th>期間</th>
+<th>單一股票</th>
+<th>全市場</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>近一週 / 一個月 / 一季</td>
-<td>日頻，隨便哪張都行</td>
+<td>近一週／一個月／一季</td>
+<td>日頻，任一張表</td>
+<td><code>MSMP.日_*</code></td>
 </tr>
 <tr>
-<td>近一年 ~ 近兩年</td>
-<td><code>MSMP.日_*</code>（2.1 年）；<code>Data</code> 日頻只有 1 年</td>
+<td>近一年～近兩年</td>
+<td><code>Data</code> 日頻</td>
+<td><code>MSMP.日_*</code>（2.1 年）</td>
 </tr>
 <tr>
-<td>近三年 ~ 近五年</td>
-<td><strong>日頻不夠</strong>。<code>MSMP.週_K</code>／<code>月_K</code>（6 年）、<code>MSMP.季財報_*</code>（2020-Q4 起）</td>
+<td>近三年～近五年</td>
+<td><code>Data.get('日_還原K資料表', s, start, end)</code>（2003 起）</td>
+<td><code>MSMP.週_K</code>／<code>月_K</code>（約 6 年）、<code>MSMP.季財報_*</code>（2020-Q4 起）</td>
 </tr>
 <tr>
-<td>近八年</td>
-<td>只有 <code>MSMP.月_營收</code>（2018-M05 起）</td>
+<td>近十年以上</td>
+<td><code>日_</code>／<code>週_</code>／<code>月_</code>／<code>季_</code> 開頭的表（2010 起）</td>
+<td>無；<code>MSMP.月_營收</code> 最長（2018-M05 起）</td>
 </tr>
 <tr>
-<td>期貨長歷史</td>
+<td>期貨長期歷史</td>
 <td>1 分 K：<code>MSMP._fut_TXF</code>（2017-05 起）；週／月 K：<code>Data.get('台指期週K', 'TXF')</code>（2010 起）</td>
+<td>—</td>
 </tr>
 </tbody>
 </table>
-<p>實例——「2330 近五年股價走勢」：</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># ✗ 日頻只有約 2 年</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">MSMP</span><span class="o">.</span><span class="n">日_K</span><span class="o">.</span><span class="n">adj_Close</span><span class="p">)[</span><span class="s1">&#39;2330&#39;</span><span class="p">]</span>     <span class="c1"># 500 筆，2024-09-26 起</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># ✓ 週 K 有約 6 年</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">w</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">MSMP</span><span class="o">.</span><span class="n">週_K</span><span class="o">.</span><span class="n">adj_Close</span><span class="p">)[</span><span class="s1">&#39;2330&#39;</span><span class="p">]</span>  <span class="c1"># 307 筆，2020-11-06 起</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">),</span> <span class="n">w</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>                                  <span class="c1"># 用前先確認長度</span>
+<p>例：2330 近五年股價。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># MSMP 日頻約 2 年</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">MSMP</span><span class="o">.</span><span class="n">日_K</span><span class="o">.</span><span class="n">adj_Close</span><span class="p">)[</span><span class="s1">&#39;2330&#39;</span><span class="p">]</span>     <span class="c1"># 500 筆，2024-09-26 起</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># 單一股票：Data 依起訖日的還原日 K</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">d</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;日_還原K資料表&#39;</span><span class="p">,</span> <span class="s1">&#39;2330&#39;</span><span class="p">,</span> <span class="s1">&#39;20211029&#39;</span><span class="p">,</span> <span class="s1">&#39;20261029&#39;</span><span class="p">)</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">),</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;日期&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>                           <span class="c1"># 使用前確認長度</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># 全市場：MSMP 週 K 約 6 年</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">w</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">MSMP</span><span class="o">.</span><span class="n">週_K</span><span class="o">.</span><span class="n">adj_Close</span><span class="p">)</span>          <span class="c1"># 307 筆，2020-11-06 起</span>
 </span></code></pre></div>
-<h2 id="兩個容易誤判的陷阱">兩個容易誤判的陷阱</h2>
-<p><strong>1. <code>月_營收</code> 的 index 是字串不是日期。</strong> 格式 <code>'2026-M07'</code>，
-所以 <code>.resample()</code> / <code>&gt;= pd.Timestamp(...)</code> 都不能用，要用字串比較：</p>
+<h2 id="非日期的-index">非日期的 index</h2>
+<p><code>MSMP</code> 的月、季、年頻表，index 是字串而不是日期：</p>
+<table>
+<thead>
+<tr>
+<th>頻率</th>
+<th>index 格式</th>
+<th>例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>月（<code>月_營收</code>）</td>
+<td><code>'YYYY-Mmm'</code> 字串</td>
+<td><code>'2026-M07'</code></td>
+</tr>
+<tr>
+<td>季</td>
+<td><code>'YYYY-Qn'</code> 字串</td>
+<td><code>'2026-Q2'</code></td>
+</tr>
+<tr>
+<td>年</td>
+<td><code>'YYYY-Y'</code> 字串或整數</td>
+<td><code>'2026-Y'</code>、<code>2026</code></td>
+</tr>
+</tbody>
+</table>
+<p>這類 index 無法使用 <code>.resample()</code> 或與 <code>pd.Timestamp</code> 比較。月與季的格式位數固定，可直接以字串比較篩選期間：</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">s</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">MSMP</span><span class="o">.</span><span class="n">月_營收</span><span class="o">.</span><span class="n">金額_千</span><span class="p">[</span><span class="s1">&#39;2330&#39;</span><span class="p">]</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">s</span><span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">index</span> <span class="o">&gt;=</span> <span class="s1">&#39;2026-M01&#39;</span><span class="p">]</span>            <span class="c1"># 字串比較剛好可行（zero-padded）</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">s</span><span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">index</span> <span class="o">&gt;=</span> <span class="s1">&#39;2026-M01&#39;</span><span class="p">]</span>
 </span></code></pre></div>
-<p>季頻同理是 <code>'2026-Q2'</code>、年頻是 <code>'2026-Y'</code> 或 <code>2026</code>（整數）。</p>
-<p><strong>2. <code>月_營收.金額_千</code> 的單位是千元。</strong> 換億元要 <code>÷ 1e5</code>，不是 <code>÷ 1e7</code>：</p>
+<h2 id="單位換算">單位換算</h2>
+<table>
+<thead>
+<tr>
+<th>欄名結尾</th>
+<th>單位</th>
+<th>換算為億元</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_千</code></td>
+<td>千元</td>
+<td>÷ 1e5</td>
+</tr>
+<tr>
+<td><code>_百萬</code>（例：<code>成交額_百萬</code>）</td>
+<td>百萬元</td>
+<td>÷ 1e4</td>
+</tr>
+</tbody>
+</table>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">api</span><span class="o">.</span><span class="n">MSMP</span><span class="o">.</span><span class="n">月_營收</span><span class="o">.</span><span class="n">金額_千</span><span class="p">[</span><span class="s1">&#39;2330&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>        <span class="c1"># 467580548.0</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># ÷ 1e5 = 4676 億元   ← 對</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># ÷ 1e7 = 46.8        ← 錯了 100 倍</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># ÷ 1e5 = 4676 億元</span>
 </span></code></pre></div>
-<p>凡是 <code>_千</code> 結尾的欄位都是這個規則。<code>_百萬</code> 結尾（如 <code>成交額_百萬</code>）則是 <code>÷ 1e4</code> 得億元。</p>
-<h2 id="期貨資料在-msmp_fut_txf">期貨資料在 <code>MSMP._fut_TXF</code></h2>
-<p>回測用的 1 分 K 是 <code>MSMP</code> 的一個私有屬性（2026-10 起 <code>api.Data</code> 也有台指期日／週／月 K 等表，見下方長度與 <a href="../data-get-table/">data-get-table.md</a> Example 4）：</p>
+<p>成交量：台股整股是張、零股是股；美股是股；期貨是口。</p>
+<h2 id="期貨msmp_fut_txf">期貨：MSMP._fut_TXF</h2>
+<p>台指期 TXF 的 1 分 K 在 <code>api.MSMP._fut_TXF</code>。<code>api.Data</code> 另有台指期日／週／月 K 等表，見 <a href="../data-tw-futures/">期貨</a>。</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">f</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">MSMP</span><span class="o">.</span><span class="n">_fut_TXF</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># DataFrame (2617245, 7)（2026-10-21 實測）</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># DataFrame (2617245, 7)（2026-10-21）</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># columns: DateTime, Open, High, Low, Close, TotalVolume, settlement</span>
 </span></code></pre></div>
 <table>
@@ -2304,10 +2824,10 @@
 <tbody>
 <tr>
 <td><code>DateTime</code></td>
-<td>1 分 K 的時間。<strong>零重複</strong>——這是單一「近月連續序列」，不是多合約併排</td>
+<td>1 分 K 的時間，沒有重複值：單一近月連續序列，不是多個合約並列</td>
 </tr>
 <tr>
-<td><code>Open</code>/<code>High</code>/<code>Low</code>/<code>Close</code></td>
+<td><code>Open</code>／<code>High</code>／<code>Low</code>／<code>Close</code></td>
 <td>點數</td>
 </tr>
 <tr>
@@ -2316,11 +2836,11 @@
 </tr>
 <tr>
 <td><code>settlement</code></td>
-<td>這根 K 屬於哪個合約（結算日）。共 113 個不同值 = 113 個合約月</td>
+<td>這根 K 所屬合約的結算日</td>
 </tr>
 </tbody>
 </table>
-<p>因為 <code>DateTime</code> 不重複，任何時點都只有近月合約，聚合成日線就是「近月合約日成交資訊」：</p>
+<p>每個時點只有近月合約，聚合成日線即為近月合約的每日行情：</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">g</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">MSMP</span><span class="o">.</span><span class="n">_fut_TXF</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;DateTime&#39;</span><span class="p">)</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">daily</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">開盤</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Open&#39;</span><span class="p">,</span><span class="s1">&#39;first&#39;</span><span class="p">),</span> <span class="n">最高</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;High&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">),</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>                            <span class="n">最低</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Low&#39;</span><span class="p">,</span><span class="s1">&#39;min&#39;</span><span class="p">),</span> <span class="n">收盤</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Close&#39;</span><span class="p">,</span><span class="s1">&#39;last&#39;</span><span class="p">),</span>
@@ -2328,14 +2848,13 @@
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>                            <span class="n">結算日</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;settlement&#39;</span><span class="p">,</span><span class="s1">&#39;last&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;開盤&#39;</span><span class="p">])</span>
 </span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">daily</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </span></code></pre></div>
-<p>實測近一週（2026-08-15 ~ 08-20）合計 269,758 口，08-19 換月到 09-16 合約。</p>
-<blockquote>
-<p>要 K 線而不是自己 resample，用 <code>api.bt.Tools.get_fut_ohlc('TXF', freq=60)</code>——
-它讀的就是這份快取，還會處理日夜盤時段與結算切斷。見
-<a href="../backtest-data/">backtest-data.md</a>。</p>
-</blockquote>
-<h2 id="美股的規則不一樣">美股的規則不一樣</h2>
-<p><strong>美股價格類各頻率都短</strong>（日／週／月 K 都約 2 年），降頻拿不到長歷史；基本面（季財報、股利）長得多。</p>
+<p>2026-08-15 ～ 08-20 合計 269,758 口，08-19 換月到 09-16 結算的合約。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>需要 K 線時，可直接用 <code>api.bt.Tools.get_fut_ohlc('TXF', freq=60)</code>。它讀取同一份資料，並處理日夜盤時段與結算切換，見 <a href="../backtest-data/">資料與週期</a>。</p>
+</div>
+<h2 id="美股">美股</h2>
+<p>美股價格類各頻率都約 2 年，以週 K、月 K 也無法取得更長的股價歷史；財報與股利的期間較長。</p>
 <table>
 <thead>
 <tr>
@@ -2347,28 +2866,28 @@
 <tbody>
 <tr>
 <td>日 K</td>
-<td>500 筆 / 2.1 年</td>
-<td>500 筆 / 2.0 年（2024-10-22 起）</td>
+<td>500 筆／2.1 年</td>
+<td>500 筆／2.0 年（2024-10-22 起）</td>
 </tr>
 <tr>
 <td>週 K</td>
-<td>307 筆 / <strong>6.0 年</strong></td>
-<td>122 筆 / <strong>2.3 年</strong></td>
+<td>307 筆／6.0 年</td>
+<td>122 筆／2.3 年</td>
 </tr>
 <tr>
 <td>月 K</td>
-<td>72 筆 / <strong>5.9 年</strong></td>
-<td>26 筆 / <strong>2.1 年</strong></td>
+<td>72 筆／5.9 年</td>
+<td>26 筆／2.1 年</td>
 </tr>
 <tr>
 <td>季財報</td>
-<td>24 期 / 6 年</td>
-<td>56 期 / <strong>13.7 年</strong>（2012-Q4 起，<code>USMSMP.季財報_*</code>）</td>
+<td>24 期／6 年</td>
+<td>56 期／13.7 年（2012-Q4 起，<code>USMSMP.季財報_*</code>）</td>
 </tr>
 <tr>
 <td>月／季營收</td>
-<td>101 期（月）/ 8.4 年</td>
-<td>56 期（季）/ 13.7 年</td>
+<td>101 期（月）／8.4 年</td>
+<td>56 期（季）／13.7 年</td>
 </tr>
 <tr>
 <td>年股利</td>
@@ -2377,31 +2896,46 @@
 </tr>
 </tbody>
 </table>
-<p>所以：</p>
+<p>美股財報覆蓋 5811 檔，價格覆蓋 13534 檔，跨表運算後以 <code>.dropna()</code> 去除沒有值的股票。細節見 <a href="../usmsmp/">美股矩陣資料 USMSMP</a>。</p>
+<h2 id="不提供的資料">不提供的資料</h2>
+<table>
+<thead>
+<tr>
+<th>資料</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>選擇權</td>
+<td>台指選擇權、個股選擇權都不提供</td>
+</tr>
+<tr>
+<td>匯率行情</td>
+<td>不提供 USD/TWD 等外匯行情。表中名稱含「匯率」的欄位是財報的「匯率變動對現金及約當現金之影響」</td>
+</tr>
+<tr>
+<td>利率</td>
+<td>不提供央行、聯準會利率與公債殖利率。名稱含「利率」的欄位是殖利率、毛利率、週轉率這類財務比率</td>
+</tr>
+<tr>
+<td>原物料</td>
+<td>原油、黃金等不提供</td>
+</tr>
+<tr>
+<td>海外期貨</td>
+<td>不提供，期貨只有台指期 TXF</td>
+</tr>
+</tbody>
+</table>
+<h2 id="相關頁面">相關頁面</h2>
 <ul>
-<li><strong>美股要長期股價</strong>：沒有。價格類最多約 2 年。</li>
-<li><strong>美股要長期基本面</strong>：季財報回到 2012-Q4、股利回到 2010。</li>
-<li>美股財報只覆蓋 <strong>5811 檔</strong>，價格覆蓋 13534 檔——跨表運算要 <code>.dropna()</code>。</li>
+<li><a href="../data-tw-list/">台股資料一覽</a>：台股 114 張表的資料區間與欄位</li>
+<li><a href="../msmp-tables/">MSMP 資料表與欄位</a>：台股 25 張、美股 10 張矩陣表</li>
+<li><a href="../usmsmp/">美股矩陣資料 USMSMP</a>：美股各表的期間與覆蓋檔數</li>
+<li><a href="../backtest-data/">資料與週期</a>：<code>bt.Tools.get_stock_ohlc</code>／<code>get_fut_ohlc</code></li>
 </ul>
-<p>細節見 <a href="../usmsmp/">usmsmp.md</a>。</p>
-<h2 id="snowyowl-沒有的資料">SnowyOwl 沒有的資料</h2>
-<p>問到這些要直接說沒有，不要硬湊：</p>
-<ul>
-<li><strong>選擇權</strong>（台指選擇權、個股選擇權）——完全沒有</li>
-<li><strong>匯率</strong>（USD/TWD 等 FX 行情）——沒有。表裡出現的「匯率」都是財報的
-  「匯率變動對現金及約當現金之影響」，不是行情</li>
-<li><strong>利率</strong>（央行、聯準會、公債殖利率）——沒有。出現的「利率」都是
-  「殖利率」「毛利率」「週轉率」這類財務比率</li>
-<li><strong>原物料</strong>（原油、黃金…）——沒有</li>
-<li><strong>海外期貨</strong>——沒有，期貨只有台指期 TXF</li>
-</ul>
-<h2 id="相關頁">相關頁</h2>
-<ul>
-<li><a href="../data-get-table/">Data.get_table 列出可用表格</a>：台股表格清單（2026-10-21 實測 87 張）</li>
-<li><a href="../msmp-tables/">MSMP 資料表與欄位完整清單</a>：台股 25 張、美股 10 張矩陣表</li>
-<li><a href="../backtest-data/">回測：資料與週期</a>：<code>bt.Tools.get_stock_ohlc</code> / <code>get_fut_ohlc</code></li>
-<li><a href="../usmsmp/">USMSMP 美股矩陣資料</a>：美股 10 張表的欄位、形狀與期間</li>
-</ul>
+<p class="sw-verified">最後驗證：2026-10-29</p>
 
 
 
@@ -2437,7 +2971,7 @@
       <nav class="md-footer__inner md-grid" aria-label="頁腳" >
         
           
-          <a href="../data-get/" class="md-footer__link md-footer__link--prev" aria-label="上一頁: Data.get 取得表格資料">
+          <a href="../usmsmp/" class="md-footer__link md-footer__link--prev" aria-label="上一頁: 美股矩陣資料 USMSMP">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2447,20 +2981,20 @@
                 上一頁
               </span>
               <div class="md-ellipsis">
-                Data.get 取得表格資料
+                美股矩陣資料 USMSMP
               </div>
             </div>
           </a>
         
         
           
-          <a href="../data-get-snapshots/" class="md-footer__link md-footer__link--next" aria-label="下一頁: USData.get_snapshots 美股即時快照">
+          <a href="../block/" class="md-footer__link md-footer__link--next" aria-label="下一頁: 積木選股概覽">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一頁
               </span>
               <div class="md-ellipsis">
-                USData.get_snapshots 美股即時快照
+                積木選股概覽
               </div>
             </div>
             <div class="md-footer__button md-icon">
