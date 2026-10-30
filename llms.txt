@@ -41,8 +41,9 @@
 
 ## Data 表格查詢
 
-- [Data 模組總覽](docs/data.md): `api.Data` / `api.USData` 三個方法，以及與 `api.MSMP` 的分工
-- [Data.get_table 列出可用表格](docs/data-get-table.md): 台股表格清單（2026-10-21 實測 **87 張**；可用的表依帳號資費包而定），含 2026-10 新增的期貨等 15 張、先前漏收的 14 張（分點籌碼 5 張、大盤法人 2 張、盤中逐筆明細 6 張、產業個股清單）；參數標記怎麼讀；`產業個股清單` 傳錯 sector 會拋誤導的 `KeyError: 'symbol'`
+- [Data 模組總覽](docs/data.md): `api.Data` / `api.USData` 的方法（`get_table(type='print'|'dic')`、`get`），以及與 `api.MSMP` 的分工
+- [Data.get_table 列出可用表格](docs/data-get-table.md): 台股表格清單（2026-10-27 實測 **114 張**；可用的表依帳號資費包而定）；`get_table(type='dic')` 回傳 `{分段: {表名: 參數}}` 可用程式列舉；含 2026-10 新增的期貨等 15 張、處置／庫藏股／分點等 12 張、先前漏收的 14 張（分點籌碼 5 張、大盤法人 2 張、盤中逐筆明細 6 張、產業個股清單）；參數標記怎麼讀；`產業個股清單` 傳錯 sector 會拋誤導的 `KeyError: 'symbol'`
+- [Data v2 新增資料表（28 張）](docs/data-v2-tables.md): `get_table()` 最後一段「新增」——`日_`／`週_`／`月_`／`季_`／`事件_`／`其他_` 開頭的 28 張（日週月 K 含還原、融資融券、借券、三大法人、董監持股、ETF 每日持股、月營收、股權分散、季財報四表、除權息、處置、暫停交易…）；每張的參數、2330／0050／興櫃／已下市可否查詢、最早資料（多數 2010 起）、欄位與注意事項；**已下市股票全部查不到**、**月營收與季財報沒有公告日**（回測要自己往後推）、v2 比舊表晚
 - [Data.get 取得表格資料](docs/data-get.md): `get(table, *args)` 五個範例（清單、還原日K、季財報、分K）與兩種錯誤訊息
 - [資料頻率與歷史長度](docs/data-history.md): **歷史長度不是固定值**（2026-10 實測台股日頻 `MSMP` 500 筆、`Data` 250 筆）；`MSMP` 週/月 K 約 6 年、月營收約 8 年，「近五年」要降頻；同一種資料 `MSMP` 比 `Data` 長；`_千` ÷1e5、`_百萬` ÷1e4 才是億元；**期貨在 `MSMP._fut_TXF`（2017-05 起 1 分 K）**；SnowyOwl 沒有選擇權/匯率/央行利率/原物料；**美股規則不同**（週/月K 反而比台股短，長歷史只在財報與股利）
 - [USData.get_snapshots 美股即時快照](docs/data-get-snapshots.md): **僅美股** `api.USData.get_snapshots(symbols)` 回 `dict[str, Symbol]`，Symbol 9 欄（含現成的 netChange/percentChange）；台股 `api.Data` 無此方法

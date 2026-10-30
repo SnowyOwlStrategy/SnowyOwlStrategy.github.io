@@ -8,7 +8,8 @@ description: |
   多條件 AND、股池 pool。
   歷史與矩陣資料：api.MSMP／api.USMSMP、日_K／週_K／月_K、adj 還原股價、漲跌幅、
   成交量／成交額、市值。
-  表格查詢：api.Data／api.USData、get(table)、清單／分K／逐筆明細。
+  表格查詢：api.Data／api.USData、get(table)、get_table(type=dic)、清單／分K／逐筆明細、
+  v2 新增表（日_K線資料表、季_財務比率…）。
   基本面：月營收、季財報、EPS、本益比 PER、ROE、毛利率、股利。
   籌碼：三大法人、外資／投信／自營、融資融券、八大行庫、券商分點、大戶持股、籌碼集中度。
   技術面：均線、MACD、RSI、KD、布林、突破。
@@ -107,7 +108,8 @@ api = so.login('帳號', '密碼', type='account')   # 或 so.login(type='google
 | 某個積木的參數與合法值 | [block-reference-tw.md](https://snowyowlstrategy.github.io/block-reference-tw/)、[block-reference-us.md](https://snowyowlstrategy.github.io/block-reference-us/) |
 | 積木的已知落差 | [block-caveats.md](https://snowyowlstrategy.github.io/block-caveats/) |
 | MSMP 有哪些表與欄位、常用查詢 | [msmp.md](https://snowyowlstrategy.github.io/msmp/)、[msmp-tables.md](https://snowyowlstrategy.github.io/msmp-tables/) |
-| 表格式查詢（`api.Data`）有哪些表 | [data-get.md](https://snowyowlstrategy.github.io/data-get/)、[data-get-table.md](https://snowyowlstrategy.github.io/data-get-table/) |
+| 表格式查詢（`api.Data`）有哪些表（`get_table(type='dic')` 可用程式列舉） | [data-get.md](https://snowyowlstrategy.github.io/data-get/)、[data-get-table.md](https://snowyowlstrategy.github.io/data-get-table/) |
+| `get_table()`「新增」段的 28 張（`日_`／`週_`／`月_`／`季_`／`事件_` 開頭） | [data-v2-tables.md](https://snowyowlstrategy.github.io/data-v2-tables/) |
 | 各頻率的歷史長度、期貨資料在哪 | [data-history.md](https://snowyowlstrategy.github.io/data-history/) |
 | 盤中、分K、逐筆明細 | [intraday.md](https://snowyowlstrategy.github.io/intraday/) |
 | 美股 | [usmsmp.md](https://snowyowlstrategy.github.io/usmsmp/)、[usdata.md](https://snowyowlstrategy.github.io/usdata/) |

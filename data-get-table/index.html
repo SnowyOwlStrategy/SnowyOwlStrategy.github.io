@@ -16,7 +16,7 @@
         <link rel="prev" href="../data/">
       
       
-        <link rel="next" href="../data-get/">
+        <link rel="next" href="../data-v2-tables/">
       
       
         
@@ -1142,6 +1142,8 @@
       
         
       
+        
+      
     
     
     
@@ -1427,6 +1429,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#example-52026-10-新增的-12-張2026-10-27-實測" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 5：2026-10 新增的 12 張（2026-10-27 實測）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-6新增段的-28-張" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 6：「新增」段的 28 張
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1436,6 +1460,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-v2-tables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data v2 新增資料表（28 張）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2177,6 +2229,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#example-52026-10-新增的-12-張2026-10-27-實測" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 5：2026-10 新增的 12 張（2026-10-27 實測）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-6新增段的-28-張" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 6：「新增」段的 28 張
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2202,19 +2276,21 @@
 <h1 id="dataget_table-列出可用表格">Data.get_table 列出可用表格</h1>
 <blockquote>
 <p>所屬章節：Data 表格查詢
-以 2026-08-20 實際執行結果為準</p>
+以 2026-10-27 實際執行結果為準</p>
 </blockquote>
 <h2 id="overview">Overview</h2>
-<p><strong>印出</strong>（不是回傳）所有可用表名，以及每張表的必填參數。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get_table</span><span class="p">()</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">api</span><span class="o">.</span><span class="n">USData</span><span class="o">.</span><span class="n">get_table</span><span class="p">()</span>
+<p>列出所有可用表名，以及每張表的必填參數。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get_table</span><span class="p">()</span>                  <span class="c1"># 印出（回傳 None）</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get_table</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;dic&#39;</span><span class="p">)</span>        <span class="c1"># 回傳 {分段: {表名: 參數}}</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">api</span><span class="o">.</span><span class="n">USData</span><span class="o">.</span><span class="n">get_table</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;dic&#39;</span><span class="p">)</span>      <span class="c1"># 美股同樣有 type</span>
 </span></code></pre></div>
-<p>沒有參數。輸出按用途分成六段：多股單期、單股多期、分K、批次取得、其他。
+<p><code>type</code> 預設 <code>'print'</code>（印出）；<code>'dic'</code> 回傳兩層字典，外層是分段名稱、內層是 <code>{表名: 參數提示}</code>。
+台股輸出按用途分段：多股單期、單股多期、分K、批次取得、其他、分點資料、期貨、新增（只會出現帳號有權限的分段）。
 表名後面接的就是 <code>get()</code> 要補的參數，例如 <code>"symbol"</code> 代表必須傳股票代號。</p>
 <h2 id="manual-sample-inputoutput">Manual Sample Input/Output</h2>
 <h3 id="example-1台股表格清單節錄">Example 1：台股表格清單（節錄）</h3>
 <blockquote>
-<p>台股 2026-10-21 實測共 <strong>87 張</strong>表（可用的表依帳號資費包而定，以當下 <code>get_table()</code> 的輸出為準）。下面是節錄；2026-10 新出現的 15 張見本頁最後的「Example 4」，完整分組見 <a href="../data-get/">data-get.md</a>。</p>
+<p>台股 2026-10-27 實測共 <strong>114 張</strong>表（可用的表依帳號資費包而定，以當下 <code>get_table()</code> 的輸出為準）。下面是節錄；2026-10 新出現的表見本頁的 Example 4、5，「新增」段的 28 張見 <a href="../data-v2-tables/">data-v2-tables.md</a>。</p>
 </blockquote>
 <h4 id="input">input</h4>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get_table</span><span class="p">()</span>
@@ -2334,8 +2410,12 @@
 </table>
 <p>參數給錯時的錯誤訊息會直接告訴你正確用法，見 <a href="../data-get/">Data.get</a>。</p>
 <blockquote>
-<p><code>get_table()</code> 只印出來，<strong>不回傳值</strong>。想用程式列舉表名的話，
-目前沒有公開 API，只能改讀 <code>api.Data.get_table</code> 背後的對照表。</p>
+<p><code>get_table()</code> 預設只印出來、回傳 <code>None</code>。要用程式列舉表名，改用 <code>type='dic'</code>：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">t</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get_table</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;dic&#39;</span><span class="p">)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">list</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>                                  <span class="c1"># 分段名稱，例：[&#39;多股單期&#39;, &#39;單股多期&#39;, ..., &#39;期貨&#39;, &#39;新增&#39;]</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">t</span><span class="p">[</span><span class="s1">&#39;新增&#39;</span><span class="p">][</span><span class="s1">&#39;季_財務比率&#39;</span><span class="p">]</span>                  <span class="c1"># &#39;&quot;symbol&quot;&#39;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">sec</span> <span class="ow">in</span> <span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">sec</span><span class="p">]</span>   <span class="c1"># 全部表名（2026-10-27 實測 114 張）</span>
+</span></code></pre></div>
 </blockquote>
 <hr />
 <h3 id="example-3先前漏收的-14-張全部實測過">Example 3：先前漏收的 14 張（全部實測過）</h3>
@@ -2486,8 +2566,8 @@
 <p><strong>傳錯值的錯誤訊息會誤導。</strong> 例如傳 <code>'半導體'</code>（不在 172 種裡）會拋
 <code>KeyError: 'symbol'</code>——看起來像少傳了 symbol，其實是 sector 值不合法。
 先取合法值清單：</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">t</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;台股產業對照表&#39;</span><span class="p">)</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">sectors</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="s1">&#39;指數彙編分類&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>      <span class="c1"># 172 種</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">t</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;台股產業對照表&#39;</span><span class="p">)</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">sectors</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="s1">&#39;指數彙編分類&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>      <span class="c1"># 172 種</span>
 </span></code></pre></div>
 </blockquote>
 <h3 id="example-42026-10-出現在清單的-15-張2026-10-21-實測">Example 4：2026-10 出現在清單的 15 張（2026-10-21 實測）</h3>
@@ -2613,6 +2693,94 @@
 <p><strong>期貨現在也在 <code>api.Data</code> 裡</strong>：日／週／月 K（含夜盤）、近期分 K、三大法人未平倉。
 回測用的 1 分 K 仍在 <code>api.MSMP._fut_TXF</code>（見 <a href="../data-history/">data-history.md</a>）。</p>
 </blockquote>
+<h3 id="example-52026-10-新增的-12-張2026-10-27-實測">Example 5：2026-10 新增的 12 張（2026-10-27 實測）</h3>
+<table>
+<thead>
+<tr>
+<th>表名</th>
+<th>呼叫</th>
+<th>形狀</th>
+<th>欄位（節錄）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>可現股當沖標的</code></td>
+<td>無參數</td>
+<td>(646, 3)</td>
+<td>股票代號、股票名稱、日期（只有當天）</td>
+</tr>
+<tr>
+<td><code>粗產業多空-多</code> / <code>粗產業多空-空</code></td>
+<td>無參數</td>
+<td>(30, 5)</td>
+<td>名稱、漲跌、漲跌幅、淨比、淨流</td>
+</tr>
+<tr>
+<td><code>取得最新處置資料</code></td>
+<td>無參數</td>
+<td>(21, 14)</td>
+<td>date、symbol、處置次數、最快處置日期、收盤價、本益比、近6日漲跌幅、成交量倍數、週轉率、punishArticleList</td>
+</tr>
+<tr>
+<td><code>取得最新預測處置資料</code></td>
+<td>無參數</td>
+<td>(22, 16)</td>
+<td>date、mkt、symbol、處置次數、最快處置日期、處置天數、處置時間、警示狀態進度、是否符合處置、優先處置情境、注意風險次數</td>
+</tr>
+<tr>
+<td><code>批次取得個股預測處置資料</code></td>
+<td><code>get(..., ['2330', '2033'])</code></td>
+<td>(2, 16)</td>
+<td>同上，一檔一列</td>
+</tr>
+<tr>
+<td><code>月營收/月增率/年增率-個股多期</code></td>
+<td><code>'2330'</code></td>
+<td>(201, 7)</td>
+<td>年月、股票代號、股票名稱、日期、單月合併營收(千)、月變動(%)、年成長(%)；2010-01 起</td>
+</tr>
+<tr>
+<td><code>查詢個股歷史處置起訖-單股多期</code></td>
+<td><code>'2033'</code></td>
+<td>(114, 11)</td>
+<td>事件日、事件類型、公告日、處置迄日、處置措施、處置條件、分盤間隔時間(分)、市場別；2002 起</td>
+</tr>
+<tr>
+<td><code>查詢庫藏股資訊-單股多期</code></td>
+<td><code>'2330'</code></td>
+<td>(2, 13)</td>
+<td>董事會決議日、買回次數、買回用途(中)、預定買回期間起迄日、預定買價區間、預計／實際買回股數(千股)、平均買價(元)</td>
+</tr>
+<tr>
+<td><code>查詢粗產業近N日分點買賣超金額Top15資料</code></td>
+<td><code>get(..., '水泥', 5)</code></td>
+<td>(30, 8)</td>
+<td>rownum、broker_id、broker_name、amount、買賣、industry、startDate、endDate</td>
+</tr>
+<tr>
+<td><code>查詢買超賣超TOPN主力分點n日加總資料</code></td>
+<td><code>get(..., '2330', 15, '20261015', '20261020')</code></td>
+<td>(30, 15)</td>
+<td>rownum、broker_id、broker_name、buy/sell_volume、buy/sell_amount、avg_price、買賣（買超、賣超各 topN 列）</td>
+</tr>
+<tr>
+<td><code>查詢近N日單一分點買賣超&gt;20%的股票及重點分點</code></td>
+<td><code>get(..., 5)</code></td>
+<td>(39168, 8)</td>
+<td>股票代號、買賣、broker_id、broker_name、buy_sell_volume、volume_percentage、buy/sell_avg_price</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>查詢粗產業近N日分點買賣超金額Top15資料</code> 的 <code>industry</code> 要填 <code>台股商品檔</code> 的 <code>粗產業</code> 欄的值（79 種，含空字串）；傳空字串回空表。
+  回傳的 <code>startDate</code> 比 <code>endDate</code> 晚（例：startDate 2026-10-22、endDate 2026-10-16），兩欄名稱是反的。</li>
+<li><code>days</code>／<code>N</code> 只吃 &frac12;/&frac34;/5/10/20/60/80/100/120/180/240。</li>
+<li>處置相關的四張：<code>取得最新處置資料</code>（已處置）、<code>取得最新預測處置資料</code>（可能被處置）、<code>批次取得個股預測處置資料</code>（指定代號）、<code>查詢個股歷史處置起訖-單股多期</code>（單檔歷史）。</li>
+</ul>
+<h3 id="example-6新增段的-28-張">Example 6：「新增」段的 28 張</h3>
+<p><code>get_table()</code> 最後一段「新增」是另一套資料來源（表名以 <code>日_</code>、<code>週_</code>、<code>月_</code>、<code>季_</code>、<code>事件_</code>、<code>其他_</code> 開頭），
+欄位、歷史長度與舊表不同，全部說明見 <a href="../data-v2-tables/">data-v2-tables.md</a>。</p>
 
 
 
@@ -2665,13 +2833,13 @@
         
         
           
-          <a href="../data-get/" class="md-footer__link md-footer__link--next" aria-label="下一頁: Data.get 取得表格資料">
+          <a href="../data-v2-tables/" class="md-footer__link md-footer__link--next" aria-label="下一頁: Data v2 新增資料表（28 張）">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一頁
               </span>
               <div class="md-ellipsis">
-                Data.get 取得表格資料
+                Data v2 新增資料表（28 張）
               </div>
             </div>
             <div class="md-footer__button md-icon">
