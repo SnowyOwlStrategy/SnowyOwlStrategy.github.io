@@ -1,22 +1,22 @@
 # llms-full.txt 導覽（給 AI：先讀這段，不要整份讀）
 
-這份檔 ＝ llms.txt 索引 ＋ 33 篇文件全文，共 8904 行。
+這份檔 ＝ llms.txt 索引 ＋ 33 篇文件全文，共 8876 行。
 - 用行號跳讀（例如讀第 N 行起的 M 行），或搜尋 `<!-- source: docs/檔名.md -->` 找到該篇開頭。
 - 文中所有 `docs/xxx.md` 連結，都對應本檔裡 `<!-- source: docs/xxx.md -->` 那一段；沒有 docs/ 資料夾也找得到。
 
-- **寫程式之前先讀**：AI 工作守則（`docs/agent-playbook.md`）第 8855–8905 行
-- **要寫回測先讀，找用得上的寫法**：策略範例（`docs/recipes.md`）第 6987–7596 行
-- **MSMP 台美股所有表與欄名**：MSMP 資料表與欄位（`docs/msmp-tables.md`）第 4893–5108 行
+- **寫程式之前先讀**：AI 工作守則（`docs/agent-playbook.md`）第 8827–8877 行
+- **要寫回測先讀，找用得上的寫法**：策略範例（`docs/recipes.md`）第 6960–7569 行
+- **MSMP 台美股所有表與欄名**：MSMP 資料表與欄位（`docs/msmp-tables.md`）第 4866–5081 行
 
 策略範例各節：
-- 第 6995 行：共用前置
-- 第 7038 行：單檔技術指標策略
-- 第 7088 行：多檔組合（共用資金池）
-- 第 7138 行：台指期雙均線多空反手
-- 第 7227 行：目標權重輪動
-- 第 7347 行：訊號驗證（IC 與分組單調性）
-- 第 7417 行：參數最佳化
-- 第 7469 行：多因子輪動（分步寫法）
+- 第 6968 行：共用前置
+- 第 7011 行：單檔技術指標策略
+- 第 7061 行：多檔組合（共用資金池）
+- 第 7111 行：台指期雙均線多空反手
+- 第 7200 行：目標權重輪動
+- 第 7320 行：訊號驗證（IC 與分組單調性）
+- 第 7390 行：參數最佳化
+- 第 7442 行：多因子輪動（分步寫法）
 
 ## 行號目錄
 
@@ -30,31 +30,31 @@
 | 879–1413 | `docs/data-tw-price.md` | 價量與 K 線 |
 | 1415–2009 | `docs/data-tw-chip.md` | 籌碼 |
 | 2011–2636 | `docs/data-tw-fundamental.md` | 基本面 |
-| 2638–2946 | `docs/data-tw-intraday.md` | 盤中與分 K |
-| 2948–3254 | `docs/data-tw-broker.md` | 券商分點 |
-| 3256–3618 | `docs/data-tw-futures.md` | 期貨 |
-| 3620–4259 | `docs/data-tw-event.md` | 清單與事件 |
-| 4261–4554 | `docs/usdata.md` | 美股資料 api.USData |
-| 4556–4891 | `docs/msmp.md` | 矩陣資料 MSMP |
-| 4893–5108 | `docs/msmp-tables.md` | MSMP 資料表與欄位 |
-| 5110–5295 | `docs/usmsmp.md` | 美股矩陣資料 USMSMP |
-| 5297–5471 | `docs/data-history.md` | 資料期間與頻率 |
-| 5473–5654 | `docs/backtest.md` | 回測概覽 |
-| 5656–5957 | `docs/backtest-strategy.md` | 撰寫策略 |
-| 5959–6155 | `docs/backtest-order.md` | 下單與成交 |
-| 6157–6414 | `docs/backtest-data.md` | 資料與週期 |
-| 6416–6849 | `docs/backtest-report.md` | 商品設定與績效報告 |
-| 6851–6985 | `docs/backtest-tools.md` | 技術指標與參數最佳化 |
-| 6987–7596 | `docs/recipes.md` | 策略範例 |
-| 7598–7693 | `docs/api-login.md` | snowyowl 與 api |
-| 7695–7794 | `docs/api-data.md` | api.Data／api.USData |
-| 7796–7927 | `docs/api-msmp.md` | api.MSMP／api.USMSMP |
-| 7929–8088 | `docs/api-bt.md` | api.bt |
-| 8090–8131 | `docs/errors.md` | 錯誤訊息 |
-| 8133–8349 | `docs/how-to-ask.md` | 提問技巧 |
-| 8351–8654 | `docs/how-to-plan.md` | 規劃研究流程 |
-| 8656–8853 | `docs/case-study-backtest.md` | 回測提問範例 |
-| 8855–8905 | `docs/agent-playbook.md` | AI 工作守則 |
+| 2638–2919 | `docs/data-tw-intraday.md` | 盤中與分 K |
+| 2921–3227 | `docs/data-tw-broker.md` | 券商分點 |
+| 3229–3591 | `docs/data-tw-futures.md` | 期貨 |
+| 3593–4232 | `docs/data-tw-event.md` | 清單與事件 |
+| 4234–4527 | `docs/usdata.md` | 美股資料 api.USData |
+| 4529–4864 | `docs/msmp.md` | 矩陣資料 MSMP |
+| 4866–5081 | `docs/msmp-tables.md` | MSMP 資料表與欄位 |
+| 5083–5268 | `docs/usmsmp.md` | 美股矩陣資料 USMSMP |
+| 5270–5444 | `docs/data-history.md` | 資料期間與頻率 |
+| 5446–5627 | `docs/backtest.md` | 回測概覽 |
+| 5629–5930 | `docs/backtest-strategy.md` | 撰寫策略 |
+| 5932–6128 | `docs/backtest-order.md` | 下單與成交 |
+| 6130–6387 | `docs/backtest-data.md` | 資料與週期 |
+| 6389–6822 | `docs/backtest-report.md` | 商品設定與績效報告 |
+| 6824–6958 | `docs/backtest-tools.md` | 技術指標與參數最佳化 |
+| 6960–7569 | `docs/recipes.md` | 策略範例 |
+| 7571–7666 | `docs/api-login.md` | snowyowl 與 api |
+| 7668–7767 | `docs/api-data.md` | api.Data／api.USData |
+| 7769–7900 | `docs/api-msmp.md` | api.MSMP／api.USMSMP |
+| 7902–8061 | `docs/api-bt.md` | api.bt |
+| 8063–8103 | `docs/errors.md` | 錯誤訊息 |
+| 8105–8321 | `docs/how-to-ask.md` | 提問技巧 |
+| 8323–8626 | `docs/how-to-plan.md` | 規劃研究流程 |
+| 8628–8825 | `docs/case-study-backtest.md` | 回測提問範例 |
+| 8827–8877 | `docs/agent-playbook.md` | AI 工作守則 |
 
 ====================================================================================================
 
@@ -82,7 +82,7 @@
 - [價量與 K 線](docs/data-tw-price.md): 日／週／月 K（原始價與還原價）、附技術指標的 K 線、全市場最新一日價量、市值與成交值、周轉率、Beta；月 K 成交量單位為千張，還原 K 的成交量沒有還原
 - [籌碼](docs/data-tw-chip.md): 三大法人、大盤法人（AX999 等法人代號）、融資融券、借券、當沖、董監與大戶持股、股權分散、八大行庫、籌碼集中度、ETF 持股；投信與自營的買賣超金額以買進金額減賣出金額計算
 - [基本面](docs/data-tw-fundamental.md): 月營收、季財報三表與財務比率（2010-Q1 起）、近四季加總、EPS／ROE／本益比、股利（2000 起）、資本支出、公司基本資料、庫藏股；月營收與季財報的日期是所屬期間，不是公告日
-- [盤中與分 K](docs/data-tw-intraday.md): 個股分 K（即時、指定日、近 999 根，30 分鐘延遲）、盤中產業資金流、依方案提供的逐筆明細與內外盤表；`minutes` 可用 1／3／5／15／30／60
+- [盤中與分 K](docs/data-tw-intraday.md): 個股分 K（即時、指定日、近 999 根，30 分鐘延遲）、盤中產業資金流；`minutes` 可用 1／3／5／15／30／60
 - [券商分點](docs/data-tw-broker.md): 主力分點買賣超、單一分點進出（`brokerId` 格式為 `'代號 分點名'`）、產業分點、個股券商排行；`days` 的可用值
 - [期貨](docs/data-tw-futures.md): 期貨商品與保證金、台指期日／週／月 K（日盤與夜盤）、期貨分 K、三大法人未平倉；回測用的 1 分 K 在 `api.MSMP._fut_TXF`
 - [清單與事件](docs/data-tw-event.md): 上市櫃清單、商品檔、產業對照、產業個股清單、下市股票、當沖標的、處置／注意／全額交割、暫停交易、分盤交易、股市行事曆
@@ -2909,33 +2909,6 @@ api.Data.get('粗產業多空-空')
   被動元件  -41.23  -8.83 -36.27% -105.93億
 電源供應器 -124.93  -9.51 -55.14%  -99.46億
 ```
-
-## 依方案提供的表
-
-以下表格依帳號方案提供，能否使用以 `api.Data.get_table()` 的輸出為準。
-
-| 表名 | 參數 | 說明 |
-|---|---|---|
-| `漲跌家數(盤中)` | 無 | 12 個漲跌幅級距的家數（`-0%`／`+0%` 是跌／漲不到 1%，不是平盤） |
-| `漲跌列表(盤中)` | 無 | 同上，列出每個級距的代號 list |
-| `漲跌家數分鐘歷史(盤中)` | 無 | 漲跌家數的逐分鐘紀錄 |
-| `即時周轉率排行` | 無 | 周轉率前 200 名 |
-| `前50大成交金額-多檔股票最新時間` | 無 | 成交金額前 50 名的買賣張數、金額、資金淨流 |
-| `取得即時分K-含興櫃` | `symbol` | 含興櫃的即時分 K（沒有 `datetime` 欄） |
-| `分價量` | `symbol` | 各價位成交量，`類型` 分 current／pre2Sum／pre4Sum／pre9Sum／pre19Sum |
-| `取得指定日期前幾天的分價量歷史資料` | `symbol`、`date`、`days` | 分價量歷史 |
-| `取得歷史1分K(指定起訖日)` | `symbol`、`startDate`、`endDate` | 1 分 K（`api.bt.Tools.get_stock_ohlc()` 使用這張表） |
-| `取得歷史1分K(指定日期前5天)` | `symbol`、`endDate` | 指定日期前 5 天的 1 分 K |
-| `取得今日即時成交明細(含五檔報價)` | `symbol` | 當日逐筆成交，每筆附五檔報價（欄名 `買_1價`，有底線） |
-| `取得今日即時成交明細(貼標大戶/散戶)` | `symbol` | 同上，另有 `類型` 欄 |
-| `取得最新一筆成交明細(含五檔報價)` | `symbol` | 最新一筆成交 |
-| `取得零股成交明細` | `symbol` | 零股逐筆成交，量的單位是股 |
-| `取得個股盤中內外盤-含興櫃` | `symbol` | 內外盤累計量，欄名為簡體 `内盤` |
-| `個股上個交易日成交均張(成交量/成交筆數)` | `symbol` | 每筆平均成交張數 |
-| `批次取得個股盤中行情` | 代號 list | 多檔盤中 OHLC |
-| `批次取得個股盤中行情-含興櫃(tick含試搓)` | 代號 list | 另有漲跌停價、第一檔買賣價（欄名 `買1價`，沒有底線） |
-| `批次取得個股盤中內外盤-含興櫃與權證` | 代號 list | 多檔內外盤（欄名 `内盤`） |
-| `批次取得盤中預估量` | 代號 list | 收盤預估量（不是當下累計量） |
 
 ## 相關頁面
 
@@ -8099,11 +8072,10 @@ rp.dashboard(view='web')
 
 | 錯誤訊息 | 原因 | 處理方式 |
 |---|---|---|
-| `ValueError: 找不到 table: 不存在的表` | 表名不存在 | 表名須與 `get_table()` 列出的名稱完全一致，包含全形括號與斜線。部分表名以「取得」開頭（例如 `取得個股內外盤…`），部分沒有（例如 `個股營收資訊…`） |
+| `ValueError: 找不到 table: 不存在的表` | 表名不存在 | 表名須與 `get_table()` 列出的名稱完全一致，包含全形括號與斜線。部分表名以「取得」開頭（例如 `取得即時分K(最後交易日)`），部分沒有（例如 `個股營收資訊…`） |
 | `ValueError: 參數輸入錯誤，正確用法：Data.get('…', '2330')` | 參數個數不符，少傳或多傳都會出現此訊息 | 依訊息中的正確用法修改 |
 | `ValueError: 參數輸入錯誤，正確用法：Data.get('取得即時分K(最後交易日)', '2330', 1)  # minutes 可選: [1, 3, 5, 15, 30, 60]` | 分 K 表缺少 `minutes` 參數 | 補上 `minutes`。各分 K 表是否需要 `minutes` 不同，見 [盤中與分 K](data-tw-intraday.md) |
 | `KeyError: 'symbol'` | `產業個股清單` 的 `sector` 值不在合法值中 | `sector` 填 `台股產業對照表` 的 `指數彙編分類`（172 種）。例如 `'半導體'` 不是合法值 |
-| `KeyError: '內盤'` | 內外盤資料的欄名是簡體字 `内盤` | 使用 `df['内盤']` |
 | `IndexError: positional indexers are out-of-bounds` | 股票代號不存在（例如 `'999999'`） | 先以 `上市櫃/ETF清單(含當沖限制)` 或 `api.MSMP.INFO` 確認代號 |
 
 ## 矩陣資料 api.MSMP／USMSMP

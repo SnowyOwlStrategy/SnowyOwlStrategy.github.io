@@ -1036,17 +1036,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#依方案提供的表" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        依方案提供的表
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#相關頁面" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2229,17 +2218,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#依方案提供的表" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        依方案提供的表
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#相關頁面" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2643,119 +2621,6 @@
 </span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>  被動元件  -41.23  -8.83 -36.27% -105.93億
 </span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>電源供應器 -124.93  -9.51 -55.14%  -99.46億
 </span></code></pre></div>
-<h2 id="依方案提供的表">依方案提供的表</h2>
-<p>以下表格依帳號方案提供，能否使用以 <code>api.Data.get_table()</code> 的輸出為準。</p>
-<table>
-<thead>
-<tr>
-<th>表名</th>
-<th>參數</th>
-<th>說明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>漲跌家數(盤中)</code></td>
-<td>無</td>
-<td>12 個漲跌幅級距的家數（<code>-0%</code>／<code>+0%</code> 是跌／漲不到 1%，不是平盤）</td>
-</tr>
-<tr>
-<td><code>漲跌列表(盤中)</code></td>
-<td>無</td>
-<td>同上，列出每個級距的代號 list</td>
-</tr>
-<tr>
-<td><code>漲跌家數分鐘歷史(盤中)</code></td>
-<td>無</td>
-<td>漲跌家數的逐分鐘紀錄</td>
-</tr>
-<tr>
-<td><code>即時周轉率排行</code></td>
-<td>無</td>
-<td>周轉率前 200 名</td>
-</tr>
-<tr>
-<td><code>前50大成交金額-多檔股票最新時間</code></td>
-<td>無</td>
-<td>成交金額前 50 名的買賣張數、金額、資金淨流</td>
-</tr>
-<tr>
-<td><code>取得即時分K-含興櫃</code></td>
-<td><code>symbol</code></td>
-<td>含興櫃的即時分 K（沒有 <code>datetime</code> 欄）</td>
-</tr>
-<tr>
-<td><code>分價量</code></td>
-<td><code>symbol</code></td>
-<td>各價位成交量，<code>類型</code> 分 current／pre2Sum／pre4Sum／pre9Sum／pre19Sum</td>
-</tr>
-<tr>
-<td><code>取得指定日期前幾天的分價量歷史資料</code></td>
-<td><code>symbol</code>、<code>date</code>、<code>days</code></td>
-<td>分價量歷史</td>
-</tr>
-<tr>
-<td><code>取得歷史1分K(指定起訖日)</code></td>
-<td><code>symbol</code>、<code>startDate</code>、<code>endDate</code></td>
-<td>1 分 K（<code>api.bt.Tools.get_stock_ohlc()</code> 使用這張表）</td>
-</tr>
-<tr>
-<td><code>取得歷史1分K(指定日期前5天)</code></td>
-<td><code>symbol</code>、<code>endDate</code></td>
-<td>指定日期前 5 天的 1 分 K</td>
-</tr>
-<tr>
-<td><code>取得今日即時成交明細(含五檔報價)</code></td>
-<td><code>symbol</code></td>
-<td>當日逐筆成交，每筆附五檔報價（欄名 <code>買_1價</code>，有底線）</td>
-</tr>
-<tr>
-<td><code>取得今日即時成交明細(貼標大戶/散戶)</code></td>
-<td><code>symbol</code></td>
-<td>同上，另有 <code>類型</code> 欄</td>
-</tr>
-<tr>
-<td><code>取得最新一筆成交明細(含五檔報價)</code></td>
-<td><code>symbol</code></td>
-<td>最新一筆成交</td>
-</tr>
-<tr>
-<td><code>取得零股成交明細</code></td>
-<td><code>symbol</code></td>
-<td>零股逐筆成交，量的單位是股</td>
-</tr>
-<tr>
-<td><code>取得個股盤中內外盤-含興櫃</code></td>
-<td><code>symbol</code></td>
-<td>內外盤累計量，欄名為簡體 <code>内盤</code></td>
-</tr>
-<tr>
-<td><code>個股上個交易日成交均張(成交量/成交筆數)</code></td>
-<td><code>symbol</code></td>
-<td>每筆平均成交張數</td>
-</tr>
-<tr>
-<td><code>批次取得個股盤中行情</code></td>
-<td>代號 list</td>
-<td>多檔盤中 OHLC</td>
-</tr>
-<tr>
-<td><code>批次取得個股盤中行情-含興櫃(tick含試搓)</code></td>
-<td>代號 list</td>
-<td>另有漲跌停價、第一檔買賣價（欄名 <code>買1價</code>，沒有底線）</td>
-</tr>
-<tr>
-<td><code>批次取得個股盤中內外盤-含興櫃與權證</code></td>
-<td>代號 list</td>
-<td>多檔內外盤（欄名 <code>内盤</code>）</td>
-</tr>
-<tr>
-<td><code>批次取得盤中預估量</code></td>
-<td>代號 list</td>
-<td>收盤預估量（不是當下累計量）</td>
-</tr>
-</tbody>
-</table>
 <h2 id="相關頁面">相關頁面</h2>
 <ul>
 <li><a href="../data-tw-list/">台股資料一覽</a>：114 張表依用途分類</li>
