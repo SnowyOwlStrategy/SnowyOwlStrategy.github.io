@@ -2036,7 +2036,7 @@
 <tr>
 <td><code>ValueError: 找不到 table: 不存在的表</code></td>
 <td>表名不存在</td>
-<td>表名須與 <code>get_table()</code> 列出的名稱完全一致，包含全形括號與斜線。部分表名以「取得」開頭（例如 <code>取得個股內外盤…</code>），部分沒有（例如 <code>個股營收資訊…</code>）</td>
+<td>表名須與 <code>get_table()</code> 列出的名稱完全一致，包含全形括號與斜線。部分表名以「取得」開頭（例如 <code>取得即時分K(最後交易日)</code>），部分沒有（例如 <code>個股營收資訊…</code>）</td>
 </tr>
 <tr>
 <td><code>ValueError: 參數輸入錯誤，正確用法：Data.get('…', '2330')</code></td>
@@ -2052,11 +2052,6 @@
 <td><code>KeyError: 'symbol'</code></td>
 <td><code>產業個股清單</code> 的 <code>sector</code> 值不在合法值中</td>
 <td><code>sector</code> 填 <code>台股產業對照表</code> 的 <code>指數彙編分類</code>（172 種）。例如 <code>'半導體'</code> 不是合法值</td>
-</tr>
-<tr>
-<td><code>KeyError: '內盤'</code></td>
-<td>內外盤資料的欄名是簡體字 <code>内盤</code></td>
-<td>使用 <code>df['内盤']</code></td>
 </tr>
 <tr>
 <td><code>IndexError: positional indexers are out-of-bounds</code></td>

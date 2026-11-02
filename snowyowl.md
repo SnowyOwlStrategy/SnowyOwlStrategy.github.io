@@ -6,12 +6,12 @@ description: |
   選股／篩股／screen Taiwan or US stocks：以 MSMP 矩陣計算條件、多條件 AND、股池 MSMP.list。
   歷史與矩陣資料：api.MSMP／api.USMSMP、日_K／週_K／月_K、adj 還原股價、漲跌幅、
   成交量／成交額、市值。
-  表格查詢：api.Data／api.USData、get(table)、get_table(type=dic)、清單／分K／逐筆明細、
+  表格查詢：api.Data／api.USData、get(table)、get_table(type=dic)、清單／分K、
   台股 114 張表依用途分類（價量、籌碼、基本面、盤中、分點、期貨、清單與事件）。
   基本面：月營收、季財報、EPS、本益比 PER、ROE、毛利率、股利。
   籌碼：三大法人、外資／投信／自營、融資融券、八大行庫、券商分點、大戶持股、籌碼集中度。
   技術面：均線、MACD、RSI、KD、布林、突破。
-  盤中資料：分K、逐筆明細、美股即時快照 api.USData.get_snapshots。
+  盤中資料：分K、美股即時快照 api.USData.get_snapshots。
   回測：api.bt、backtest、事件式策略、進出場、停損停利、部位大小、績效 KPI。
   台指期：MSMP._fut_TXF、期貨 1 分 K。
 ---
@@ -101,7 +101,7 @@ api = so.login('帳號', '密碼', type='account')   # 或 so.login(type='google
 | MSMP 有哪些表與欄位、常用查詢 | [msmp.md](https://snowyowlstrategy.github.io/msmp/)、[msmp-tables.md](https://snowyowlstrategy.github.io/msmp-tables/) |
 | 台股表格式查詢（`api.Data`）有哪些表、每張的資料區間與欄位 | [data-tw-list.md](https://snowyowlstrategy.github.io/data-tw-list/)（依用途分 7 類，各分類頁有範例輸出） |
 | 各頻率的歷史長度、期貨資料在哪 | [data-history.md](https://snowyowlstrategy.github.io/data-history/) |
-| 盤中、分K、逐筆明細 | [data-tw-intraday.md](https://snowyowlstrategy.github.io/data-tw-intraday/) |
+| 盤中、分K | [data-tw-intraday.md](https://snowyowlstrategy.github.io/data-tw-intraday/) |
 | 美股 | [usmsmp.md](https://snowyowlstrategy.github.io/usmsmp/)、[usdata.md](https://snowyowlstrategy.github.io/usdata/) |
 | 回測框架 | [backtest.md](https://snowyowlstrategy.github.io/backtest/)、[backtest-strategy.md](https://snowyowlstrategy.github.io/backtest-strategy/)、[backtest-order.md](https://snowyowlstrategy.github.io/backtest-order/)、[backtest-data.md](https://snowyowlstrategy.github.io/backtest-data/)、[backtest-report.md](https://snowyowlstrategy.github.io/backtest-report/)、[backtest-tools.md](https://snowyowlstrategy.github.io/backtest-tools/) |
 | 錯誤訊息 | [errors.md](https://snowyowlstrategy.github.io/errors/) |
