@@ -37,7 +37,7 @@
 - [回測概覽](docs/backtest.md): `api.bt` 的 `Core`、`config`、`generate_report`、`Tools`；單檔與多檔範例
 - [撰寫策略](docs/backtest-strategy.md): 策略骨架、事件方法與一根 K 棒內的執行順序、`row` 欄位、`Position`／`Order`、狀態屬性、`self.stats`、`self.char` 繪圖
 - [下單與成交](docs/backtest-order.md): `Condition.Global` 參數、五種 `PriceType`、成交價規則（12 個案例）、停損停利方法、`tick_map` 與期貨設定
-- [資料與週期](docs/backtest-data.md): `feed_data`、`set_tick_period`、聚合週期 `freq`、`get_stock_ohlc`／`get_fut_ohlc`、時序檢查
+- [資料與週期](docs/backtest-data.md): `feed_data`、`set_tick_period`、聚合週期 `freq`、`get_fut_ohlc`、時序檢查
 - [商品設定與績效報告](docs/backtest-report.md): `config` 參數（`fee`、`tax_long`／`tax_short`、`unit`、`margin`）、`generate_report`（`capital` 用於比例下單）、報表內容與 28 項 KPI、`rp.dashboard()`、`rp.save()`
 - [技術指標與參數最佳化](docs/backtest-tools.md): `self.Ind` 的 25 個指標、`bt.Tools.optimize` 以 `CalmarRatio` 評分並回傳最佳參數
 - [策略範例](docs/recipes.md): 實際執行過的完整範例：單檔技術指標、多檔組合、台指期多空、目標權重輪動、IC 訊號驗證、參數最佳化、多因子輪動

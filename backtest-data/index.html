@@ -1540,17 +1540,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#get_stock_ohlc" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_stock_ohlc
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#get_fut_ohlc" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2339,17 +2328,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#get_stock_ohlc" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_stock_ohlc
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#get_fut_ohlc" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2634,77 +2612,10 @@
 <p><code>freq</code> 可以是分鐘數（<code>int</code>）或日線（<code>'D'</code>）。日線以日盤加上前一夜盤為同一個交易日。</p>
 <h2 id="歷史-k-線">歷史 K 線</h2>
 <p><code>bt.Tools</code> 依 <code>symbol</code> 快取資料：原始資料只下載一次，不同 <code>freq</code>／<code>period</code> 組合的聚合結果也各自快取，重複呼叫不會重新下載或重算。下載時會顯示 <code>【'開始下載':XXX ,freq=1】</code> 與 <code>【下載完成】</code>。</p>
-<h3 id="get_stock_ohlc">get_stock_ohlc</h3>
-<p>取得個股／ETF 的歷史 K 線。資料為回溯約 4 年、到昨日為止的 1 分 K，依 <code>freq</code> 聚合。帳號需要有「取得歷史1分K(指定起訖日)」這張表的權限。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">bt</span><span class="o">.</span><span class="n">Tools</span><span class="o">.</span><span class="n">get_stock_ohlc</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">adj</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="p">[[</span><span class="s1">&#39;0900&#39;</span><span class="p">,</span> <span class="s1">&#39;1330&#39;</span><span class="p">]])</span>
-</span></code></pre></div>
-<table>
-<thead>
-<tr>
-<th>參數</th>
-<th>型別</th>
-<th>預設值</th>
-<th>說明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>symbol</code></td>
-<td><code>str</code></td>
-<td>—</td>
-<td>必填。個股／ETF 代號，例如 <code>'0050'</code>、<code>'2330'</code></td>
-</tr>
-<tr>
-<td><code>freq</code></td>
-<td><code>int</code></td>
-<td><code>1</code></td>
-<td>聚合週期（分鐘）</td>
-</tr>
-<tr>
-<td><code>adj</code></td>
-<td><code>bool</code></td>
-<td><code>True</code></td>
-<td>是否還原權息。<code>True</code> 時以「還原日 K 價量資料」的 <code>收盤價/次日開盤參考價</code> 比例，依交易日往前填補後，開高低收乘以比例、成交量除以比例</td>
-</tr>
-<tr>
-<td><code>period</code></td>
-<td><code>list</code></td>
-<td><code>[['0900','1330']]</code></td>
-<td>交易時段</td>
-</tr>
-</tbody>
-</table>
-<p>回傳 <code>DataFrame</code>，欄位如下：</p>
-<table>
-<thead>
-<tr>
-<th>欄位</th>
-<th>說明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>DateTime</code></td>
-<td>K 棒的結束時間</td>
-</tr>
-<tr>
-<td><code>dt_period</code></td>
-<td>這根 K 棒涵蓋的原始資料起訖時間（字串）</td>
-</tr>
-<tr>
-<td><code>開盤價</code>／<code>最高價</code>／<code>最低價</code>／<code>收盤價</code>／<code>成交量</code></td>
-<td>開高低收量</td>
-</tr>
-<tr>
-<td><code>ratio</code></td>
-<td>還原比例係數，<code>adj=True</code> 時才有</td>
-</tr>
-</tbody>
-</table>
 <h3 id="get_fut_ohlc">get_fut_ohlc</h3>
 <p>取得期貨的歷史 K 線（日盤與夜盤合併）。資料為回溯約 2 年、到昨日為止的 1 分 K，依 <code>freq</code> 聚合。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">bt</span><span class="o">.</span><span class="n">Tools</span><span class="o">.</span><span class="n">get_fut_ohlc</span><span class="p">(</span><span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;TXF&#39;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>                      <span class="n">period</span><span class="o">=</span><span class="p">[[</span><span class="s1">&#39;0845&#39;</span><span class="p">,</span> <span class="s1">&#39;1345&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;1500&#39;</span><span class="p">,</span> <span class="s1">&#39;0500&#39;</span><span class="p">]])</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">bt</span><span class="o">.</span><span class="n">Tools</span><span class="o">.</span><span class="n">get_fut_ohlc</span><span class="p">(</span><span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;TXF&#39;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>                      <span class="n">period</span><span class="o">=</span><span class="p">[[</span><span class="s1">&#39;0845&#39;</span><span class="p">,</span> <span class="s1">&#39;1345&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;1500&#39;</span><span class="p">,</span> <span class="s1">&#39;0500&#39;</span><span class="p">]])</span>
 </span></code></pre></div>
 <table>
 <thead>
@@ -2768,19 +2679,19 @@
 </tbody>
 </table>
 <h3 id="範例_1">範例</h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">df</span>     <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Tools</span><span class="o">.</span><span class="n">get_stock_ohlc</span><span class="p">(</span><span class="s1">&#39;0050&#39;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">adj</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">df_fut</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Tools</span><span class="o">.</span><span class="n">get_fut_ohlc</span><span class="p">(</span><span class="s1">&#39;TXF&#39;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">df</span>     <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Tools</span><span class="o">.</span><span class="n">get_stock_ohlc</span><span class="p">(</span><span class="s1">&#39;0050&#39;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">adj</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">df_fut</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Tools</span><span class="o">.</span><span class="n">get_fut_ohlc</span><span class="p">(</span><span class="s1">&#39;TXF&#39;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
 </span></code></pre></div>
 <h2 id="從-msmp-取日-k">從 MSMP 取日 K</h2>
 <p>要和自行從 <code>api.MSMP</code> 算出的訊號對齊時，日 K 也從 <code>api.MSMP</code> 取得，日期才會一致，不需要 reindex 或 ffill。<code>get_stock_ohlc()</code> 回傳的是由 1 分 K 聚合的 K 線，與 MSMP 的日頻不同。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">daily_bars</span><span class="p">(</span><span class="n">api</span><span class="p">,</span> <span class="n">symbol</span><span class="p">):</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="n">k</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">MSMP</span><span class="o">.</span><span class="n">日_K</span>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="n">zh2en</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;開盤價&#39;</span><span class="p">:</span><span class="s1">&#39;Open&#39;</span><span class="p">,</span><span class="s1">&#39;最高價&#39;</span><span class="p">:</span><span class="s1">&#39;High&#39;</span><span class="p">,</span><span class="s1">&#39;最低價&#39;</span><span class="p">:</span><span class="s1">&#39;Low&#39;</span><span class="p">,</span><span class="s1">&#39;收盤價&#39;</span><span class="p">:</span><span class="s1">&#39;Close&#39;</span><span class="p">,</span><span class="s1">&#39;成交量&#39;</span><span class="p">:</span><span class="s1">&#39;Volume&#39;</span><span class="p">}</span>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="n">zh</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">en</span><span class="p">)[</span><span class="n">symbol</span><span class="p">]</span> <span class="k">for</span> <span class="n">zh</span><span class="p">,</span> <span class="n">en</span> <span class="ow">in</span> <span class="n">zh2en</span><span class="o">.</span><span class="n">items</span><span class="p">()})</span>
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;DateTime&#39;</span>
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">daily_bars</span><span class="p">(</span><span class="n">api</span><span class="p">,</span> <span class="n">symbol</span><span class="p">):</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    <span class="n">k</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">MSMP</span><span class="o">.</span><span class="n">日_K</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="n">zh2en</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;開盤價&#39;</span><span class="p">:</span><span class="s1">&#39;Open&#39;</span><span class="p">,</span><span class="s1">&#39;最高價&#39;</span><span class="p">:</span><span class="s1">&#39;High&#39;</span><span class="p">,</span><span class="s1">&#39;最低價&#39;</span><span class="p">:</span><span class="s1">&#39;Low&#39;</span><span class="p">,</span><span class="s1">&#39;收盤價&#39;</span><span class="p">:</span><span class="s1">&#39;Close&#39;</span><span class="p">,</span><span class="s1">&#39;成交量&#39;</span><span class="p">:</span><span class="s1">&#39;Volume&#39;</span><span class="p">}</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="n">zh</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">en</span><span class="p">)[</span><span class="n">symbol</span><span class="p">]</span> <span class="k">for</span> <span class="n">zh</span><span class="p">,</span> <span class="n">en</span> <span class="ow">in</span> <span class="n">zh2en</span><span class="o">.</span><span class="n">items</span><span class="p">()})</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;DateTime&#39;</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 </span></code></pre></div>
 <p>完整範例見 <a href="../backtest/">回測概覽</a>。</p>
 <h2 id="時序檢查">時序檢查</h2>
@@ -2844,9 +2755,9 @@
 </table>
 <p>主商品與對標商品各自檢查，互不影響。分段餵入時，後一段的起始時間不可早於前一段的結尾，重疊的部分會被略過。</p>
 <h3 id="警告訊息">警告訊息</h3>
-<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>[警告] 主商品資料時間 20240102103000 早於前一筆 20240102120000，已忽略（時序守門）
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>[警告] feed_tick_df 主商品: DateTime 沒有依時間遞增，已自動排序後才餵入
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>[警告] feed_data: 有 2 列時間早於已餵入的前一筆，已忽略（時序守門）
+<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>[警告] 主商品資料時間 20240102103000 早於前一筆 20240102120000，已忽略（時序守門）
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>[警告] feed_tick_df 主商品: DateTime 沒有依時間遞增，已自動排序後才餵入
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>[警告] feed_data: 有 2 列時間早於已餵入的前一筆，已忽略（時序守門）
 </span></code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>

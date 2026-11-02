@@ -1,22 +1,22 @@
 # llms-full.txt 導覽（給 AI：先讀這段，不要整份讀）
 
-這份檔 ＝ llms.txt 索引 ＋ 33 篇文件全文，共 8876 行。
+這份檔 ＝ llms.txt 索引 ＋ 33 篇文件全文，共 8850 行。
 - 用行號跳讀（例如讀第 N 行起的 M 行），或搜尋 `<!-- source: docs/檔名.md -->` 找到該篇開頭。
 - 文中所有 `docs/xxx.md` 連結，都對應本檔裡 `<!-- source: docs/xxx.md -->` 那一段；沒有 docs/ 資料夾也找得到。
 
-- **寫程式之前先讀**：AI 工作守則（`docs/agent-playbook.md`）第 8827–8877 行
-- **要寫回測先讀，找用得上的寫法**：策略範例（`docs/recipes.md`）第 6960–7569 行
-- **MSMP 台美股所有表與欄名**：MSMP 資料表與欄位（`docs/msmp-tables.md`）第 4866–5081 行
+- **寫程式之前先讀**：AI 工作守則（`docs/agent-playbook.md`）第 8801–8851 行
+- **要寫回測先讀，找用得上的寫法**：策略範例（`docs/recipes.md`）第 6935–7544 行
+- **MSMP 台美股所有表與欄名**：MSMP 資料表與欄位（`docs/msmp-tables.md`）第 4865–5080 行
 
 策略範例各節：
-- 第 6968 行：共用前置
-- 第 7011 行：單檔技術指標策略
-- 第 7061 行：多檔組合（共用資金池）
-- 第 7111 行：台指期雙均線多空反手
-- 第 7200 行：目標權重輪動
-- 第 7320 行：訊號驗證（IC 與分組單調性）
-- 第 7390 行：參數最佳化
-- 第 7442 行：多因子輪動（分步寫法）
+- 第 6943 行：共用前置
+- 第 6986 行：單檔技術指標策略
+- 第 7036 行：多檔組合（共用資金池）
+- 第 7086 行：台指期雙均線多空反手
+- 第 7175 行：目標權重輪動
+- 第 7295 行：訊號驗證（IC 與分組單調性）
+- 第 7365 行：參數最佳化
+- 第 7417 行：多因子輪動（分步寫法）
 
 ## 行號目錄
 
@@ -30,31 +30,31 @@
 | 879–1413 | `docs/data-tw-price.md` | 價量與 K 線 |
 | 1415–2009 | `docs/data-tw-chip.md` | 籌碼 |
 | 2011–2636 | `docs/data-tw-fundamental.md` | 基本面 |
-| 2638–2919 | `docs/data-tw-intraday.md` | 盤中與分 K |
-| 2921–3227 | `docs/data-tw-broker.md` | 券商分點 |
-| 3229–3591 | `docs/data-tw-futures.md` | 期貨 |
-| 3593–4232 | `docs/data-tw-event.md` | 清單與事件 |
-| 4234–4527 | `docs/usdata.md` | 美股資料 api.USData |
-| 4529–4864 | `docs/msmp.md` | 矩陣資料 MSMP |
-| 4866–5081 | `docs/msmp-tables.md` | MSMP 資料表與欄位 |
-| 5083–5268 | `docs/usmsmp.md` | 美股矩陣資料 USMSMP |
-| 5270–5444 | `docs/data-history.md` | 資料期間與頻率 |
-| 5446–5627 | `docs/backtest.md` | 回測概覽 |
-| 5629–5930 | `docs/backtest-strategy.md` | 撰寫策略 |
-| 5932–6128 | `docs/backtest-order.md` | 下單與成交 |
-| 6130–6387 | `docs/backtest-data.md` | 資料與週期 |
-| 6389–6822 | `docs/backtest-report.md` | 商品設定與績效報告 |
-| 6824–6958 | `docs/backtest-tools.md` | 技術指標與參數最佳化 |
-| 6960–7569 | `docs/recipes.md` | 策略範例 |
-| 7571–7666 | `docs/api-login.md` | snowyowl 與 api |
-| 7668–7767 | `docs/api-data.md` | api.Data／api.USData |
-| 7769–7900 | `docs/api-msmp.md` | api.MSMP／api.USMSMP |
-| 7902–8061 | `docs/api-bt.md` | api.bt |
-| 8063–8103 | `docs/errors.md` | 錯誤訊息 |
-| 8105–8321 | `docs/how-to-ask.md` | 提問技巧 |
-| 8323–8626 | `docs/how-to-plan.md` | 規劃研究流程 |
-| 8628–8825 | `docs/case-study-backtest.md` | 回測提問範例 |
-| 8827–8877 | `docs/agent-playbook.md` | AI 工作守則 |
+| 2638–2918 | `docs/data-tw-intraday.md` | 盤中與分 K |
+| 2920–3226 | `docs/data-tw-broker.md` | 券商分點 |
+| 3228–3590 | `docs/data-tw-futures.md` | 期貨 |
+| 3592–4231 | `docs/data-tw-event.md` | 清單與事件 |
+| 4233–4526 | `docs/usdata.md` | 美股資料 api.USData |
+| 4528–4863 | `docs/msmp.md` | 矩陣資料 MSMP |
+| 4865–5080 | `docs/msmp-tables.md` | MSMP 資料表與欄位 |
+| 5082–5267 | `docs/usmsmp.md` | 美股矩陣資料 USMSMP |
+| 5269–5443 | `docs/data-history.md` | 資料期間與頻率 |
+| 5445–5626 | `docs/backtest.md` | 回測概覽 |
+| 5628–5929 | `docs/backtest-strategy.md` | 撰寫策略 |
+| 5931–6127 | `docs/backtest-order.md` | 下單與成交 |
+| 6129–6362 | `docs/backtest-data.md` | 資料與週期 |
+| 6364–6797 | `docs/backtest-report.md` | 商品設定與績效報告 |
+| 6799–6933 | `docs/backtest-tools.md` | 技術指標與參數最佳化 |
+| 6935–7544 | `docs/recipes.md` | 策略範例 |
+| 7546–7641 | `docs/api-login.md` | snowyowl 與 api |
+| 7643–7742 | `docs/api-data.md` | api.Data／api.USData |
+| 7744–7875 | `docs/api-msmp.md` | api.MSMP／api.USMSMP |
+| 7877–8035 | `docs/api-bt.md` | api.bt |
+| 8037–8077 | `docs/errors.md` | 錯誤訊息 |
+| 8079–8295 | `docs/how-to-ask.md` | 提問技巧 |
+| 8297–8600 | `docs/how-to-plan.md` | 規劃研究流程 |
+| 8602–8799 | `docs/case-study-backtest.md` | 回測提問範例 |
+| 8801–8851 | `docs/agent-playbook.md` | AI 工作守則 |
 
 ====================================================================================================
 
@@ -97,7 +97,7 @@
 - [回測概覽](docs/backtest.md): `api.bt` 的 `Core`、`config`、`generate_report`、`Tools`；單檔與多檔範例
 - [撰寫策略](docs/backtest-strategy.md): 策略骨架、事件方法與一根 K 棒內的執行順序、`row` 欄位、`Position`／`Order`、狀態屬性、`self.stats`、`self.char` 繪圖
 - [下單與成交](docs/backtest-order.md): `Condition.Global` 參數、五種 `PriceType`、成交價規則（12 個案例）、停損停利方法、`tick_map` 與期貨設定
-- [資料與週期](docs/backtest-data.md): `feed_data`、`set_tick_period`、聚合週期 `freq`、`get_stock_ohlc`／`get_fut_ohlc`、時序檢查
+- [資料與週期](docs/backtest-data.md): `feed_data`、`set_tick_period`、聚合週期 `freq`、`get_fut_ohlc`、時序檢查
 - [商品設定與績效報告](docs/backtest-report.md): `config` 參數（`fee`、`tax_long`／`tax_short`、`unit`、`margin`）、`generate_report`（`capital` 用於比例下單）、報表內容與 28 項 KPI、`rp.dashboard()`、`rp.save()`
 - [技術指標與參數最佳化](docs/backtest-tools.md): `self.Ind` 的 25 個指標、`bt.Tools.optimize` 以 `CalmarRatio` 評分並回傳最佳參數
 - [策略範例](docs/recipes.md): 實際執行過的完整範例：單檔技術指標、多檔組合、台指期多空、目標權重輪動、IC 訊號驗證、參數最佳化、多因子輪動
@@ -2664,7 +2664,6 @@ api.Data.get('查詢庫藏股資訊-單股多期', '2330')
 - `日成交金額(千)`、`日成交量`、`日平均價` 是當日累計到該根 K 棒為止的數值；單根 K 棒的量在 `成交量`。
 - 時間欄有兩組：`日期` 加 `hhmm`（4 位字串），以及組合好的 `datetime`，一般直接使用 `datetime`。
 - 非交易時段呼叫時，回傳最後一個交易日的資料，可由 `日期` 或 `datetime` 確認日期。
-- 分 K 回測請用 `api.bt.Tools.get_stock_ohlc()`，見 [資料與週期](backtest-data.md)。
 
 ## 個股分 K
 
@@ -5439,7 +5438,7 @@ daily.tail(5)
 - [台股資料一覽](data-tw-list.md)：台股 114 張表的資料區間與欄位
 - [MSMP 資料表與欄位](msmp-tables.md)：台股 25 張、美股 10 張矩陣表
 - [美股矩陣資料 USMSMP](usmsmp.md)：美股各表的期間與覆蓋檔數
-- [資料與週期](backtest-data.md)：`bt.Tools.get_stock_ohlc`／`get_fut_ohlc`
+- [資料與週期](backtest-data.md)：`bt.Tools.get_fut_ohlc`
 
 ====================================================================================================
 
@@ -6267,30 +6266,6 @@ core.feed_tick_df(df60)          # 餵入 1 分 K 也可以，結果相同
 ## 歷史 K 線
 
 `bt.Tools` 依 `symbol` 快取資料：原始資料只下載一次，不同 `freq`／`period` 組合的聚合結果也各自快取，重複呼叫不會重新下載或重算。下載時會顯示 `【'開始下載':XXX ,freq=1】` 與 `【下載完成】`。
-
-### get_stock_ohlc
-
-取得個股／ETF 的歷史 K 線。資料為回溯約 4 年、到昨日為止的 1 分 K，依 `freq` 聚合。帳號需要有「取得歷史1分K(指定起訖日)」這張表的權限。
-
-```python
-bt.Tools.get_stock_ohlc(symbol, freq=1, adj=True, period=[['0900', '1330']])
-```
-
-| 參數 | 型別 | 預設值 | 說明 |
-|---|---|---|---|
-| `symbol` | `str` | — | 必填。個股／ETF 代號，例如 `'0050'`、`'2330'` |
-| `freq` | `int` | `1` | 聚合週期（分鐘） |
-| `adj` | `bool` | `True` | 是否還原權息。`True` 時以「還原日 K 價量資料」的 `收盤價/次日開盤參考價` 比例，依交易日往前填補後，開高低收乘以比例、成交量除以比例 |
-| `period` | `list` | `[['0900','1330']]` | 交易時段 |
-
-回傳 `DataFrame`，欄位如下：
-
-| 欄位 | 說明 |
-|---|---|
-| `DateTime` | K 棒的結束時間 |
-| `dt_period` | 這根 K 棒涵蓋的原始資料起訖時間（字串） |
-| `開盤價`／`最高價`／`最低價`／`收盤價`／`成交量` | 開高低收量 |
-| `ratio` | 還原比例係數，`adj=True` 時才有 |
 
 ### get_fut_ohlc
 
@@ -8052,7 +8027,6 @@ rp.dashboard(view='web')
 
 | 方法 | 說明 |
 |---|---|
-| `get_stock_ohlc(symbol, freq=1, adj=True, period=[['0900','1330']])` | 個股分 K（`freq` 分鐘），預設還原權息 |
 | `get_fut_ohlc(symbol=None, freq=1, period=[['0845','1345'],['1500','0500']])` | 台指期分 K（日盤＋夜盤） |
 | `optimize(my_strategy, search_range, times=50, random_ratio=0.5)` | 參數尋優，以 Calmar Ratio 評分，回傳最佳參數 `dict` |
 
