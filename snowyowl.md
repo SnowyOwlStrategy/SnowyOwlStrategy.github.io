@@ -3,9 +3,7 @@ name: snowyowl
 description: |
   用於 snowyowl（台股／美股資料、選股、回測）的任何任務，或廣義的台美股資料／篩股／
   策略需求。涵蓋——
-  選股／篩股／screen Taiwan or US stocks：積木 blocks、api.Block、con_tw／con_us、
-  screener_tw／screener_us、get_table_tw／get_table_us、積木條件、選股條件、
-  多條件 AND、股池 pool。
+  選股／篩股／screen Taiwan or US stocks：以 MSMP 矩陣計算條件、多條件 AND、股池 MSMP.list。
   歷史與矩陣資料：api.MSMP／api.USMSMP、日_K／週_K／月_K、adj 還原股價、漲跌幅、
   成交量／成交額、市值。
   表格查詢：api.Data／api.USData、get(table)、get_table(type=dic)、清單／分K／逐筆明細、
@@ -14,8 +12,7 @@ description: |
   籌碼：三大法人、外資／投信／自營、融資融券、八大行庫、券商分點、大戶持股、籌碼集中度。
   技術面：均線、MACD、RSI、KD、布林、突破。
   盤中資料：分K、逐筆明細、美股即時快照 api.USData.get_snapshots。
-  回測：api.bt、backtest、事件式策略、進出場、停損停利、部位大小、績效 KPI、
-  積木 sig 餵回測。
+  回測：api.bt、backtest、事件式策略、進出場、停損停利、部位大小、績效 KPI。
   台指期：MSMP._fut_TXF、期貨 1 分 K。
 ---
 > **這份 skill 需要本機已安裝 snowyowl 套件**：
@@ -31,7 +28,7 @@ description: |
 
 # snowyowl
 
-台股／美股資料、積木選股與回測的 Python 套件。這份 skill 只講「必須遵守的規則」與「去哪裡查」；
+台股／美股資料與回測的 Python 套件。這份 skill 只講「必須遵守的規則」與「去哪裡查」；
 API 細節、寫法範例都在文件裡，以文件為準。
 
 完整文件在 <https://snowyowlstrategy.github.io/>，索引見 <https://snowyowlstrategy.github.io/llms.txt>，全文串接見 <https://snowyowlstrategy.github.io/llms-full.txt>。本檔可從 <https://snowyowlstrategy.github.io/snowyowl.md> 取得最新版。
@@ -74,10 +71,9 @@ api = so.login('帳號', '密碼', type='account')   # 或 so.login(type='google
 
 照 [agent-playbook.md](https://snowyowlstrategy.github.io/agent-playbook/)：
 
-1. **分流**：查事實 → `api.MSMP` 一行算；組條件選股 → 積木 `api.Block`；驗規則 → 回測 `api.bt`（[getting-started.md](https://snowyowlstrategy.github.io/getting-started/)）
+1. **分流**：查事實 → `api.MSMP` 一行算；組條件選股 → 以 `api.MSMP` 的欄位計算；驗規則 → 回測 `api.bt`（[getting-started.md](https://snowyowlstrategy.github.io/getting-started/)）
 2. **找寫法**：到 [recipes.md](https://snowyowlstrategy.github.io/recipes/) 找用得上的寫法，照使用者的規格組合，不要整份照抄
-3. **規格逐條對應**：每一條規格先找積木（[block-reference-tw.md](https://snowyowlstrategy.github.io/block-reference-tw/)、[block-auto.md](https://snowyowlstrategy.github.io/block-auto/)）；
-   做不到才手寫，並在程式註解寫「積木做不到：原因」
+3. **規格逐條對應**：每一條規格對應到 `api.MSMP` 的表與欄位（[msmp-tables.md](https://snowyowlstrategy.github.io/msmp-tables/)），用這些欄位計算條件
 4. **執行**：寫完要跑，報錯就修。不能執行時要明說「未執行」
 5. **交付**：`print(rp.report)`、打開儀表板，回覆時介紹 `rp` 底下有什麼（見上方「必須遵守」）
 
@@ -93,7 +89,6 @@ api = so.login('帳號', '密碼', type='account')   # 或 so.login(type='google
 | **先套可交易遮罩再排名** | 排名母體含買不到的股票 |
 | 反向因子 `1 - p`，缺值填 `0.5` | 用負號會讓排名方向錯；缺值填 0 會懲罰沒資料的股票 |
 | 價格門檻、成交額用**未還原** `Close`；`Volume` 是張要 `×1000` | 門檻差好幾倍、成交額差 1000 倍 |
-| 日 K 從 `api.MSMP` 取，不用 `bt.Tools.get_stock_ohlc` | 頻率跟積木 `sig` 對不上 |
 | 輪動用 `qty = 1/N`（百分比路徑）；小資金 `unit=1`（零股） | 固定口數時 `capital` 不參與計算；整股買不起被夾成 0 |
 | 台股只填 `tax_short=0.003`（ETF `0.001`），`tax_long=0` | 證交稅收兩次 |
 | 指標寫進 `self.char`（主圖）／`self.char1`（副圖） | 就會畫在 `show_monitor()` 與 `rp.dashboard()` 的 K 線 |
@@ -102,11 +97,7 @@ api = so.login('帳號', '密碼', type='account')   # 或 so.login(type='google
 
 | 要做什麼 | 文件 |
 |---|---|
-| 回測寫法範例（單檔、積木訊號、多檔、期貨、輪動、IC、尋優、多因子） | [recipes.md](https://snowyowlstrategy.github.io/recipes/) |
-| 積木怎麼組、怎麼跑 | [block.md](https://snowyowlstrategy.github.io/block/)、[block-con.md](https://snowyowlstrategy.github.io/block-con/)、[block-screener.md](https://snowyowlstrategy.github.io/block-screener/)、[block-pool.md](https://snowyowlstrategy.github.io/block-pool/) |
-| 原生積木做不到的條件、白話 → 參數對照 | [block-auto.md](https://snowyowlstrategy.github.io/block-auto/) |
-| 某個積木的參數與合法值 | [block-reference-tw.md](https://snowyowlstrategy.github.io/block-reference-tw/)、[block-reference-us.md](https://snowyowlstrategy.github.io/block-reference-us/) |
-| 積木名稱與實際計算方式（以產生的 `code` 為準） | [block-codegen.md](https://snowyowlstrategy.github.io/block-codegen/) |
+| 回測寫法範例（單檔、多檔、期貨、輪動、IC、尋優、多因子） | [recipes.md](https://snowyowlstrategy.github.io/recipes/) |
 | MSMP 有哪些表與欄位、常用查詢 | [msmp.md](https://snowyowlstrategy.github.io/msmp/)、[msmp-tables.md](https://snowyowlstrategy.github.io/msmp-tables/) |
 | 台股表格式查詢（`api.Data`）有哪些表、每張的資料區間與欄位 | [data-tw-list.md](https://snowyowlstrategy.github.io/data-tw-list/)（依用途分 7 類，各分類頁有範例輸出） |
 | 各頻率的歷史長度、期貨資料在哪 | [data-history.md](https://snowyowlstrategy.github.io/data-history/) |
@@ -114,4 +105,4 @@ api = so.login('帳號', '密碼', type='account')   # 或 so.login(type='google
 | 美股 | [usmsmp.md](https://snowyowlstrategy.github.io/usmsmp/)、[usdata.md](https://snowyowlstrategy.github.io/usdata/) |
 | 回測框架 | [backtest.md](https://snowyowlstrategy.github.io/backtest/)、[backtest-strategy.md](https://snowyowlstrategy.github.io/backtest-strategy/)、[backtest-order.md](https://snowyowlstrategy.github.io/backtest-order/)、[backtest-data.md](https://snowyowlstrategy.github.io/backtest-data/)、[backtest-report.md](https://snowyowlstrategy.github.io/backtest-report/)、[backtest-tools.md](https://snowyowlstrategy.github.io/backtest-tools/) |
 | 錯誤訊息 | [errors.md](https://snowyowlstrategy.github.io/errors/) |
-| 各物件的方法與參數一覽 | [api-login.md](https://snowyowlstrategy.github.io/api-login/)、[api-data.md](https://snowyowlstrategy.github.io/api-data/)、[api-msmp.md](https://snowyowlstrategy.github.io/api-msmp/)、[api-block.md](https://snowyowlstrategy.github.io/api-block/)、[api-bt.md](https://snowyowlstrategy.github.io/api-bt/) |
+| 各物件的方法與參數一覽 | [api-login.md](https://snowyowlstrategy.github.io/api-login/)、[api-data.md](https://snowyowlstrategy.github.io/api-data/)、[api-msmp.md](https://snowyowlstrategy.github.io/api-msmp/)、[api-bt.md](https://snowyowlstrategy.github.io/api-bt/) |
