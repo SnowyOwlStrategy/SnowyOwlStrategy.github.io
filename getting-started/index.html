@@ -2147,22 +2147,15 @@
 <p>SnowyOwl 是台股與美股的 Python 資料套件，提供歷史資料查詢與回測。
 安裝並登入後，所有功能都從登入取得的 <code>api</code> 物件使用。</p>
 <h2 id="安裝">安裝</h2>
-<p>SnowyOwl 需要 Python 3.10 以上（3.10～3.14 可用），以 SnowyOwl 提供的 wheel 檔安裝。
-依作業系統安裝對應的檔案；macOS 的檔案 Intel 與 Apple 晶片通用，Intel 晶片需加上 <code>--prefer-binary</code>：</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Windows</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>pip<span class="w"> </span>install<span class="w"> </span>snowyowlstrategy-1.0.0-cp310-abi3-win_amd64.whl
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Linux</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>pip<span class="w"> </span>install<span class="w"> </span>snowyowlstrategy-1.0.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># macOS（Apple 晶片）</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>pip<span class="w"> </span>install<span class="w"> </span>snowyowlstrategy-1.0.0-cp310-abi3-macosx_11_0_universal2.whl
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># macOS（Intel 晶片）</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>pip<span class="w"> </span>install<span class="w"> </span>snowyowlstrategy-1.0.0-cp310-abi3-macosx_11_0_universal2.whl<span class="w"> </span>--prefer-binary
+<p>SnowyOwl 需要 Python 3.10～3.13，從 <a href="https://pypi.org/project/SnowyOwlStrategy/">PyPI</a> 安裝：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>SnowyOwlStrategy
 </span></code></pre></div>
-<p>套件名稱是 <code>snowyowlstrategy</code>，程式中匯入的名稱是 <code>snowyowl</code>：</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">snowyowl</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">so</span>
+<p>支援 Windows（x86_64）、Linux（x86_64）與 macOS 11 以上（Intel 與 Apple 晶片）。macOS Intel 晶片需加上 <code>--prefer-binary</code>：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>SnowyOwlStrategy<span class="w"> </span>--prefer-binary
+</span></code></pre></div>
+<p>已安裝舊版時，以 <code>pip install -U SnowyOwlStrategy</code> 更新。</p>
+<p>套件名稱是 <code>SnowyOwlStrategy</code>，程式中匯入的名稱是 <code>snowyowl</code>：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">snowyowl</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">so</span>
 </span></code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">安裝在虛擬環境</p>
@@ -2171,41 +2164,41 @@
 </div>
 <h2 id="登入">登入</h2>
 <p>以 <code>so.login()</code> 登入，取得 <code>api</code> 物件：</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">snowyowl</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">so</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">api</span> <span class="o">=</span> <span class="n">so</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s1">&#39;user@x.com&#39;</span><span class="p">,</span> <span class="s1">&#39;pwd&#39;</span><span class="p">)</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">api</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">snowyowl</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">so</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">api</span> <span class="o">=</span> <span class="n">so</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s1">&#39;user@x.com&#39;</span><span class="p">,</span> <span class="s1">&#39;pwd&#39;</span><span class="p">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">api</span>
 </span></code></pre></div>
-<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>…
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>[系統訊息] MSMP 物件初始化完成。
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>[系統訊息] USMSMP 物件初始化完成。
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>[系統訊息] 已將資料存入本地暫存
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>[系統訊息] API 加載完成，歡迎使用。
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>Api Instance is ready
+<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>…
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>[系統訊息] MSMP 物件初始化完成。
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>[系統訊息] USMSMP 物件初始化完成。
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>[系統訊息] 已將資料存入本地暫存
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>[系統訊息] API 加載完成，歡迎使用。
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>Api Instance is ready
 </span></code></pre></div>
 <p>也可以用 Google 或 Apple 帳號登入（<code>so.login(type='google')</code>、<code>so.login(type='apple')</code>），執行後會開啟瀏覽器完成驗證。
 登入約需 10～15 秒，期間會下載或更新本機的 MSMP 資料快取。登入方式與登入訊息的說明見 <a href="../login/">登入與登出</a>。</p>
 <h2 id="入門範例">入門範例</h2>
 <p>以下範例為 2026-08-21 的執行結果（資料日 2026-08-20）。</p>
 <h3 id="查詢漲幅-5-以上的檔數">查詢漲幅 5% 以上的檔數</h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">k</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">MSMP</span><span class="o">.</span><span class="n">日_K</span>              <span class="c1"># index 是日期，columns 是股票代號</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">t</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">漲跌幅</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>  <span class="c1"># 最後一個交易日的漲跌幅</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">t</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">]),</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">Close</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">date</span><span class="p">())</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">k</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">MSMP</span><span class="o">.</span><span class="n">日_K</span>              <span class="c1"># index 是日期，columns 是股票代號</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">t</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">漲跌幅</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>  <span class="c1"># 最後一個交易日的漲跌幅</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">t</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">]),</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">Close</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">date</span><span class="p">())</span>
 </span></code></pre></div>
-<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>(89, &#39;2026-08-20&#39;)
+<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>(89, &#39;2026-08-20&#39;)
 </span></code></pre></div>
 <p><code>api.MSMP</code> 的每個欄位都是「日期 × 股票代號」的 <code>DataFrame</code>。資料到前一交易日為止，最後一個資料日以 <code>k.Close.index[-1]</code> 取得。
 說明見 <a href="../msmp/">矩陣資料 MSMP</a>。</p>
 <h3 id="取得單一標的的歷史資料">取得單一標的的歷史資料</h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;還原日K價量資料(個股、ETF、大盤)-單檔股票多個區間&#39;</span><span class="p">,</span> <span class="s1">&#39;2330&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;還原日K價量資料(個股、ETF、大盤)-單檔股票多個區間&#39;</span><span class="p">,</span> <span class="s1">&#39;2330&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </span></code></pre></div>
-<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>DataFrame shape: (1000, 14)
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>            日期  股票代號 股票名稱  開盤價  最高價  最低價  收盤價        成交量  漲跌  漲跌幅(%)
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>997 2026-08-18  2330  台積電 2415 2415 2375 2380 19997.2130 -20 -0.8300
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>998 2026-08-19  2330  台積電 2340 2355 2335 2350 23618.6120 -30 -1.2600
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>999 2026-08-20  2330  台積電 2365 2375 2350 2375 16967.7370  25  1.0600
+<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>DataFrame shape: (1000, 14)
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>            日期  股票代號 股票名稱  開盤價  最高價  最低價  收盤價        成交量  漲跌  漲跌幅(%)
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>997 2026-08-18  2330  台積電 2415 2415 2375 2380 19997.2130 -20 -0.8300
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>998 2026-08-19  2330  台積電 2340 2355 2335 2350 23618.6120 -30 -1.2600
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>999 2026-08-20  2330  台積電 2365 2375 2350 2375 16967.7370  25  1.0600
 </span></code></pre></div>
 <p><code>api.Data</code> 一次取一張表，回傳欄位為中文名稱的 <code>pandas.DataFrame</code>。
 歷史長度不是固定值，各資料可回溯的期間見 <a href="../data-history/">資料期間與頻率</a>。</p>

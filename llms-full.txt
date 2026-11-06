@@ -1,60 +1,60 @@
 # llms-full.txt 導覽（給 AI：先讀這段，不要整份讀）
 
-這份檔 ＝ llms.txt 索引 ＋ 33 篇文件全文，共 8850 行。
+這份檔 ＝ llms.txt 索引 ＋ 33 篇文件全文，共 8847 行。
 - 用行號跳讀（例如讀第 N 行起的 M 行），或搜尋 `<!-- source: docs/檔名.md -->` 找到該篇開頭。
 - 文中所有 `docs/xxx.md` 連結，都對應本檔裡 `<!-- source: docs/xxx.md -->` 那一段；沒有 docs/ 資料夾也找得到。
 
-- **寫程式之前先讀**：AI 工作守則（`docs/agent-playbook.md`）第 8801–8851 行
-- **要寫回測先讀，找用得上的寫法**：策略範例（`docs/recipes.md`）第 6935–7544 行
-- **MSMP 台美股所有表與欄名**：MSMP 資料表與欄位（`docs/msmp-tables.md`）第 4865–5080 行
+- **寫程式之前先讀**：AI 工作守則（`docs/agent-playbook.md`）第 8798–8848 行
+- **要寫回測先讀，找用得上的寫法**：策略範例（`docs/recipes.md`）第 6932–7541 行
+- **MSMP 台美股所有表與欄名**：MSMP 資料表與欄位（`docs/msmp-tables.md`）第 4862–5077 行
 
 策略範例各節：
-- 第 6943 行：共用前置
-- 第 6986 行：單檔技術指標策略
-- 第 7036 行：多檔組合（共用資金池）
-- 第 7086 行：台指期雙均線多空反手
-- 第 7175 行：目標權重輪動
-- 第 7295 行：訊號驗證（IC 與分組單調性）
-- 第 7365 行：參數最佳化
-- 第 7417 行：多因子輪動（分步寫法）
+- 第 6940 行：共用前置
+- 第 6983 行：單檔技術指標策略
+- 第 7033 行：多檔組合（共用資金池）
+- 第 7083 行：台指期雙均線多空反手
+- 第 7172 行：目標權重輪動
+- 第 7292 行：訊號驗證（IC 與分組單調性）
+- 第 7362 行：參數最佳化
+- 第 7414 行：多因子輪動（分步寫法）
 
 ## 行號目錄
 
 | 行號 | 文件 | 標題 |
 |---|---|---|
-| 122–269 | `docs/getting-started.md` | 快速開始 |
-| 271–381 | `docs/login.md` | 登入與登出 |
-| 383–486 | `docs/data.md` | 資料總覽 |
-| 488–660 | `docs/data-get.md` | 表格查詢 api.Data |
-| 662–877 | `docs/data-tw-list.md` | 台股資料一覽 |
-| 879–1413 | `docs/data-tw-price.md` | 價量與 K 線 |
-| 1415–2009 | `docs/data-tw-chip.md` | 籌碼 |
-| 2011–2636 | `docs/data-tw-fundamental.md` | 基本面 |
-| 2638–2918 | `docs/data-tw-intraday.md` | 盤中與分 K |
-| 2920–3226 | `docs/data-tw-broker.md` | 券商分點 |
-| 3228–3590 | `docs/data-tw-futures.md` | 期貨 |
-| 3592–4231 | `docs/data-tw-event.md` | 清單與事件 |
-| 4233–4526 | `docs/usdata.md` | 美股資料 api.USData |
-| 4528–4863 | `docs/msmp.md` | 矩陣資料 MSMP |
-| 4865–5080 | `docs/msmp-tables.md` | MSMP 資料表與欄位 |
-| 5082–5267 | `docs/usmsmp.md` | 美股矩陣資料 USMSMP |
-| 5269–5443 | `docs/data-history.md` | 資料期間與頻率 |
-| 5445–5626 | `docs/backtest.md` | 回測概覽 |
-| 5628–5929 | `docs/backtest-strategy.md` | 撰寫策略 |
-| 5931–6127 | `docs/backtest-order.md` | 下單與成交 |
-| 6129–6362 | `docs/backtest-data.md` | 資料與週期 |
-| 6364–6797 | `docs/backtest-report.md` | 商品設定與績效報告 |
-| 6799–6933 | `docs/backtest-tools.md` | 技術指標與參數最佳化 |
-| 6935–7544 | `docs/recipes.md` | 策略範例 |
-| 7546–7641 | `docs/api-login.md` | snowyowl 與 api |
-| 7643–7742 | `docs/api-data.md` | api.Data／api.USData |
-| 7744–7875 | `docs/api-msmp.md` | api.MSMP／api.USMSMP |
-| 7877–8035 | `docs/api-bt.md` | api.bt |
-| 8037–8077 | `docs/errors.md` | 錯誤訊息 |
-| 8079–8295 | `docs/how-to-ask.md` | 提問技巧 |
-| 8297–8600 | `docs/how-to-plan.md` | 規劃研究流程 |
-| 8602–8799 | `docs/case-study-backtest.md` | 回測提問範例 |
-| 8801–8851 | `docs/agent-playbook.md` | AI 工作守則 |
+| 122–266 | `docs/getting-started.md` | 快速開始 |
+| 268–378 | `docs/login.md` | 登入與登出 |
+| 380–483 | `docs/data.md` | 資料總覽 |
+| 485–657 | `docs/data-get.md` | 表格查詢 api.Data |
+| 659–874 | `docs/data-tw-list.md` | 台股資料一覽 |
+| 876–1410 | `docs/data-tw-price.md` | 價量與 K 線 |
+| 1412–2006 | `docs/data-tw-chip.md` | 籌碼 |
+| 2008–2633 | `docs/data-tw-fundamental.md` | 基本面 |
+| 2635–2915 | `docs/data-tw-intraday.md` | 盤中與分 K |
+| 2917–3223 | `docs/data-tw-broker.md` | 券商分點 |
+| 3225–3587 | `docs/data-tw-futures.md` | 期貨 |
+| 3589–4228 | `docs/data-tw-event.md` | 清單與事件 |
+| 4230–4523 | `docs/usdata.md` | 美股資料 api.USData |
+| 4525–4860 | `docs/msmp.md` | 矩陣資料 MSMP |
+| 4862–5077 | `docs/msmp-tables.md` | MSMP 資料表與欄位 |
+| 5079–5264 | `docs/usmsmp.md` | 美股矩陣資料 USMSMP |
+| 5266–5440 | `docs/data-history.md` | 資料期間與頻率 |
+| 5442–5623 | `docs/backtest.md` | 回測概覽 |
+| 5625–5926 | `docs/backtest-strategy.md` | 撰寫策略 |
+| 5928–6124 | `docs/backtest-order.md` | 下單與成交 |
+| 6126–6359 | `docs/backtest-data.md` | 資料與週期 |
+| 6361–6794 | `docs/backtest-report.md` | 商品設定與績效報告 |
+| 6796–6930 | `docs/backtest-tools.md` | 技術指標與參數最佳化 |
+| 6932–7541 | `docs/recipes.md` | 策略範例 |
+| 7543–7638 | `docs/api-login.md` | snowyowl 與 api |
+| 7640–7739 | `docs/api-data.md` | api.Data／api.USData |
+| 7741–7872 | `docs/api-msmp.md` | api.MSMP／api.USMSMP |
+| 7874–8032 | `docs/api-bt.md` | api.bt |
+| 8034–8074 | `docs/errors.md` | 錯誤訊息 |
+| 8076–8292 | `docs/how-to-ask.md` | 提問技巧 |
+| 8294–8597 | `docs/how-to-plan.md` | 規劃研究流程 |
+| 8599–8796 | `docs/case-study-backtest.md` | 回測提問範例 |
+| 8798–8848 | `docs/agent-playbook.md` | AI 工作守則 |
 
 ====================================================================================================
 
@@ -130,24 +130,21 @@ SnowyOwl 是台股與美股的 Python 資料套件，提供歷史資料查詢與
 
 ## 安裝
 
-SnowyOwl 需要 Python 3.10 以上（3.10～3.14 可用），以 SnowyOwl 提供的 wheel 檔安裝。
-依作業系統安裝對應的檔案；macOS 的檔案 Intel 與 Apple 晶片通用，Intel 晶片需加上 `--prefer-binary`：
+SnowyOwl 需要 Python 3.10～3.13，從 [PyPI](https://pypi.org/project/SnowyOwlStrategy/) 安裝：
 
 ```bash
-# Windows
-pip install snowyowlstrategy-1.0.0-cp310-abi3-win_amd64.whl
-
-# Linux
-pip install snowyowlstrategy-1.0.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-
-# macOS（Apple 晶片）
-pip install snowyowlstrategy-1.0.0-cp310-abi3-macosx_11_0_universal2.whl
-
-# macOS（Intel 晶片）
-pip install snowyowlstrategy-1.0.0-cp310-abi3-macosx_11_0_universal2.whl --prefer-binary
+pip install SnowyOwlStrategy
 ```
 
-套件名稱是 `snowyowlstrategy`，程式中匯入的名稱是 `snowyowl`：
+支援 Windows（x86_64）、Linux（x86_64）與 macOS 11 以上（Intel 與 Apple 晶片）。macOS Intel 晶片需加上 `--prefer-binary`：
+
+```bash
+pip install SnowyOwlStrategy --prefer-binary
+```
+
+已安裝舊版時，以 `pip install -U SnowyOwlStrategy` 更新。
+
+套件名稱是 `SnowyOwlStrategy`，程式中匯入的名稱是 `snowyowl`：
 
 ```python
 import snowyowl as so
