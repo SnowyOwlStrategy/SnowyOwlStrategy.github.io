@@ -50,6 +50,14 @@
 - [api.bt](docs/api-bt.md): `Core` 的事件、方法、`Condition` 下單與狀態屬性；`config`、`generate_report` 與 `rp` 的成員；`Tools`
 - [錯誤訊息](docs/errors.md): 表格查詢、矩陣資料、回測的錯誤訊息、原因與處理方式
 
+## API 下單
+
+- [下單串接總覽](docs/trade.md): SnowyOwl 產生訊號、券商 API 下單的流程；目標部位與現有部位的差額計算；模擬環境與交易時段
+- [凱基 Superpy](docs/trade-kgi.md): `kgisuperpy` 登入、台股與台指期下單、刪單、查委託與部位、回報事件，串接 SnowyOwl 選股結果
+- [富邦 Neo API](docs/trade-fubon.md): `fubon_neo` 登入、台股與台指期下單、刪單、查委託與庫存、回報事件，串接 SnowyOwl 選股結果
+- [永豐 Shioaji](docs/trade-shioaji.md): `shioaji` 登入、台股與台指期下單、刪單、查委託與部位、回報事件，串接 SnowyOwl 選股結果
+- [IB 美股](docs/trade-ib.md): `ib_async` 連線 TWS／IB Gateway、美股下單、刪單、查委託與部位，串接 SnowyOwl 美股訊號
+
 ## 搭配 AI 使用
 
 - [提問技巧](docs/how-to-ask.md): 提問的基本原則；單檔技術指標、選股輪動、期貨三個情境的基本提問與完整提問對照；提問檢查清單、回測後建議追問的問題、提問結構速查

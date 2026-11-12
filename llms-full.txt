@@ -1,60 +1,65 @@
 # llms-full.txt 導覽（給 AI：先讀這段，不要整份讀）
 
-這份檔 ＝ llms.txt 索引 ＋ 33 篇文件全文，共 8847 行。
+這份檔 ＝ llms.txt 索引 ＋ 38 篇文件全文，共 9629 行。
 - 用行號跳讀（例如讀第 N 行起的 M 行），或搜尋 `<!-- source: docs/檔名.md -->` 找到該篇開頭。
 - 文中所有 `docs/xxx.md` 連結，都對應本檔裡 `<!-- source: docs/xxx.md -->` 那一段；沒有 docs/ 資料夾也找得到。
 
-- **寫程式之前先讀**：AI 工作守則（`docs/agent-playbook.md`）第 8798–8848 行
-- **要寫回測先讀，找用得上的寫法**：策略範例（`docs/recipes.md`）第 6932–7541 行
-- **MSMP 台美股所有表與欄名**：MSMP 資料表與欄位（`docs/msmp-tables.md`）第 4862–5077 行
+- **寫程式之前先讀**：AI 工作守則（`docs/agent-playbook.md`）第 9580–9630 行
+- **要寫回測先讀，找用得上的寫法**：策略範例（`docs/recipes.md`）第 6945–7554 行
+- **MSMP 台美股所有表與欄名**：MSMP 資料表與欄位（`docs/msmp-tables.md`）第 4875–5090 行
 
 策略範例各節：
-- 第 6940 行：共用前置
-- 第 6983 行：單檔技術指標策略
-- 第 7033 行：多檔組合（共用資金池）
-- 第 7083 行：台指期雙均線多空反手
-- 第 7172 行：目標權重輪動
-- 第 7292 行：訊號驗證（IC 與分組單調性）
-- 第 7362 行：參數最佳化
-- 第 7414 行：多因子輪動（分步寫法）
+- 第 6953 行：共用前置
+- 第 6996 行：單檔技術指標策略
+- 第 7046 行：多檔組合（共用資金池）
+- 第 7096 行：台指期雙均線多空反手
+- 第 7185 行：目標權重輪動
+- 第 7305 行：訊號驗證（IC 與分組單調性）
+- 第 7375 行：參數最佳化
+- 第 7427 行：多因子輪動（分步寫法）
 
 ## 行號目錄
 
 | 行號 | 文件 | 標題 |
 |---|---|---|
-| 122–266 | `docs/getting-started.md` | 快速開始 |
-| 268–378 | `docs/login.md` | 登入與登出 |
-| 380–483 | `docs/data.md` | 資料總覽 |
-| 485–657 | `docs/data-get.md` | 表格查詢 api.Data |
-| 659–874 | `docs/data-tw-list.md` | 台股資料一覽 |
-| 876–1410 | `docs/data-tw-price.md` | 價量與 K 線 |
-| 1412–2006 | `docs/data-tw-chip.md` | 籌碼 |
-| 2008–2633 | `docs/data-tw-fundamental.md` | 基本面 |
-| 2635–2915 | `docs/data-tw-intraday.md` | 盤中與分 K |
-| 2917–3223 | `docs/data-tw-broker.md` | 券商分點 |
-| 3225–3587 | `docs/data-tw-futures.md` | 期貨 |
-| 3589–4228 | `docs/data-tw-event.md` | 清單與事件 |
-| 4230–4523 | `docs/usdata.md` | 美股資料 api.USData |
-| 4525–4860 | `docs/msmp.md` | 矩陣資料 MSMP |
-| 4862–5077 | `docs/msmp-tables.md` | MSMP 資料表與欄位 |
-| 5079–5264 | `docs/usmsmp.md` | 美股矩陣資料 USMSMP |
-| 5266–5440 | `docs/data-history.md` | 資料期間與頻率 |
-| 5442–5623 | `docs/backtest.md` | 回測概覽 |
-| 5625–5926 | `docs/backtest-strategy.md` | 撰寫策略 |
-| 5928–6124 | `docs/backtest-order.md` | 下單與成交 |
-| 6126–6359 | `docs/backtest-data.md` | 資料與週期 |
-| 6361–6794 | `docs/backtest-report.md` | 商品設定與績效報告 |
-| 6796–6930 | `docs/backtest-tools.md` | 技術指標與參數最佳化 |
-| 6932–7541 | `docs/recipes.md` | 策略範例 |
-| 7543–7638 | `docs/api-login.md` | snowyowl 與 api |
-| 7640–7739 | `docs/api-data.md` | api.Data／api.USData |
-| 7741–7872 | `docs/api-msmp.md` | api.MSMP／api.USMSMP |
-| 7874–8032 | `docs/api-bt.md` | api.bt |
-| 8034–8074 | `docs/errors.md` | 錯誤訊息 |
-| 8076–8292 | `docs/how-to-ask.md` | 提問技巧 |
-| 8294–8597 | `docs/how-to-plan.md` | 規劃研究流程 |
-| 8599–8796 | `docs/case-study-backtest.md` | 回測提問範例 |
-| 8798–8848 | `docs/agent-playbook.md` | AI 工作守則 |
+| 135–279 | `docs/getting-started.md` | 快速開始 |
+| 281–391 | `docs/login.md` | 登入與登出 |
+| 393–496 | `docs/data.md` | 資料總覽 |
+| 498–670 | `docs/data-get.md` | 表格查詢 api.Data |
+| 672–887 | `docs/data-tw-list.md` | 台股資料一覽 |
+| 889–1423 | `docs/data-tw-price.md` | 價量與 K 線 |
+| 1425–2019 | `docs/data-tw-chip.md` | 籌碼 |
+| 2021–2646 | `docs/data-tw-fundamental.md` | 基本面 |
+| 2648–2928 | `docs/data-tw-intraday.md` | 盤中與分 K |
+| 2930–3236 | `docs/data-tw-broker.md` | 券商分點 |
+| 3238–3600 | `docs/data-tw-futures.md` | 期貨 |
+| 3602–4241 | `docs/data-tw-event.md` | 清單與事件 |
+| 4243–4536 | `docs/usdata.md` | 美股資料 api.USData |
+| 4538–4873 | `docs/msmp.md` | 矩陣資料 MSMP |
+| 4875–5090 | `docs/msmp-tables.md` | MSMP 資料表與欄位 |
+| 5092–5277 | `docs/usmsmp.md` | 美股矩陣資料 USMSMP |
+| 5279–5453 | `docs/data-history.md` | 資料期間與頻率 |
+| 5455–5636 | `docs/backtest.md` | 回測概覽 |
+| 5638–5939 | `docs/backtest-strategy.md` | 撰寫策略 |
+| 5941–6137 | `docs/backtest-order.md` | 下單與成交 |
+| 6139–6372 | `docs/backtest-data.md` | 資料與週期 |
+| 6374–6807 | `docs/backtest-report.md` | 商品設定與績效報告 |
+| 6809–6943 | `docs/backtest-tools.md` | 技術指標與參數最佳化 |
+| 6945–7554 | `docs/recipes.md` | 策略範例 |
+| 7556–7651 | `docs/api-login.md` | snowyowl 與 api |
+| 7653–7752 | `docs/api-data.md` | api.Data／api.USData |
+| 7754–7885 | `docs/api-msmp.md` | api.MSMP／api.USMSMP |
+| 7887–8045 | `docs/api-bt.md` | api.bt |
+| 8047–8087 | `docs/errors.md` | 錯誤訊息 |
+| 8089–8213 | `docs/trade.md` | 下單串接總覽 |
+| 8215–8379 | `docs/trade-kgi.md` | 凱基 Superpy |
+| 8381–8554 | `docs/trade-fubon.md` | 富邦 Neo API |
+| 8556–8733 | `docs/trade-shioaji.md` | 永豐 Shioaji |
+| 8735–8856 | `docs/trade-ib.md` | IB 美股 |
+| 8858–9074 | `docs/how-to-ask.md` | 提問技巧 |
+| 9076–9379 | `docs/how-to-plan.md` | 規劃研究流程 |
+| 9381–9578 | `docs/case-study-backtest.md` | 回測提問範例 |
+| 9580–9630 | `docs/agent-playbook.md` | AI 工作守則 |
 
 ====================================================================================================
 
@@ -109,6 +114,14 @@
 - [api.MSMP／USMSMP](docs/api-msmp.md): `表名.欄位`、`get`、`get_table`、`list`、`INFO`、`INDEX`、`TSE`／`OTC`、`DataFrame`、`msmp_to_dic`
 - [api.bt](docs/api-bt.md): `Core` 的事件、方法、`Condition` 下單與狀態屬性；`config`、`generate_report` 與 `rp` 的成員；`Tools`
 - [錯誤訊息](docs/errors.md): 表格查詢、矩陣資料、回測的錯誤訊息、原因與處理方式
+
+## API 下單
+
+- [下單串接總覽](docs/trade.md): SnowyOwl 產生訊號、券商 API 下單的流程；目標部位與現有部位的差額計算；模擬環境與交易時段
+- [凱基 Superpy](docs/trade-kgi.md): `kgisuperpy` 登入、台股與台指期下單、刪單、查委託與部位、回報事件，串接 SnowyOwl 選股結果
+- [富邦 Neo API](docs/trade-fubon.md): `fubon_neo` 登入、台股與台指期下單、刪單、查委託與庫存、回報事件，串接 SnowyOwl 選股結果
+- [永豐 Shioaji](docs/trade-shioaji.md): `shioaji` 登入、台股與台指期下單、刪單、查委託與部位、回報事件，串接 SnowyOwl 選股結果
+- [IB 美股](docs/trade-ib.md): `ib_async` 連線 TWS／IB Gateway、美股下單、刪單、查委託與部位，串接 SnowyOwl 美股訊號
 
 ## 搭配 AI 使用
 
@@ -8070,6 +8083,775 @@ rp.dashboard(view='web')
 - [資料期間與頻率](data-history.md)：各頻率可回溯的期間
 - [盤中與分 K](data-tw-intraday.md)：盤中資料與分 K 表的參數
 - [商品設定與績效報告](backtest-report.md)：成本與部位大小的設定
+
+====================================================================================================
+
+<!-- source: docs/trade.md -->
+
+# 下單串接總覽
+
+> 以 2026-11-11 各券商套件版本為準
+
+SnowyOwl 負責資料、選股與回測，不直接下單。要把訊號送到券商，以券商提供的 Python API 下單：
+SnowyOwl 算出「要持有什麼」，券商 API 查出「目前持有什麼」，兩者的差額就是要送出的委託。
+
+## 運作方式
+
+| 步驟 | 使用 | 產出 |
+|---|---|---|
+| 計算訊號 | SnowyOwl（`api.MSMP`、`api.USMSMP`、`api.bt.Tools`） | 目標部位，例如 `{'2330': 2, '2317': 1}`（張） |
+| 查詢部位 | 券商 API | 目前部位，格式與目標部位相同 |
+| 計算差額 | 本頁的 `order_diff()` | 每檔要買賣的數量 |
+| 送出委託 | 券商 API | 委託書號、成交回報 |
+
+SnowyOwl 與券商 API 是各自獨立的套件，在同一個 Python 環境安裝即可，兩者的登入互不影響。
+
+!!! note "資料日期"
+    `api.MSMP`、`api.USMSMP` 的資料到前一個交易日，`bt.Tools.get_fut_ohlc` 的資料到昨日。
+    以這些資料算出的訊號適合在開盤前或開盤後執行，屬於「收盤後決策、隔日執行」的流程。
+    盤中訊號請用 `api.Data` 的分 K，見 [盤中與分 K](data-tw-intraday.md)。
+
+## 支援的券商
+
+| 券商 | 套件 | 市場 | 說明頁 |
+|---|---|---|---|
+| 凱基證券 | `kgisuperpy` | 台股、台指期 | [凱基 Superpy](trade-kgi.md) |
+| 富邦證券 | `fubon_neo` | 台股、台指期 | [富邦 Neo API](trade-fubon.md) |
+| 永豐金證券 | `shioaji` | 台股、台指期 | [永豐 Shioaji](trade-shioaji.md) |
+| Interactive Brokers | `ib_async` | 美股 | [IB 美股](trade-ib.md) |
+
+各券商的帳戶開通、API 申請、憑證與交易規則以券商公告為準。
+
+## 計算訊號
+
+### 台股選股名單
+
+以前一交易日的收盤價與成交量篩選，排除 ETF，每檔買 1 張：
+
+```python
+import pandas as pd
+import snowyowl as so
+
+api = so.login('user@x.com', 'pwd')
+M = api.MSMP
+
+close = pd.DataFrame(M.日_K.Close)
+vol   = pd.DataFrame(M.日_K.Volume)          # 單位：張
+etf   = set(M.list['etf'])
+
+ma20 = close.rolling(20).mean()
+cond = (close.iloc[-1] > ma20.iloc[-1]) & (vol.iloc[-1] >= 5000)
+picks = [s for s in cond[cond].index if s not in etf]
+
+target = {s: 1 for s in picks}               # 目標部位：代號 → 張數
+print(close.index[-1], len(target))
+```
+
+### 台指期方向
+
+以日 K 收盤價與 20 日均線決定多空，`1` 為多單 1 口、`-1` 為空單 1 口：
+
+```python
+df = api.bt.Tools.get_fut_ohlc('TXF', freq='D')
+c  = df['收盤價']
+direction = 1 if c.iloc[-1] > c.rolling(20).mean().iloc[-1] else -1
+```
+
+### 美股選股名單
+
+`api.USMSMP` 的 `Volume` 單位是股，成交值以 `Volume × Close` 計算。目標部位以股數表示：
+
+```python
+U = api.USMSMP
+close = pd.DataFrame(U.日_K.Close)
+value = (pd.DataFrame(U.日_K.Volume) * close).iloc[-1]   # 前一交易日成交值（美元）
+
+top = value.nlargest(20).index
+ret = close[top].pct_change(20).iloc[-1]
+target = {s: 10 for s in ret.nlargest(5).index}          # 20 日漲幅前 5 名，每檔 10 股
+```
+
+## 計算差額
+
+目標部位與目前部位都以 `dict`（代號 → 數量）表示。差額為正是買進，為負是賣出：
+
+```python
+def order_diff(target: dict, current: dict) -> dict:
+    """回傳 {代號: 數量}，正數買進、負數賣出，略過不需變動的代號。"""
+    keys = list(target) + [k for k in current if k not in target]
+    diff = {k: target.get(k, 0) - current.get(k, 0) for k in keys}
+    return {k: v for k, v in diff.items() if v != 0}
+
+order_diff({'2330': 2, '2317': 1}, {'2330': 1, '2454': 1})
+```
+
+```text title="輸出"
+{'2330': 1, '2317': 1, '2454': -1}
+```
+
+各券商頁的「串接 SnowyOwl」一節，示範如何把券商的部位查詢結果轉成 `current`，再依差額逐檔下單。
+
+!!! warning "先在模擬環境確認"
+    下單程式會送出真實委託。請先以券商的模擬（測試）環境確認數量單位、買賣方向與委託條件，再切換到正式環境。
+
+## 本章內容
+
+| 頁面 | 說明 |
+|---|---|
+| [凱基 Superpy](trade-kgi.md) | `kgisuperpy` 台股與台指期下單 |
+| [富邦 Neo API](trade-fubon.md) | `fubon_neo` 台股與台指期下單 |
+| [永豐 Shioaji](trade-shioaji.md) | `shioaji` 台股與台指期下單 |
+| [IB 美股](trade-ib.md) | `ib_async` 美股下單 |
+
+## 相關頁面
+
+- [矩陣資料 MSMP](msmp.md)：選股用的日期 × 股票代號矩陣
+- [美股矩陣資料 USMSMP](usmsmp.md)：美股的矩陣資料
+- [資料與週期](backtest-data.md)：`get_fut_ohlc` 取得台指期 K 線
+- [策略範例](recipes.md)：回測過的選股與期貨策略
+
+====================================================================================================
+
+<!-- source: docs/trade-kgi.md -->
+
+# 凱基 Superpy
+
+> 以 2026-11-11 kgisuperpy 原始碼為準
+
+凱基證券的 Python API `kgisuperpy` 提供台股、台指期與複委託下單。本頁示範台股與台指期下單、查詢部位，並把 SnowyOwl 算出的目標部位送成委託。
+完整功能以凱基證券的 kgisuperpy 文件為準。
+
+## 安裝與登入
+
+```bash
+pip install kgisuperpy
+```
+
+```python
+import kgisuperpy as kgi
+
+api = kgi.login('身分證字號', '密碼', simulation=True)   # True：測試環境，False：正式環境
+api.set_Account('證券帳號')        # 設定後才有 api.Order
+api.set_FutAccount('期貨帳號')     # 設定後才有 api.FutOrder
+```
+
+| 參數 | 型別 | 預設值 | 說明 |
+|---|---|---|---|
+| `person_id` | `str` | | 身分證字號 |
+| `person_pwd` | `str` | | 密碼 |
+| `simulation` | `bool` | `True` | `True` 為測試環境，`False` 為正式環境 |
+
+`api.show_account()` 列出可用的帳號。
+
+!!! note "正式環境的條件"
+    正式環境下單需要有效的 CA 憑證，並完成 API 風險預告書簽署與程式驗證。
+    測試環境的開放時段：證券為營業日 08:30 至隔日 05:00，期貨為 10:00～22:00。
+
+## 台股下單
+
+```python
+api.Order.create_order(action, symbol, qty, price=None,
+                       time_in_force=kgi.TimeInForce.ROD,
+                       order_cond=kgi.OrderCond.CASH,
+                       odd_lot=False)
+```
+
+| 參數 | 說明 |
+|---|---|
+| `action` | `kgi.Action.Buy`／`kgi.Action.Sell` |
+| `symbol` | 股票代號，例如 `'2330'` |
+| `qty` | 正整數。整股以張計，零股以股計 |
+| `price` | 數字為限價；或 `kgi.PriceType.MKT`（市價）、`LimitUp`、`LimitDown`、`Reference`。`None` 時買進以漲停價、賣出以跌停價送出 |
+| `time_in_force` | `kgi.TimeInForce.ROD`／`IOC`／`FOK` |
+| `order_cond` | `kgi.OrderCond.CASH`（現股）、`MARGIN`（融資）、`SHORT_SELLING`（融券）等 |
+| `odd_lot` | `kgi.OddLot.Common`（整股）、`Odd`（盤中零股）、`Odd_AfterMarket`（盤後零股）、`Fixing`（盤後定價）；傳 `False`／`True` 時依下單時間自動選擇整股或零股的交易時段 |
+
+呼叫即送出委託，成功時回傳 `Trade` 物件，失敗時回傳 `None`。
+
+```python
+# 2330 限價買進 1 張
+trade = api.Order.create_order(action=kgi.Action.Buy, symbol='2330', qty=1, price=1000,
+                               odd_lot=kgi.OddLot.Common)
+
+# 盤中零股：qty 為股數
+trade = api.Order.create_order(action=kgi.Action.Buy, symbol='2330', qty=100, price=1000,
+                               odd_lot=kgi.OddLot.Odd)
+```
+
+## 台指期下單
+
+```python
+api.FutOrder.create_order(action, symbol, qty, price,
+                          time_in_force=kgi.TimeInForce.ROD,
+                          position_effect=kgi.PositionEffect.Auto)
+```
+
+| 參數 | 說明 |
+|---|---|
+| `symbol` | 商品代號 + 月份字母（`A`＝1 月 … `L`＝12 月）+ 年份末碼，例如 2026 年 11 月台指期為 `'TXFK6'` |
+| `qty` | 口數 |
+| `price` | 數字為限價；或 `kgi.PriceType.MKT`（市價）、`kgi.PriceType.RangeMarket`（範圍市價） |
+| `position_effect` | `kgi.PositionEffect.New`（新倉）、`Close`（平倉）、`DayTrade`（當沖）、`Auto`（自動） |
+
+```python
+trade = api.FutOrder.create_order(action=kgi.Action.Buy, symbol='TXFK6', qty=1,
+                                  price=kgi.PriceType.MKT,
+                                  time_in_force=kgi.TimeInForce.IOC,
+                                  position_effect=kgi.PositionEffect.Auto)
+```
+
+## 刪單與查詢
+
+| 方法 | 回傳 | 說明 |
+|---|---|---|
+| `api.Order.get_trades()` | `dict` | 有效委託，key 為委託書號，value 為 `Trade` |
+| `api.Order.cancel_order(order_id)` | `Trade` | 刪單，可傳委託書號或 `Trade` |
+| `api.Order.cancel_order_all()` | | 刪除全部有效委託 |
+| `api.Order.get_deals()` | `dict` | 今日成交，key 為股票代號 |
+| `api.Order.get_position()` | `DataFrame` | 股票庫存，index 為股票代號 |
+| `api.FutOrder.get_trades()`／`cancel_order()`／`get_position()` | | 期貨的對應方法 |
+
+委託書號在收到委託成功回報後才會產生，刪單請在回報之後進行。
+
+`api.Order.get_position()` 的數量欄位是 4 個元素的 list，依序為零股（股）、現股（張）、融資（張）、融券（張）：
+
+| 欄位 | 說明 |
+|---|---|
+| `quantity_yd` | 昨日餘額 |
+| `quantity_B`／`quantity_S` | 今日買進／賣出成交 |
+| `quantity_td` | 今日持股餘額 |
+| `dealPrice_cash\|margin\|short` | 現股、融資、融券均價 |
+| `lastprice`／`unrealized`／`realized` | 市價、未實現損益、已實現損益 |
+
+## 回報事件
+
+以 `set_event` 註冊委託與成交回報。回報是 `Event` 物件，以屬性取值：
+
+```python
+def on_event(ev):
+    if ev.task == kgi.Task.Deal:
+        print('成交', ev.symbol, ev.action, ev.quantity, ev.price, ev.ts)
+    elif ev.status == kgi.Status.Failed:
+        print('失敗', ev.order_id, ev.msg)
+    else:
+        print(ev.task, ev.status, ev.order_id)
+
+api.Order.set_event(on_event)
+api.FutOrder.set_event(on_event)
+```
+
+## 串接 SnowyOwl
+
+以 [下單串接總覽](trade.md) 的選股名單 `target`（代號 → 張數）與 `order_diff()`，把庫存調整成目標部位：
+
+```python
+pos = api.Order.get_position()
+current = {s: int(q[1]) for s, q in pos['quantity_td'].items() if q[1] > 0}   # 現股張數
+
+for symbol, qty in order_diff(target, current).items():
+    trade = api.Order.create_order(
+        action=kgi.Action.Buy if qty > 0 else kgi.Action.Sell,
+        symbol=symbol, qty=abs(qty), price=None,          # 買進以漲停價、賣出以跌停價送出
+        odd_lot=kgi.OddLot.Common)
+    if trade is None:
+        print('送單失敗', symbol)
+```
+
+台指期以總覽的 `direction`（`1` 或 `-1`）調整為 1 口多單或空單：
+
+```python
+fp = api.FutOrder.get_position()
+row = fp[fp['symbol'] == 'TXFK6']
+now = int(row['quantity_B'].sum() - row['quantity_S'].sum())   # 淨口數
+diff = direction - now
+if diff != 0:
+    api.FutOrder.create_order(action=kgi.Action.Buy if diff > 0 else kgi.Action.Sell,
+                              symbol='TXFK6', qty=abs(diff), price=kgi.PriceType.MKT,
+                              time_in_force=kgi.TimeInForce.IOC,
+                              position_effect=kgi.PositionEffect.Auto)
+```
+
+## 相關頁面
+
+- [下單串接總覽](trade.md)：訊號、部位差額與 `order_diff()`
+- [富邦 Neo API](trade-fubon.md)、[永豐 Shioaji](trade-shioaji.md)：其他券商的台股與台指期下單
+
+====================================================================================================
+
+<!-- source: docs/trade-fubon.md -->
+
+# 富邦 Neo API
+
+> 以 2026-11-11 富邦新一代 API 官方文件（SDK v2.5.0）為準
+
+富邦證券的新一代 API `fubon_neo` 提供台股與期貨選擇權下單。本頁示範台股與台指期下單、查詢庫存，並把 SnowyOwl 算出的目標部位送成委託。
+完整功能以 [富邦新一代 API 文件](https://www.fbs.com.tw/TradeAPI/docs/trading/quickstart) 為準。
+
+## 安裝與登入
+
+SDK 自 2026-11-12 起可從 PyPI 安裝：
+
+```bash
+pip install fubon-neo
+```
+
+在此之前，從富邦新一代 API 網站下載 wheel 檔安裝：`pip install fubon_neo-<版本>-cp37-abi3-<平台>.whl`。
+
+```python
+from fubon_neo.sdk import FubonSDK, Order, FutOptOrder
+from fubon_neo.constant import (BSAction, MarketType, PriceType, TimeInForce, OrderType,
+                                FutOptMarketType, FutOptPriceType, FutOptOrderType)
+
+sdk = FubonSDK()
+accounts = sdk.login("身分證字號", "登入密碼", r"C:\CAFubon\身分證字號\身分證字號.pfx", "憑證密碼")
+if not accounts.is_success:
+    raise SystemExit(accounts.message)
+
+stock_acc  = next(a for a in accounts.data if a.account_type == "stock")    # 證券帳戶
+futopt_acc = next(a for a in accounts.data if a.account_type == "futopt")   # 期貨帳戶
+```
+
+`login` 回傳 `Result`，`data` 為帳戶清單。所有查詢與下單方法都回傳 `Result`，以 `is_success`、`message`、`data` 判斷結果。
+
+!!! note "使用條件與測試環境"
+    使用前需有富邦帳戶與數位憑證，並簽署 API 風險使用聲明書、完成連線測試；期貨下單另需向富邦期貨申請。
+    測試環境以 `FubonSDK(30, 3, "wss://neoapitest.fbs.com.tw/TASP/XCPXWS")` 連線，測試帳號由富邦新一代 API 網站提供。
+
+## 台股下單
+
+```python
+order = Order(
+    buy_sell=BSAction.Buy,
+    symbol="2330",
+    price="1000",
+    quantity=1000,
+    market_type=MarketType.Common,
+    price_type=PriceType.Limit,
+    time_in_force=TimeInForce.ROD,
+    order_type=OrderType.Stock,
+)
+res = sdk.stock.place_order(stock_acc, order)
+print(res.is_success, res.message)
+```
+
+| 參數 | 說明 |
+|---|---|
+| `buy_sell` | `BSAction.Buy`／`Sell` |
+| `price` | 價格，型別為字串。市價單不填 |
+| `quantity` | 股數，1 張為 `1000` |
+| `market_type` | `MarketType.Common`（整股）、`IntradayOdd`（盤中零股）、`Odd`（盤後零股）、`Fixing`（定盤） |
+| `price_type` | `PriceType.Limit`（限價）、`Market`（市價）、`LimitUp`、`LimitDown`、`Reference` |
+| `time_in_force` | `TimeInForce.ROD`／`IOC`／`FOK` |
+| `order_type` | `OrderType.Stock`（現股）、`Margin`（融資）、`Short`（融券）、`DayTrade`（現股當沖） |
+
+盤中零股把 `market_type` 改為 `MarketType.IntradayOdd`，`quantity` 填股數，例如 `100`。
+
+## 台指期下單
+
+```python
+order = FutOptOrder(
+    buy_sell=BSAction.Buy,
+    symbol="TXFL6",
+    price="23000",
+    lot=1,
+    market_type=FutOptMarketType.Future,
+    price_type=FutOptPriceType.Limit,
+    time_in_force=TimeInForce.ROD,
+    order_type=FutOptOrderType.Auto,
+)
+res = sdk.futopt.place_order(futopt_acc, order)
+```
+
+| 參數 | 說明 |
+|---|---|
+| `symbol` | 商品代號 + 月份字母（`A`＝1 月 … `L`＝12 月）+ 年份末碼，例如 2026 年 12 月台指期為 `'TXFL6'` |
+| `lot` | 口數 |
+| `market_type` | `FutOptMarketType.Future`（日盤）、`FutureNight`（夜盤） |
+| `price_type` | `FutOptPriceType.Limit`（限價）、`Market`（市價）、`RangeMarket`（範圍市價）、`Reference` |
+| `order_type` | `FutOptOrderType.New`（新倉）、`Close`（平倉）、`Auto`（自動）、`FdayTrade`（當沖） |
+
+## 刪單與查詢
+
+| 方法 | 說明 |
+|---|---|
+| `sdk.stock.get_order_results(stock_acc)` | 當日股票委託，`data` 為委託清單 |
+| `sdk.stock.cancel_order(stock_acc, order_result)` | 刪單，傳入委託清單中的一筆 |
+| `sdk.accounting.inventories(stock_acc)` | 股票庫存 |
+| `sdk.accounting.unrealized_gains_and_loses(stock_acc)` | 未實現損益 |
+| `sdk.futopt.get_order_results(futopt_acc)` | 當日期貨委託 |
+| `sdk.futopt.cancel_order(futopt_acc, order_result)` | 期貨刪單 |
+| `sdk.futopt_accounting.query_single_position(futopt_acc)` | 期貨部位 |
+
+```python
+orders = sdk.stock.get_order_results(stock_acc)
+for o in orders.data:
+    print(o.order_no, o.stock_no, o.buy_sell, o.quantity, o.filled_qty, o.status)
+```
+
+庫存 `Inventory` 的數量以股計：`today_qty` 為整股餘額，`odd.today_qty` 為零股餘額。
+期貨部位 `Position` 的 `symbol` 為帳務代碼（台指期為 `"FITX"`），`tradable_lot` 為可交易口數，`buy_sell` 為多空方向。
+
+## 回報事件
+
+```python
+def on_order(code, content):
+    print('委託', code, content)
+
+def on_filled(code, content):
+    print('成交', code, content)
+
+sdk.set_on_order(on_order)            # 證券委託
+sdk.set_on_filled(on_filled)          # 證券成交
+sdk.set_on_futopt_order(on_order)     # 期貨委託
+sdk.set_on_futopt_filled(on_filled)   # 期貨成交
+```
+
+回報函式在獨立的執行緒執行，函式內發生的例外不會傳出，需在函式內自行處理。
+
+## 串接 SnowyOwl
+
+以 [下單串接總覽](trade.md) 的選股名單 `target`（代號 → 張數）與 `order_diff()`，把庫存調整成目標部位：
+
+```python
+inv = sdk.accounting.inventories(stock_acc)
+current = {i.stock_no: i.today_qty // 1000 for i in inv.data
+           if i.order_type == OrderType.Stock and i.today_qty >= 1000}   # 現股張數
+
+for symbol, qty in order_diff(target, current).items():
+    order = Order(
+        buy_sell=BSAction.Buy if qty > 0 else BSAction.Sell,
+        symbol=symbol, quantity=abs(qty) * 1000,
+        market_type=MarketType.Common, price_type=PriceType.Market,
+        time_in_force=TimeInForce.IOC, order_type=OrderType.Stock,
+    )
+    res = sdk.stock.place_order(stock_acc, order)
+    if not res.is_success:
+        print('送單失敗', symbol, res.message)
+```
+
+台指期以總覽的 `direction`（`1` 或 `-1`）調整為 1 口多單或空單：
+
+```python
+pos = sdk.futopt_accounting.query_single_position(futopt_acc)
+now = sum(p.tradable_lot if p.buy_sell == BSAction.Buy else -p.tradable_lot
+          for p in pos.data if p.symbol == "FITX")
+diff = direction - now
+if diff != 0:
+    order = FutOptOrder(
+        buy_sell=BSAction.Buy if diff > 0 else BSAction.Sell,
+        symbol="TXFL6", lot=abs(diff),
+        market_type=FutOptMarketType.Future, price_type=FutOptPriceType.RangeMarket,
+        time_in_force=TimeInForce.IOC, order_type=FutOptOrderType.Auto,
+    )
+    res = sdk.futopt.place_order(futopt_acc, order)
+```
+
+## 相關頁面
+
+- [下單串接總覽](trade.md)：訊號、部位差額與 `order_diff()`
+- [凱基 Superpy](trade-kgi.md)、[永豐 Shioaji](trade-shioaji.md)：其他券商的台股與台指期下單
+
+====================================================================================================
+
+<!-- source: docs/trade-shioaji.md -->
+
+# 永豐 Shioaji
+
+> 以 2026-11-11 shioaji 1.7.11 為準
+
+永豐金證券的 Python API `shioaji` 提供台股與期貨選擇權下單。本頁示範台股與台指期下單、查詢部位，並把 SnowyOwl 算出的目標部位送成委託。
+完整功能以 [Shioaji 官方文件](https://sinotrade.github.io/) 為準。
+
+## 安裝與登入
+
+```bash
+pip install shioaji
+```
+
+```python
+import shioaji as sj
+
+api = sj.Shioaji(simulation=True)          # True：模擬環境，False：正式環境
+accounts = api.login(
+    api_key="YOUR_API_KEY",
+    secret_key="YOUR_SECRET_KEY",
+)
+```
+
+登入後，`api.stock_account` 為證券帳戶，`api.futopt_account` 為期貨帳戶。API Key 在永豐金證券網站申請，下單需開啟「交易」權限。
+
+正式環境下單前需啟用憑證：
+
+```python
+api.activate_ca(ca_path="C:/path/Sinopac.pfx", ca_passwd="憑證密碼", person_id="身分證字號")
+```
+
+!!! note "正式環境的條件"
+    正式環境下單前，需簽署 API 文件並在模擬環境完成登入與下單測試（證券、期貨分開測試），帳戶的 `signed` 欄位為 `True` 後才能下單。
+    模擬環境服務時間為週一至週五 08:00～20:00（18:00～20:00 限台灣 IP），不支援零股與興櫃下單。
+
+## 取得合約
+
+```python
+stock = api.contracts.get("2330")       # 股票
+fut   = api.contracts.get("TXFR1")      # 台指期近月
+```
+
+`R1` 為近月、`R2` 為次近月，下單時會換成實際月份的合約。代號不存在時回傳 `None`。
+`api.Contracts.Stocks["2330"]`、`api.Contracts.Futures.TXF.TXFR1` 的寫法也可以使用。
+
+## 台股下單
+
+```python
+order = sj.StockOrder(
+    action=sj.Action.Buy,
+    price=1000,
+    quantity=1,
+    price_type=sj.StockPriceType.LMT,
+    order_type=sj.OrderType.ROD,
+    order_lot=sj.StockOrderLot.Common,
+    order_cond=sj.StockOrderCond.Cash,
+    account=api.stock_account,
+)
+trade = api.place_order(stock, order)
+```
+
+| 參數 | 可用值 |
+|---|---|
+| `action` | `sj.Action.Buy`／`Sell` |
+| `price_type` | `sj.StockPriceType.LMT`（限價）／`MKT`（市價） |
+| `order_type` | `sj.OrderType.ROD`／`IOC`／`FOK` |
+| `order_lot` | `sj.StockOrderLot.Common`（整股，張）、`Odd`（盤後零股）、`IntradayOdd`（盤中零股，股）、`Fixing`（定盤） |
+| `order_cond` | `sj.StockOrderCond.Cash`（現股）、`MarginTrading`（融資）、`ShortSelling`（融券） |
+
+`api.place_order` 回傳 `Trade` 物件。盤中零股只需把 `order_lot` 改為 `sj.StockOrderLot.IntradayOdd`，`quantity` 為股數；盤中零股委託只能減量，不能改價。
+
+## 台指期下單
+
+```python
+order = sj.FuturesOrder(
+    action=sj.Action.Buy,
+    price=23000,
+    quantity=1,
+    price_type=sj.FuturesPriceType.LMT,
+    order_type=sj.OrderType.ROD,
+    octype=sj.FuturesOCType.Auto,
+    account=api.futopt_account,
+)
+trade = api.place_order(fut, order)
+```
+
+| 參數 | 可用值 |
+|---|---|
+| `price_type` | `sj.FuturesPriceType.LMT`（限價）、`MKT`（市價）、`MKP`（範圍市價） |
+| `octype` | `sj.FuturesOCType.Auto`（自動）、`New`（新倉）、`Cover`（平倉）、`DayTrade`（當沖） |
+
+## 刪單與查詢
+
+```python
+api.cancel_order(trade)                          # 刪單
+api.update_order(trade=trade, price=1005)        # 改價
+api.update_order(trade=trade, qty=1)             # 減量
+
+api.update_status(api.stock_account)             # 更新委託狀態
+for t in api.list_trades():
+    print(t.contract.code, t.order.action, t.status.status, t.status.deal_quantity)
+
+stk_pos = api.list_positions(api.stock_account)  # 股票部位，數量以張計
+fut_pos = api.list_positions(api.futopt_account) # 期貨部位
+```
+
+`list_trades()` 在登入後是空的，先呼叫 `update_status()` 取得當日委託。
+
+部位物件的欄位：
+
+| 欄位 | 說明 |
+|---|---|
+| `code` | 商品代號 |
+| `direction` | `sj.Action.Buy`（多）／`Sell`（空） |
+| `quantity` | 數量。股票預設以張計，`list_positions(api.stock_account, unit=sj.Unit.Share)` 以股計 |
+| `price`／`last_price`／`pnl` | 均價、現價、損益 |
+| `yd_quantity`、`cond` | 股票才有：昨日餘額、交易條件 |
+
+## 回報事件
+
+以 `set_order_callback` 註冊委託與成交回報（或以 `@api.on_order` 裝飾函式，兩者擇一）：
+
+```python
+def order_cb(stat, msg):
+    if stat == sj.OrderState.StockDeal:
+        print('成交', msg['code'], msg['action'], msg['price'], msg['quantity'])
+    else:
+        print(stat, msg)
+
+api.set_order_callback(order_cb)
+```
+
+`stat` 為 `sj.OrderState.StockOrder`、`StockDeal`、`FuturesOrder` 或 `FuturesDeal`。同一筆回報可能重複送達，以 `msg['event_id']` 判斷是否已處理。
+
+## 串接 SnowyOwl
+
+以 [下單串接總覽](trade.md) 的選股名單 `target`（代號 → 張數）與 `order_diff()`，把庫存調整成目標部位：
+
+```python
+current = {p.code: p.quantity for p in api.list_positions(api.stock_account)
+           if p.direction == sj.Action.Buy and p.cond == sj.StockOrderCond.Cash}
+
+for symbol, qty in order_diff(target, current).items():
+    order = sj.StockOrder(
+        action=sj.Action.Buy if qty > 0 else sj.Action.Sell,
+        price=0, quantity=abs(qty),
+        price_type=sj.StockPriceType.MKT, order_type=sj.OrderType.IOC,
+        order_lot=sj.StockOrderLot.Common, order_cond=sj.StockOrderCond.Cash,
+        account=api.stock_account,
+    )
+    trade = api.place_order(api.contracts.get(symbol), order)
+```
+
+台指期以總覽的 `direction`（`1` 或 `-1`）調整為 1 口多單或空單：
+
+```python
+fut = api.contracts.get("TXFR1")
+now = sum(p.quantity if p.direction == sj.Action.Buy else -p.quantity
+          for p in api.list_positions(api.futopt_account) if p.code.startswith("TXF"))
+diff = direction - now
+if diff != 0:
+    order = sj.FuturesOrder(
+        action=sj.Action.Buy if diff > 0 else sj.Action.Sell,
+        price=0, quantity=abs(diff),
+        price_type=sj.FuturesPriceType.MKP, order_type=sj.OrderType.IOC,
+        octype=sj.FuturesOCType.Auto, account=api.futopt_account,
+    )
+    trade = api.place_order(fut, order)
+```
+
+## 相關頁面
+
+- [下單串接總覽](trade.md)：訊號、部位差額與 `order_diff()`
+- [凱基 Superpy](trade-kgi.md)、[富邦 Neo API](trade-fubon.md)：其他券商的台股與台指期下單
+
+====================================================================================================
+
+<!-- source: docs/trade-ib.md -->
+
+# IB 美股
+
+> 以 2026-11-11 ib_async 2.1.0 為準
+
+Interactive Brokers（IB）以 TWS 或 IB Gateway 提供 API 連線。本頁以 Python 套件 `ib_async` 示範美股下單、查詢部位，並把 SnowyOwl 以 `api.USMSMP` 算出的目標部位送成委託。
+完整功能以 [ib_async 文件](https://ib-api-reloaded.github.io/ib_async/) 與 IB 官方 API 文件為準。
+
+## 安裝與連線
+
+```bash
+pip install ib_async
+```
+
+`ib_async` 連線到本機執行中的 TWS 或 IB Gateway，不直接連 IB 伺服器。連線前先啟動並登入 TWS／IB Gateway，並在 API 設定中：
+
+- 勾選「Enable ActiveX and Socket Clients」（TWS 預設關閉）
+- 取消「Read-Only API」，否則無法下單
+- 將 `127.0.0.1` 加入 Trusted IPs
+
+```python
+from ib_async import IB, Stock, LimitOrder, MarketOrder
+
+ib = IB()
+ib.connect('127.0.0.1', 7497, clientId=1)    # TWS 模擬帳戶
+```
+
+| 參數 | 預設值 | 說明 |
+|---|---|---|
+| `host` | `'127.0.0.1'` | TWS／IB Gateway 所在主機 |
+| `port` | `7497` | TWS 模擬帳戶為 `7497`、正式帳戶為 `7496`；IB Gateway 以其 API 設定中的連接埠為準 |
+| `clientId` | `1` | 每個連線需使用不同的編號 |
+| `readonly` | `False` | `True` 為唯讀連線，不能下單 |
+
+在 Jupyter 中使用時，先執行 `from ib_async import util; util.startLoop()`。程式中等待請用 `ib.sleep()`，不要用 `time.sleep()`。
+
+!!! note "TWS／IB Gateway 需每日重新啟動"
+    TWS 與 IB Gateway 設計為每日重新啟動，可在設定中開啟自動重啟；每週伺服器重置後需手動重新登入。
+
+## 美股下單
+
+```python
+contract = Stock('AAPL', 'SMART', 'USD')
+ib.qualifyContracts(contract)               # 補齊合約資訊
+
+order = LimitOrder('BUY', 10, 180.0)        # 限價買進 10 股
+trade = ib.placeOrder(contract, order)
+
+while not trade.isDone():
+    ib.sleep(1)
+print(trade.orderStatus.status, trade.orderStatus.avgFillPrice, trade.filled())
+```
+
+| 類別 | 語法 | 說明 |
+|---|---|---|
+| `Stock` | `Stock(symbol, exchange, currency)` | 美股合約，`exchange` 一般用 `'SMART'` |
+| `LimitOrder` | `LimitOrder(action, totalQuantity, lmtPrice)` | 限價單，`action` 為 `'BUY'`／`'SELL'` |
+| `MarketOrder` | `MarketOrder(action, totalQuantity)` | 市價單 |
+
+委託可再指定 `tif`（例如 `'DAY'`、`'GTC'`）與 `outsideRth=True`（盤前盤後），例如 `LimitOrder('BUY', 10, 180.0, tif='GTC')`。
+`placeOrder` 回傳 `Trade` 物件，狀態會隨回報自動更新；`trade.isDone()` 在成交、取消或失效後為 `True`。
+
+## 刪單與查詢
+
+| 方法 | 回傳 | 說明 |
+|---|---|---|
+| `ib.cancelOrder(trade.order)` | `Trade` | 刪單 |
+| `ib.openTrades()` | `list[Trade]` | 未完成的委託 |
+| `ib.fills()` | `list[Fill]` | 本次連線期間的成交 |
+| `ib.positions()` | `list[Position]` | 部位，欄位 `account`、`contract`、`position`、`avgCost` |
+| `ib.portfolio()` | `list[PortfolioItem]` | 部位與市值、未實現損益 |
+| `ib.accountSummary()` | `list[AccountValue]` | 帳戶摘要 |
+
+```python
+for p in ib.positions():
+    print(p.account, p.contract.symbol, p.position, p.avgCost)
+```
+
+## 回報事件
+
+```python
+def on_status(trade):
+    print(trade.contract.symbol, trade.orderStatus.status)
+
+def on_filled(trade):
+    print('成交', trade.contract.symbol, trade.orderStatus.avgFillPrice)
+
+ib.orderStatusEvent += on_status
+trade = ib.placeOrder(contract, MarketOrder('BUY', 1))
+trade.filledEvent += on_filled
+ib.sleep(5)
+```
+
+## 串接 SnowyOwl
+
+以 [下單串接總覽](trade.md) 的美股選股名單 `target`（代號 → 股數）與 `order_diff()`，把部位調整成目標部位：
+
+```python
+current = {p.contract.symbol: int(p.position) for p in ib.positions()
+           if p.contract.secType == 'STK' and p.position != 0}
+
+for symbol, qty in order_diff(target, current).items():
+    contract = Stock(symbol, 'SMART', 'USD')
+    ib.qualifyContracts(contract)
+    trade = ib.placeOrder(contract, MarketOrder('BUY' if qty > 0 else 'SELL', abs(qty)))
+
+ib.sleep(5)
+for t in ib.openTrades():
+    print(t.contract.symbol, t.orderStatus.status)
+ib.disconnect()
+```
+
+!!! note "代號格式"
+    `api.USMSMP` 的股票代號與 IB 的代號在一般股票相同；特別股、多類股等代號格式可能不同，送單前以 `ib.qualifyContracts` 確認合約。
+
+## 相關頁面
+
+- [下單串接總覽](trade.md)：美股訊號、部位差額與 `order_diff()`
+- [美股矩陣資料 USMSMP](usmsmp.md)：美股選股用的矩陣資料
 
 ====================================================================================================
 
