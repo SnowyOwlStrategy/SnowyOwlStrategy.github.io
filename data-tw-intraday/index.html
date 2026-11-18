@@ -991,6 +991,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#取得歷史1分k指定日期前5天" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        取得歷史1分K(指定日期前5天)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2382,6 +2393,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#取得歷史1分k指定日期前5天" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        取得歷史1分K(指定日期前5天)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2489,7 +2511,7 @@
 <tbody>
 <tr>
 <td>個股分 K</td>
-<td><a href="#取得即時分k最後交易日"><code>取得即時分K(最後交易日)</code></a><br><a href="#取得歷史分k指定日期前"><code>取得歷史分K(指定日期前)</code></a><br><a href="#取得歷史3分k指定當日"><code>取得歷史3分K(指定當日)</code></a><br><a href="#取得歷史5分k指定當日"><code>取得歷史5分K(指定當日)</code></a><br><a href="#取得歷史分k含加權櫃買指數"><code>取得歷史分K(含加權/櫃買指數)</code></a></td>
+<td><a href="#取得即時分k最後交易日"><code>取得即時分K(最後交易日)</code></a><br><a href="#取得歷史分k指定日期前"><code>取得歷史分K(指定日期前)</code></a><br><a href="#取得歷史3分k指定當日"><code>取得歷史3分K(指定當日)</code></a><br><a href="#取得歷史5分k指定當日"><code>取得歷史5分K(指定當日)</code></a><br><a href="#取得歷史分k含加權櫃買指數"><code>取得歷史分K(含加權/櫃買指數)</code></a><br><a href="#取得歷史1分k指定日期前5天"><code>取得歷史1分K(指定日期前5天)</code></a></td>
 </tr>
 <tr>
 <td>產業資金流</td>
@@ -2510,12 +2532,12 @@
 <tr>
 <td>表格</td>
 <td><code>取得即時分K(最後交易日)</code>、<code>粗產業多(盤中)</code>、<code>粗產業空(盤中)</code></td>
-<td><code>取得歷史分K(指定日期前)</code>、<code>取得歷史3分K(指定當日)</code>、<code>取得歷史5分K(指定當日)</code>、<code>取得歷史分K(含加權/櫃買指數)</code></td>
+<td><code>取得歷史分K(指定日期前)</code>、<code>取得歷史3分K(指定當日)</code>、<code>取得歷史5分K(指定當日)</code>、<code>取得歷史分K(含加權/櫃買指數)</code>、<code>取得歷史1分K(指定日期前5天)</code></td>
 </tr>
 <tr>
 <td>資料範圍</td>
 <td>只有當天</td>
-<td>指定的日期，或最近約 999 根</td>
+<td>指定的日期、指定日期往前 5 個交易日，或最近約 999 根</td>
 </tr>
 <tr>
 <td>適用</td>
@@ -2539,7 +2561,7 @@
 <h2 id="個股分-k">個股分 K</h2>
 <h3 id="取得即時分k最後交易日">取得即時分K(最後交易日)</h3>
 <p>最後一個交易日的個股分 K（可選分鐘數），附當日累計成交金額、成交量、均價。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;取得即時分K(最後交易日)&#39;</span><span class="p">,</span> <span class="s1">&#39;2330&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;取得即時分K(最後交易日)&#39;</span><span class="p">,</span> <span class="s1">&#39;2330&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
 </span></code></pre></div>
 <table>
 <thead>
@@ -2551,7 +2573,7 @@
 <tbody>
 <tr>
 <td>參數</td>
-<td><code>symbol</code>、minutes(&#8531;/5/15/30/60)</td>
+<td><code>symbol</code>、minutes(15/30/60)</td>
 </tr>
 <tr>
 <td>資料區間</td>
@@ -2564,20 +2586,20 @@
 <p><code>日期</code>、<code>hhmm</code>、<code>開盤價</code>、<code>最高價</code>、<code>最低價</code>、<code>收盤價</code>、<code>成交量</code>、<code>日成交金額(千)</code>、<code>日成交量</code>、<code>日平均價</code>、<code>datetime</code></p>
 </details>
 <div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>            日期 hhmm 開盤價 最高價 最低價 收盤價 成交量 日成交金額(千) 日成交量
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>2026-10-30 00:0… 0905 2380.0 2380.0 2370.0 2375.0 3306.0      7860970.0   3306.0
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>2026-10-30 00:0… 0910 2375.0 2375.0 2360.0 2365.0 1339.0     11030445.0   4645.0
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>2026-10-30 00:0… 0915 2365.0 2370.0 2360.0 2365.0  609.0     12470795.0   5254.0
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>2026-11-18 00:0… 0915 2200.0 2210.0 2175.0 2185.0 8388.0     18403070.0   8388.0
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>2026-11-18 00:0… 0930 2185.0 2195.0 2175.0 2190.0 1262.0     21160740.0   9650.0
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>2026-11-18 00:0… 0945 2190.0 2195.0 2165.0 2175.0 2458.0     26519365.0  12108.0
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>…（另有 2 欄，見欄位清單）
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">說明</p>
 <ul>
-<li><code>minutes</code> 可用 1／3／5／15／30／60；未提供時會出現 <code>ValueError</code> 並顯示正確用法。</li>
+<li><code>minutes</code> 可用 15／30／60；傳入 1／3／5 會出現 <code>ValueError</code>。</li>
 </ul>
 </div>
 <h3 id="取得歷史分k指定日期前">取得歷史分K(指定日期前)</h3>
 <p>指定日期（含）之前的個股分 K（可選分鐘數）。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;取得歷史分K(指定日期前)&#39;</span><span class="p">,</span> <span class="s1">&#39;2330&#39;</span><span class="p">,</span> <span class="s1">&#39;20261029&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;取得歷史分K(指定日期前)&#39;</span><span class="p">,</span> <span class="s1">&#39;2330&#39;</span><span class="p">,</span> <span class="s1">&#39;20261029&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
 </span></code></pre></div>
 <table>
 <thead>
@@ -2589,7 +2611,7 @@
 <tbody>
 <tr>
 <td>參數</td>
-<td><code>symbol</code>、<code>date</code>(yyyyMMdd)、minutes(&#8531;/5/15/30/60)</td>
+<td><code>symbol</code>、<code>date</code>(yyyyMMdd)、minutes(15/30/60)</td>
 </tr>
 <tr>
 <td>資料區間</td>
@@ -2602,15 +2624,15 @@
 <p><code>日期</code>、<code>hhmm</code>、<code>開盤價</code>、<code>最高價</code>、<code>最低價</code>、<code>收盤價</code>、<code>成交量</code>、<code>日成交金額(千)</code>、<code>日成交量</code>、<code>日平均價</code>、<code>datetime</code></p>
 </details>
 <div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>            日期 hhmm 開盤價 最高價 最低價 收盤價 成交量 日成交金額(千) 日成交量
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>2026-10-29 00:0… 0905 2420.0 2425.0 2415.0 2420.0 2478.0      5996210.0   2478.0
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>2026-10-29 00:0… 0910 2415.0 2420.0 2415.0 2420.0  103.0      6245300.0   2581.0
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>2026-10-29 00:0… 0915 2420.0 2420.0 2415.0 2420.0   93.0      6470225.0   2674.0
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>2026-10-29 00:0… 0915 2420.0 2425.0 2415.0 2420.0 2674.0      6470225.0   2674.0
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>2026-10-29 00:0… 0930 2420.0 2425.0 2415.0 2415.0 1026.0      8951510.0   3700.0
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>2026-10-29 00:0… 0945 2420.0 2420.0 2410.0 2415.0  936.0     11211600.0   4636.0
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>…（另有 2 欄，見欄位清單）
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">說明</p>
 <ul>
-<li><code>minutes</code> 可用 1／3／5／15／30／60；未提供時會出現 <code>ValueError</code> 並顯示正確用法。</li>
+<li><code>minutes</code> 可用 15／30／60；傳入 1／3／5 會出現 <code>ValueError</code>。</li>
 </ul>
 </div>
 <h3 id="取得歷史3分k指定當日">取得歷史3分K(指定當日)</h3>
@@ -2677,7 +2699,7 @@
 </span></code></pre></div>
 <h3 id="取得歷史分k含加權櫃買指數">取得歷史分K(含加權/櫃買指數)</h3>
 <p>個股或加權／櫃買指數的近期分 K（可選分鐘數），固定回最近 999 根左右。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;取得歷史分K(含加權/櫃買指數)&#39;</span><span class="p">,</span> <span class="s1">&#39;2330&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;取得歷史分K(含加權/櫃買指數)&#39;</span><span class="p">,</span> <span class="s1">&#39;2330&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
 </span></code></pre></div>
 <table>
 <thead>
@@ -2689,11 +2711,11 @@
 <tbody>
 <tr>
 <td>參數</td>
-<td><code>symbol</code>、minutes(&#8531;/5/15/30/60)</td>
+<td><code>symbol</code>、minutes(15/30/60)</td>
 </tr>
 <tr>
 <td>資料區間</td>
-<td>最近約 999 根（5 分 K 約一個月）</td>
+<td>最近約 999 根（15 分 K 約三個月）</td>
 </tr>
 </tbody>
 </table>
@@ -2702,21 +2724,58 @@
 <p><code>日期</code>、<code>hhmm</code>、<code>開盤價</code>、<code>最高價</code>、<code>最低價</code>、<code>收盤價</code>、<code>成交量</code>、<code>日成交金額(千)</code>、<code>日成交量</code>、<code>日平均價</code>、<code>datetime</code></p>
 </details>
 <div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>            日期 hhmm 開盤價 最高價 最低價 收盤價 成交量 日成交金額(千) 日成交量
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>2026-09-30 00:0… 1240 2505.0 2505.0 2500.0 2500.0  191.0     32907690.0  13161.0
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>2026-09-30 00:0… 1245 2500.0 2505.0 2500.0 2500.0  282.0     33613120.0  13443.0
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>2026-09-30 00:0… 1250 2500.0 2505.0 2500.0 2500.0  274.0     34298545.0  13717.0
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>2026-08-26 00:0… 1115 2410.0 2420.0 2410.0 2420.0 1239.0     22504315.0   9403.0
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>2026-08-26 00:0… 1130 2420.0 2420.0 2415.0 2420.0  876.0     24623790.0  10279.0
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>2026-08-26 00:0… 1145 2420.0 2420.0 2415.0 2420.0  523.0     25888810.0  10802.0
 </span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>…（另有 2 欄，見欄位清單）
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">說明</p>
 <ul>
-<li><code>minutes</code> 可用 1／3／5／15／30／60；未提供時會出現 <code>ValueError</code> 並顯示正確用法。</li>
+<li><code>minutes</code> 可用 15／30／60；傳入 1／3／5 會出現 <code>ValueError</code>。</li>
+</ul>
+</div>
+<h3 id="取得歷史1分k指定日期前5天">取得歷史1分K(指定日期前5天)</h3>
+<p>指定日期（含）往前 5 個交易日的 1 分 K。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;取得歷史1分K(指定日期前5天)&#39;</span><span class="p">,</span> <span class="s1">&#39;2330&#39;</span><span class="p">,</span> <span class="s1">&#39;20261029&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>參數</td>
+<td><code>symbol</code>、<code>endDate</code>(yyyyMMdd)</td>
+</tr>
+<tr>
+<td>資料區間</td>
+<td>指定日期（含）往前 5 個交易日</td>
+</tr>
+</tbody>
+</table>
+<details class="info">
+<summary>欄位（8）</summary>
+<p><code>日期</code>、<code>hhmm</code>、<code>開盤價</code>、<code>最高價</code>、<code>最低價</code>、<code>收盤價</code>、<code>成交量</code>、<code>datetime</code></p>
+</details>
+<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>            日期 hhmm 開盤價 最高價 最低價 收盤價 成交量         datetime
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>2026-10-21 00:0… 0900 2425.0 2430.0 2425.0 2425.0 1748.0 2026-10-21 09:0…
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>2026-10-21 00:0… 0901 2430.0 2430.0 2420.0 2425.0  283.0 2026-10-21 09:0…
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>2026-10-21 00:0… 0902 2425.0 2425.0 2420.0 2425.0   99.0 2026-10-21 09:0…
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">說明</p>
+<ul>
+<li><code>endDate</code> 不是交易日時，取該日之前最近的 5 個交易日。</li>
 </ul>
 </div>
 <h2 id="產業資金流">產業資金流</h2>
 <h3 id="粗產業多盤中">粗產業多(盤中)</h3>
 <p>盤中上漲的粗產業：漲跌幅、淨比、淨流、總市值、市值漲跌幅。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;粗產業多(盤中)&#39;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;粗產業多(盤中)&#39;</span><span class="p">)</span>
 </span></code></pre></div>
 <table>
 <thead>
@@ -2740,10 +2799,10 @@
 <summary>欄位（8）</summary>
 <p><code>市場別</code>、<code>名稱</code>、<code>漲跌</code>、<code>漲跌幅</code>、<code>淨比</code>、<code>淨流</code>、<code>總市值</code>、<code>市值漲跌幅</code></p>
 </details>
-<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>市場別     名稱 漲跌 漲跌幅   淨比    淨流          總市值 市值漲跌幅
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>   TSE     航運 5.91   2.54 24.42% 10.11億 2043963874550.0       1.32
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>   TSE 電信服務 0.64   0.45 13.02%  1.99億 2145692125000.0       0.53
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>   TSE     百貨 2.45   1.53 11.80%  0.84億  817849139410.0        1.3
+<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>市場別     名稱 漲跌 漲跌幅   淨比    淨流          總市值 市值漲跌幅
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>   TSE     航運 5.91   2.54 24.42% 10.11億 2043963874550.0       1.32
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>   TSE 電信服務 0.64   0.45 13.02%  1.99億 2145692125000.0       0.53
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>   TSE     百貨 2.45   1.53 11.80%  0.84億  817849139410.0        1.3
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">說明</p>
@@ -2754,7 +2813,7 @@
 </div>
 <h3 id="粗產業空盤中">粗產業空(盤中)</h3>
 <p>盤中下跌的粗產業：漲跌幅、淨比、淨流、總市值、市值漲跌幅。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;粗產業空(盤中)&#39;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;粗產業空(盤中)&#39;</span><span class="p">)</span>
 </span></code></pre></div>
 <table>
 <thead>
@@ -2778,10 +2837,10 @@
 <summary>欄位（8）</summary>
 <p><code>市場別</code>、<code>名稱</code>、<code>漲跌</code>、<code>漲跌幅</code>、<code>淨比</code>、<code>淨流</code>、<code>總市值</code>、<code>市值漲跌幅</code></p>
 </details>
-<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>市場別       名稱    漲跌 漲跌幅    淨比     淨流          總市值 市值漲跌幅
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>   TSE 電源供應器 -125.54  -9.57 -55.47% -99.57億 4106717157350.0      -9.48
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>   TSE   被動元件  -43.72   -8.9 -37.13% -98.10億 1565168291300.0      -8.74
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>   TSE   PCB-製造  -97.33   -7.1 -14.29% -83.82億 6756684582900.0       -7.1
+<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>市場別       名稱    漲跌 漲跌幅    淨比     淨流          總市值 市值漲跌幅
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>   TSE 電源供應器 -125.54  -9.57 -55.47% -99.57億 4106717157350.0      -9.48
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>   TSE   被動元件  -43.72   -8.9 -37.13% -98.10億 1565168291300.0      -8.74
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>   TSE   PCB-製造  -97.33   -7.1 -14.29% -83.82億 6756684582900.0       -7.1
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">說明</p>
@@ -2791,7 +2850,7 @@
 </div>
 <h3 id="粗產業多空-多">粗產業多空-多</h3>
 <p>上漲的粗產業：漲跌、漲跌幅、淨比、淨流（不分市場）。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;粗產業多空-多&#39;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;粗產業多空-多&#39;</span><span class="p">)</span>
 </span></code></pre></div>
 <table>
 <thead>
@@ -2815,14 +2874,14 @@
 <summary>欄位（5）</summary>
 <p><code>名稱</code>、<code>漲跌</code>、<code>漲跌幅</code>、<code>淨比</code>、<code>淨流</code></p>
 </details>
-<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>    名稱  漲跌 漲跌幅   淨比    淨流
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    航運   5.9   2.53 24.24% 10.06億
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    其他 -2.24  -0.68 35.17%  2.59億
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>電信服務  0.53    0.4 12.45%  1.94億
+<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>    名稱  漲跌 漲跌幅   淨比    淨流
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    航運   5.9   2.53 24.24% 10.06億
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    其他 -2.24  -0.68 35.17%  2.59億
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>電信服務  0.53    0.4 12.45%  1.94億
 </span></code></pre></div>
 <h3 id="粗產業多空-空">粗產業多空-空</h3>
 <p>下跌的粗產業：漲跌、漲跌幅、淨比、淨流（不分市場）。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;粗產業多空-空&#39;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;粗產業多空-空&#39;</span><span class="p">)</span>
 </span></code></pre></div>
 <table>
 <thead>
@@ -2846,14 +2905,14 @@
 <summary>欄位（5）</summary>
 <p><code>名稱</code>、<code>漲跌</code>、<code>漲跌幅</code>、<code>淨比</code>、<code>淨流</code></p>
 </details>
-<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>      名稱    漲跌 漲跌幅    淨比      淨流
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>  PCB-製造 -101.01  -7.38 -16.77% -110.93億
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>  被動元件  -41.23  -8.83 -36.27% -105.93億
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>電源供應器 -124.93  -9.51 -55.14%  -99.46億
+<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>      名稱    漲跌 漲跌幅    淨比      淨流
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>  PCB-製造 -101.01  -7.38 -16.77% -110.93億
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>  被動元件  -41.23  -8.83 -36.27% -105.93億
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>電源供應器 -124.93  -9.51 -55.14%  -99.46億
 </span></code></pre></div>
 <h2 id="相關頁面">相關頁面</h2>
 <ul>
-<li><a href="../data-tw-list/">台股資料一覽</a>：114 張表依用途分類</li>
+<li><a href="../data-tw-list/">台股資料一覽</a>：87 張表依用途分類</li>
 <li><a href="../data-get/">表格查詢 api.Data</a>：<code>get_table()</code> 與 <code>get()</code> 的用法</li>
 <li><a href="../data-history/">資料期間與頻率</a>：各頻率的資料期間</li>
 </ul>

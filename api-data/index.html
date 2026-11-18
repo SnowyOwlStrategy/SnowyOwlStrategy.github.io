@@ -1659,17 +1659,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#get_snapshots" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_snapshots
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2286,17 +2275,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#get_snapshots" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_snapshots
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2374,11 +2352,6 @@
 <td><code>None</code> / <code>dict</code></td>
 <td>列出可用的美股表</td>
 </tr>
-<tr>
-<td><a href="#get_snapshots"><code>get_snapshots(symbols)</code></a></td>
-<td><code>dict</code></td>
-<td>美股即時報價快照（台股沒有）</td>
-</tr>
 </tbody>
 </table>
 <hr />
@@ -2410,11 +2383,11 @@
 </tbody>
 </table>
 <p><strong>回傳</strong>：<code>pandas.DataFrame</code>。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;日_K線資料表&#39;</span><span class="p">,</span> <span class="s1">&#39;2330&#39;</span><span class="p">,</span> <span class="s1">&#39;20261001&#39;</span><span class="p">,</span> <span class="s1">&#39;20261029&#39;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;查詢TOP15主力分點買賣超加總資料(指定起訖日)&#39;</span><span class="p">,</span> <span class="s1">&#39;2330&#39;</span><span class="p">,</span> <span class="s1">&#39;20261001&#39;</span><span class="p">,</span> <span class="s1">&#39;20261029&#39;</span><span class="p">)</span>
 </span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>        日期 股票代號 開盤價 最高價 最低價 收盤價  成交量 成交筆數 次日開盤參考價
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>2026-10-01     2330 2490.0 2510.0 2485.0 2510.0 20666.0  57634.0         2510.0
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>2026-10-02     2330 2505.0 2515.0 2495.0 2500.0 15792.0  65783.0         2500.0
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a> 買賣超排名  券商代號 券商名稱       買(張)     賣(張)    買賣超(張)   買賣總和(張)  買入金額(百萬)
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>     1   9A00 永豐金  永豐金 21228.3380 6205.0200 15023.3180 27433.3580 52125.0786
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>     2   9100 群益   群益 10467.8520 1519.6580  8948.1940 11987.5100 25777.2253
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>...
 </span></code></pre></div>
 <div class="admonition note">
@@ -2446,31 +2419,10 @@
 <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">t</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get_table</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;dic&#39;</span><span class="p">)</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">sec</span> <span class="ow">in</span> <span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">sec</span><span class="p">]</span>     <span class="c1"># 全部表名</span>
 </span></code></pre></div>
-<h3 id="get_snapshots">get_snapshots</h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">api</span><span class="o">.</span><span class="n">USData</span><span class="o">.</span><span class="n">get_snapshots</span><span class="p">(</span><span class="n">symbols</span><span class="p">)</span>
-</span></code></pre></div>
-<p>美股即時報價快照，一次查多檔。<strong>只有 <code>api.USData</code> 有</strong>。</p>
-<table>
-<thead>
-<tr>
-<th>參數</th>
-<th>型別</th>
-<th>說明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>symbols</code></td>
-<td><code>list[str]</code></td>
-<td>美股代號，例如 <code>['AAPL', 'MSFT']</code></td>
-</tr>
-</tbody>
-</table>
-<p><strong>回傳</strong>：<code>dict[str, Symbol]</code>，每檔一個物件，含 <code>open</code>／<code>high</code>／<code>low</code>／<code>close</code>／<code>volume</code>／<code>previousClose</code>／<code>netChange</code>／<code>percentChange</code>／<code>timestamp</code>。</p>
 <p>詳細說明：<a href="../data/">資料總覽</a>、<a href="../data-get/">表格查詢 api.Data</a>、<a href="../usdata/">美股資料 api.USData</a></p>
 <hr />
 <h2 id="apiusdata">api.USData</h2>
-<p>美股表格查詢，用法與 <code>api.Data</code> 相同，另有 <a href="#get_snapshots"><code>get_snapshots</code></a>。可用的表見 <a href="../usdata/">美股資料 api.USData</a>。</p>
+<p>美股表格查詢，用法與 <code>api.Data</code> 相同。可用的表見 <a href="../usdata/">美股資料 api.USData</a>。</p>
 <p class="sw-verified">最後驗證：2026-10-30</p>
 
 

@@ -1176,56 +1176,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#get_snapshots" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_snapshots
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="get_snapshots">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#參數" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        參數
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#回傳" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        回傳
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#範例_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        範例
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#錯誤處理" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2508,56 +2458,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#get_snapshots" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_snapshots
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="get_snapshots">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#參數" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        參數
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#回傳" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        回傳
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#範例_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        範例
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#錯誤處理" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2597,7 +2497,7 @@
 
 
 <h1 id="美股資料-apiusdata">美股資料 api.USData</h1>
-<p><code>api.USData</code> 以表格形式查詢美股資料：一次取一張表，回傳 <code>pandas.DataFrame</code>。另提供 <code>get_snapshots()</code> 取得即時報價快照。
+<p><code>api.USData</code> 以表格形式查詢美股資料：一次取一張表，回傳 <code>pandas.DataFrame</code>。
 適合查單一標的的完整財報、分 K 與明細；跨全市場的運算與選股用 <a href="../usmsmp/">美股矩陣資料 USMSMP</a>。</p>
 <table>
 <thead>
@@ -2628,7 +2528,6 @@
 <h2 id="語法">語法</h2>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">api</span><span class="o">.</span><span class="n">USData</span><span class="o">.</span><span class="n">get_table</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;print&#39;</span><span class="p">)</span>   <span class="c1"># 列出所有表名與參數</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">api</span><span class="o">.</span><span class="n">USData</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>         <span class="c1"># 取一張表，回傳 DataFrame</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">api</span><span class="o">.</span><span class="n">USData</span><span class="o">.</span><span class="n">get_snapshots</span><span class="p">(</span><span class="n">symbols</span><span class="p">)</span>    <span class="c1"># 即時快照，回傳 dict[str, Symbol]</span>
 </span></code></pre></div>
 <p><code>get_table()</code> 與 <code>get()</code> 的參數與回傳和台股相同，見 <a href="../data-get/">表格查詢 api.Data</a>。<code>get()</code> 沒有關鍵字參數，全部依 <code>get_table()</code> 標示的順序以位置傳入。</p>
 <div class="admonition note">
@@ -2778,8 +2677,8 @@
 <td>(946, 8)</td>
 </tr>
 <tr>
-<td><code>取得歷史1/3/5/15/30/60分K</code></td>
-<td><code>symbol</code>、<code>minutes</code>（1／3／5／15／30／60）</td>
+<td><code>取得歷史分K</code></td>
+<td><code>symbol</code>、<code>minutes</code>（15／30／60）</td>
 <td>(999, 8)</td>
 </tr>
 </tbody>
@@ -2828,16 +2727,21 @@
 </span></code></pre></div>
 <p>固定回傳最近 1000 個交易日，由舊到新排序。<code>5～250日均價</code> 與 <code>5～250日均量</code> 已計算好，不需另取技術指標表。</p>
 <h3 id="分-k">分 K</h3>
-<p>指定分鐘數：</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">USData</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;取得歷史1/3/5/15/30/60分K&#39;</span><span class="p">,</span> <span class="s1">&#39;NVDA&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<p>指定分鐘數（15／30／60）：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">USData</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;取得歷史分K&#39;</span><span class="p">,</span> <span class="s1">&#39;NVDA&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </span></code></pre></div>
 <div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>(999, 8)
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>  股票代號         日期  hhmm      開盤價      最高價      最低價      收盤價     成交量
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>0  NVDA 2026-08-04  1050 210.1300 211.0399 209.9900 210.9200 1593932
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>1  NVDA 2026-08-04  1055 210.9025 211.0200 209.3545 209.5950 1982633
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>0  NVDA 2026-09-24  1330 224.4600 224.5599 223.7600 224.1300 1708172
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>1  NVDA 2026-09-24  1345 224.1150 224.3900 223.5700 223.5801 1843380
 </span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">30 分鐘延遲</p>
+<p><code>取得歷史分K</code>、<code>取得全天含盤前盤後歷史分k(最後交易日)</code>、<code>批次取得個股盤中多筆分K</code> 以美東時間計算，最新 30 分鐘內的 K 棒不會回傳。
+<code>取得指定日期前幾天的分價量歷史資料</code> 只有日期，美東當天的資料在當天 20:30 之後才回傳。</p>
+</div>
 <p>含盤前盤後（最後一個交易日，<code>market</code> 指定盤別）：</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">USData</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;取得全天含盤前盤後歷史分k(最後交易日)&#39;</span><span class="p">,</span> <span class="s1">&#39;AAPL&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">)</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -2919,94 +2823,6 @@
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">ind</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">USData</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;美股產業對照表&#39;</span><span class="p">)</span>
 </span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">m</span> <span class="o">=</span> <span class="n">flow</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">ind</span><span class="p">[[</span><span class="s1">&#39;股票代號&#39;</span><span class="p">,</span> <span class="s1">&#39;細產業名稱&#39;</span><span class="p">,</span> <span class="s1">&#39;市值(美元)&#39;</span><span class="p">]],</span>
 </span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>               <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;產業名稱&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;細產業名稱&#39;</span><span class="p">)</span>
-</span></code></pre></div>
-<h2 id="get_snapshots">get_snapshots</h2>
-<p>取得一批美股的即時報價快照，為一次性查詢。台股 <code>api.Data</code> 沒有這個方法；台股盤中資料用分 K 與逐筆查詢，見 <a href="../data-tw-intraday/">盤中與分 K</a>。</p>
-<h3 id="參數">參數</h3>
-<table>
-<thead>
-<tr>
-<th>參數</th>
-<th>型別</th>
-<th>說明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>symbols</code></td>
-<td><code>list[str]</code></td>
-<td>美股代號清單，例：<code>['AAPL', 'MSFT']</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="回傳">回傳</h3>
-<p><code>dict[str, Symbol]</code>，key 是股票代號。<code>Symbol</code> 是 dataclass，有 9 個欄位：</p>
-<table>
-<thead>
-<tr>
-<th>欄位</th>
-<th>型別</th>
-<th>說明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>timestamp</code></td>
-<td><code>str</code></td>
-<td>報價時間，17 位字串 <code>yyyyMMddHHmmssSSS</code>（毫秒）</td>
-</tr>
-<tr>
-<td><code>open</code>／<code>high</code>／<code>low</code>／<code>close</code></td>
-<td><code>float</code></td>
-<td>當日開／高／低／最新價</td>
-</tr>
-<tr>
-<td><code>volume</code></td>
-<td><code>int</code></td>
-<td>當日累計成交量（股）</td>
-</tr>
-<tr>
-<td><code>previousClose</code></td>
-<td><code>float</code></td>
-<td>前一交易日收盤價</td>
-</tr>
-<tr>
-<td><code>netChange</code></td>
-<td><code>float</code></td>
-<td>漲跌（相對前一交易日收盤）</td>
-</tr>
-<tr>
-<td><code>percentChange</code></td>
-<td><code>float</code></td>
-<td>漲跌幅（%）</td>
-</tr>
-</tbody>
-</table>
-<p><code>Symbol</code> 不含五檔買賣價量與漲跌停價。盤後執行時取得的是收盤時的最後一筆快照，<code>timestamp</code> 停在收盤時間（例：<code>160000000</code> 為 16:00）。</p>
-<h3 id="範例_1">範例</h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">s</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">USData</span><span class="o">.</span><span class="n">get_snapshots</span><span class="p">([</span><span class="s1">&#39;AAPL&#39;</span><span class="p">,</span> <span class="s1">&#39;MSFT&#39;</span><span class="p">])</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">),</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">s</span><span class="p">[</span><span class="s1">&#39;AAPL&#39;</span><span class="p">]</span>
-</span></code></pre></div>
-<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>dict 2 [&#39;AAPL&#39;, &#39;MSFT&#39;]
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>Symbol(timestamp=&#39;20260910160000000&#39;, open=316.67, high=326.74, low=316.51,
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>       close=326.57, volume=70011913, previousClose=315.34,
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>       netChange=11.23, percentChange=3.56)
-</span></code></pre></div>
-<p>以 <code>dataclasses.asdict()</code> 轉為 <code>dict</code>：</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">asdict</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">asdict</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;AAPL&#39;</span><span class="p">])</span>
-</span></code></pre></div>
-<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>{&#39;timestamp&#39;: &#39;20260910160000000&#39;, &#39;open&#39;: 316.67, &#39;high&#39;: 326.74,
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a> &#39;low&#39;: 316.51, &#39;close&#39;: 326.57, &#39;volume&#39;: 70011913,
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a> &#39;previousClose&#39;: 315.34, &#39;netChange&#39;: 11.23, &#39;percentChange&#39;: 3.56}
-</span></code></pre></div>
-<p>直接讀取漲跌與漲跌幅：</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">d</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="s1">&#39;AAPL&#39;</span><span class="p">]</span>
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">d</span><span class="o">.</span><span class="n">netChange</span><span class="si">:</span><span class="s2">+.2f</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">d</span><span class="o">.</span><span class="n">percentChange</span><span class="si">:</span><span class="s2">+.2f</span><span class="si">}</span><span class="s2">%)&quot;</span><span class="p">)</span>
-</span></code></pre></div>
-<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>+11.23 (+3.56%)
 </span></code></pre></div>
 <h2 id="錯誤處理">錯誤處理</h2>
 <table>

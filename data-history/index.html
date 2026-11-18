@@ -2408,20 +2408,6 @@
 </tr>
 <tr>
 <td>日</td>
-<td><code>Data.get('日_K線資料表', s, start, end)</code></td>
-<td>4,121</td>
-<td>2010-01-04 ～</td>
-<td>16.8</td>
-</tr>
-<tr>
-<td>日</td>
-<td><code>Data.get('日_還原K資料表', s, start, end)</code></td>
-<td>5,862</td>
-<td>2003-01-02 ～</td>
-<td>23.8</td>
-</tr>
-<tr>
-<td>日</td>
 <td><code>Data.get('日K/技術指標/價量資料-單檔股票多個區間', s)</code></td>
 <td>1000（固定）</td>
 <td>2022-09-12 ～</td>
@@ -2443,13 +2429,6 @@
 </tr>
 <tr>
 <td>週</td>
-<td><code>Data.get('週_還原K線資料表', s)</code></td>
-<td>868</td>
-<td>2010-01-08 ～</td>
-<td>16.8</td>
-</tr>
-<tr>
-<td>週</td>
 <td><code>Data.get('還原週K價量資料(個股、ETF、大盤)-單檔股票多個區間', s)</code></td>
 <td>765</td>
 <td>2012-01-06 ～</td>
@@ -2461,13 +2440,6 @@
 <td>72</td>
 <td>2020-11-30 ～</td>
 <td>5.9</td>
-</tr>
-<tr>
-<td>月</td>
-<td><code>Data.get('月_還原K線資料表', s)</code></td>
-<td>202</td>
-<td>2010-01 ～</td>
-<td>16.8</td>
 </tr>
 <tr>
 <td>月</td>
@@ -2485,9 +2457,9 @@
 </tr>
 <tr>
 <td>月營收</td>
-<td><code>Data.get('月_營收資料表', s)</code></td>
+<td><code>Data.get('月營收/月增率/年增率-個股多期', s)</code></td>
 <td>201</td>
-<td>2010-01 ～ 2026-09</td>
+<td>2010-M01 ～ 2026-M09</td>
 <td>16.7</td>
 </tr>
 <tr>
@@ -2499,10 +2471,17 @@
 </tr>
 <tr>
 <td>季財報</td>
-<td><code>Data.get('季_綜合損益表', s)</code>（資產負債、現金流量、財務比率相同）</td>
-<td>66</td>
-<td>2010-Q1 ～ 2026-Q2</td>
-<td>16.5</td>
+<td><code>Data.get('季稅後淨利/季稅後EPS-單檔股票多個區間', s)</code></td>
+<td>58</td>
+<td>2012-Q1 ～ 2026-Q2</td>
+<td>14.5</td>
+</tr>
+<tr>
+<td>季財報</td>
+<td><code>Data.get('個股季財報資訊-單檔股票多個區間', s)</code></td>
+<td>46</td>
+<td>2015-Q1 ～ 2026-Q2</td>
+<td>11.5</td>
 </tr>
 <tr>
 <td>年股利</td>
@@ -2513,10 +2492,10 @@
 </tr>
 <tr>
 <td>年股利</td>
-<td><code>Data.get('季_個股除權息資料表', s)</code></td>
-<td>27</td>
-<td>2000 ～ 2026</td>
-<td>27</td>
+<td><code>Data.get('個股股利資訊(年)-單檔股票多個區間', s)</code></td>
+<td>15</td>
+<td>2012 ～ 2026</td>
+<td>15</td>
 </tr>
 <tr>
 <td>期貨 1 分</td>
@@ -2550,7 +2529,7 @@
 </table>
 <p>各 <code>api.Data</code> 表的資料區間見 <a href="../data-tw-price/">價量與 K 線</a>、<a href="../data-tw-fundamental/">基本面</a>、<a href="../data-tw-futures/">期貨</a> 等分類頁。</p>
 <h2 id="近-n-年該用哪張表">「近 N 年」該用哪張表</h2>
-<p>單一股票的長期歷史用 <code>api.Data</code> 依起訖日的表；全市場的矩陣用 <code>api.MSMP</code>。</p>
+<p>單一股票的長期歷史用 <code>api.Data</code> 的週、月、季頻表（一次回傳全部歷史）；全市場的矩陣用 <code>api.MSMP</code>。</p>
 <table>
 <thead>
 <tr>
@@ -2571,13 +2550,13 @@
 <td><code>MSMP.日_*</code>（2.1 年）</td>
 </tr>
 <tr>
-<td>近三年～近五年</td>
-<td><code>Data.get('日_還原K資料表', s, start, end)</code>（2003 起）</td>
+<td>近三年～近四年</td>
+<td><code>Data</code> 日頻（固定最新 1000 筆，約 4 年）</td>
 <td><code>MSMP.週_K</code>／<code>月_K</code>（約 6 年）、<code>MSMP.季財報_*</code>（2020-Q4 起）</td>
 </tr>
 <tr>
-<td>近十年以上</td>
-<td><code>日_</code>／<code>週_</code>／<code>月_</code>／<code>季_</code> 開頭的表（2010 起）</td>
+<td>近五年以上</td>
+<td>還原週 K／還原月 K（2012 起）、<code>月營收/月增率/年增率-個股多期</code>（2010 起）、季財報與股利表（2012 起）</td>
 <td>無；<code>MSMP.月_營收</code> 最長（2018-M05 起）</td>
 </tr>
 <tr>
@@ -2593,9 +2572,9 @@
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># MSMP 日頻約 2 年</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">MSMP</span><span class="o">.</span><span class="n">日_K</span><span class="o">.</span><span class="n">adj_Close</span><span class="p">)[</span><span class="s1">&#39;2330&#39;</span><span class="p">]</span>     <span class="c1"># 500 筆，2024-09-26 起</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># 單一股票：Data 依起訖日的還原日 K</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">d</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;日_還原K資料表&#39;</span><span class="p">,</span> <span class="s1">&#39;2330&#39;</span><span class="p">,</span> <span class="s1">&#39;20211029&#39;</span><span class="p">,</span> <span class="s1">&#39;20261029&#39;</span><span class="p">)</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">),</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;日期&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>                           <span class="c1"># 使用前確認長度</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># 單一股票：Data 的還原週 K 一次回傳全部歷史，再取近五年</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">d</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;還原週K價量資料(個股、ETF、大盤)-單檔股票多個區間&#39;</span><span class="p">,</span> <span class="s1">&#39;2330&#39;</span><span class="p">)</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">d</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;日期&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="s1">&#39;2021-10-29&#39;</span><span class="p">]</span>                   <span class="c1"># 765 筆，2012-01-06 起</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># 全市場：MSMP 週 K 約 6 年</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">w</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">MSMP</span><span class="o">.</span><span class="n">週_K</span><span class="o">.</span><span class="n">adj_Close</span><span class="p">)</span>          <span class="c1"># 307 筆，2020-11-06 起</span>
@@ -2780,7 +2759,7 @@
 </table>
 <h2 id="相關頁面">相關頁面</h2>
 <ul>
-<li><a href="../data-tw-list/">台股資料一覽</a>：台股 114 張表的資料區間與欄位</li>
+<li><a href="../data-tw-list/">台股資料一覽</a>：台股 87 張表的資料區間與欄位</li>
 <li><a href="../msmp-tables/">MSMP 資料表與欄位</a>：台股 25 張、美股 10 張矩陣表</li>
 <li><a href="../usmsmp/">美股矩陣資料 USMSMP</a>：美股各表的期間與覆蓋檔數</li>
 <li><a href="../backtest-data/">資料與週期</a>：<code>bt.Tools.get_fut_ohlc</code></li>

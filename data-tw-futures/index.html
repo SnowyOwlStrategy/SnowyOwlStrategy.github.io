@@ -1187,17 +1187,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#依方案提供的表" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        依方案提供的表
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#相關頁面" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2606,17 +2595,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#依方案提供的表" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        依方案提供的表
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#相關頁面" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2990,7 +2968,7 @@
 </span></code></pre></div>
 <h3 id="取得台指近日盤歷史分k">取得台指近日盤歷史分K</h3>
 <p>台指期近期日盤分 K（可選分鐘數）。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;取得台指近日盤歷史分K&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;取得台指近日盤歷史分K&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
 </span></code></pre></div>
 <table>
 <thead>
@@ -3002,7 +2980,7 @@
 <tbody>
 <tr>
 <td>參數</td>
-<td>minutes(&#8531;/5/15/30/60)</td>
+<td>minutes(15/30/60)</td>
 </tr>
 <tr>
 <td>資料區間</td>
@@ -3015,19 +2993,19 @@
 <p><code>日期</code>、<code>hhmm</code>、<code>開盤價</code>、<code>最高價</code>、<code>最低價</code>、<code>收盤價</code>、<code>成交量</code>、<code>datetime</code></p>
 </details>
 <div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>            日期 hhmm  開盤價  最高價  最低價  收盤價 成交量         datetime
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>2026-10-02 00:0… 1155 48658.0 48708.0 48657.0 48703.0  284.0 2026-10-02 11:5…
-</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>2026-10-02 00:0… 1200 48703.0 48712.0 48684.0 48709.0  278.0 2026-10-02 12:0…
-</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>2026-10-02 00:0… 1205 48709.0 48740.0 48706.0 48732.0  585.0 2026-10-02 12:0…
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>2026-09-02 00:0… 1315 46240.0 46242.0 46164.0 46227.0 1682.0 2026-09-02 13:1…
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>2026-09-02 00:0… 1330 46227.0 46267.0 46177.0 46212.0 3105.0 2026-09-02 13:3…
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>2026-09-02 00:0… 1345 46215.0 46229.0 46131.0 46189.0 5179.0 2026-09-02 13:4…
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">說明</p>
 <ul>
-<li><code>minutes</code> 可用 1／3／5／15／30／60；未提供時會出現 <code>ValueError</code> 並顯示正確用法。</li>
+<li><code>minutes</code> 可用 15／30／60；傳入 1／3／5 會出現 <code>ValueError</code>。</li>
 </ul>
 </div>
 <h3 id="取得台指近夜盤歷史分k">取得台指近夜盤歷史分K</h3>
 <p>台指期近期夜盤分 K（可選分鐘數）。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;取得台指近夜盤歷史分K&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;取得台指近夜盤歷史分K&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
 </span></code></pre></div>
 <table>
 <thead>
@@ -3039,7 +3017,7 @@
 <tbody>
 <tr>
 <td>參數</td>
-<td>minutes(&#8531;/5/15/30/60)</td>
+<td>minutes(15/30/60)</td>
 </tr>
 <tr>
 <td>資料區間</td>
@@ -3052,14 +3030,14 @@
 <p><code>日期</code>、<code>hhmm</code>、<code>開盤價</code>、<code>最高價</code>、<code>最低價</code>、<code>收盤價</code>、<code>成交量</code>、<code>datetime</code></p>
 </details>
 <div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>            日期 hhmm  開盤價  最高價  最低價  收盤價 成交量         datetime
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>2026-10-20 00:0… 1550 46388.0 46397.0 46365.0 46365.0  120.0 2026-10-20 15:5…
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>2026-10-20 00:0… 1555 46362.0 46370.0 46347.0 46360.0  118.0 2026-10-20 15:5…
-</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>2026-10-20 00:0… 1600 46350.0 46380.0 46302.0 46379.0  186.0 2026-10-20 16:0…
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>2026-10-21 00:0… 1730 47198.0 47218.0 47147.0 47214.0  441.0 2026-10-21 17:3…
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>2026-10-21 00:0… 1745 47217.0 47274.0 47217.0 47239.0  568.0 2026-10-21 17:4…
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>2026-10-21 00:0… 1800 47241.0 47245.0 47171.0 47197.0  380.0 2026-10-21 18:0…
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">說明</p>
 <ul>
-<li><code>minutes</code> 可用 1／3／5／15／30／60；未提供時會出現 <code>ValueError</code> 並顯示正確用法。</li>
+<li><code>minutes</code> 可用 15／30／60；傳入 1／3／5 會出現 <code>ValueError</code>。</li>
 </ul>
 </div>
 <h2 id="籌碼">籌碼</h2>
@@ -3105,12 +3083,9 @@
 <li>第二個參數是法人別：1＝自營商、2＝投信、3＝外資。</li>
 </ul>
 </div>
-<h2 id="依方案提供的表">依方案提供的表</h2>
-<p><code>取得期貨日盤1分K(指定起訖日)</code>、<code>取得期貨夜盤1分K(指定起訖日)</code>、<code>批次取得商品日盤當前成交</code> 依帳號方案提供，
-能否使用以 <code>api.Data.get_table()</code> 的輸出為準。</p>
 <h2 id="相關頁面">相關頁面</h2>
 <ul>
-<li><a href="../data-tw-list/">台股資料一覽</a>：114 張表依用途分類</li>
+<li><a href="../data-tw-list/">台股資料一覽</a>：87 張表依用途分類</li>
 <li><a href="../data-get/">表格查詢 api.Data</a>：<code>get_table()</code> 與 <code>get()</code> 的用法</li>
 <li><a href="../data-history/">資料期間與頻率</a>：各頻率的資料期間</li>
 </ul>

@@ -7,18 +7,18 @@ description: |
   歷史與矩陣資料：api.MSMP／api.USMSMP、日_K／週_K／月_K、adj 還原股價、漲跌幅、
   成交量／成交額、市值。
   表格查詢：api.Data／api.USData、get(table)、get_table(type=dic)、清單／分K、
-  台股 114 張表依用途分類（價量、籌碼、基本面、盤中、分點、期貨、清單與事件）。
+  台股 87 張表依用途分類（價量、籌碼、基本面、盤中、分點、期貨、清單與事件）。
   基本面：月營收、季財報、EPS、本益比 PER、ROE、毛利率、股利。
   籌碼：三大法人、外資／投信／自營、融資融券、八大行庫、券商分點、大戶持股、籌碼集中度。
   技術面：均線、MACD、RSI、KD、布林、突破。
-  盤中資料：分K、美股即時快照 api.USData.get_snapshots。
+  盤中資料：台股與美股分K（30 分鐘延遲）、盤中表。
   回測：api.bt、backtest、事件式策略、進出場、停損停利、部位大小、績效 KPI。
   台指期：MSMP._fut_TXF、期貨 1 分 K。
 ---
 > **這份 skill 需要本機已安裝 snowyowl 套件**：
 >
 > ```bash
-> pip install git+https://github.com/SnowyOwlStrategy/SnowyOwl.git
+> pip install SnowyOwlStrategy
 > ```
 >
 > 它教 AI 怎麼寫 snowyowl 的 Python，不是自己去打 API——沒裝套件的話

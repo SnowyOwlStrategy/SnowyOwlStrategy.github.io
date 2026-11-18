@@ -2452,8 +2452,8 @@
 </tr>
 <tr>
 <td><code>api.Data</code>／<code>api.USData</code></td>
-<td>表格式查詢，一次取一張表。台股 114 張（2026-10-29）、美股 25 張</td>
-<td><code>get()</code>、<code>get_table()</code>；美股另有 <code>get_snapshots()</code></td>
+<td>表格式查詢，一次取一張表。台股 87 張、美股 25 張</td>
+<td><code>get()</code>、<code>get_table()</code></td>
 <td><a href="../data-get/">表格查詢 api.Data</a>、<a href="../data-tw-list/">台股資料一覽</a>、<a href="../usdata/">美股資料 api.USData</a></td>
 </tr>
 <tr>
@@ -2505,7 +2505,7 @@
 <li>海外期貨。期貨資料只有台指期（TXF），見 <a href="../data-tw-futures/">期貨</a>。</li>
 </ul>
 <p>SnowyOwl 不提供即時行情訂閱，也不提供下單與帳務功能。盤中資料以查詢方式取得：
-台股以 <code>api.Data.get()</code> 查詢分 K 表（見 <a href="../data-tw-intraday/">盤中與分 K</a>），美股以 <code>api.USData.get_snapshots()</code> 取得即時快照（見 <a href="../usdata/">美股資料 api.USData</a>）。</p>
+台股以 <code>api.Data.get()</code> 查詢分 K 表（見 <a href="../data-tw-intraday/">盤中與分 K</a>），美股以 <code>api.USData.get()</code> 查詢分 K 與盤中表（見 <a href="../usdata/">美股資料 api.USData</a>）。</p>
 <h2 id="下一步">下一步</h2>
 <table>
 <thead>

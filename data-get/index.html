@@ -2586,11 +2586,8 @@
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get_table</span><span class="p">()</span>                       <span class="c1"># 印出（回傳 None）</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">t</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get_table</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;dic&#39;</span><span class="p">)</span>         <span class="c1"># 回傳 {分段: {表名: 參數}}</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">sec</span> <span class="ow">in</span> <span class="n">t</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">sec</span><span class="p">]</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
 </span></code></pre></div>
-<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>114
-</span></code></pre></div>
-<p>可用的表依帳號方案而定，上例為 2026-10-29 的台股結果。每張表的用途、資料區間與欄位見 <a href="../data-tw-list/">台股資料一覽</a>。</p>
+<p>可用的表依帳號方案而定，以 <code>get_table()</code> 列出的為準；方案內的台股表共 87 張。每張表的用途、資料區間與欄位見 <a href="../data-tw-list/">台股資料一覽</a>。</p>
 <h3 id="參數標記">參數標記</h3>
 <p><code>get_table()</code> 以下列標記表示每張表需要的參數，<code>get()</code> 依標記的順序傳入：</p>
 <table>
@@ -2615,7 +2612,7 @@
 <tr>
 <td><code>"symbol" ,"startDate"(yyyyMMdd) ,"endDate"(yyyyMMdd)</code></td>
 <td>代號、起訖日（包含頭尾）</td>
-<td><code>api.Data.get('日_K線資料表', '2330', '20261001', '20261029')</code></td>
+<td><code>api.Data.get('查詢TOP15主力分點買賣超加總資料(指定起訖日)', '2330', '20261001', '20261029')</code></td>
 </tr>
 <tr>
 <td><code>"date"(yyyyMMdd)</code></td>
@@ -2623,9 +2620,9 @@
 <td><code>api.Data.get('成交金額及股本-多檔股票指定時間', '20261029')</code></td>
 </tr>
 <tr>
-<td><code>"symbol" ,minutes(1/3/5/15/30/60)</code></td>
+<td><code>"symbol" ,minutes(15/30/60)</code></td>
 <td>代號、分鐘數</td>
-<td><code>api.Data.get('取得歷史分K(含加權/櫃買指數)', '2330', 5)</code></td>
+<td><code>api.Data.get('取得歷史分K(含加權/櫃買指數)', '2330', 15)</code></td>
 </tr>
 <tr>
 <td><code>List[symbol、...]</code></td>
@@ -2667,57 +2664,57 @@
 </div>
 <h2 id="範例_1">範例</h2>
 <h3 id="不需要參數的表">不需要參數的表</h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;上市櫃/ETF清單(含當沖限制)&#39;</span><span class="p">)</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;上市櫃/ETF清單(含當沖限制)&#39;</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </span></code></pre></div>
-<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>DataFrame shape: (2728, 8)
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>columns: [&#39;股票代號&#39;, &#39;股票名稱&#39;, &#39;日期&#39;, &#39;市場&#39;, &#39;ETF&#39;, &#39;可先買後賣當沖標的&#39;, &#39;可先賣後買當沖標的&#39;, &#39;當日禁止當沖標的&#39;]
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>     股票代號      股票名稱         日期 市場 ETF 可先買後賣當沖標的 可先賣後買當沖標的 當日禁止當沖標的
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>0  00400A  主動國泰動能高息 2026-08-20  1   1         Y         Y
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>1  00401A  主動摩根台灣鑫收 2026-08-20  1   1         Y         Y
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>2  00402A  主動安聯美國科技 2026-08-20  1   1         Y         Y
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>3  00403A  主動統一升級50 2026-08-20  1   1         Y         Y
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>4  00404A  主動聯博動能50 2026-08-20  1   1         Y         Y
+<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>DataFrame shape: (2728, 8)
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>columns: [&#39;股票代號&#39;, &#39;股票名稱&#39;, &#39;日期&#39;, &#39;市場&#39;, &#39;ETF&#39;, &#39;可先買後賣當沖標的&#39;, &#39;可先賣後買當沖標的&#39;, &#39;當日禁止當沖標的&#39;]
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>     股票代號      股票名稱         日期 市場 ETF 可先買後賣當沖標的 可先賣後買當沖標的 當日禁止當沖標的
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>0  00400A  主動國泰動能高息 2026-08-20  1   1         Y         Y
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>1  00401A  主動摩根台灣鑫收 2026-08-20  1   1         Y         Y
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>2  00402A  主動安聯美國科技 2026-08-20  1   1         Y         Y
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>3  00403A  主動統一升級50 2026-08-20  1   1         Y         Y
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>4  00404A  主動聯博動能50 2026-08-20  1   1         Y         Y
 </span></code></pre></div>
 <p><code>市場</code> 與 <code>ETF</code> 是代碼欄（<code>1</code> 代表屬於該分類），不是中文標籤。</p>
 <h3 id="單一股票的還原日-k">單一股票的還原日 K</h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;還原日K價量資料(個股、ETF、大盤)-單檔股票多個區間&#39;</span><span class="p">,</span> <span class="s1">&#39;2330&#39;</span><span class="p">)</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;還原日K價量資料(個股、ETF、大盤)-單檔股票多個區間&#39;</span><span class="p">,</span> <span class="s1">&#39;2330&#39;</span><span class="p">)</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </span></code></pre></div>
-<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>DataFrame shape: (1000, 14)
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>columns: [&#39;日期&#39;, &#39;股票代號&#39;, &#39;股票名稱&#39;, &#39;開盤價&#39;, &#39;最高價&#39;, &#39;最低價&#39;, &#39;收盤價&#39;, &#39;成交量&#39;,
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>          &#39;漲跌&#39;, &#39;漲跌幅(%)&#39;, &#39;市值(百萬元)&#39;, &#39;次日開盤參考價&#39;, &#39;成交金額(百萬)&#39;, &#39;現股當沖量(千股)&#39;]
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>            日期  股票代號 股票名稱   開盤價   最高價   最低價   收盤價         成交量  漲跌  漲跌幅(%)   市值(百萬元)  次日開盤參考價
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>997 2026-08-17  2330  台積電  2410  2420  2390  2400  13482.4560   5   0.2100  62237688     2400
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>998 2026-08-18  2330  台積電  2415  2415  2375  2380  19997.2130 -20  -0.8300  61719041     2380
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>999 2026-08-19  2330  台積電  2340  2355  2335  2350  23618.6120 -30  -1.2600  60941070     2350
+<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>DataFrame shape: (1000, 14)
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>columns: [&#39;日期&#39;, &#39;股票代號&#39;, &#39;股票名稱&#39;, &#39;開盤價&#39;, &#39;最高價&#39;, &#39;最低價&#39;, &#39;收盤價&#39;, &#39;成交量&#39;,
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>          &#39;漲跌&#39;, &#39;漲跌幅(%)&#39;, &#39;市值(百萬元)&#39;, &#39;次日開盤參考價&#39;, &#39;成交金額(百萬)&#39;, &#39;現股當沖量(千股)&#39;]
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>            日期  股票代號 股票名稱   開盤價   最高價   最低價   收盤價         成交量  漲跌  漲跌幅(%)   市值(百萬元)  次日開盤參考價
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>997 2026-08-17  2330  台積電  2410  2420  2390  2400  13482.4560   5   0.2100  62237688     2400
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>998 2026-08-18  2330  台積電  2415  2415  2375  2380  19997.2130 -20  -0.8300  61719041     2380
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>999 2026-08-19  2330  台積電  2340  2355  2335  2350  23618.6120 -30  -1.2600  60941070     2350
 </span></code></pre></div>
-<p>這張表固定回傳最新 1000 筆，起點隨時間往後移。要指定期間或更長的歷史，改用依起訖日回傳的 <code>日_還原K資料表</code>，見 <a href="../data-history/">資料期間與頻率</a>。</p>
+<p>這張表固定回傳最新 1000 筆，起點隨時間往後移。要更長的歷史，改用週頻或月頻的還原 K（2012 起），見 <a href="../data-history/">資料期間與頻率</a>。</p>
 <h3 id="個股季財報">個股季財報</h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;個股季財報資訊-單檔股票多個區間&#39;</span><span class="p">,</span> <span class="s1">&#39;2330&#39;</span><span class="p">)</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[:</span><span class="mi">12</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;個股季財報資訊-單檔股票多個區間&#39;</span><span class="p">,</span> <span class="s1">&#39;2330&#39;</span><span class="p">)</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[:</span><span class="mi">12</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 </span></code></pre></div>
-<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>(46, 135)
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>[&#39;年季&#39;, &#39;資產(千)&#39;, &#39;負債(千)&#39;, &#39;股東權益(千)&#39;, &#39;流動資產(千)&#39;, &#39;流動負債(千)&#39;,
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a> &#39;合約負債–流動(千)&#39;, &#39;合約負債–非流動(千)&#39;, &#39;合約負債(千)&#39;, &#39;公告累計EPS(元)&#39;,
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a> &#39;公告EPS(元)&#39;, &#39;公告EPS成長率(%)&#39;]
+<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>(46, 135)
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>[&#39;年季&#39;, &#39;資產(千)&#39;, &#39;負債(千)&#39;, &#39;股東權益(千)&#39;, &#39;流動資產(千)&#39;, &#39;流動負債(千)&#39;,
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a> &#39;合約負債–流動(千)&#39;, &#39;合約負債–非流動(千)&#39;, &#39;合約負債(千)&#39;, &#39;公告累計EPS(元)&#39;,
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a> &#39;公告EPS(元)&#39;, &#39;公告EPS成長率(%)&#39;]
 </span></code></pre></div>
 <p><code>年季</code> 欄的格式為 <code>'2023-Q3'</code>，另含 <code>本益比</code> 欄。金額類欄位的單位寫在欄名裡（<code>(千)</code>、<code>(百萬)</code>），比率類是 <code>(%)</code>。</p>
 <h3 id="分-k">分 K</h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;取得歷史分K(含加權/櫃買指數)&#39;</span><span class="p">,</span> <span class="s1">&#39;2330&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">df</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;取得歷史分K(含加權/櫃買指數)&#39;</span><span class="p">,</span> <span class="s1">&#39;2330&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </span></code></pre></div>
-<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>DataFrame shape: (999, 11)
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>columns: [&#39;日期&#39;, &#39;hhmm&#39;, &#39;開盤價&#39;, &#39;最高價&#39;, &#39;最低價&#39;, &#39;收盤價&#39;, &#39;成交量&#39;,
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>          &#39;日成交金額(千)&#39;, &#39;日成交量&#39;, &#39;日平均價&#39;, &#39;datetime&#39;]
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>            日期  hhmm   開盤價   最高價   最低價   收盤價  成交量  日成交金額(千)  日成交量      日平均價            datetime
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>996 2026-08-20  1030  2360  2365  2355  2360  897  11743195  4972 2361.8700 2026-08-20 10:30:00
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>997 2026-08-20  1100  2355  2360  2350  2355  818  13669960  5790 2360.9600 2026-08-20 11:00:00
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>998 2026-08-20  1130  2360  2360  2355  2360   93  13889035  5883 2360.8800 2026-08-20 11:30:00
+<div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>DataFrame shape: (999, 11)
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>columns: [&#39;日期&#39;, &#39;hhmm&#39;, &#39;開盤價&#39;, &#39;最高價&#39;, &#39;最低價&#39;, &#39;收盤價&#39;, &#39;成交量&#39;,
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>          &#39;日成交金額(千)&#39;, &#39;日成交量&#39;, &#39;日平均價&#39;, &#39;datetime&#39;]
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>            日期  hhmm   開盤價   最高價   最低價   收盤價  成交量  日成交金額(千)  日成交量      日平均價            datetime
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>996 2026-08-20  1030  2360  2365  2355  2360  897  11743195  4972 2361.8700 2026-08-20 10:30:00
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>997 2026-08-20  1100  2355  2360  2350  2355  818  13669960  5790 2360.9600 2026-08-20 11:00:00
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>998 2026-08-20  1130  2360  2360  2355  2360   93  13889035  5883 2360.8800 2026-08-20 11:30:00
 </span></code></pre></div>
 <p>分 K 包含當日盤中資料；<code>api.MSMP</code> 則只到前一交易日。</p>
 <h2 id="錯誤處理">錯誤處理</h2>
@@ -2744,7 +2741,7 @@
 </table>
 <h2 id="相關頁面">相關頁面</h2>
 <ul>
-<li><a href="../data-tw-list/">台股資料一覽</a>：台股 114 張表依用途分類，各表的參數、資料區間與欄位</li>
+<li><a href="../data-tw-list/">台股資料一覽</a>：台股 87 張表依用途分類，各表的參數、資料區間與欄位</li>
 <li><a href="../usdata/">美股資料 api.USData</a>：美股表格查詢</li>
 <li><a href="../msmp/">矩陣資料 MSMP</a>：全市場橫向運算使用本機快取的矩陣</li>
 <li><a href="../api-data/">api.Data／USData</a>：API 參考</li>

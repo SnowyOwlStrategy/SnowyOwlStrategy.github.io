@@ -2275,9 +2275,9 @@
 <td>依訊息中的正確用法修改</td>
 </tr>
 <tr>
-<td><code>ValueError: 參數輸入錯誤，正確用法：Data.get('取得即時分K(最後交易日)', '2330', 1)  # minutes 可選: [1, 3, 5, 15, 30, 60]</code></td>
-<td>分 K 表缺少 <code>minutes</code> 參數</td>
-<td>補上 <code>minutes</code>。各分 K 表是否需要 <code>minutes</code> 不同，見 <a href="../data-tw-intraday/">盤中與分 K</a></td>
+<td><code>ValueError: 參數錯誤：minutes 不支援 5，required: minutes(15/30/60)</code></td>
+<td>分 K 表的 <code>minutes</code> 給了 1、3、5</td>
+<td><code>minutes</code> 改用 15、30、60，見 <a href="../data-tw-intraday/">盤中與分 K</a></td>
 </tr>
 <tr>
 <td><code>KeyError: 'symbol'</code></td>
