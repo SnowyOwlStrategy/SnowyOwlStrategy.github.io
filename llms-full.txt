@@ -71,7 +71,7 @@
 
 ## 開始使用
 
-- [快速開始](docs/getting-started.md): 安裝（Python 3.10 以上、`snowyowlstrategy` wheel 檔，匯入名稱 `snowyowl`）、登入、入門範例（MSMP 查詢、Data 取單一標的歷史）、功能一覽、選擇合適的功能、不提供的資料
+- [快速開始](docs/getting-started.md): 安裝（Python 3.10～3.13，`pip install SnowyOwlStrategy`，匯入名稱 `snowyowl`）、登入、入門範例（MSMP 查詢、Data 取單一標的歷史）、功能一覽、選擇合適的功能、不提供的資料
 - [登入與登出](docs/login.md): `so.login(person_id, person_pwd, type='account'|'google'|'apple')`、Google／Apple 登入 72 小時快取、登入訊息說明、Token 無效時可用的功能、`api.logout()` 與 `api.login()` 重新登入
 
 ## 資料
