@@ -2716,7 +2716,7 @@
 </table>
 <hr />
 <h2 id="generate_report">generate_report</h2>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">rp</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">bt</span><span class="o">.</span><span class="n">generate_report</span><span class="p">(</span><span class="n">core_dic</span><span class="p">,</span> <span class="n">margin_call</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">capital</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="n">benchmark</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">rp</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">bt</span><span class="o">.</span><span class="n">generate_report</span><span class="p">(</span><span class="n">core_dic</span><span class="p">,</span> <span class="n">margin_call</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">capital</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="n">benchmark</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </span></code></pre></div>
 <table>
 <thead>
@@ -2734,8 +2734,8 @@
 </tr>
 <tr>
 <td><code>margin_call</code></td>
-<td>未實現虧損是否計入資金佔用</td>
-<td><code>False</code></td>
+<td>維持水位：帳戶淨值至少要維持在收盤持倉成本的幾成，不足時補錢並計入 <code>invest</code>；<code>True</code>／<code>False</code> 等於 <code>1</code>／<code>0</code></td>
+<td><code>0</code></td>
 </tr>
 <tr>
 <td><code>capital</code></td>

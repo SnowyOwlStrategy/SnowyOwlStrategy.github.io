@@ -2482,7 +2482,7 @@
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">bt</span><span class="o">.</span><span class="n">generate_report</span><span class="p">))</span>
 </span></code></pre></div>
 <div class="language-text highlight"><span class="filename">輸出</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>(name: str = &#39;strategy&#39;, symbol: str = &#39;symbol&#39;, tax_long: float = 0, tax_short: float = 0, daytrade_discount: float = 1, fee: float = 0, unit: int = 1, margin_long: float = 1, margin_short: float = 1, lot_size: str = &#39;inf,0,floor,1&#39;) -&gt; None
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>(core_dic: dict, margin_call: bool = False, capital=1000000, benchmark=None)
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>(core_dic: dict, margin_call: float = 0, capital=1000000, benchmark=None)
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2587,7 +2587,7 @@
 <tr>
 <td><code>rp.daily</code></td>
 <td><code>DataFrame</code></td>
-<td>每日權益曲線，13 欄（含每日回撤金額 <code>dd</code>）</td>
+<td>每日權益曲線，12 欄（含每日回撤金額 <code>dd</code> 與回撤比率 <code>dd_pct</code>）</td>
 </tr>
 <tr>
 <td><code>rp.daily_close</code></td>

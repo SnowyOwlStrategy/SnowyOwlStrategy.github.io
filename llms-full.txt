@@ -1,22 +1,22 @@
 # llms-full.txt 導覽（給 AI：先讀這段，不要整份讀）
 
-這份檔 ＝ llms.txt 索引 ＋ 33 篇文件全文，共 7924 行。
+這份檔 ＝ llms.txt 索引 ＋ 33 篇文件全文，共 7902 行。
 - 用行號跳讀（例如讀第 N 行起的 M 行），或搜尋 `<!-- source: docs/檔名.md -->` 找到該篇開頭。
 - 文中所有 `docs/xxx.md` 連結，都對應本檔裡 `<!-- source: docs/xxx.md -->` 那一段；沒有 docs/ 資料夾也找得到。
 
-- **寫程式之前先讀**：AI 工作守則（`docs/agent-playbook.md`）第 7875–7925 行
-- **要寫回測先讀，找用得上的寫法**：策略範例（`docs/recipes.md`）第 6024–6633 行
-- **MSMP 台美股所有表與欄名**：MSMP 資料表與欄位（`docs/msmp-tables.md`）第 3957–4172 行
+- **寫程式之前先讀**：AI 工作守則（`docs/agent-playbook.md`）第 7853–7903 行
+- **要寫回測先讀，找用得上的寫法**：策略範例（`docs/recipes.md`）第 6003–6612 行
+- **MSMP 台美股所有表與欄名**：MSMP 資料表與欄位（`docs/msmp-tables.md`）第 3937–4152 行
 
 策略範例各節：
-- 第 6032 行：共用前置
-- 第 6075 行：單檔技術指標策略
-- 第 6125 行：多檔組合（共用資金池）
-- 第 6175 行：台指期雙均線多空反手
-- 第 6264 行：目標權重輪動
-- 第 6384 行：訊號驗證（IC 與分組單調性）
-- 第 6454 行：參數最佳化
-- 第 6506 行：多因子輪動（分步寫法）
+- 第 6011 行：共用前置
+- 第 6054 行：單檔技術指標策略
+- 第 6104 行：多檔組合（共用資金池）
+- 第 6154 行：台指期雙均線多空反手
+- 第 6243 行：目標權重輪動
+- 第 6363 行：訊號驗證（IC 與分組單調性）
+- 第 6433 行：參數最佳化
+- 第 6485 行：多因子輪動（分步寫法）
 
 ## 行號目錄
 
@@ -30,31 +30,31 @@
 | 843–1172 | `docs/data-tw-price.md` | 價量與 K 線 |
 | 1174–1526 | `docs/data-tw-chip.md` | 籌碼 |
 | 1528–1912 | `docs/data-tw-fundamental.md` | 基本面 |
-| 1914–2222 | `docs/data-tw-intraday.md` | 盤中與分 K |
-| 2224–2530 | `docs/data-tw-broker.md` | 券商分點 |
-| 2532–2889 | `docs/data-tw-futures.md` | 期貨 |
-| 2891–3385 | `docs/data-tw-event.md` | 清單與事件 |
-| 3387–3618 | `docs/usdata.md` | 美股資料 api.USData |
-| 3620–3955 | `docs/msmp.md` | 矩陣資料 MSMP |
-| 3957–4172 | `docs/msmp-tables.md` | MSMP 資料表與欄位 |
-| 4174–4359 | `docs/usmsmp.md` | 美股矩陣資料 USMSMP |
-| 4361–4532 | `docs/data-history.md` | 資料期間與頻率 |
-| 4534–4715 | `docs/backtest.md` | 回測概覽 |
-| 4717–5018 | `docs/backtest-strategy.md` | 撰寫策略 |
-| 5020–5216 | `docs/backtest-order.md` | 下單與成交 |
-| 5218–5451 | `docs/backtest-data.md` | 資料與週期 |
-| 5453–5886 | `docs/backtest-report.md` | 商品設定與績效報告 |
-| 5888–6022 | `docs/backtest-tools.md` | 技術指標與參數最佳化 |
-| 6024–6633 | `docs/recipes.md` | 策略範例 |
-| 6635–6730 | `docs/api-login.md` | snowyowl 與 api |
-| 6732–6816 | `docs/api-data.md` | api.Data／api.USData |
-| 6818–6949 | `docs/api-msmp.md` | api.MSMP／api.USMSMP |
-| 6951–7109 | `docs/api-bt.md` | api.bt |
-| 7111–7151 | `docs/errors.md` | 錯誤訊息 |
-| 7153–7369 | `docs/how-to-ask.md` | 提問技巧 |
-| 7371–7674 | `docs/how-to-plan.md` | 規劃研究流程 |
-| 7676–7873 | `docs/case-study-backtest.md` | 回測提問範例 |
-| 7875–7925 | `docs/agent-playbook.md` | AI 工作守則 |
+| 1914–2210 | `docs/data-tw-intraday.md` | 盤中與分 K |
+| 2212–2518 | `docs/data-tw-broker.md` | 券商分點 |
+| 2520–2869 | `docs/data-tw-futures.md` | 期貨 |
+| 2871–3365 | `docs/data-tw-event.md` | 清單與事件 |
+| 3367–3598 | `docs/usdata.md` | 美股資料 api.USData |
+| 3600–3935 | `docs/msmp.md` | 矩陣資料 MSMP |
+| 3937–4152 | `docs/msmp-tables.md` | MSMP 資料表與欄位 |
+| 4154–4339 | `docs/usmsmp.md` | 美股矩陣資料 USMSMP |
+| 4341–4512 | `docs/data-history.md` | 資料期間與頻率 |
+| 4514–4695 | `docs/backtest.md` | 回測概覽 |
+| 4697–4998 | `docs/backtest-strategy.md` | 撰寫策略 |
+| 5000–5196 | `docs/backtest-order.md` | 下單與成交 |
+| 5198–5431 | `docs/backtest-data.md` | 資料與週期 |
+| 5433–5865 | `docs/backtest-report.md` | 商品設定與績效報告 |
+| 5867–6001 | `docs/backtest-tools.md` | 技術指標與參數最佳化 |
+| 6003–6612 | `docs/recipes.md` | 策略範例 |
+| 6614–6709 | `docs/api-login.md` | snowyowl 與 api |
+| 6711–6795 | `docs/api-data.md` | api.Data／api.USData |
+| 6797–6928 | `docs/api-msmp.md` | api.MSMP／api.USMSMP |
+| 6930–7088 | `docs/api-bt.md` | api.bt |
+| 7090–7129 | `docs/errors.md` | 錯誤訊息 |
+| 7131–7347 | `docs/how-to-ask.md` | 提問技巧 |
+| 7349–7652 | `docs/how-to-plan.md` | 規劃研究流程 |
+| 7654–7851 | `docs/case-study-backtest.md` | 回測提問範例 |
+| 7853–7903 | `docs/agent-playbook.md` | AI 工作守則 |
 
 ====================================================================================================
 
@@ -82,7 +82,7 @@
 - [價量與 K 線](docs/data-tw-price.md): 日／週／月 K（原始價與還原價）、附技術指標的 K 線、全市場最新一日價量、市值與成交值、周轉率、Beta；月 K 成交量單位為千張，還原 K 的成交量沒有還原
 - [籌碼](docs/data-tw-chip.md): 三大法人、大盤法人（AX999 等法人代號）、融資融券、借券、當沖、董監與大戶持股、股權分散、八大行庫、籌碼集中度、ETF 持股；投信與自營的買賣超金額以買進金額減賣出金額計算
 - [基本面](docs/data-tw-fundamental.md): 月營收、季財報三表與財務比率（2010-Q1 起）、近四季加總、EPS／ROE／本益比、股利（2000 起）、資本支出、公司基本資料、庫藏股；月營收與季財報的日期是所屬期間，不是公告日
-- [盤中與分 K](docs/data-tw-intraday.md): 個股分 K（即時、指定日、指定日前 5 天的 1 分 K、近 999 根，30 分鐘延遲）、盤中產業資金流；`minutes` 可用 15／30／60
+- [盤中與分 K](docs/data-tw-intraday.md): 個股分 K（即時、指定日、指定日前 5 天的 1 分 K、近 999 根，30 分鐘延遲）、盤中產業資金流；`minutes` 可用 1／3／5／15／30／60
 - [券商分點](docs/data-tw-broker.md): 主力分點買賣超、單一分點進出（`brokerId` 格式為 `'代號 分點名'`）、產業分點、個股券商排行；`days` 的可用值
 - [期貨](docs/data-tw-futures.md): 期貨商品與保證金、台指期日／週／月 K（日盤與夜盤）、期貨分 K、三大法人未平倉；回測用的 1 分 K 在 `api.MSMP._fut_TXF`
 - [清單與事件](docs/data-tw-event.md): 上市櫃清單、商品檔、產業對照、產業個股清單、下市股票、當沖標的、處置／注意／全額交割、暫停交易、分盤交易、股市行事曆
@@ -532,7 +532,7 @@ names = [n for sec in t.values() for n in sec]
 | `"symbol"` | 股票代號 | `api.Data.get('公司基本資料', '2330')` |
 | `"symbol" ,"startDate"(yyyyMMdd) ,"endDate"(yyyyMMdd)` | 代號、起訖日（包含頭尾） | `api.Data.get('查詢TOP15主力分點買賣超加總資料(指定起訖日)', '2330', '20261001', '20261029')` |
 | `"date"(yyyyMMdd)` | 日期字串 | `api.Data.get('成交金額及股本-多檔股票指定時間', '20261029')` |
-| `"symbol" ,minutes(15/30/60)` | 代號、分鐘數 | `api.Data.get('取得歷史分K(含加權/櫃買指數)', '2330', 15)` |
+| `"symbol" ,minutes(1/3/5/15/30/60)` | 代號、分鐘數 | `api.Data.get('取得歷史分K(含加權/櫃買指數)', '2330', 15)` |
 | `List[symbol、...]` | 代號 list | `api.Data.get('批次取得個股預測處置資料', ['2033', '2221'])` |
 
 ## get
@@ -752,11 +752,11 @@ api.Data.get('表名', 參數...)     # 回傳 pandas.DataFrame
 
 | 表名 | 參數 | 說明 |
 |---|---|---|
-| [`取得即時分K(最後交易日)`](data-tw-intraday.md#取得即時分k最後交易日) | `symbol`、minutes(15/30/60) | 最後一個交易日的個股分 K（可選分鐘數），附當日累計成交金額、成交量、均價。 |
-| [`取得歷史分K(指定日期前)`](data-tw-intraday.md#取得歷史分k指定日期前) | `symbol`、`date`(yyyyMMdd)、minutes(15/30/60) | 指定日期（含）之前的個股分 K（可選分鐘數）。 |
+| [`取得即時分K(最後交易日)`](data-tw-intraday.md#取得即時分k最後交易日) | `symbol`、minutes(1/3/5/15/30/60) | 最後一個交易日的個股分 K（可選分鐘數），附當日累計成交金額、成交量、均價。 |
+| [`取得歷史分K(指定日期前)`](data-tw-intraday.md#取得歷史分k指定日期前) | `symbol`、`date`(yyyyMMdd)、minutes(1/3/5/15/30/60) | 指定日期（含）之前的個股分 K（可選分鐘數）。 |
 | [`取得歷史3分K(指定當日)`](data-tw-intraday.md#取得歷史3分k指定當日) | `symbol`、`date`(yyyyMMdd) | 指定當日的 3 分 K，附當日 MA3。 |
 | [`取得歷史5分K(指定當日)`](data-tw-intraday.md#取得歷史5分k指定當日) | `symbol`、`date`(yyyyMMdd) | 指定當日的 5 分 K，附當日 MA5。 |
-| [`取得歷史分K(含加權/櫃買指數)`](data-tw-intraday.md#取得歷史分k含加權櫃買指數) | `symbol`、minutes(15/30/60) | 個股或加權／櫃買指數的近期分 K（可選分鐘數），固定回最近 999 根左右。 |
+| [`取得歷史分K(含加權/櫃買指數)`](data-tw-intraday.md#取得歷史分k含加權櫃買指數) | `symbol`、minutes(1/3/5/15/30/60) | 個股或加權／櫃買指數的近期分 K（可選分鐘數），固定回最近 999 根左右。 |
 | [`取得歷史1分K(指定日期前5天)`](data-tw-intraday.md#取得歷史1分k指定日期前5天) | `symbol`、`endDate`(yyyyMMdd) | 指定日期（含）往前 5 個交易日的 1 分 K。 |
 | [`粗產業多(盤中)`](data-tw-intraday.md#粗產業多盤中) | 無 | 盤中上漲的粗產業：漲跌幅、淨比、淨流、總市值、市值漲跌幅。 |
 | [`粗產業空(盤中)`](data-tw-intraday.md#粗產業空盤中) | 無 | 盤中下跌的粗產業：漲跌幅、淨比、淨流、總市值、市值漲跌幅。 |
@@ -795,8 +795,8 @@ api.Data.get('表名', 參數...)     # 回傳 pandas.DataFrame
 | [`台指期月K(夜盤)`](data-tw-futures.md#台指期月k夜盤) | `Fut`(例如:`TXF`、 `TXFK4`) | 台指期夜盤月 K（2017-05 起）。 |
 | [`取得期貨3分K-3MA歷史資料`](data-tw-futures.md#取得期貨3分k-3ma歷史資料) | `date`(yyyyMMdd) | 台指期指定當日的 3 分 K，附 MA3。 |
 | [`取得期貨5分K-5MA歷史資料`](data-tw-futures.md#取得期貨5分k-5ma歷史資料) | `date`(yyyyMMdd) | 台指期指定當日的 5 分 K，附 MA5。 |
-| [`取得台指近日盤歷史分K`](data-tw-futures.md#取得台指近日盤歷史分k) | minutes(15/30/60) | 台指期近期日盤分 K（可選分鐘數）。 |
-| [`取得台指近夜盤歷史分K`](data-tw-futures.md#取得台指近夜盤歷史分k) | minutes(15/30/60) | 台指期近期夜盤分 K（可選分鐘數）。 |
+| [`取得台指近日盤歷史分K`](data-tw-futures.md#取得台指近日盤歷史分k) | minutes(1/3/5/15/30/60) | 台指期近期日盤分 K（可選分鐘數）。 |
+| [`取得台指近夜盤歷史分K`](data-tw-futures.md#取得台指近夜盤歷史分k) | minutes(1/3/5/15/30/60) | 台指期近期夜盤分 K（可選分鐘數）。 |
 | [`三大法人未平倉資料-單檔股票多個區間`](data-tw-futures.md#三大法人未平倉資料-單檔股票多個區間) | `Fut`(例如:`TXF`)、 type(1:自營商、2:投信、3:外資) | 期貨三大法人每日交易與未平倉口數、契約金額、多空淨額。 |
 
 ## 清單與事件
@@ -1953,7 +1953,7 @@ api.Data.get('取得即時分K(最後交易日)', '2330', 15)
 
 | 項目 | 說明 |
 |---|---|
-| 參數 | `symbol`、minutes(15/30/60) |
+| 參數 | `symbol`、minutes(1/3/5/15/30/60) |
 | 資料區間 | 最後一個交易日（盤中呼叫是今天到目前為止） |
 
 ??? info "欄位（11）"
@@ -1968,10 +1968,6 @@ api.Data.get('取得即時分K(最後交易日)', '2330', 15)
 …（另有 2 欄，見欄位清單）
 ```
 
-!!! note "說明"
-
-    - `minutes` 可用 15／30／60；傳入 1／3／5 會出現 `ValueError`。
-
 ### 取得歷史分K(指定日期前)
 
 指定日期（含）之前的個股分 K（可選分鐘數）。
@@ -1982,7 +1978,7 @@ api.Data.get('取得歷史分K(指定日期前)', '2330', '20261029', 15)
 
 | 項目 | 說明 |
 |---|---|
-| 參數 | `symbol`、`date`(yyyyMMdd)、minutes(15/30/60) |
+| 參數 | `symbol`、`date`(yyyyMMdd)、minutes(1/3/5/15/30/60) |
 | 資料區間 | 指定日期當天 |
 
 ??? info "欄位（11）"
@@ -1996,10 +1992,6 @@ api.Data.get('取得歷史分K(指定日期前)', '2330', '20261029', 15)
 2026-10-29 00:0… 0945 2420.0 2420.0 2410.0 2415.0  936.0     11211600.0   4636.0
 …（另有 2 欄，見欄位清單）
 ```
-
-!!! note "說明"
-
-    - `minutes` 可用 15／30／60；傳入 1／3／5 會出現 `ValueError`。
 
 ### 取得歷史3分K(指定當日)
 
@@ -2059,7 +2051,7 @@ api.Data.get('取得歷史分K(含加權/櫃買指數)', '2330', 15)
 
 | 項目 | 說明 |
 |---|---|
-| 參數 | `symbol`、minutes(15/30/60) |
+| 參數 | `symbol`、minutes(1/3/5/15/30/60) |
 | 資料區間 | 最近約 999 根（15 分 K 約三個月） |
 
 ??? info "欄位（11）"
@@ -2073,10 +2065,6 @@ api.Data.get('取得歷史分K(含加權/櫃買指數)', '2330', 15)
 2026-08-26 00:0… 1145 2420.0 2420.0 2415.0 2420.0  523.0     25888810.0  10802.0
 …（另有 2 欄，見欄位清單）
 ```
-
-!!! note "說明"
-
-    - `minutes` 可用 15／30／60；傳入 1／3／5 會出現 `ValueError`。
 
 ### 取得歷史1分K(指定日期前5天)
 
@@ -2802,7 +2790,7 @@ api.Data.get('取得台指近日盤歷史分K', 15)
 
 | 項目 | 說明 |
 |---|---|
-| 參數 | minutes(15/30/60) |
+| 參數 | minutes(1/3/5/15/30/60) |
 | 資料區間 | 最近 999 根（5 分 K 約一個月） |
 
 ??? info "欄位（8）"
@@ -2816,10 +2804,6 @@ api.Data.get('取得台指近日盤歷史分K', 15)
 2026-09-02 00:0… 1345 46215.0 46229.0 46131.0 46189.0 5179.0 2026-09-02 13:4…
 ```
 
-!!! note "說明"
-
-    - `minutes` 可用 15／30／60；傳入 1／3／5 會出現 `ValueError`。
-
 ### 取得台指近夜盤歷史分K
 
 台指期近期夜盤分 K（可選分鐘數）。
@@ -2830,7 +2814,7 @@ api.Data.get('取得台指近夜盤歷史分K', 15)
 
 | 項目 | 說明 |
 |---|---|
-| 參數 | minutes(15/30/60) |
+| 參數 | minutes(1/3/5/15/30/60) |
 | 資料區間 | 最近 999 根（5 分 K 約一週） |
 
 ??? info "欄位（8）"
@@ -2843,10 +2827,6 @@ api.Data.get('取得台指近夜盤歷史分K', 15)
 2026-10-21 00:0… 1745 47217.0 47274.0 47217.0 47239.0  568.0 2026-10-21 17:4…
 2026-10-21 00:0… 1800 47241.0 47245.0 47171.0 47197.0  380.0 2026-10-21 18:0…
 ```
-
-!!! note "說明"
-
-    - `minutes` 可用 15／30／60；傳入 1／3／5 會出現 `ValueError`。
 
 ## 籌碼
 
@@ -3452,7 +3432,7 @@ api.USData.get(table, *args)         # 取一張表，回傳 DataFrame
 |---|---|---|
 | `取得指定日期前幾天的分價量歷史資料` | `symbol`、`endDate`（`yyyyMMdd`）、`days` | (62, 4) |
 | `取得全天含盤前盤後歷史分k(最後交易日)` | `symbol`、`market`（`F` 全天／`P` 盤前／`M` 盤中／`A` 盤後） | (946, 8) |
-| `取得歷史分K` | `symbol`、`minutes`（15／30／60） | (999, 8) |
+| `取得歷史分K` | `symbol`、`minutes`（1／3／5／15／30／60） | (999, 8) |
 
 三張分 K 表的欄位相同：`股票代號`、`日期`、`hhmm`、`開盤價`、`最高價`、`最低價`、`收盤價`、`成交量`。日期與時間分為兩欄：`日期` 是 `datetime64[ns]`，`hhmm` 是 4 位字串。
 
@@ -3490,7 +3470,7 @@ df.head(2)
 
 ### 分 K
 
-指定分鐘數（15／30／60）：
+指定分鐘數（1／3／5／15／30／60）：
 
 ```python
 df = api.USData.get('取得歷史分K', 'NVDA', 15)
@@ -4566,7 +4546,7 @@ print(inspect.signature(api.bt.generate_report))
 
 ```text title="輸出"
 (name: str = 'strategy', symbol: str = 'symbol', tax_long: float = 0, tax_short: float = 0, daytrade_discount: float = 1, fee: float = 0, unit: int = 1, margin_long: float = 1, margin_short: float = 1, lot_size: str = 'inf,0,floor,1') -> None
-(core_dic: dict, margin_call: bool = False, capital=1000000, benchmark=None)
+(core_dic: dict, margin_call: float = 0, capital=1000000, benchmark=None)
 ```
 
 !!! note
@@ -4651,7 +4631,7 @@ KPI 的定義見 [商品設定與績效報告](backtest-report.md)。
 | `rp.trade_detail` | `DataFrame` | 逐筆交易，21 欄，含 `name`／`symbol`／`direction`／`pnl`／`cost` |
 | `rp.trade_main` | `DataFrame` | 委託層級明細，進場與出場各一列 |
 | `rp.position` | `DataFrame` | 部位變化 |
-| `rp.daily` | `DataFrame` | 每日權益曲線，13 欄（含每日回撤金額 `dd`） |
+| `rp.daily` | `DataFrame` | 每日權益曲線，12 欄（含每日回撤金額 `dd` 與回撤比率 `dd_pct`） |
 | `rp.daily_close` | `DataFrame` | 每日收盤價 |
 | `rp.dashboard()` | 方法 | 產生互動式 HTML 報表（總覽／績效分析／交易明細／個股分析四頁） |
 | `rp.save(path=None)` | 方法 | 存成一個 xlsx 檔 |
@@ -5534,7 +5514,7 @@ cfg = bt.config(name='pct_TXF', symbol='TXF', tax_short=0.00002, fee=20, unit=20
 ### 語法
 
 ```python
-api.bt.generate_report(core_dic, margin_call=False, capital=1000000, benchmark=None)
+api.bt.generate_report(core_dic, margin_call=0, capital=1000000, benchmark=None)
 ```
 
 ### 參數
@@ -5542,7 +5522,7 @@ api.bt.generate_report(core_dic, margin_call=False, capital=1000000, benchmark=N
 | 參數 | 型別 | 預設值 | 說明 |
 |---|---|---|---|
 | `core_dic` | `dict` | — | 必填。`{config: core}` 字典，`core` 須已跑完整段資料。可放多組一起比較 |
-| `margin_call` | `bool` | `False` | 是否把未實現的浮動虧損計入資金佔用，影響 `rp.daily` 的 `invest` 與 `rp.report` 的 `Invest`／`MaxPosition`。`True` 較保守，模擬保證金追繳 |
+| `margin_call` | `float` | `0` | 維持水位：帳戶淨值（`invest` ＋ 累計損益）至少要維持在收盤持倉成本的幾成，低於時補錢到水位，補的錢計入 `rp.daily` 的 `invest` 與 `rp.report` 的 `Invest`。`0`：淨值不能低於 0（現股做多不會觸發，期貨浮動虧損超過保證金才補）；`0.5`：淨值跌到持倉成本的一半時補回一半；`1`：任何浮動虧損都立刻補。`True`／`False` 等於 `1`／`0` |
 | `capital` | `int` | `1000000` | 起始資金。只在比例下單（數量填 0～1）時生效；固定數量下單時不參與計算，見下方「部位大小與 capital」 |
 | `benchmark` | `dict`／`pd.Series` | `None` | 基準指數的每日收盤價，index 為日期。提供後 `rp.report` 多一欄 `benchmark`，做買進持有比較 |
 
@@ -5557,7 +5537,7 @@ api.bt.generate_report(core_dic, margin_call=False, capital=1000000, benchmark=N
 ```python
 benchmark = df.set_index('DateTime')['收盤價'].resample('D').last().dropna()
 rp = bt.generate_report({cfg1: core1, cfg2: core2},
-                        margin_call=True, capital=10_000_000, benchmark=benchmark)
+                        margin_call=1, capital=10_000_000, benchmark=benchmark)
 
 print(rp.report)                    # 兩個策略 + benchmark 並列
 print(rp.core['pct_TXF'].report)    # 只看單一策略
@@ -5710,7 +5690,7 @@ rp.dashboard()                                      # notebook
 
 | 分頁 | 內容 |
 |---|---|
-| 總覽 | 上方 10 張卡片（總報酬率、平均年報酬、年化報酬、投資金額、淨利潤、勝率、Calmar、Sharpe、Sortino、年化波動率）；近期報酬與交易次數、資金使用率、資料明細（含 `MddRatio`／`MddAmount`／`MddDuration`）；累計報酬、月報酬熱圖（% 與金額）、損益與回撤（金額）圖、最大 5 次回撤（天數／金額）表 |
+| 總覽 | 上方 10 張卡片（總報酬率、平均年報酬、年化報酬、投資金額、淨利潤、勝率、Calmar、Sharpe、Sortino、年化波動率）；近期報酬與交易次數、資金使用率、資料明細（含 `MddRatio`／`MddAmount`／`MddDuration`）；累計報酬、月報酬熱圖（% 與金額；% 為當月損益 ÷（月末 `invest` ＋ 上月底累計損益），全年同理直接計算）、損益與回撤（金額）圖、最大 5 次回撤（天數／金額）表 |
 | 績效分析 | 個股績效表（交易次數、勝率、`total_qty`、報酬率、損益）、每日摘要 |
 | 交易明細 | 委託（最新委託／全部委託）、成交（最新庫存／全部成交） |
 | 個股分析 | 選擇股票後顯示 K 線（含進出場標記，並畫出策略的 `self.char`／`self.char1` 指標）、進出場規則績效、個股委託、個股成交 |
@@ -5800,7 +5780,7 @@ rp.set_benchmark(data)
 
 ### `rp.daily`
 
-以交易日為單位追蹤資產變化。最大回撤與波動率都以 `value_pct` 計算。
+以交易日為單位追蹤資產變化。
 
 | 欄位 | 說明 |
 |---|---|
@@ -5810,13 +5790,12 @@ rp.set_benchmark(data)
 | `profit_loss` | 累計損益（已實現 ＋ 未實現） |
 | `unrealized` | 未實現損益（`entry_cost + market_value`） |
 | `realized` | 已實現損益（`profit_loss - unrealized`） |
-| `position` | 當日最大資金佔用（以保證金或進場金額估算） |
-| `invest` | 累計最大投入資本，為報酬率的分母，取歷史最大值。是否計入未實現虧損由 `margin_call` 決定 |
+| `position` | 當日盤中最大的持倉成本（以保證金或進場金額計），含當沖與開盤時已持有的部位 |
+| `invest` | 到當日為止曾經需要投入的最大本金，只增不減，為報酬率的分母。依逐筆進出計算：進場付出進場金額、出場收回出場金額（含損益），依時間累計後取最低點，當沖佔用的資金也會計入；同一時點依出場、進場、當沖出場的順序處理。再依 `margin_call` 計入未平倉的浮動虧損，取較大者 |
 | `dd` | 當日回撤金額，等於 `profit_loss - profit_loss.cummax()`（創新高當天為 0）。`rp.report` 的 `MddAmount` 是它的最小值 |
+| `dd_pct` | 當日回撤比率，等於 `dd / (invest + profit_loss.cummax())`：分母是高點時的權益加上之後投入的本金，損益回到前高才歸零。`rp.report` 的 `MddRatio` 是它的最小值 |
 | `PNL/COST` | 累計損益 ÷ 累計進場成本 |
-| `return` | 當日報酬：累計報酬率（`profit_loss / invest`）的逐日差分 |
-| `return_pct` | 當日報酬率：(1 ＋ 當日累計報酬率) ÷ (1 ＋ 前一日累計報酬率) − 1 |
-| `value_pct` | 當日資產變動率：`profit_loss.diff() / (前日 profit_loss + invest)`，風險指標都以此計算 |
+| `return` | 當日報酬：累計報酬率（`profit_loss / invest`）的逐日差分，加總等於 `TotalReturns`；dashboard 的累計報酬圖是它的累加 |
 
 ### `rp.report`（KPI）
 
@@ -5827,30 +5806,30 @@ rp.set_benchmark(data)
 | `StartDate` | 第一筆進場日期 |
 | `EndDate` | 回測結束日期 |
 | `BacktestDate` | 執行回測當天的日期 |
-| `TotalReturns` | 累計總報酬（`daily['return'].sum()`） |
+| `TotalReturns` | 累計總報酬，等於期末 `profit_loss` ÷ 期末 `invest`（即 `daily['return'].sum()`） |
 | `CAGR` | 年化報酬率（複利） |
 | `AAR` | 年化報酬率（單利：平均每日報酬 × 252） |
-| `MddRatio` | 最大回撤比率（以 `value_pct` 計算，負數） |
+| `MddRatio` | 最大回撤比率，等於 `daily['dd_pct'].min()`（負數） |
 | `MddAmount` | 最大回撤金額，等於 `daily['dd'].min()`（負數，元）。月中跌深、月底反彈時月損益不會反映這段回撤，因此可能大於任何單月的虧損 |
-| `MddDuration` | 最長回撤持續天數 |
+| `MddDuration` | 最長回撤持續天數：`profit_loss` 低於前高的最長連續期間（日曆天） |
 | `CalmarRatio` | `CAGR / abs(MddRatio)`，也是 `bt.Tools.optimize()` 的評分 |
-| `SharpeRatio` | 夏普比率（以 `value_pct` 計算，年化） |
-| `SortinoRatio` | 索提諾比率（只計下行波動） |
-| `AnnualisedVolatility` | 年化波動率（`value_pct` 標準差 × √252） |
+| `SharpeRatio` | 夏普比率，以每日損益變動 ΔF（`profit_loss` 的逐日差分）計算：`mean(ΔF) / std(ΔF) × √252`。不需要分母，投入本金多寡不影響結果 |
+| `SortinoRatio` | 索提諾比率：`mean(ΔF) / √(Σ min(ΔF, 0)² / N) × √252`，N 為交易日數 |
+| `AnnualisedVolatility` | 年化波動率：`std(ΔF) × √252 / 期末 invest`。`AAR / AnnualisedVolatility` 等於 `SharpeRatio` |
 | `WinRate` | 勝率（已平倉交易中 `pnl > 0` 的比例） |
-| `ProfitLossRatio` | 盈虧比（獲利總額 ÷ 虧損總額） |
-| `MaxPosition` | 期間最大資金佔用（`position` 的峰值） |
-| `Invest` | 期間最大投入資本（`invest` 的峰值，受 `margin_call` 影響） |
-| `AvgCashUtilizationRate` | 平均資金使用率 |
+| `ProfitLossRatio` | 盈虧比：已平倉交易的獲利總額 ÷ 虧損總額，未平倉不計 |
+| `MaxPosition` | 期間最大持倉成本（`position` 的峰值） |
+| `Invest` | 期間最大投入本金（`invest` 的峰值，受 `margin_call` 影響） |
+| `AvgCashUtilizationRate` | 平均資金使用率：每日 `position / (invest + max(profit_loss, 0))` 的平均 |
 | `TotalTrades` | 總交易筆數（含未平倉） |
 | `ProfitTimes`／`LossTimes` | 獲利／虧損筆數（已平倉） |
 | `NetProfit` | 淨利，等於 `round(daily['profit_loss'].iloc[-1])` |
 | `TradeCost` | 總交易成本（所有手續費與稅） |
 | `AvgProfitPerTrade` | `NetProfit / TotalTrades` |
-| `WeeklyReturn` | 近 5 根（約 1 週）報酬 |
-| `MonthlyReturn` | 近 20 根（約 1 月）報酬 |
-| `QuarterlyReturn` | 近 60 根（約 1 季）報酬 |
-| `AnnualReturn` | 近 240 根（約 1 年）報酬 |
+| `WeeklyReturn` | 近 5 根（約 1 週）報酬：期間損益 ÷（期末 `invest` ＋ 期初 `profit_loss`），字串 |
+| `MonthlyReturn` | 近 20 根（約 1 月）報酬，算法同上 |
+| `QuarterlyReturn` | 近 60 根（約 1 季）報酬，算法同上 |
+| `AnnualReturn` | 近 240 根（約 1 年）報酬，算法同上 |
 
 `NetProfit` 取自每日權益曲線的末值並四捨五入。期末有未平倉部位時，與 `rp.trade_detail['pnl'].sum()` 會有小差異：未平倉部位在 `trade_detail` 預先扣除進出場雙邊成本，在 `daily` 只計單邊。全部平倉時兩者一致。
 
@@ -7063,13 +7042,13 @@ api.bt.config(name='strategy', symbol='symbol', tax_long=0, tax_short=0,
 ## generate_report
 
 ```python
-rp = api.bt.generate_report(core_dic, margin_call=False, capital=1000000, benchmark=None)
+rp = api.bt.generate_report(core_dic, margin_call=0, capital=1000000, benchmark=None)
 ```
 
 | 參數 | 說明 | 預設 |
 |---|---|---|
 | `core_dic` | `{config: 跑完的策略}`，可放多組一起比較 | 必填 |
-| `margin_call` | 未實現虧損是否計入資金佔用 | `False` |
+| `margin_call` | 維持水位：帳戶淨值至少要維持在收盤持倉成本的幾成，不足時補錢並計入 `invest`；`True`／`False` 等於 `1`／`0` | `0` |
 | `capital` | 起始資金（比例下單時生效） | `1000000` |
 | `benchmark` | 基準的每日收盤價（`dict` / `Series`） | `None` |
 
@@ -7122,7 +7101,6 @@ rp.dashboard(view='web')
 |---|---|---|
 | `ValueError: 找不到 table: 不存在的表` | 表名不存在 | 表名須與 `get_table()` 列出的名稱完全一致，包含全形括號與斜線。部分表名以「取得」開頭（例如 `取得即時分K(最後交易日)`），部分沒有（例如 `個股營收資訊…`） |
 | `ValueError: 參數輸入錯誤，正確用法：Data.get('…', '2330')` | 參數個數不符，少傳或多傳都會出現此訊息 | 依訊息中的正確用法修改 |
-| `ValueError: 參數錯誤：minutes 不支援 5，required: minutes(15/30/60)` | 分 K 表的 `minutes` 給了 1、3、5 | `minutes` 改用 15、30、60，見 [盤中與分 K](data-tw-intraday.md) |
 | `KeyError: 'symbol'` | `產業個股清單` 的 `sector` 值不在合法值中 | `sector` 填 `台股產業對照表` 的 `指數彙編分類`（172 種）。例如 `'半導體'` 不是合法值 |
 | `IndexError: positional indexers are out-of-bounds` | 股票代號不存在（例如 `'999999'`） | 先以 `上市櫃/ETF清單(含當沖限制)` 或 `api.MSMP.INFO` 確認代號 |
 

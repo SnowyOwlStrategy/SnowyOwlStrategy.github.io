@@ -3033,7 +3033,7 @@
 </span></code></pre></div>
 <h2 id="產生報告-generate_report">產生報告 generate_report</h2>
 <h3 id="語法_1">語法</h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">api</span><span class="o">.</span><span class="n">bt</span><span class="o">.</span><span class="n">generate_report</span><span class="p">(</span><span class="n">core_dic</span><span class="p">,</span> <span class="n">margin_call</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">capital</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="n">benchmark</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">api</span><span class="o">.</span><span class="n">bt</span><span class="o">.</span><span class="n">generate_report</span><span class="p">(</span><span class="n">core_dic</span><span class="p">,</span> <span class="n">margin_call</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">capital</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="n">benchmark</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </span></code></pre></div>
 <h3 id="參數_1">參數</h3>
 <table>
@@ -3054,9 +3054,9 @@
 </tr>
 <tr>
 <td><code>margin_call</code></td>
-<td><code>bool</code></td>
-<td><code>False</code></td>
-<td>是否把未實現的浮動虧損計入資金佔用，影響 <code>rp.daily</code> 的 <code>invest</code> 與 <code>rp.report</code> 的 <code>Invest</code>／<code>MaxPosition</code>。<code>True</code> 較保守，模擬保證金追繳</td>
+<td><code>float</code></td>
+<td><code>0</code></td>
+<td>維持水位：帳戶淨值（<code>invest</code> ＋ 累計損益）至少要維持在收盤持倉成本的幾成，低於時補錢到水位，補的錢計入 <code>rp.daily</code> 的 <code>invest</code> 與 <code>rp.report</code> 的 <code>Invest</code>。<code>0</code>：淨值不能低於 0（現股做多不會觸發，期貨浮動虧損超過保證金才補）；<code>0.5</code>：淨值跌到持倉成本的一半時補回一半；<code>1</code>：任何浮動虧損都立刻補。<code>True</code>／<code>False</code> 等於 <code>1</code>／<code>0</code></td>
 </tr>
 <tr>
 <td><code>capital</code></td>
@@ -3078,7 +3078,7 @@
 <p>兩個策略與基準指數一起產生報告：</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">benchmark</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;DateTime&#39;</span><span class="p">)[</span><span class="s1">&#39;收盤價&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">last</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">rp</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">generate_report</span><span class="p">({</span><span class="n">cfg1</span><span class="p">:</span> <span class="n">core1</span><span class="p">,</span> <span class="n">cfg2</span><span class="p">:</span> <span class="n">core2</span><span class="p">},</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>                        <span class="n">margin_call</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">capital</span><span class="o">=</span><span class="mi">10_000_000</span><span class="p">,</span> <span class="n">benchmark</span><span class="o">=</span><span class="n">benchmark</span><span class="p">)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>                        <span class="n">margin_call</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">capital</span><span class="o">=</span><span class="mi">10_000_000</span><span class="p">,</span> <span class="n">benchmark</span><span class="o">=</span><span class="n">benchmark</span><span class="p">)</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">rp</span><span class="o">.</span><span class="n">report</span><span class="p">)</span>                    <span class="c1"># 兩個策略 + benchmark 並列</span>
 </span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">rp</span><span class="o">.</span><span class="n">core</span><span class="p">[</span><span class="s1">&#39;pct_TXF&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">report</span><span class="p">)</span>    <span class="c1"># 只看單一策略</span>
@@ -3333,7 +3333,7 @@
 <tbody>
 <tr>
 <td>總覽</td>
-<td>上方 10 張卡片（總報酬率、平均年報酬、年化報酬、投資金額、淨利潤、勝率、Calmar、Sharpe、Sortino、年化波動率）；近期報酬與交易次數、資金使用率、資料明細（含 <code>MddRatio</code>／<code>MddAmount</code>／<code>MddDuration</code>）；累計報酬、月報酬熱圖（% 與金額）、損益與回撤（金額）圖、最大 5 次回撤（天數／金額）表</td>
+<td>上方 10 張卡片（總報酬率、平均年報酬、年化報酬、投資金額、淨利潤、勝率、Calmar、Sharpe、Sortino、年化波動率）；近期報酬與交易次數、資金使用率、資料明細（含 <code>MddRatio</code>／<code>MddAmount</code>／<code>MddDuration</code>）；累計報酬、月報酬熱圖（% 與金額；% 為當月損益 ÷（月末 <code>invest</code> ＋ 上月底累計損益），全年同理直接計算）、損益與回撤（金額）圖、最大 5 次回撤（天數／金額）表</td>
 </tr>
 <tr>
 <td>績效分析</td>
@@ -3545,7 +3545,7 @@
 </table>
 <p>扣除成本前的毛損益為 <code>(pnl + cost).sum()</code>。進出頻繁的策略，毛損益可能接近零、虧損幾乎都來自成本，建議先比較毛損益與成本，再看報酬率。</p>
 <h3 id="rpdaily"><code>rp.daily</code></h3>
-<p>以交易日為單位追蹤資產變化。最大回撤與波動率都以 <code>value_pct</code> 計算。</p>
+<p>以交易日為單位追蹤資產變化。</p>
 <table>
 <thead>
 <tr>
@@ -3580,15 +3580,19 @@
 </tr>
 <tr>
 <td><code>position</code></td>
-<td>當日最大資金佔用（以保證金或進場金額估算）</td>
+<td>當日盤中最大的持倉成本（以保證金或進場金額計），含當沖與開盤時已持有的部位</td>
 </tr>
 <tr>
 <td><code>invest</code></td>
-<td>累計最大投入資本，為報酬率的分母，取歷史最大值。是否計入未實現虧損由 <code>margin_call</code> 決定</td>
+<td>到當日為止曾經需要投入的最大本金，只增不減，為報酬率的分母。依逐筆進出計算：進場付出進場金額、出場收回出場金額（含損益），依時間累計後取最低點，當沖佔用的資金也會計入；同一時點依出場、進場、當沖出場的順序處理。再依 <code>margin_call</code> 計入未平倉的浮動虧損，取較大者</td>
 </tr>
 <tr>
 <td><code>dd</code></td>
 <td>當日回撤金額，等於 <code>profit_loss - profit_loss.cummax()</code>（創新高當天為 0）。<code>rp.report</code> 的 <code>MddAmount</code> 是它的最小值</td>
+</tr>
+<tr>
+<td><code>dd_pct</code></td>
+<td>當日回撤比率，等於 <code>dd / (invest + profit_loss.cummax())</code>：分母是高點時的權益加上之後投入的本金，損益回到前高才歸零。<code>rp.report</code> 的 <code>MddRatio</code> 是它的最小值</td>
 </tr>
 <tr>
 <td><code>PNL/COST</code></td>
@@ -3596,15 +3600,7 @@
 </tr>
 <tr>
 <td><code>return</code></td>
-<td>當日報酬：累計報酬率（<code>profit_loss / invest</code>）的逐日差分</td>
-</tr>
-<tr>
-<td><code>return_pct</code></td>
-<td>當日報酬率：(1 ＋ 當日累計報酬率) ÷ (1 ＋ 前一日累計報酬率) − 1</td>
-</tr>
-<tr>
-<td><code>value_pct</code></td>
-<td>當日資產變動率：<code>profit_loss.diff() / (前日 profit_loss + invest)</code>，風險指標都以此計算</td>
+<td>當日報酬：累計報酬率（<code>profit_loss / invest</code>）的逐日差分，加總等於 <code>TotalReturns</code>；dashboard 的累計報酬圖是它的累加</td>
 </tr>
 </tbody>
 </table>
@@ -3632,7 +3628,7 @@
 </tr>
 <tr>
 <td><code>TotalReturns</code></td>
-<td>累計總報酬（<code>daily['return'].sum()</code>）</td>
+<td>累計總報酬，等於期末 <code>profit_loss</code> ÷ 期末 <code>invest</code>（即 <code>daily['return'].sum()</code>）</td>
 </tr>
 <tr>
 <td><code>CAGR</code></td>
@@ -3644,7 +3640,7 @@
 </tr>
 <tr>
 <td><code>MddRatio</code></td>
-<td>最大回撤比率（以 <code>value_pct</code> 計算，負數）</td>
+<td>最大回撤比率，等於 <code>daily['dd_pct'].min()</code>（負數）</td>
 </tr>
 <tr>
 <td><code>MddAmount</code></td>
@@ -3652,7 +3648,7 @@
 </tr>
 <tr>
 <td><code>MddDuration</code></td>
-<td>最長回撤持續天數</td>
+<td>最長回撤持續天數：<code>profit_loss</code> 低於前高的最長連續期間（日曆天）</td>
 </tr>
 <tr>
 <td><code>CalmarRatio</code></td>
@@ -3660,15 +3656,15 @@
 </tr>
 <tr>
 <td><code>SharpeRatio</code></td>
-<td>夏普比率（以 <code>value_pct</code> 計算，年化）</td>
+<td>夏普比率，以每日損益變動 ΔF（<code>profit_loss</code> 的逐日差分）計算：<code>mean(ΔF) / std(ΔF) × √252</code>。不需要分母，投入本金多寡不影響結果</td>
 </tr>
 <tr>
 <td><code>SortinoRatio</code></td>
-<td>索提諾比率（只計下行波動）</td>
+<td>索提諾比率：<code>mean(ΔF) / √(Σ min(ΔF, 0)² / N) × √252</code>，N 為交易日數</td>
 </tr>
 <tr>
 <td><code>AnnualisedVolatility</code></td>
-<td>年化波動率（<code>value_pct</code> 標準差 × √252）</td>
+<td>年化波動率：<code>std(ΔF) × √252 / 期末 invest</code>。<code>AAR / AnnualisedVolatility</code> 等於 <code>SharpeRatio</code></td>
 </tr>
 <tr>
 <td><code>WinRate</code></td>
@@ -3676,19 +3672,19 @@
 </tr>
 <tr>
 <td><code>ProfitLossRatio</code></td>
-<td>盈虧比（獲利總額 ÷ 虧損總額）</td>
+<td>盈虧比：已平倉交易的獲利總額 ÷ 虧損總額，未平倉不計</td>
 </tr>
 <tr>
 <td><code>MaxPosition</code></td>
-<td>期間最大資金佔用（<code>position</code> 的峰值）</td>
+<td>期間最大持倉成本（<code>position</code> 的峰值）</td>
 </tr>
 <tr>
 <td><code>Invest</code></td>
-<td>期間最大投入資本（<code>invest</code> 的峰值，受 <code>margin_call</code> 影響）</td>
+<td>期間最大投入本金（<code>invest</code> 的峰值，受 <code>margin_call</code> 影響）</td>
 </tr>
 <tr>
 <td><code>AvgCashUtilizationRate</code></td>
-<td>平均資金使用率</td>
+<td>平均資金使用率：每日 <code>position / (invest + max(profit_loss, 0))</code> 的平均</td>
 </tr>
 <tr>
 <td><code>TotalTrades</code></td>
@@ -3712,19 +3708,19 @@
 </tr>
 <tr>
 <td><code>WeeklyReturn</code></td>
-<td>近 5 根（約 1 週）報酬</td>
+<td>近 5 根（約 1 週）報酬：期間損益 ÷（期末 <code>invest</code> ＋ 期初 <code>profit_loss</code>），字串</td>
 </tr>
 <tr>
 <td><code>MonthlyReturn</code></td>
-<td>近 20 根（約 1 月）報酬</td>
+<td>近 20 根（約 1 月）報酬，算法同上</td>
 </tr>
 <tr>
 <td><code>QuarterlyReturn</code></td>
-<td>近 60 根（約 1 季）報酬</td>
+<td>近 60 根（約 1 季）報酬，算法同上</td>
 </tr>
 <tr>
 <td><code>AnnualReturn</code></td>
-<td>近 240 根（約 1 年）報酬</td>
+<td>近 240 根（約 1 年）報酬，算法同上</td>
 </tr>
 </tbody>
 </table>
