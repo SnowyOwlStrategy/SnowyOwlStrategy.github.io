@@ -2479,7 +2479,7 @@
 <p class="admonition-title">帳號方案</p>
 <ul>
 <li>可用的表依帳號方案而定，以 <code>api.Data.get_table()</code> 列出的為準。</li>
-<li>試用方案的帳號，表名結尾為 <code>-單檔股票多個區間</code> 的表只回傳最新 &frac14;。</li>
+<li>試用方案的帳號，表名結尾為 <code>-單檔股票多個區間</code> 的表只回傳最新 1/4。</li>
 <li><code>get_table()</code> 依參數型態分段列出（多股單期、單股多期…），本手冊依用途分類，兩者涵蓋同一批表。</li>
 </ul>
 </div>
@@ -2720,12 +2720,12 @@
 <tbody>
 <tr>
 <td><a href="../data-tw-intraday/#取得即時分k最後交易日"><code>取得即時分K(最後交易日)</code></a></td>
-<td><code>symbol</code>、minutes(&#8531;/5/15/30/60)</td>
+<td><code>symbol</code>、minutes(1/3/5/15/30/60)</td>
 <td>最後一個交易日的個股分 K（可選分鐘數），附當日累計成交金額、成交量、均價。</td>
 </tr>
 <tr>
 <td><a href="../data-tw-intraday/#取得歷史分k指定日期前"><code>取得歷史分K(指定日期前)</code></a></td>
-<td><code>symbol</code>、<code>date</code>(yyyyMMdd)、minutes(&#8531;/5/15/30/60)</td>
+<td><code>symbol</code>、<code>date</code>(yyyyMMdd)、minutes(1/3/5/15/30/60)</td>
 <td>指定日期（含）之前的個股分 K（可選分鐘數）。</td>
 </tr>
 <tr>
@@ -2740,7 +2740,7 @@
 </tr>
 <tr>
 <td><a href="../data-tw-intraday/#取得歷史分k含加權櫃買指數"><code>取得歷史分K(含加權/櫃買指數)</code></a></td>
-<td><code>symbol</code>、minutes(&#8531;/5/15/30/60)</td>
+<td><code>symbol</code>、minutes(1/3/5/15/30/60)</td>
 <td>個股或加權／櫃買指數的近期分 K（可選分鐘數），固定回最近 999 根左右。</td>
 </tr>
 <tr>
@@ -2818,17 +2818,17 @@
 </tr>
 <tr>
 <td><a href="../data-tw-broker/#查詢分點近n日top15買賣超資料"><code>查詢分點近N日Top15買賣超資料</code></a></td>
-<td><code>brokerId</code>(例如:<code>9268 凱基台北</code>)、N(&frac12;/&frac34;/5/10/20/60/80/100/120/180/240)</td>
+<td><code>brokerId</code>(例如:<code>9268 凱基台北</code>)、N(1/2/3/4/5/10/20/60/80/100/120/180/240)</td>
 <td>單一分點近 N 日買超、賣超各前 15 名的股票。</td>
 </tr>
 <tr>
 <td><a href="../data-tw-broker/#查詢近n日單一分點買賣超20的股票及重點分點"><code>查詢近N日單一分點買賣超&gt;20%的股票及重點分點</code></a></td>
-<td>days(&frac12;/&frac34;/5/10/20/60/80/100/120/180/240)</td>
+<td>days(1/2/3/4/5/10/20/60/80/100/120/180/240)</td>
 <td>近 N 日單一分點買賣超佔該股成交量 20% 以上的股票與分點。</td>
 </tr>
 <tr>
 <td><a href="../data-tw-broker/#查詢粗產業近n日分點買賣超金額top15資料"><code>查詢粗產業近N日分點買賣超金額Top15資料</code></a></td>
-<td><code>industry</code>( <code>台股商品檔</code>中的<code>粗產業</code>)、days(&frac12;/&frac34;/5/10/20/60/80/100/120/180/240)</td>
+<td><code>industry</code>( <code>台股商品檔</code>中的<code>粗產業</code>)、days(1/2/3/4/5/10/20/60/80/100/120/180/240)</td>
 <td>某個粗產業近 N 日買賣超金額前 15 名的分點。</td>
 </tr>
 </tbody>
@@ -2891,12 +2891,12 @@
 </tr>
 <tr>
 <td><a href="../data-tw-futures/#取得台指近日盤歷史分k"><code>取得台指近日盤歷史分K</code></a></td>
-<td>minutes(&#8531;/5/15/30/60)</td>
+<td>minutes(1/3/5/15/30/60)</td>
 <td>台指期近期日盤分 K（可選分鐘數）。</td>
 </tr>
 <tr>
 <td><a href="../data-tw-futures/#取得台指近夜盤歷史分k"><code>取得台指近夜盤歷史分K</code></a></td>
-<td>minutes(&#8531;/5/15/30/60)</td>
+<td>minutes(1/3/5/15/30/60)</td>
 <td>台指期近期夜盤分 K（可選分鐘數）。</td>
 </tr>
 <tr>
